@@ -1,5 +1,6 @@
 using Godot;
 using Godot3dPlatformerCourse.Scripts.Game.Consts;
+using System;
 
 namespace Godot3dPlatformerCourse.Scripts.Game.Player;
 
@@ -11,6 +12,10 @@ public partial class Player : CharacterBody3D, IPlayer
 	private float jumpForce = 8;
 	[Export]
 	private float gravity = 20;
+	[Export]
+	private int health = 3;
+
+	private int points;
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -33,5 +38,34 @@ public partial class Player : CharacterBody3D, IPlayer
 		Velocity = velocity;
 
 		MoveAndSlide();
+	}
+
+	public override void _Process(double delta)
+	{
+		if(GlobalPosition.Y <= -5)
+		{
+			GameOver();
+		}
+	}
+
+	public void TakeDamage(int amount)
+	{
+		health -= amount;
+
+		if (health <= 0)
+		{
+			GameOver();
+		}
+	}
+
+	public void UpdateScore(int amount)
+	{
+		points += amount;
+		GD.Print("Score: " + points);
+	}
+
+	private void GameOver()
+	{
+		GetTree().ReloadCurrentScene();
 	}
 }

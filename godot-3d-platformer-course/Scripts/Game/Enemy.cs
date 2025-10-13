@@ -15,12 +15,15 @@ public partial class Enemy : Area3D
 	private float spinSpeed = 900;
 
 	private Vector3 spawnPosition;
+	private Vector3 startPos;
+	private Vector3 targetPos;
+	private MeshInstance3D model;
 
 	public override void _Ready()
 	{
-		Vector3 startPos = GlobalPosition;
-		Vector3 targetPos = GlobalPosition + moveDirection;
-		MeshInstance3D model = GetNode<MeshInstance3D>("Model");
+		startPos = GlobalPosition;
+		targetPos = GlobalPosition + moveDirection;
+		model = GetNode<MeshInstance3D>("Model");
 
 		BodyEntered += OnBodyEntered;
 
@@ -29,21 +32,36 @@ public partial class Enemy : Area3D
 
 	public override void _Process(double delta)
 	{
-		
+		var modelRotation = model.Rotation;
+		modelRotation.Z += ((float)Math.PI / 180f * spinSpeed) * (float)delta;
+		model.Rotation = modelRotation;
+
+		GlobalPosition = GlobalPosition.MoveToward(targetPos, moveSpeed * (float)delta);
+		if (GlobalPosition == startPos)
+		{
+			targetPos = startPos + moveDirection;
+		} else if (GlobalPosition == startPos + moveDirection)
+		{
+			targetPos = startPos;
+		}
 	}
 
 	private void RandomStartPosition()
 	{
+		float t = (float)GD.RandRange(0.0, 1.0);
 
+		GlobalPosition = startPos.Lerp(targetPos, t);
 	}
 
 	public void OnBodyEntered(Node body)
 	{
 		if (body is IPlayer player)
 		{
-			GD.Print("Oh, fuck me daddy");
+			player.TakeDamage(1);
 		}
 	}
+
+
 
 	public override void _ExitTree()
 	{

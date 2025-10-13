@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b4o63a6i0jnki"]
+[gd_scene load_steps=17 format=3 uid="uid://b4o63a6i0jnki"]
 
 [ext_resource type="ArrayMesh" uid="uid://du2p7xaum1i6l" path="res://Assets/Models/Platformer/block-grass-low-large.obj" id="1_vk57k"]
 [ext_resource type="ArrayMesh" uid="uid://y61nj7c5lv76" path="res://Assets/Models/Platformer/block-grass-narrow.obj" id="2_6444e"]
@@ -6,8 +6,8 @@
 [ext_resource type="ArrayMesh" uid="uid://ci053esoxmogu" path="res://Assets/Models/Platformer/block-grass-large.obj" id="4_lsmp6"]
 [ext_resource type="ArrayMesh" uid="uid://811shelyghw3" path="res://Assets/Models/Platformer/block-grass-overhang-low.obj" id="5_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://cc3uewck3viid" path="res://Scenes/player.tscn" id="6_evi0p"]
-[ext_resource type="Script" uid="uid://bs7wjrp7gjkd4" path="res://Scripts/Game/Enemy.cs" id="7_xrdnt"]
-[ext_resource type="ArrayMesh" uid="uid://c1gaj6r56lq8" path="res://Assets/Models/Platformer/saw.obj" id="8_wrinw"]
+[ext_resource type="PackedScene" uid="uid://carqb6jfyfquo" path="res://Scenes/enemy.tscn" id="7_lsmp6"]
+[ext_resource type="PackedScene" uid="uid://d37jcwnu10wxk" path="res://Scenes/coin.tscn" id="8_xrdnt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6444e"]
 
@@ -44,9 +44,6 @@ points = PackedVector3Array(-0.9914517, 5.551115e-17, -0.73557156, 1.018175, 0.8
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6r07y"]
 points = PackedVector3Array(0.26366165, 0.39740676, 0.5275299, -0.25403005, 0.2966804, -0.5080601, 0.42947215, 0.001230716, -0.39645174, -0.42950076, 0.0012739217, 0.39638263, -0.49330348, 0.4957681, 0.24665174, 0.43026644, 0.49738315, -0.39718497, 0.42947215, 0.001230716, 0.39645174, -0.49753812, 0.00026971303, -0.2321429, -0.4303063, 0.4973463, -0.39712605, 0.49330348, 0.4957681, 0.24665174, -0.24665195, 0.4957683, 0.4933039, -0.23222998, 0.00028775213, 0.49750206, 0.2321429, 0.00026971303, -0.49753812, 0.26366216, 0.39740705, -0.5275309, 0.5274976, 0.39739767, -0.2637488, 0.49753812, 0.00026971303, 0.2321429, -0.39638263, 0.0012739217, -0.42950076, -0.5274976, 0.39739767, -0.2637488, -0.48122057, 0.13300239, 0.3981583, 0.39712605, 0.4973463, 0.4303063, 0.2321429, 0.00026971303, 0.49753812, -0.24665174, 0.4957681, -0.49330348, 0.5274976, 0.39739767, 0.2637488, -0.3144546, 0.38150492, 0.51316667, -0.5274976, 0.39739767, 0.2637488, 0.48119417, 0.13298367, -0.3982225, -0.3981583, 0.13300239, -0.48122057, 0.3981583, 0.13300239, 0.48122057, -0.44531673, 0.41402718, 0.44531673, -0.23222998, 0.00028775213, -0.49750206, -0.49753812, 0.00026971303, 0.2321429, 0.49753812, 0.00026971303, -0.2321429)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_chwpn"]
-size = Vector3(0.7920532, 0.7858887, 0.20672607)
 
 [node name="Main" type="Node3D"]
 
@@ -144,17 +141,17 @@ skeleton = NodePath("../PlatformLowLarge")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/BlockGrassOverhangLow2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_6r07y")
 
-[node name="Enemy" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.014389, 0.66734767)
-script = ExtResource("7_xrdnt")
+[node name="Enemy" parent="." instance=ExtResource("7_lsmp6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.9298129, 1.014389, -0.004343033)
 
-[node name="Model" type="MeshInstance3D" parent="Enemy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0009332895, 0, 0)
-mesh = ExtResource("8_wrinw")
-skeleton = NodePath("../..")
+[node name="Coin" parent="." instance=ExtResource("8_xrdnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91542923, 0.79425764)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000579834, 0.00012207031, -0.00045776367)
-shape = SubResource("BoxShape3D_chwpn")
+[node name="Coin2" parent="." instance=ExtResource("8_xrdnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.164512, 1.176303, 0.13663626)
 
-[connection signal="body_entered" from="Enemy" to="Enemy" method="_on_body_entered"]
+[node name="Coin3" parent="." instance=ExtResource("8_xrdnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.114334, 1.176303, 0.96059227)
+
+[node name="Coin4" parent="." instance=ExtResource("8_xrdnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.114334, 1.176303, 3.7071981)
