@@ -1,42 +1,44 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\",
+  "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|g:\\godot games\\courses\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|solutionrelative:scripts\\game\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|g:\\godot games\\courses\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|solutionrelative:scripts\\game\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|g:\\godot games\\courses\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\player\\iplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|solutionrelative:scripts\\game\\player\\iplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\playerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|solutionrelative:scripts\\game\\playerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|g:\\godot games\\courses\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\player\\playervisuals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|solutionrelative:scripts\\game\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\player\\playervisuals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|solutionrelative:scripts\\game\\player\\playervisuals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|g:\\godot games\\courses\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|solutionrelative:scripts\\game\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|g:\\godot games\\courses\\currenttutorial\\godot-3d-platformer-course\\.editorconfig||{68B46364-D378-42F2-9E72-37D86C5F4468}",
+      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\player\\iplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|solutionrelative:scripts\\game\\player\\iplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-3d-platformer-course\\.editorconfig||{68B46364-D378-42F2-9E72-37D86C5F4468}",
       "RelativeMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|solutionrelative:.editorconfig||{68B46364-D378-42F2-9E72-37D86C5F4468}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scenes\\Enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\Enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scenes\\Enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|g:\\godot games\\courses\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\consts\\inputconsts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-3d-platformer-course\\scripts\\game\\consts\\inputconsts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A6836C6-B56A-417A-AE27-49F1C5F23CC8}|Godot3dPlatformerCourse.csproj|solutionrelative:scripts\\game\\consts\\inputconsts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scenes\\PlayerVisuals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\PlayerVisuals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scenes\\PlayerVisuals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,20 +48,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 175,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 16,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Coin.cs",
-              "DocumentMoniker": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Coin.cs",
-              "RelativeDocumentMoniker": "Scripts\\Game\\Coin.cs",
-              "ToolTip": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Coin.cs",
-              "RelativeToolTip": "Scripts\\Game\\Coin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T15:28:39.446Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -83,54 +76,76 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": ".editorconfig",
-              "DocumentMoniker": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\.editorconfig",
-              "RelativeDocumentMoniker": ".editorconfig",
-              "ToolTip": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\.editorconfig",
-              "RelativeToolTip": ".editorconfig",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-13T15:28:17.28Z",
+              "DocumentIndex": 1,
+              "Title": "PlayerStats.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\PlayerStats.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game\\PlayerStats.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\PlayerStats.cs",
+              "RelativeToolTip": "Scripts\\Game\\PlayerStats.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T16:10:21.347Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Coin.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Coin.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game\\Coin.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Coin.cs",
+              "RelativeToolTip": "Scripts\\Game\\Coin.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T15:28:39.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": ".editorconfig",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\.editorconfig",
+              "RelativeDocumentMoniker": ".editorconfig",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\.editorconfig",
+              "RelativeToolTip": ".editorconfig",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-13T15:28:17.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "IPlayer.cs",
-              "DocumentMoniker": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Player\\IPlayer.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Player\\IPlayer.cs",
               "RelativeDocumentMoniker": "Scripts\\Game\\Player\\IPlayer.cs",
-              "ToolTip": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Player\\IPlayer.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Player\\IPlayer.cs",
               "RelativeToolTip": "Scripts\\Game\\Player\\IPlayer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T16:18:44.86Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-12T16:18:44.86Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Enemy.cs",
-              "DocumentMoniker": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Enemy.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Enemy.cs",
               "RelativeDocumentMoniker": "Scripts\\Game\\Enemy.cs",
-              "ToolTip": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Enemy.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Enemy.cs",
               "RelativeToolTip": "Scripts\\Game\\Enemy.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAUwDwAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-12T16:06:42.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Enemy.cs",
               "DocumentMoniker": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scenes\\Enemy.cs",
-              "RelativeDocumentMoniker": "Scenes\\Enemy.cs",
               "ToolTip": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scenes\\Enemy.cs",
-              "RelativeToolTip": "Scenes\\Enemy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-12T16:05:28.795Z"
@@ -139,34 +154,32 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "PlayerVisuals.cs",
-              "DocumentMoniker": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Player\\PlayerVisuals.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Player\\PlayerVisuals.cs",
               "RelativeDocumentMoniker": "Scripts\\Game\\Player\\PlayerVisuals.cs",
-              "ToolTip": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Player\\PlayerVisuals.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Player\\PlayerVisuals.cs",
               "RelativeToolTip": "Scripts\\Game\\Player\\PlayerVisuals.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwDIAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-12T15:08:59.295Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "PlayerVisuals.cs",
               "DocumentMoniker": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scenes\\PlayerVisuals.cs",
-              "RelativeDocumentMoniker": "Scenes\\PlayerVisuals.cs",
               "ToolTip": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scenes\\PlayerVisuals.cs",
-              "RelativeToolTip": "Scenes\\PlayerVisuals.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-12T15:08:04.012Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "InputConsts.cs",
-              "DocumentMoniker": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Consts\\InputConsts.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Consts\\InputConsts.cs",
               "RelativeDocumentMoniker": "Scripts\\Game\\Consts\\InputConsts.cs",
-              "ToolTip": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Consts\\InputConsts.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Consts\\InputConsts.cs",
               "RelativeToolTip": "Scripts\\Game\\Consts\\InputConsts.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -174,13 +187,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Player.cs",
-              "DocumentMoniker": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Player\\Player.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Game\\Player\\Player.cs",
-              "ToolTip": "G:\\Godot Games\\Courses\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Player\\Player.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-3d-platformer-course\\Scripts\\Game\\Player\\Player.cs",
               "RelativeToolTip": "Scripts\\Game\\Player\\Player.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAYwD8AAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAAD8AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-12T14:21:33.598Z",
               "EditorCaption": ""

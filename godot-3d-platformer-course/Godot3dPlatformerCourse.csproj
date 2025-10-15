@@ -5,6 +5,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Scripts\Game\NewFolder\" />
+    <Compile Remove="Scripts\Game\NewFolder\**" />
+    <EmbeddedResource Remove="Scripts\Game\NewFolder\**" />
   </ItemGroup>
 </Project>

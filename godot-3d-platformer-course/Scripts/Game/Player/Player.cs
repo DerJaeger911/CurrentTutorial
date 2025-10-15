@@ -17,7 +17,13 @@ public partial class Player : CharacterBody3D, IPlayer
 
 	private int points;
 
-	public override void _PhysicsProcess(double delta)
+	[Signal]
+	public delegate void OnTakeDamageEventHandler(int hp);
+    [Signal]
+    public delegate void OnScoreChangedEventHandler(int score);
+
+
+    public override void _PhysicsProcess(double delta)
 	{
 		Vector3 velocity = Velocity;
 
@@ -51,6 +57,7 @@ public partial class Player : CharacterBody3D, IPlayer
 	public void TakeDamage(int amount)
 	{
 		health -= amount;
+		EmitSignal(SignalName.OnTakeDamage, health);
 
 		if (health <= 0)
 		{
@@ -61,11 +68,13 @@ public partial class Player : CharacterBody3D, IPlayer
 	public void UpdateScore(int amount)
 	{
 		points += amount;
-		GD.Print("Score: " + points);
+		PlayerStats.Instance.Score += amount;
+		GD.Print(PlayerStats.Instance.Score);
 	}
 
 	private void GameOver()
 	{
-		GetTree().ReloadCurrentScene();
+		PlayerStats.Instance.Score = 0;
+		EmitSignal(SignalName.OnScoreChanged, PlayerStats.Instance.Score);
 	}
 }
