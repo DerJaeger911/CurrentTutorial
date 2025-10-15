@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkingSimulator", "WalkingSimulator.csproj", "{FA01BD76-6CC0-4111-8471-BEF643281C32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA01BD76-6CC0-4111-8471-BEF643281C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA01BD76-6CC0-4111-8471-BEF643281C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA01BD76-6CC0-4111-8471-BEF643281C32}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{FA01BD76-6CC0-4111-8471-BEF643281C32}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{FA01BD76-6CC0-4111-8471-BEF643281C32}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{FA01BD76-6CC0-4111-8471-BEF643281C32}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
