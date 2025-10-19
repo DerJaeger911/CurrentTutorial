@@ -42,3 +42,5 @@ position = Vector2(-96, 45)
 vertices = PackedVector2Array(75, -2, 117, -2, 117, 48, 75, 48)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
+
+[node name="UnitBase" type="Area2D" parent="."]
