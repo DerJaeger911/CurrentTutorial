@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=4 uid="uid://crfb3mx0j7rpo"]
+[gd_scene load_steps=4 format=4 uid="uid://crfb3mx0j7rpo"]
 
+[ext_resource type="Script" uid="uid://bi051tqfoslcl" path="res://Scripts/Game/UnitController.cs" id="1_bo1nx"]
 [ext_resource type="TileSet" uid="uid://c2ye2ttvcn34y" path="res://Assets/Sprites/Tiles/new_tile_set.tres" id="1_jjgbg"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jjgbg"]
@@ -8,6 +9,9 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(-272, -96, -272, 129, 272, 129, 272, -96)])
 
 [node name="Main" type="Node2D"]
+
+[node name="UnitController" type="Node2D" parent="."]
+script = ExtResource("1_bo1nx")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -42,5 +46,3 @@ position = Vector2(-96, 45)
 vertices = PackedVector2Array(75, -2, 117, -2, 117, 48, 75, 48)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
-
-[node name="UnitBase" type="Area2D" parent="."]

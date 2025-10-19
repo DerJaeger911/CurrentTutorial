@@ -12,7 +12,7 @@ config_version=5
 
 config/name="GodotRTSCourse"
 run/main_scene="uid://crfb3mx0j7rpo"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
