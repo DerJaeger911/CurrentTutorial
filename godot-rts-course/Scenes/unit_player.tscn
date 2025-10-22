@@ -11,11 +11,13 @@ colors = PackedColorArray(0, 0.5254902, 0.25490198, 1)
 gradient = SubResource("Gradient_iwxyt")
 
 [node name="UnitBase" instance=ExtResource("1_66hmh")]
+moveSpeed = 30.0
 
 [node name="PlayerUnit" type="Node" parent="." index="0"]
 script = ExtResource("2_qq154")
 
 [node name="SelectionVisual" type="Sprite2D" parent="." index="1"]
+visible = false
 position = Vector2(0, 6.5)
 scale = Vector2(0.078125, 7.0000005)
 texture = SubResource("GradientTexture1D_u42x6")

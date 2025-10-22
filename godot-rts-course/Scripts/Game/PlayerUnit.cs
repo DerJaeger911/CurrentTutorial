@@ -10,7 +10,7 @@ public partial class PlayerUnit : Node
         selectionVisual = GetNode<Sprite2D>(GodotConsts.SelectionVisual);
     }
 
-    private void ToggleSelectionVisual(bool toggle)
+    public void ToggleSelectionVisual(bool toggle)
     {
         selectionVisual.Visible = toggle;
     }

@@ -4,68 +4,95 @@ using GodotRTSCourse.Scripts.Game;
 
 public partial class UnitController : Node2D
 {
-    private Unit selectedUnit;
+	private Unit selectedUnit;
 
-    public override void _Input(InputEvent @event)
-    {
-        if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
-        {
-            if(mouseEvent.ButtonIndex == MouseButton.Left)
-            {
-                TrySelectUnit();
-            }
-            else if (mouseEvent.ButtonIndex == MouseButton.Right)
-            {
-                TryCommandUnit();
-            }
-        }
-    }
+	public override void _Input(InputEvent @event)
+	{
+		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
+		{
+			if (mouseEvent.ButtonIndex == MouseButton.Left)
+			{
+				TrySelectUnit();
+			}
+			else if (mouseEvent.ButtonIndex == MouseButton.Right)
+			{
+				TryCommandUnit();
+			}
+		}
+	}
 
-    private void TrySelectUnit()
-    {
-        Unit unit = GetSelectedUnit();
+	private void TrySelectUnit()
+	{
+		Unit unit = GetSelectedUnit();
 
 
-        if (unit == null || unit.Team != TeamEnums.Player)
-        {
-            UnselectUnit();
-        }
-        else
-        {
-            SelectUnit(unit);
-        }
-    }
+		if (unit == null || unit.Team != TeamEnums.Player)
+		{
+			UnselectUnit();
+		}
+		else
+		{
+			SelectUnit(unit);
+		}
+	}
 
-    private void SelectUnit(Unit unit)
-    {
+	private void SelectUnit(Unit unit)
+	{
+		UnselectUnit();
+		selectedUnit = unit;
+		unit.GetNode<PlayerUnit>("PlayerUnit").ToggleSelectionVisual(true);
+	}
 
-    }
+	private void UnselectUnit()
+	{
+		if (selectedUnit != null)
+		{
+			selectedUnit.GetNode<PlayerUnit>("PlayerUnit").ToggleSelectionVisual(false);
+		}
+		selectedUnit = null;
+	}
 
-    private void UnselectUnit()
-    {
+	private void TryCommandUnit()
+	{
+		if (selectedUnit == null)
+		{
+			return;
+		}
 
-    }
+		var target = GetSelectedUnit();
 
-    private void TryCommandUnit()
-    {
+		if (target != null)
+		{
+			if (target.Team != TeamEnums.Player) 
+			{
+				selectedUnit.SetAttackTarget(target);
+			}
+		}
+		else
+		{
+			selectedUnit.SetMoveToTarget(GetGlobalMousePosition());
+		}
+	}
 
-    }
+	private Unit GetSelectedUnit()
+	{
+		PhysicsDirectSpaceState2D space = GetWorld2D().DirectSpaceState;
+		PhysicsPointQueryParameters2D query = new()
+		{
+			Position = GetGlobalMousePosition(),
+			CollideWithAreas = true
+		};
 
-    private Unit GetSelectedUnit()
-    {
-        PhysicsDirectSpaceState2D space = GetWorld2D().DirectSpaceState;
-        PhysicsPointQueryParameters2D query = new();
-        query.Position = GetGlobalMousePosition();
-        Array<Dictionary> intersection = space.IntersectPoint(query, 1);
+		Array<Dictionary> intersection = space.IntersectPoint(query, 1);
 
-        GodotObject collider = intersection[0][GodotConsts.collider].AsGodotObject();
-        
+		if (intersection.Count == 0)
+			return null;
 
-        if (intersection.Count == 0 || collider is not Unit unit)
-        {
-            return null;
-        }
+		GodotObject collider = intersection[0][GodotConsts.collider].AsGodotObject();
 
-        return unit;
-    }
+		if (collider is not Unit unit)
+			return null;
+
+		return unit;
+	}
 }

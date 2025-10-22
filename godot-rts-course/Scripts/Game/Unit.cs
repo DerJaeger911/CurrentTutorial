@@ -38,8 +38,6 @@ public partial class Unit : Area2D
         currentHealth = maxHealth;
 
         agent = GetNode<NavigationAgent2D>(GodotConsts.NavAgent);
-
-        SetMoveToTarget(Vector2.Zero);
     }
 
     public override void _Process(double delta)
@@ -69,13 +67,13 @@ public partial class Unit : Area2D
 
     }
 
-    private void SetMoveToTarget(Vector2 target)
+	public void SetMoveToTarget(Vector2 target)
     {
         agent.TargetPosition = target;
         attackTarget = null;
     }
 
-    private void SetAttackTarget(Unit target)
+    public void SetAttackTarget(Unit target)
     {
 
     }
