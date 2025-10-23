@@ -2,6 +2,7 @@ using Godot;
 using Godot.Collections;
 using GodotRTSCourse.Scripts.Game;
 
+namespace GodotRTSCourse.Scripts.Game;
 public partial class UnitController : Node2D
 {
 	private Unit selectedUnit;
@@ -38,23 +39,21 @@ public partial class UnitController : Node2D
 
 	private void SelectUnit(Unit unit)
 	{
+		
 		UnselectUnit();
-		selectedUnit = unit;
+		this.selectedUnit = unit;
 		unit.GetNode<PlayerUnit>("PlayerUnit").ToggleSelectionVisual(true);
 	}
 
 	private void UnselectUnit()
 	{
-		if (selectedUnit != null)
-		{
-			selectedUnit.GetNode<PlayerUnit>("PlayerUnit").ToggleSelectionVisual(false);
-		}
-		selectedUnit = null;
+		this.selectedUnit?.GetNode<PlayerUnit>("PlayerUnit").ToggleSelectionVisual(false);
+		this.selectedUnit = null;
 	}
 
 	private void TryCommandUnit()
 	{
-		if (selectedUnit == null)
+		if (this.selectedUnit == null)
 		{
 			return;
 		}
@@ -65,12 +64,12 @@ public partial class UnitController : Node2D
 		{
 			if (target.Team != TeamEnums.Player) 
 			{
-				selectedUnit.SetAttackTarget(target);
+				this.selectedUnit.SetAttackTarget(target);
 			}
 		}
 		else
 		{
-			selectedUnit.SetMoveToTarget(GetGlobalMousePosition());
+			this.selectedUnit.SetMoveToTarget(GetGlobalMousePosition());
 		}
 	}
 
@@ -86,12 +85,16 @@ public partial class UnitController : Node2D
 		Array<Dictionary> intersection = space.IntersectPoint(query, 1);
 
 		if (intersection.Count == 0)
+		{
 			return null;
+		}
 
 		GodotObject collider = intersection[0][GodotConsts.collider].AsGodotObject();
 
 		if (collider is not Unit unit)
+		{
 			return null;
+		}
 
 		return unit;
 	}

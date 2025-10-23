@@ -12,6 +12,7 @@ gradient = SubResource("Gradient_iwxyt")
 
 [node name="UnitBase" instance=ExtResource("1_66hmh")]
 moveSpeed = 30.0
+team = 0
 
 [node name="PlayerUnit" type="Node" parent="." index="0"]
 script = ExtResource("2_qq154")

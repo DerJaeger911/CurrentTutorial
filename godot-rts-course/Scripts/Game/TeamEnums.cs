@@ -1,8 +1,7 @@
-namespace GodotRTSCourse.Scripts.Game
+namespace GodotRTSCourse.Scripts.Game;
+
+public enum TeamEnums
 {
-    public enum TeamEnums
-    {
-        Player,
-        Ai
-    }
+    Player,
+    Ai
 }
