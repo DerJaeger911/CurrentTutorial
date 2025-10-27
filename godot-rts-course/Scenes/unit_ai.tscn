@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy5uxpsu1gi3u"]
+
+[ext_resource type="PackedScene" uid="uid://cn4pgqdsvdi6b" path="res://Scenes/unit_base.tscn" id="1_iesgf"]
+[ext_resource type="Script" uid="uid://ciehi4o7rnb4c" path="res://Scripts/Game/UnitAi.cs" id="2_gu8n8"]
+[ext_resource type="Texture2D" uid="uid://odlvvem68m1s" path="res://Assets/Sprites/Characters/tile_0110.png" id="2_t8do7"]
+
+[node name="UnitBase" groups=["AiUnits"] instance=ExtResource("1_iesgf")]
+
+[node name="Node" type="Node" parent="." index="0"]
+script = ExtResource("2_gu8n8")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_t8do7")

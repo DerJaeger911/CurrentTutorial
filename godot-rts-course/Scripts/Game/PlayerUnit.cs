@@ -1,9 +1,10 @@
 using Godot;
 using GodotRTSCourse.Scripts.Game;
+using GodotRTSCourse.Scripts.Game.Interfaces;
 
 namespace GodotRTSCourse.Scripts.Game;
 
-public partial class PlayerUnit : Node
+public partial class PlayerUnit : Node, IUnitPlayer
 {
     private Sprite2D selectionVisual;
 

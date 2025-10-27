@@ -18,7 +18,7 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0.11372549, 0.11372549, 0.11372549, 1)
 
-[node name="UnitBase" type="Area2D"]
+[node name="UnitBase" type="Area2D" groups=["Units"]]
 script = ExtResource("1_2vsbj")
 team = 1
 
