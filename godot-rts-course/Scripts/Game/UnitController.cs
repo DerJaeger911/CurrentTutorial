@@ -1,101 +1,125 @@
 using Godot;
 using Godot.Collections;
-using GodotRTSCourse.Scripts.Game;
+using GodotRTSCourse.Scripts.Game.EnumAndConsts;
+using GodotRTSCourse.Scripts.Game.Interfaces;
 
 namespace GodotRTSCourse.Scripts.Game;
 public partial class UnitController : Node2D
 {
-	private Unit selectedUnit;
+    private Unit selectedUnit;
 
-	public override void _Input(InputEvent @event)
-	{
-		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
-		{
-			if (mouseEvent.ButtonIndex == MouseButton.Left)
-			{
-				TrySelectUnit();
-			}
-			else if (mouseEvent.ButtonIndex == MouseButton.Right)
-			{
-				TryCommandUnit();
-			}
-		}
-	}
+    public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
+        {
+            if (mouseEvent.ButtonIndex == MouseButton.Left)
+            {
+                this.TrySelectUnit();
+            }
+            else if (mouseEvent.ButtonIndex == MouseButton.Right)
+            {
+                this.TryCommandUnit();
+            }
+        }
+    }
 
-	private void TrySelectUnit()
-	{
-		Unit unit = GetSelectedUnit();
+    private void TrySelectUnit()
+    {
+        Unit unit = this.GetSelectedUnit();
 
 
-		if (unit == null || unit.Team != TeamEnums.Player)
-		{
-			UnselectUnit();
-		}
-		else
-		{
-			SelectUnit(unit);
-		}
-	}
+        if (unit == null || unit.Team != TeamEnums.Player)
+        {
+            this.UnselectUnit();
+        }
+        else
+        {
+            this.SelectUnit(unit);
+        }
+    }
 
-	private void SelectUnit(Unit unit)
-	{
-		
-		UnselectUnit();
-		this.selectedUnit = unit;
-		unit.GetNode<PlayerUnit>("PlayerUnit").ToggleSelectionVisual(true);
-	}
+    private void SelectUnit(Unit unit)
+    {
+        this.UnselectUnit();
+        this.selectedUnit = unit;
 
-	private void UnselectUnit()
-	{
-		this.selectedUnit?.GetNode<PlayerUnit>("PlayerUnit").ToggleSelectionVisual(false);
-		this.selectedUnit = null;
-	}
+        unit.DeathSignal += this.OnSelectedUnitDeath;
 
-	private void TryCommandUnit()
-	{
-		if (this.selectedUnit == null)
-		{
-			return;
-		}
+        if (IsInstanceValid(unit.GetNode<PlayerUnit>(GodotConsts.PlayerUnit)))
+        {
+            unit.GetNode<PlayerUnit>(GodotConsts.PlayerUnit).ToggleSelectionVisual(true);
+        }
+    }
 
-		var target = GetSelectedUnit();
+    private void OnSelectedUnitDeath(Unit unit)
+    {
+        if (unit == this.selectedUnit)
+        {
+            this.selectedUnit = null;
+        }
+    }
 
-		if (target != null)
-		{
-			if (target.Team != TeamEnums.Player) 
-			{
-				this.selectedUnit.SetAttackTarget(target);
-			}
-		}
-		else
-		{
-			this.selectedUnit.SetMoveToTarget(GetGlobalMousePosition());
-		}
-	}
+    private void UnselectUnit()
+    {
+        if (IsInstanceValid(this.selectedUnit))
+        {
+            this.selectedUnit.DeathSignal -= this.OnSelectedUnitDeath;
+            var playerUnitNode = this.selectedUnit.GetNode<PlayerUnit>(GodotConsts.PlayerUnit);
+            if (IsInstanceValid(playerUnitNode))
+            {
+                playerUnitNode.ToggleSelectionVisual(false);
+            }
+        }
 
-	private Unit GetSelectedUnit()
-	{
-		PhysicsDirectSpaceState2D space = GetWorld2D().DirectSpaceState;
-		PhysicsPointQueryParameters2D query = new()
-		{
-			Position = GetGlobalMousePosition(),
-			CollideWithAreas = true
-		};
+        this.selectedUnit = null;
 
-		Array<Dictionary> intersection = space.IntersectPoint(query, 1);
+    }
 
-		if (intersection.Count == 0)
-		{
-			return null;
-		}
+    private void TryCommandUnit()
+    {
+        if (this.selectedUnit == null)
+        {
+            return;
+        }
 
-		GodotObject collider = intersection[0][GodotConsts.collider].AsGodotObject();
+        var target = this.GetSelectedUnit();
 
-		if (collider is not Unit unit)
-		{
-			return null;
-		}
+        if (target != null)
+        {
+            if (target.Team != TeamEnums.Player)
+            {
+                this.selectedUnit.SetAttackTarget(target);
+            }
+        }
+        else
+        {
+            this.selectedUnit.SetMoveToTarget(this.GetGlobalMousePosition());
+        }
+    }
 
-		return unit;
-	}
+    private Unit GetSelectedUnit()
+    {
+        PhysicsDirectSpaceState2D space = this.GetWorld2D().DirectSpaceState;
+        PhysicsPointQueryParameters2D query = new()
+        {
+            Position = this.GetGlobalMousePosition(),
+            CollideWithAreas = true
+        };
+
+        Array<Dictionary> intersection = space.IntersectPoint(query, 1);
+
+        if (intersection.Count == 0)
+        {
+            return null;
+        }
+
+        GodotObject collider = intersection[0][GodotConsts.collider].AsGodotObject();
+
+        if (collider is not Unit unit)
+        {
+            return null;
+        }
+
+        return unit;
+    }
 }

@@ -1,8 +1,11 @@
 using Godot;
 using Godot.Collections;
 using GodotRTSCourse.Scripts.Game;
+using GodotRTSCourse.Scripts.Game.EnumAndConsts;
 using GodotRTSCourse.Scripts.Game.Interfaces;
 using System;
+
+namespace GodotRTSCourse.Scripts.Game;
 
 public partial class UnitAi : Node, IUnitAi
 {
@@ -17,31 +20,31 @@ public partial class UnitAi : Node, IUnitAi
 
     public override void _Ready()
     {
-        unit = GetParent<Unit>();
+        this.unit = this.GetParent<Unit>();
     }
 
     public override void _Process(double delta)
     {
         float time = (float)Time.GetTicksMsec() / 1000;
 
-        if (time - lastDetectionTime > detectionRate)
+        if (time - this.lastDetectionTime > this.detectionRate)
         {
-            lastDetectionTime = time;
-            UpdateEnemyList();
-            Detect();
+            this.lastDetectionTime = time;
+            this.UpdateEnemyList();
+            this.Detect();
         }
     }
 
     private void UpdateEnemyList()
     {
-        enemyList.Clear();
+        this.enemyList.Clear();
 
-        Array<Node> rawList = GetTree().GetNodesInGroup("PlayerUnits");
+        Array<Node> rawList = this.GetTree().GetNodesInGroup(GodotConsts.PlayerUnits);
 
         foreach (var node in rawList)
         {
             if (node is Unit player)
-                enemyList.Add(player);
+                this.enemyList.Add(player);
         }
     }
 
@@ -50,9 +53,9 @@ public partial class UnitAi : Node, IUnitAi
         Unit closestEnemy = null;
         float closestDistance = 99999;
 
-        foreach(Unit enemy in enemyList)
+        foreach (Unit enemy in this.enemyList)
         {
-            var distance = unit.GlobalPosition.DistanceTo(enemy.GlobalPosition);
+            var distance = this.unit.GlobalPosition.DistanceTo(enemy.GlobalPosition);
 
             if (distance < closestDistance)
             {
@@ -60,9 +63,9 @@ public partial class UnitAi : Node, IUnitAi
                 closestDistance = distance;
             }
         }
-        if (closestEnemy != null) 
+        if (closestEnemy != null)
         {
-            unit.SetAttackTarget(closestEnemy);
+            this.unit.SetAttackTarget(closestEnemy);
         }
     }
 

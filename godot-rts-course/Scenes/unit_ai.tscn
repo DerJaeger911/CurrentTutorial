@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://ciehi4o7rnb4c" path="res://Scripts/Game/UnitAi.cs" id="2_gu8n8"]
 [ext_resource type="Texture2D" uid="uid://odlvvem68m1s" path="res://Assets/Sprites/Characters/tile_0110.png" id="2_t8do7"]
 
-[node name="UnitBase" groups=["AiUnits"] instance=ExtResource("1_iesgf")]
+[node name="UnitAI" groups=["AiUnits"] instance=ExtResource("1_iesgf")]
 
-[node name="Node" type="Node" parent="." index="0"]
+[node name="Node" type="Node" parent="." index="0" groups=["AiUnits", "Units"]]
 script = ExtResource("2_gu8n8")
 
 [node name="Sprite" parent="." index="1"]

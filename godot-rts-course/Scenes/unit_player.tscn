@@ -10,12 +10,12 @@ colors = PackedColorArray(0, 0.5254902, 0.25490198, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_u42x6"]
 gradient = SubResource("Gradient_iwxyt")
 
-[node name="UnitBase" groups=["PlayerUnits"] instance=ExtResource("1_66hmh")]
+[node name="UnitPlayer" groups=["PlayerUnits"] instance=ExtResource("1_66hmh")]
 moveSpeed = 35.0
 maxHealth = 40
 team = 0
 
-[node name="PlayerUnit" type="Node" parent="." index="0"]
+[node name="PlayerUnit" type="Node" parent="." index="0" groups=["PlayerUnits", "Units"]]
 script = ExtResource("2_qq154")
 
 [node name="SelectionVisual" type="Sprite2D" parent="." index="1"]

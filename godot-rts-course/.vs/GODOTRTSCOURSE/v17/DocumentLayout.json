@@ -3,44 +3,64 @@
   "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\unitai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\unitai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\unitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\unitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\teamenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\teamenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\playerunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\playerunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\interfaces\\iunitai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\interfaces\\iunitai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\unitvisual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\unitvisual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\enumandconsts\\teamenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\enumandconsts\\teamenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\enumandconsts\\godotconsts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\enumandconsts\\godotconsts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\enumandconsts\\audiopathconsts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\enumandconsts\\audiopathconsts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\interfaces\\iunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\interfaces\\iunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\interfaces\\iunitai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\interfaces\\iunitai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\interfaces\\iunitplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\interfaces\\iunitplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\unithealthbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\unithealthbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\unitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\unitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\godotconsts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\godotconsts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\unitaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\unitaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\godot-rts-course\\scripts\\game\\unithealthbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C55A085E-D97A-4480-B696-1B3E376FC25D}|GodotRTSCourse.csproj|solutionrelative:scripts\\game\\unithealthbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 175,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,7 +102,72 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\GameManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game\\GameManager.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\GameManager.cs",
+              "RelativeToolTip": "Scripts\\Game\\GameManager.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAYwBoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T20:14:24.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CameraController.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\CameraController.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game\\CameraController.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\CameraController.cs",
+              "RelativeToolTip": "Scripts\\Game\\CameraController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAqwCQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T19:02:25.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AudioPathConsts.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\EnumAndConsts\\AudioPathConsts.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game\\EnumAndConsts\\AudioPathConsts.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\EnumAndConsts\\AudioPathConsts.cs",
+              "RelativeToolTip": "Scripts\\Game\\EnumAndConsts\\AudioPathConsts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T18:34:18.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UnitAudio.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\UnitAudio.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game\\UnitAudio.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\UnitAudio.cs",
+              "RelativeToolTip": "Scripts\\Game\\UnitAudio.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwB8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T18:32:39.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "UnitVisual.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\UnitVisual.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game\\UnitVisual.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\UnitVisual.cs",
+              "RelativeToolTip": "Scripts\\Game\\UnitVisual.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwCcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T16:06:48.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "IUnitAi.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\Interfaces\\IUnitAi.cs",
               "RelativeDocumentMoniker": "Scripts\\Game\\Interfaces\\IUnitAi.cs",
@@ -90,11 +175,12 @@
               "RelativeToolTip": "Scripts\\Game\\Interfaces\\IUnitAi.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T18:44:32.131Z"
+              "WhenOpened": "2025-10-27T18:44:32.131Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "IUnitPlayer.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\Interfaces\\IUnitPlayer.cs",
               "RelativeDocumentMoniker": "Scripts\\Game\\Interfaces\\IUnitPlayer.cs",
@@ -102,11 +188,12 @@
               "RelativeToolTip": "Scripts\\Game\\Interfaces\\IUnitPlayer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T18:43:38.015Z"
+              "WhenOpened": "2025-10-27T18:43:38.015Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "IUnit.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\Interfaces\\IUnit.cs",
               "RelativeDocumentMoniker": "Scripts\\Game\\Interfaces\\IUnit.cs",
@@ -114,7 +201,8 @@
               "RelativeToolTip": "Scripts\\Game\\Interfaces\\IUnit.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T18:43:25.088Z"
+              "WhenOpened": "2025-10-27T18:43:25.088Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -124,82 +212,85 @@
               "RelativeDocumentMoniker": "Scripts\\Game\\UnitAi.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\UnitAi.cs",
               "RelativeToolTip": "Scripts\\Game\\UnitAi.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAgwD0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-27T18:21:51.288Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "UnitHealthBar.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\UnitHealthBar.cs",
               "RelativeDocumentMoniker": "Scripts\\Game\\UnitHealthBar.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\UnitHealthBar.cs",
               "RelativeToolTip": "Scripts\\Game\\UnitHealthBar.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwB0AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwB0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T17:06:42.219Z"
+              "WhenOpened": "2025-10-23T17:06:42.219Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "UnitController.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\UnitController.cs",
               "RelativeDocumentMoniker": "Scripts\\Game\\UnitController.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\UnitController.cs",
               "RelativeToolTip": "Scripts\\Game\\UnitController.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAYwBMAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwDsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T17:32:40.625Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "PlayerUnit.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\PlayerUnit.cs",
               "RelativeDocumentMoniker": "Scripts\\Game\\PlayerUnit.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\PlayerUnit.cs",
               "RelativeToolTip": "Scripts\\Game\\PlayerUnit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T17:27:01.828Z"
+              "WhenOpened": "2025-10-19T17:27:01.828Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "GodotConsts.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\GodotConsts.cs",
-              "RelativeDocumentMoniker": "Scripts\\Game\\GodotConsts.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\GodotConsts.cs",
-              "RelativeToolTip": "Scripts\\Game\\GodotConsts.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAyAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\WORKINPROGRESS\\CURRENTTUTORIAL\\CURRENTTUTORIAL\\GODOT-RTS-COURSE\\Scripts\\Game\\EnumAndConsts\\GodotConsts.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game\\EnumAndConsts\\GodotConsts.cs",
+              "ToolTip": "D:\\WORKINPROGRESS\\CURRENTTUTORIAL\\CURRENTTUTORIAL\\GODOT-RTS-COURSE\\Scripts\\Game\\EnumAndConsts\\GodotConsts.cs",
+              "RelativeToolTip": "Scripts\\Game\\EnumAndConsts\\GodotConsts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T16:52:36.554Z"
+              "WhenOpened": "2025-10-19T16:52:36.554Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "TeamEnums.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\TeamEnums.cs",
-              "RelativeDocumentMoniker": "Scripts\\Game\\TeamEnums.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\TeamEnums.cs",
-              "RelativeToolTip": "Scripts\\Game\\TeamEnums.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\WORKINPROGRESS\\CURRENTTUTORIAL\\CURRENTTUTORIAL\\GODOT-RTS-COURSE\\Scripts\\Game\\EnumAndConsts\\TeamEnums.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game\\EnumAndConsts\\TeamEnums.cs",
+              "ToolTip": "D:\\WORKINPROGRESS\\CURRENTTUTORIAL\\CURRENTTUTORIAL\\GODOT-RTS-COURSE\\Scripts\\Game\\EnumAndConsts\\TeamEnums.cs",
+              "RelativeToolTip": "Scripts\\Game\\EnumAndConsts\\TeamEnums.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T16:49:39.358Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Unit.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\Unit.cs",
               "RelativeDocumentMoniker": "Scripts\\Game\\Unit.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\godot-rts-course\\Scripts\\Game\\Unit.cs",
               "RelativeToolTip": "Scripts\\Game\\Unit.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAYwDQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwHQAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T16:36:03.824Z",
               "EditorCaption": ""

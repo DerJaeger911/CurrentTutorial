@@ -1,5 +1,5 @@
 using Godot;
-using GodotRTSCourse.Scripts.Game;
+using GodotRTSCourse.Scripts.Game.EnumAndConsts;
 using GodotRTSCourse.Scripts.Game.Interfaces;
 
 namespace GodotRTSCourse.Scripts.Game;
@@ -10,11 +10,11 @@ public partial class PlayerUnit : Node, IUnitPlayer
 
     public override void _Ready()
     {
-		this.selectionVisual = GetNode<Sprite2D>(GodotConsts.SelectionVisual);
+        this.selectionVisual = this.GetNode<Sprite2D>(GodotConsts.SelectionVisual);
     }
 
     public void ToggleSelectionVisual(bool toggle)
     {
-		this.selectionVisual.Visible = toggle;
+        this.selectionVisual.Visible = toggle;
     }
 }
