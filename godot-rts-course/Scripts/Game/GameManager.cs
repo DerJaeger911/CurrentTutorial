@@ -18,14 +18,14 @@ public partial class GameManager : Node2D
         {
             Unit unit = node as Unit;
 
-            if (unit == null && node is Node parentNode)
-            {
-                unit = parentNode.GetNodeOrNull<Unit>(".");
-                if (unit == null)
-                {
-                    unit = parentNode.GetNodeOrNull<Unit>("Unit");
-                }
-            }
+            //if (unit == null && node is Node parentNode)
+            //{
+            //    unit = parentNode.GetNodeOrNull<Unit>(".");
+            //    if (unit == null)
+            //    {
+            //        unit = parentNode.GetNodeOrNull<Unit>("Unit");
+            //    }
+            //}
 
             if (unit == null)
                 continue;
@@ -39,7 +39,7 @@ public partial class GameManager : Node2D
             unit.DeathSignal += this.OnUnitDie;
         }
 
-        GD.Print($"GameManager Ready. Units Alive: Player={this.units[TeamEnums.Player]}, AI={this.units[TeamEnums.Ai]}");
+        GD.Print($"GameManager Ready. Units Alive: Player={this.units[TeamEnums.Player]}, Ai={this.units[TeamEnums.Ai]}");
     }
 
     private void OnUnitDie(Unit unit)
