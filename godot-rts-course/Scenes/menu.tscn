@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq3x72lpu588g"]
+
+[ext_resource type="Texture2D" uid="uid://e33ukyq7vfg4" path="res://Assets/Sprites/Backgrounds/menu_background.png" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://csdeqxwuoic0g" path="res://Scripts/Game/Menu.cs" id="1_xhh6f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xhh6f"]
+font_size = 42
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhh6f")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1rerr")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -177.0
+offset_right = 232.0
+offset_bottom = -119.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Oh i see small pee pee!"
+label_settings = SubResource("LabelSettings_xhh6f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -27.0
+offset_right = 136.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 58.0
+offset_right = 136.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"

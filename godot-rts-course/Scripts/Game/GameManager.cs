@@ -12,8 +12,12 @@ public partial class GameManager : Node2D
         { TeamEnums.Ai, 0 }
     };
 
+    private EndScreen endScreen;
+
     public override void _Ready()
     {
+        this.endScreen = this.GetNode<EndScreen>("CanvasLayer/EndScreen");
+
         foreach (var node in this.GetTree().GetNodesInGroup("Units"))
         {
             Unit unit = node as Unit;
@@ -70,6 +74,8 @@ public partial class GameManager : Node2D
         }
 
         if (winner != null)
-            GD.Print("🏆 Team ", winner, " wins!");
+        {
+            this.endScreen.SetScreen(winner.ToString());
+        }
     }
 }
