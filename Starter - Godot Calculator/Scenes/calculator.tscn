@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bo7t28scfj1jq"]
 
 [ext_resource type="Script" uid="uid://cxvlakp2yibcb" path="res://Scripts/Calculator.cs" id="1_57imy"]
-[ext_resource type="Theme" uid="uid://i1e5hkoya5y" path="res://Themes/LightTheme.tres" id="1_xst5o"]
+[ext_resource type="Theme" uid="uid://b6hts0ukbhoul" path="res://Themes/DarkTheme.tres" id="1_xst5o"]
 
 [node name="Calculator" type="Control"]
 layout_mode = 3

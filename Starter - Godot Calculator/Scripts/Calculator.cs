@@ -3,167 +3,180 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CalculatorApp.Scripts
+namespace CalculatorApp.Scripts;
+
+public partial class Calculator : Control
 {
-    public partial class Calculator : Control
+    private Button zeroButton;
+    private Label label;
+
+    private readonly Dictionary<Button, Action> buttonHandlers = [];
+
+    private Action zeroButtonHandler;
+    private Action resizeHandler;
+
+    private readonly HashSet<string> operators = ["+", "-", "/", "x"];
+
+    private List<string> tempNums = [];
+    private readonly List<string> finNums = [];
+
+    private Theme[] themes = {
+    GD.Load<Theme>("res://Themes/DarkTheme.tres"),
+    GD.Load<Theme>("res://Themes/LightTheme.tres") };
+    private int themIndex;
+
+    public override void _Ready()
     {
-        private Button zeroButton;
-        private Label label;
+        this.zeroButton = this.GetNode<Button>("VBoxContainer/PanelContainer/GridContainer/ZeroButtonContainer/ZeroButton");
+        this.label = this.GetNode<Label>("VBoxContainer/MarginContainer/Label");
 
-        private readonly Dictionary<Button, Action> buttonHandlers = [];
+        this.resizeHandler = () => this.zeroButton.OffsetLeft = -this.GetWindow().Size.X / 4;
+        this.zeroButton.Resized += this.resizeHandler;
 
-        private Action zeroButtonHandler;
-        private Action resizeHandler;
 
-        private readonly HashSet<string> operators = ["+", "-", "/", "x"];
+        this.zeroButtonHandler = () => this.OnButtonPressed(this.zeroButton.Text);
+        this.zeroButton.Pressed += this.zeroButtonHandler;
+        this.buttonHandlers[this.zeroButton] = this.zeroButtonHandler;
 
-        private List<string> tempNums = [];
-        private readonly List<string> finNums = [];
+        this.label.Text = string.Empty;
 
-        public override void _Ready()
+        foreach (Node child in this.GetNode<GridContainer>("VBoxContainer/PanelContainer/GridContainer").GetChildren())
         {
-            this.zeroButton = this.GetNode<Button>("VBoxContainer/PanelContainer/GridContainer/ZeroButtonContainer/ZeroButton");
-            this.label = this.GetNode<Label>("VBoxContainer/MarginContainer/Label");
-
-            this.resizeHandler = () => this.zeroButton.OffsetLeft = -this.GetWindow().Size.X / 4;
-            this.zeroButton.Resized += this.resizeHandler;
-
-
-            this.zeroButtonHandler = () => this.OnButtonPressed(this.zeroButton.Text);
-            this.zeroButton.Pressed += this.zeroButtonHandler;
-            this.buttonHandlers[this.zeroButton] = this.zeroButtonHandler;
-
-            this.label.Text = string.Empty;
-
-            foreach (Node child in this.GetNode<GridContainer>("VBoxContainer/PanelContainer/GridContainer").GetChildren())
+            if (child is Button button)
             {
-                if (child is Button button)
-                {
-                    void handler() => this.OnButtonPressed(button.Text);
-                    button.Pressed += handler;
+                void handler() => this.OnButtonPressed(button.Text);
+                button.Pressed += handler;
 
-                    this.buttonHandlers[button] = handler;
-                }
+                this.buttonHandlers[button] = handler;
+            }
+        }
+    }
+
+    private void OnButtonPressed(string character)
+    {
+        if (character.IsValidInt())
+        {
+            this.tempNums.Add(character);
+
+            this.label.Text = this.ListToString(this.tempNums);
+        }
+        
+        if (this.operators.Contains(character))
+        {
+            if (!string.IsNullOrEmpty(this.label.Text))
+            {
+                this.finNums.Add(this.label.Text);
+                this.ClearTemp();
+                this.ClearScreen();
+                this.finNums.Add(character != "x" ? character : "*");
             }
         }
 
-        private void OnButtonPressed(string character)
+        switch (character)
         {
-            if (character.IsValidInt())
-            {
-                this.tempNums.Add(character);
-
-                this.label.Text = this.ListToString(this.tempNums);
-            }
-            
-            if (this.operators.Contains(character))
-            {
+            case "=": 
+                Expression expression = new();
                 if (!string.IsNullOrEmpty(this.label.Text))
                 {
                     this.finNums.Add(this.label.Text);
-                    this.ClearTemp();
-                    this.ClearScreen();
-                    this.finNums.Add(character != "x" ? character : "*");
                 }
-            }
 
-            switch (character)
-            {
-                case "=": 
-                    Expression expression = new();
-                    if (!string.IsNullOrEmpty(this.label.Text))
-                    {
-                        this.finNums.Add(this.label.Text);
-                    }
+                var equation = this.ListToString(this.finNums);
 
-                    var equation = this.ListToString(this.finNums);
+                if (equation.Length > 0 && this.operators.Contains(equation.Last().ToString()))
+                {
+                    equation = equation.Substring(0, equation.Length - 1);
+                }
 
-                    if (equation.Length > 0 && this.operators.Contains(equation.Last().ToString()))
-                    {
-                        equation = equation.Substring(0, equation.Length - 1);
-                    }
+                expression.Parse(equation);
 
-                    expression.Parse(equation);
+                this.label.Text = expression.Execute().ToString();
+                this.ClearTemp();
+                this.ClearFin();
+                this.tempNums.Add(this.label.Text);
+                break;
 
-                    this.label.Text = expression.Execute().ToString();
-                    this.ClearTemp();
-                    this.ClearFin();
-                    this.tempNums.Add(this.label.Text);
-                    break;
+            case ".": 
+                if (!this.tempNums.Contains("."))
+                this.tempNums.Add(".");
+                this.label.Text = this.ListToString(this.tempNums);
+                break;
 
-                case ".": 
-                    if (!this.tempNums.Contains("."))
-                    this.tempNums.Add(".");
-                    this.label.Text = this.ListToString(this.tempNums);
-                    break;
+            case "%":
+                if (this.tempNums.Count == 0) break;
 
-                case "%":
-                    if (this.tempNums.Count == 0) break;
+                decimal number = Convert.ToDecimal(this.ListToString(this.tempNums));
+                number *= 0.01m;
 
-                    decimal number = Convert.ToDecimal(this.ListToString(this.tempNums));
-                    number *= 0.01m;
+                this.ClearTemp();
+                this.tempNums.Add(number.ToString("G")); 
+                this.label.Text = this.ListToString(this.tempNums);
+                GD.Print(this.label.Text);
+                break;
 
-                    this.ClearTemp();
-                    this.tempNums.Add(number.ToString("G")); 
-                    this.label.Text = this.ListToString(this.tempNums);
-                    GD.Print(this.label.Text);
-                    break;
+            case "+/-": 
+                if (this.tempNums[0] == "-")
+                {
+                    this.tempNums.RemoveAt(0);
+                }
+                else
+                {
+                    this.tempNums.Insert(0,  "-");
+                }
+                this.label.Text = this.ListToString(this.tempNums);
+                break;
 
-                case "+/-": 
-                    if (this.tempNums[0] == "-")
-                    {
-                        this.tempNums.RemoveAt(0);
-                    }
-                    else
-                    {
-                        this.tempNums.Insert(0,  "-");
-                    }
-                    this.label.Text = this.ListToString(this.tempNums);
-                    break;
+            case "C":
+                this.ClearTemp();
+                this.ClearScreen();
+                break;
+        }
+    }
 
-                case "C":
-                    this.ClearTemp();
-                    this.ClearScreen();
-                    break;
-            }
+    private void ClearTemp()
+    {
+        this.tempNums.Clear();
+        
+    }
+
+    private void ClearScreen()
+    {
+        this.label.Text = string.Empty;
+    }
+
+    private void ClearFin()
+    {
+        this.finNums.Clear();
+    }
+
+    private string ListToString(List<string> characters)
+    {
+        var s = string.Empty;
+        for (int i = 0; i < characters.Count; i++)
+        {
+            s += characters[i];
+        }
+        return s;
+    }
+
+    public override void _ExitTree()
+    {
+        this.zeroButton.Resized -= this.resizeHandler;
+
+        foreach (var pair in this.buttonHandlers)
+        {
+            pair.Key.Pressed -= pair.Value;
         }
 
-        private void ClearTemp()
+        this.buttonHandlers.Clear();
+    }
+
+    public override void _Input(InputEvent @event)
+    {
+        if (Input.IsActionJustPressed("ui_focus_next"))
         {
-            this.tempNums.Clear();
-            
-        }
-
-        private void ClearScreen()
-        {
-            this.label.Text = string.Empty;
-        }
-
-        private void ClearFin()
-        {
-            this.finNums.Clear();
-        }
-
-        private string ListToString(List<string> characters)
-        {
-            var s = string.Empty;
-            for (int i = 0; i < characters.Count; i++)
-            {
-                s += characters[i];
-            }
-            return s;
-        }
-
-        public override void _ExitTree()
-        {
-            this.zeroButton.Resized -= this.resizeHandler;
-
-            foreach (var pair in this.buttonHandlers)
-            {
-                pair.Key.Pressed -= pair.Value;
-            }
-
-            this.buttonHandlers.Clear();
+            this.themIndex = (this.themIndex + 1) % 2; 
+            this.Theme = this.themes[this.themIndex];
         }
     }
 }
