@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://tvd17y2uuvcr"]
 
-[ext_resource type="Theme" uid="uid://b33q4wliriobs" path="res://Themes/DarkTheme.tres" id="1_wx6ub"]
+[ext_resource type="Theme" uid="uid://b44uqxg3gs76p" path="res://Themes/LightTheme.tres" id="1_qvbr4"]
 [ext_resource type="Script" uid="uid://wovmgob8iugf" path="res://Scripts/Bmi.cs" id="2_qvbr4"]
 
 [node name="BMI" type="Control"]
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_wx6ub")
+theme = ExtResource("1_qvbr4")
 script = ExtResource("2_qvbr4")
 
 [node name="Panel" type="Panel" parent="."]
@@ -51,7 +51,7 @@ layout_mode = 2
 layout_mode = 2
 alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HeightInput/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HeightLineEdit" type="LineEdit" parent="VBoxContainer/HeightInput/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 placeholder_text = "0"
 alignment = 1
@@ -98,21 +98,23 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/WeightInput/PanelContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/WeightInput/PanelContainer/HBoxContainer"]
+[node name="MinusButton" type="Button" parent="VBoxContainer/WeightInput/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 text = "-"
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/WeightInput/PanelContainer/HBoxContainer"]
+[node name="WeightLineEdit" type="LineEdit" parent="VBoxContainer/WeightInput/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 6.0
 placeholder_text = "0"
 alignment = 1
 
-[node name="Button2" type="Button" parent="VBoxContainer/WeightInput/PanelContainer/HBoxContainer"]
+[node name="PlusButton" type="Button" parent="VBoxContainer/WeightInput/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 text = "+"
 
 [node name="Control" type="Control" parent="VBoxContainer/WeightInput/PanelContainer"]
