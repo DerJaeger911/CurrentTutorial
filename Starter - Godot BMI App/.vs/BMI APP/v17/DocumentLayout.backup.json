@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{5495AEBE-E3AC-4F8F-8E30-5534C75B0BA4}|BMI app.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\starter - godot bmi app\\scripts\\bmi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5495AEBE-E3AC-4F8F-8E30-5534C75B0BA4}|BMI app.csproj|solutionrelative:scripts\\bmi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5495AEBE-E3AC-4F8F-8E30-5534C75B0BA4}|BMI app.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\starter - godot bmi app\\scripts\\helpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5495AEBE-E3AC-4F8F-8E30-5534C75B0BA4}|BMI app.csproj|solutionrelative:scripts\\helpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 175,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,13 +50,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Helpers.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter - Godot BMI App\\Scripts\\Helpers.cs",
+              "RelativeDocumentMoniker": "Scripts\\Helpers.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter - Godot BMI App\\Scripts\\Helpers.cs",
+              "RelativeToolTip": "Scripts\\Helpers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T18:52:46.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Bmi.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter - Godot BMI App\\Scripts\\Bmi.cs",
               "RelativeDocumentMoniker": "Scripts\\Bmi.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter - Godot BMI App\\Scripts\\Bmi.cs",
               "RelativeToolTip": "Scripts\\Bmi.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwD4AAABYAAAAAAAAAA==",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAAAIIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-30T12:45:44.651Z",
               "EditorCaption": ""

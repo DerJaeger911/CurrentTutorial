@@ -143,7 +143,7 @@ public partial class Bmi : Control
 
     private void CalculateBmi()
     {
-        this.BmiValue = (decimal)this.Weight / ((decimal)Mathf.Pow(this.Height, 2) / 100) * 100;
+        this.BmiValue = this.Weight / ((decimal)Mathf.Pow(this.Height, 2) / 100) * 100;
         this.bmiOutput.Text = Helpers.DecimalSnapped(this.BmiValue, 0.1m).ToString();
     }
 
