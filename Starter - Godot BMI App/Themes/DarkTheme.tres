@@ -1,0 +1,63 @@
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://b33q4wliriobs"]
+
+[ext_resource type="FontFile" uid="uid://dha5njmeg62si" path="res://resources/Unageo-Bold.ttf" id="1_bq4r6"]
+[ext_resource type="FontFile" uid="uid://bgdt14gtjg8ji" path="res://resources/Unageo-Medium.ttf" id="2_3q8s4"]
+[ext_resource type="Texture2D" uid="uid://cxggo7gvom10j" path="res://resources/grabber_dark.png" id="2_270m4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bq4r6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5s77"]
+bg_color = Color(0.95686275, 0.95686275, 0.95686275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oihq7"]
+bg_color = Color(0.95686275, 0.95686275, 0.95686275, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_qfo6c"]
+color = Color(0.16565639, 0.16565642, 0.16565639, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_270m4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5s77"]
+
+[sub_resource type="Gradient" id="Gradient_3ib1c"]
+colors = PackedColorArray(0, 0, 0, 1, 0.14406255, 0.14406255, 0.14406255, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bq4r6"]
+gradient = SubResource("Gradient_3ib1c")
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3q8s4"]
+texture = SubResource("GradientTexture2D_bq4r6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_270m4"]
+bg_color = Color(0.11858138, 0.11858139, 0.11858132, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[resource]
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_bq4r6")
+Button/styles/normal = SubResource("StyleBoxEmpty_bq4r6")
+HSlider/icons/grabber = ExtResource("2_270m4")
+HSlider/icons/grabber_highlight = ExtResource("2_270m4")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_y5s77")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_oihq7")
+HSlider/styles/slider = SubResource("StyleBoxLine_qfo6c")
+Label/font_sizes/font_size = 60
+Label/fonts/font = ExtResource("1_bq4r6")
+LineEdit/colors/selection_color = Color(0.79607844, 0.79607844, 0.79607844, 1)
+LineEdit/font_sizes/font_size = 35
+LineEdit/fonts/font = ExtResource("2_3q8s4")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_270m4")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_y5s77")
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 0
+Panel/styles/panel = SubResource("StyleBoxTexture_3q8s4")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_270m4")
