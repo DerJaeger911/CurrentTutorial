@@ -7,13 +7,13 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bq4r6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5s77"]
-bg_color = Color(0.95686275, 0.95686275, 0.95686275, 1)
+bg_color = Color(0.40784314, 0.6666667, 0.96862745, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oihq7"]
-bg_color = Color(0.95686275, 0.95686275, 0.95686275, 1)
+bg_color = Color(0.40784314, 0.6666667, 0.96862745, 1)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_qfo6c"]
-color = Color(0.16565639, 0.16565642, 0.16565639, 1)
+color = Color(0.5391671, 0.53827626, 0.52202666, 1)
 thickness = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_270m4"]
@@ -21,7 +21,7 @@ thickness = 10
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5s77"]
 
 [sub_resource type="Gradient" id="Gradient_3ib1c"]
-colors = PackedColorArray(0, 0, 0, 1, 0.14406255, 0.14406255, 0.14406255, 1)
+colors = PackedColorArray(0.4390491, 0.43904912, 0.43904912, 1, 0.95596343, 0.9559633, 0.95596343, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bq4r6"]
 gradient = SubResource("Gradient_3ib1c")
@@ -33,13 +33,14 @@ metadata/_snap_enabled = true
 texture = SubResource("GradientTexture2D_bq4r6")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_270m4"]
-bg_color = Color(0.11858138, 0.11858139, 0.11858132, 1)
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 20
 Button/fonts/font = ExtResource("1_i7vql")
 Button/styles/normal = SubResource("StyleBoxEmpty_bq4r6")
@@ -48,8 +49,12 @@ HSlider/icons/grabber_highlight = ExtResource("2_i7vql")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_y5s77")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_oihq7")
 HSlider/styles/slider = SubResource("StyleBoxLine_qfo6c")
+Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 60
 Label/fonts/font = ExtResource("1_i7vql")
+LineEdit/colors/caret_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0.30323246, 0.30323303, 0.3032326, 0.6)
 LineEdit/colors/selection_color = Color(0.79607844, 0.79607844, 0.79607844, 1)
 LineEdit/font_sizes/font_size = 35
 LineEdit/fonts/font = ExtResource("3_2wyb5")
