@@ -1,0 +1,148 @@
+[gd_scene load_steps=21 format=3 uid="uid://drobhnhauqtpi"]
+
+[ext_resource type="Script" uid="uid://c6oay4hidup23" path="res://Godot Particles - Assets/Player Controller/PlayerController.gd" id="1_krxqb"]
+[ext_resource type="Texture2D" uid="uid://u1v2llqwn0hv" path="res://Godot Particles - Assets/Particle Textures/dirt_01.png" id="2_bn5hx"]
+[ext_resource type="Script" uid="uid://nki1nnauyaaq" path="res://Scripts/WalkParticless.cs" id="3_1bwod"]
+[ext_resource type="Texture2D" uid="uid://dqnego80dq73c" path="res://Godot Particles - Assets/Particle Textures/star_01.png" id="4_gknu6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lt5te"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bwod"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.58298516, 0.5494777, 0.4343594, 1)
+albedo_texture = ExtResource("2_bn5hx")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_gknu6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_irpog"]
+curve = SubResource("Curve_gknu6")
+
+[sub_resource type="Curve" id="Curve_2i7fn"]
+_data = [Vector2(0, 0.2406277), 0.0, 2.1178226, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ipt4p"]
+curve = SubResource("Curve_2i7fn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_egssh"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 5.0
+angular_velocity_min = -200.00002
+angular_velocity_max = 199.99998
+gravity = Vector3(0, -15, 0)
+damping_min = 5.0
+damping_max = 15.000001
+scale_curve = SubResource("CurveTexture_ipt4p")
+alpha_curve = SubResource("CurveTexture_irpog")
+
+[sub_resource type="QuadMesh" id="QuadMesh_qek6i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2i7fn"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(2.184344, 2.184344, 0, 0.29803923)
+albedo_texture = ExtResource("4_gknu6")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qek6i"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 8.0
+emission_ring_inner_radius = 1.0
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 0, 1)
+spread = 0.0
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_min = 0.5
+scale_max = 0.5
+collision_mode = 2
+sub_emitter_mode = 3
+sub_emitter_amount_at_collision = 5
+
+[sub_resource type="QuadMesh" id="QuadMesh_sia0j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu3gr"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1.6377, 1.6377, 0, 0.2784314)
+albedo_texture = ExtResource("4_gknu6")
+billboard_keep_scale = true
+
+[sub_resource type="Curve" id="Curve_sedrv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.1055765, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ds2c8"]
+curve = SubResource("Curve_sedrv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_41qh0"]
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, -20, 0)
+scale_min = 0.19999999
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_ds2c8")
+collision_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_fr6y3"]
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_krxqb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_lt5te")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+current = true
+
+[node name="Walk" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_1bwod")
+amount = 30
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_egssh")
+draw_pass_1 = SubResource("QuadMesh_qek6i")
+script = ExtResource("3_1bwod")
+
+[node name="Rain" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1.67, 0, 1, -7.299802e-08, 0, 10.042082, 0)
+material_override = SubResource("StandardMaterial3D_2i7fn")
+amount = 5000
+sub_emitter = NodePath("Splatter")
+lifetime = 2.0
+fixed_fps = 0
+collision_base_size = 0.2
+visibility_aabb = AABB(-7, -7, -4.905, 15, 15, 15)
+process_material = SubResource("ParticleProcessMaterial_qek6i")
+draw_pass_1 = SubResource("QuadMesh_sia0j")
+
+[node name="Splatter" type="GPUParticles3D" parent="Rain"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.9339133e-07, 8.999744)
+material_override = SubResource("StandardMaterial3D_xu3gr")
+emitting = false
+amount = 10000
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 0
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_41qh0")
+draw_pass_1 = SubResource("QuadMesh_fr6y3")
