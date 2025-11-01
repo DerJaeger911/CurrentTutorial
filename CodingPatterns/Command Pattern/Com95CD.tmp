@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcveck763bkds"]
+
+[ext_resource type="Texture2D" uid="uid://1v4ne04i73m3" path="res://Sprites/tile_0084.png" id="1_gobsa"]
+[ext_resource type="Texture2D" uid="uid://dwuywtupm4wpq" path="res://Sprites/tile_0000.png" id="1_snsma"]
+[ext_resource type="Script" path="res://Command Pattern/CommandManager.gd" id="1_xgy75"]
+[ext_resource type="Script" path="res://Command Pattern/PlayerMover.gd" id="3_epo25"]
+[ext_resource type="Texture2D" uid="uid://6v1epljqwvbf" path="res://Sprites/tile_0063.png" id="3_l7djj"]
+[ext_resource type="Texture2D" uid="uid://rbbefk0ae5mc" path="res://Sprites/tile_0082.png" id="4_3dxko"]
+
+[node name="Main" type="Node2D"]
+
+[node name="CommandManager" type="Node" parent="."]
+script = ExtResource("1_xgy75")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Player" type="Sprite2D" parent="."]
+texture = ExtResource("1_gobsa")
+script = ExtResource("3_epo25")
+
+[node name="Level" type="Node" parent="."]
+
+[node name="BG" type="Sprite2D" parent="Level"]
+modulate = Color(0.52, 0.968, 1, 1)
+z_index = -10
+scale = Vector2(18.25, 10.375)
+texture = ExtResource("1_snsma")
+
+[node name="Crate" type="Sprite2D" parent="Level"]
+position = Vector2(-89, -50)
+texture = ExtResource("3_l7djj")
+
+[node name="Crate2" type="Sprite2D" parent="Level"]
+position = Vector2(84, 46)
+texture = ExtResource("3_l7djj")
+
+[node name="Barrel" type="Sprite2D" parent="Level"]
+position = Vector2(108, -53)
+texture = ExtResource("4_3dxko")
+
+[node name="Barrel2" type="Sprite2D" parent="Level"]
+position = Vector2(-92, 53)
+texture = ExtResource("4_3dxko")

@@ -1,0 +1,160 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxg4qusrt8htm"]
+
+[ext_resource type="Script" uid="uid://dholnhxspdhik" path="res://Observer Pattern/LightManager.gd" id="1_864at"]
+[ext_resource type="Texture2D" uid="uid://brabonaauk7cm" path="res://Sprites/tile_0031.png" id="2_31877"]
+[ext_resource type="Texture2D" uid="uid://mpnykg0rqpse" path="res://Sprites/tile_0048.png" id="3_sydom"]
+[ext_resource type="Script" uid="uid://i70lqp1veil2" path="res://Observer Pattern/Light.gd" id="3_yqdca"]
+
+[node name="ObserverPattern" type="Node2D"]
+
+[node name="LightManager" type="Node" parent="."]
+script = ExtResource("1_864at")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+
+[node name="Light" type="Sprite2D" parent="."]
+position = Vector2(-48, -8)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light2" type="Sprite2D" parent="."]
+position = Vector2(-24, -8)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light3" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light4" type="Sprite2D" parent="."]
+position = Vector2(24, -8)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light5" type="Sprite2D" parent="."]
+position = Vector2(48, -8)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light6" type="Sprite2D" parent="."]
+position = Vector2(-48, -32)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light7" type="Sprite2D" parent="."]
+position = Vector2(-24, -32)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light8" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light9" type="Sprite2D" parent="."]
+position = Vector2(24, -32)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light10" type="Sprite2D" parent="."]
+position = Vector2(48, -32)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light11" type="Sprite2D" parent="."]
+position = Vector2(-48, 16)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light12" type="Sprite2D" parent="."]
+position = Vector2(-24, 16)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light13" type="Sprite2D" parent="."]
+position = Vector2(0, 16)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light14" type="Sprite2D" parent="."]
+position = Vector2(24, 16)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light15" type="Sprite2D" parent="."]
+position = Vector2(48, 16)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light16" type="Sprite2D" parent="."]
+position = Vector2(72, -8)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light17" type="Sprite2D" parent="."]
+position = Vector2(72, -32)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light18" type="Sprite2D" parent="."]
+position = Vector2(72, 16)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light19" type="Sprite2D" parent="."]
+position = Vector2(-72, -8)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light20" type="Sprite2D" parent="."]
+position = Vector2(-72, -32)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light21" type="Sprite2D" parent="."]
+position = Vector2(-72, 16)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light22" type="Sprite2D" parent="."]
+position = Vector2(-48, 40)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light23" type="Sprite2D" parent="."]
+position = Vector2(-24, 40)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light24" type="Sprite2D" parent="."]
+position = Vector2(0, 40)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light25" type="Sprite2D" parent="."]
+position = Vector2(24, 40)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light26" type="Sprite2D" parent="."]
+position = Vector2(48, 40)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light27" type="Sprite2D" parent="."]
+position = Vector2(72, 40)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="Light28" type="Sprite2D" parent="."]
+position = Vector2(-72, 40)
+texture = ExtResource("2_31877")
+script = ExtResource("3_yqdca")
+
+[node name="BG" type="Sprite2D" parent="."]
+z_index = -10
+scale = Vector2(12.125, 6.875)
+texture = ExtResource("3_sydom")
+metadata/_edit_lock_ = true

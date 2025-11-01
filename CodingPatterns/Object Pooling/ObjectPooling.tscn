@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://mi3ujghcoyjo"]
+
+[ext_resource type="Script" uid="uid://dmqvv8b6pp0pp" path="res://Object Pooling/PlayerController.gd" id="2_b6qov"]
+[ext_resource type="Texture2D" uid="uid://jves7xfq2p4u" path="res://Sprites/tile_0111.png" id="2_jn1hk"]
+[ext_resource type="PackedScene" uid="uid://cldthpfqw7vgi" path="res://Object Pooling/Projectile.tscn" id="3_t0vvy"]
+[ext_resource type="Script" uid="uid://cx2fjp7pdhhuy" path="res://Object Pooling/ObjectPool.gd" id="3_wjyth"]
+
+[sub_resource type="Gradient" id="Gradient_sfe47"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.33993, 0.54, 0.3294, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lxs2u"]
+gradient = SubResource("Gradient_sfe47")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_srpxg"]
+size = Vector2(16, 16)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-0.500007, 0.499994)
+scale = Vector2(1.53516, 223)
+texture = SubResource("GradientTexture1D_lxs2u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_b6qov")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_jn1hk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_srpxg")
+
+[node name="ObjectPool_Projectile" type="Node" parent="Player"]
+script = ExtResource("3_wjyth")
+scene_to_spawn = ExtResource("3_t0vvy")
+initial_amount = 30
