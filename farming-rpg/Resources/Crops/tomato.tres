@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CropData" load_steps=7 format=3 uid="uid://ckbwj1i6wuojc"]
 
-[ext_resource type="Script" uid="uid://bfhkjofgenu2b" path="res://Scripts/CropData.cs" id="1_8pfaf"]
+[ext_resource type="Script" uid="uid://c3kat12etu5ar" path="res://Scripts/Crops/CropData.cs" id="1_8pfaf"]
 [ext_resource type="Texture2D" uid="uid://c606gwfd21wif" path="res://Assets/Sprites/Crops/Tomato/tomato_growth_0.tres" id="1_gd4g7"]
 [ext_resource type="Texture2D" uid="uid://c8mon2e1sooj0" path="res://Assets/Sprites/Crops/Tomato/tomato_growth_1.tres" id="2_dvpcx"]
 [ext_resource type="Texture2D" uid="uid://b475xpms4dcln" path="res://Assets/Sprites/Crops/Tomato/tomato_growth_2.tres" id="3_e3vgx"]

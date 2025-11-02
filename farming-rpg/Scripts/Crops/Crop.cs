@@ -12,17 +12,20 @@ public partial class Crop : Node2D
     private Vector2I tileMapCoords;
     private Sprite2D cropSprite;
 
+    public bool Harvestable { get => this.harvestable; set => this.harvestable = value; }
+    public bool Watered { get => this.watered; set => this.watered = value; }
+
     public override void _Ready()
     {
         this.cropSprite = this.GetNode<Sprite2D>("Sprite");
     }
 
-    private void SetCrop(CropData data, bool isWatered, Vector2I tileCoords)
+    public void SetCrop(CropData data, bool isWatered, Vector2I tileCoords)
     {
         this.cropData = data;
-        this.watered = isWatered;
+        this.Watered = isWatered;
         this.tileMapCoords = tileCoords;
-        this.harvestable = false;
+        this.Harvestable = false;
 
         this.daysUntilGrown = data.DaysToGrow;
 

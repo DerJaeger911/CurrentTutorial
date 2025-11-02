@@ -1,4 +1,4 @@
-namespace FarmingRpg.Scripts
+namespace FarmingRpg.Scripts.TileData
 {
     public class TileInfo
     {

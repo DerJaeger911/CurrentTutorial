@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cefx4q8ye1nb1"]
 
-[ext_resource type="Script" uid="uid://dymqq2yrcv83r" path="res://Scripts/Crop.cs" id="1_7rxg7"]
+[ext_resource type="Script" uid="uid://dxnxgf1tcf57m" path="res://Scripts/Crops/Crop.cs" id="1_7rxg7"]
 
 [node name="Crop" type="Node2D"]
 script = ExtResource("1_7rxg7")
