@@ -14,6 +14,7 @@ public partial class Crop : Node2D
 
     public bool Harvestable { get => this.harvestable; set => this.harvestable = value; }
     public bool Watered { get => this.watered; set => this.watered = value; }
+    public CropData CropData { get => this.cropData; set => this.cropData = value; }
 
     public override void _Ready()
     {
@@ -22,14 +23,14 @@ public partial class Crop : Node2D
 
     public void SetCrop(CropData data, bool isWatered, Vector2I tileCoords)
     {
-        this.cropData = data;
+        this.CropData = data;
         this.Watered = isWatered;
         this.tileMapCoords = tileCoords;
         this.Harvestable = false;
 
         this.daysUntilGrown = data.DaysToGrow;
 
-        this.cropSprite.Texture = this.cropData.GrowthSprite[0];
+        this.cropSprite.Texture = this.CropData.GrowthSprite[0];
     }
 
     private void OnNewDay(int day)

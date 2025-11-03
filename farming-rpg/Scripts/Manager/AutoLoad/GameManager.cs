@@ -26,38 +26,61 @@ public partial class GameManager : Node
     {
         if (Instance != null)
         {
-            GD.PrintErr("GameManager already exists!");
             this.QueueFree();
             return;
         }
-
         Instance = this;
+
+        this.CallDeferred(nameof(this.GiveMoney), 10);
     }
 
     private void SetNextDay()
     {
-
+        this.day += 1;
+        GameSignals.Instance.EmitSignal(SignalConsts.NewDay, this.day);
     }
 
     private void HarvestCrop(Crop crop)
     {
-
+        this.GiveMoney(crop.CropData.SellPrice);
+        GameSignals.Instance.EmitSignal(SignalConsts.HarvestCrop, crop);
+        crop.QueueFree();
     }
 
     private void TryBuySeed(CropData cropData)
     {
+        if(this.money < cropData.SeedPrice)
+        {
+            return;
+        }
 
+        this.money -= cropData.SeedPrice;
+        this.ownedSeeds[cropData] += 1;
+        GameSignals.Instance.EmitSignal(SignalConsts.ChangeMoney, this.money);
+        GameSignals.Instance.EmitSignal(SignalConsts.ChangeSeed, cropData, this.ownedSeeds[cropData]);
     }
-    
+
     private void ConsumeSeed(CropData cropData)
     {
-        this.ownedSeeds[cropData] -= 1; 
-        GameSignals.Instance.EmitSignal(SignalConsts.ChangeSeed, this.ownedSeeds[cropData])
+        this.ownedSeeds[cropData] -= 1;
+        GameSignals.Instance.EmitSignal(SignalConsts.ChangeSeed, cropData, this.ownedSeeds[cropData]);
     }
 
     private void GiveMoney(int amount)
     {
         this.money += amount;
         GameSignals.Instance.EmitSignal(SignalConsts.ChangeMoney, this.money);
+    }
+
+    private void GiveSeed(int amount,CropData cropData)
+    {
+        if (this.ownedSeeds.TryGetValue(cropData, out int current))
+        {
+            this.ownedSeeds[cropData] = current + amount;
+        }
+        else
+        {
+            this.ownedSeeds[cropData] = amount;
+        }
     }
 }
