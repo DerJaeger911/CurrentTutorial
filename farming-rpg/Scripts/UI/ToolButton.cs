@@ -1,6 +1,9 @@
+using FarmingRpg.Scripts.Consts;
 using FarmingRpg.Scripts.Enums;
+using FarmingRpg.Scripts.Manager.AutoLoad;
 using Godot;
 using System;
+using System.Collections.Generic;
 
 namespace FarmingRpg.Scripts.UI;
 
@@ -13,6 +16,9 @@ public partial class ToolButton : TextureButton
 
     private Label quantityLabel;
 
+    public ToolEnums Tool { get => this.tool; set => this.tool = value; }
+    public CropData Seed { get => this.seed; set => this.seed = value; }
+
     public override void _Ready()
     {
         this.quantityLabel = this.GetNode<Label>("QuantityText");
@@ -23,11 +29,25 @@ public partial class ToolButton : TextureButton
         this.MouseExited += this.OnMouseExited;
 
         this.PivotOffset = this.Size / 2;
+
+        this.CallDeferred(nameof(DeferredConnect));
+    }
+
+    private void DeferredConnect()
+    {
+        GameSignals.Instance.Connect(SignalConsts.ChangeSeed, new Callable(this, nameof(OnChangeSeedQuantity)));
+        if (GameManager.Instance != null && this.Seed != null)
+        {
+            foreach (KeyValuePair<CropData, int> kvp in GameManager.Instance.OwnedSeeds)
+            {
+                this.OnChangeSeedQuantity(kvp.Key, kvp.Value);
+            }
+        }
     }
 
     private void OnPressed()
     {
-
+        GameSignals.Instance.EmitSignal(SignalConsts.PlayerTool, (int)this.Tool, this.Seed);
     }
 
     private void OnMouseEntered()
@@ -42,7 +62,8 @@ public partial class ToolButton : TextureButton
 
     private void OnChangeSeedQuantity(CropData cropData, int quantity)
     {
-        if (this.seed != cropData)
+
+        if (this.Seed == null || this.Seed.GetInstanceId() != cropData.GetInstanceId())
         {
             return;
         }
@@ -55,5 +76,6 @@ public partial class ToolButton : TextureButton
         this.Pressed -= this.OnPressed;
         this.MouseEntered -= this.OnMouseEntered;
         this.MouseExited -= this.OnMouseExited;
+        GameSignals.Instance.Disconnect(SignalConsts.ChangeSeed, new Callable(this, nameof(OnChangeSeedQuantity)));
     }
 }

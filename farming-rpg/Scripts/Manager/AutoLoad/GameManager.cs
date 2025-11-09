@@ -7,23 +7,26 @@ namespace FarmingRpg.Scripts.Manager.AutoLoad;
 
 public partial class GameManager : Node
 {
-    private int day = 1;
+    private int day = 0;
     private int money = 0;
 
-    private Array<CropData> allCropData = new Array<CropData>()
-    {
+    private Array<CropData> allCropData =
+    [
         GD.Load<CropData>("res://Resources/Crops/corn.tres"),
         GD.Load<CropData>("res://Resources/Crops/tomato.tres"),
-    };
+    ];
 
     private Dictionary<CropData, int> ownedSeeds = [];
 
    
 
     public static GameManager Instance { get; private set; }
+    public Dictionary<CropData, int> OwnedSeeds { get => this.ownedSeeds; set => this.ownedSeeds = value; }
 
     public override void _Ready()
     {
+
+
         if (Instance != null)
         {
             this.QueueFree();
@@ -31,23 +34,34 @@ public partial class GameManager : Node
         }
         Instance = this;
 
+        this.CallDeferred(nameof(this.DeferredInit));
         this.CallDeferred(nameof(this.GiveMoney), 10);
+        this.CallDeferred(nameof(this.SetNextDay));
     }
 
-    private void SetNextDay()
+    private void DeferredInit()
+    {
+        GameSignals.Instance.Connect(SignalConsts.ConsumeSeed, new Callable(this, nameof(ConsumeSeed)));
+        foreach (CropData cd in this.allCropData)
+        {
+            this.GiveSeed( cd, 2);
+        }
+    }
+
+    public void SetNextDay()
     {
         this.day += 1;
         GameSignals.Instance.EmitSignal(SignalConsts.NewDay, this.day);
     }
 
-    private void HarvestCrop(Crop crop)
+    public void HarvestCrop(Crop crop)
     {
         this.GiveMoney(crop.CropData.SellPrice);
         GameSignals.Instance.EmitSignal(SignalConsts.HarvestCrop, crop);
         crop.QueueFree();
     }
 
-    private void TryBuySeed(CropData cropData)
+    public void TryBuySeed(CropData cropData)
     {
         if(this.money < cropData.SeedPrice)
         {
@@ -55,15 +69,15 @@ public partial class GameManager : Node
         }
 
         this.money -= cropData.SeedPrice;
-        this.ownedSeeds[cropData] += 1;
+        this.OwnedSeeds[cropData] += 1;
         GameSignals.Instance.EmitSignal(SignalConsts.ChangeMoney, this.money);
-        GameSignals.Instance.EmitSignal(SignalConsts.ChangeSeed, cropData, this.ownedSeeds[cropData]);
+        GameSignals.Instance.EmitSignal(SignalConsts.ChangeSeed, cropData, this.OwnedSeeds[cropData]);
     }
 
     private void ConsumeSeed(CropData cropData)
     {
-        this.ownedSeeds[cropData] -= 1;
-        GameSignals.Instance.EmitSignal(SignalConsts.ChangeSeed, cropData, this.ownedSeeds[cropData]);
+        this.OwnedSeeds[cropData] -= 1;
+        GameSignals.Instance.EmitSignal(SignalConsts.ChangeSeed, cropData, this.OwnedSeeds[cropData]);
     }
 
     private void GiveMoney(int amount)
@@ -72,15 +86,21 @@ public partial class GameManager : Node
         GameSignals.Instance.EmitSignal(SignalConsts.ChangeMoney, this.money);
     }
 
-    private void GiveSeed(int amount,CropData cropData)
+    private void GiveSeed(CropData cropData, int amount)
     {
-        if (this.ownedSeeds.TryGetValue(cropData, out int current))
+        if (this.OwnedSeeds.TryGetValue(cropData, out int current))
         {
-            this.ownedSeeds[cropData] = current + amount;
+            this.OwnedSeeds[cropData] = current + amount;
         }
         else
         {
-            this.ownedSeeds[cropData] = amount;
+            this.OwnedSeeds[cropData] = amount;
         }
+        GameSignals.Instance.EmitSignal(SignalConsts.ChangeSeed, cropData, this.OwnedSeeds[cropData]);
+    }
+
+    public override void _ExitTree()
+    {
+        GameSignals.Instance.Disconnect(SignalConsts.ConsumeSeed, new Callable(this, nameof(ConsumeSeed)));
     }
 }

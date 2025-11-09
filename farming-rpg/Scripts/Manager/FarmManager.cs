@@ -1,10 +1,11 @@
-using FarmingRpg.Scripts;
+using FarmingRpg.Scripts.Consts;
 using FarmingRpg.Scripts.Enums;
+using FarmingRpg.Scripts.Manager.AutoLoad;
 using FarmingRpg.Scripts.TileData;
 using Godot;
 using System.Collections.Generic;
-using System.Threading;
 
+namespace FarmingRpg.Scripts.Manager;
 
 public partial class FarmManager : Node
 {
@@ -18,6 +19,10 @@ public partial class FarmManager : Node
 
     public override void _Ready()
     {
+        GameSignals.Instance.Connect(SignalConsts.NewDay, new Callable(this, nameof(OnNewDay)));
+        GameSignals.Instance.Connect(SignalConsts.HarvestCrop, new Callable(this, nameof(OnHarvestCrop)));
+
+
         this.tileMapLayer = this.GetNode<TileMapLayer>("FarmTileMap");
 
         foreach (var cell in this.tileMapLayer.GetUsedCells())
@@ -28,12 +33,24 @@ public partial class FarmManager : Node
 
     private void OnNewDay(int day)
     {
-
+        foreach (var tilePos in this.tileMapLayer.GetUsedCells())
+        {
+            this.CheckViableTile(tilePos);
+            if (this.tile.Watered)
+            {
+                this.SetTileState(TileTypeEnums.Tilled);
+            }
+            else if (this.tile.Tilled && this.tile.Crop == null)
+            {
+                this.SetTileState(TileTypeEnums.Grass);
+            }
+        }
     }
 
     private void OnHarvestCrop(Crop crop)
     {
-
+        this.CheckViableTile(crop.TileMapCoords);
+        this.SetTileState(TileTypeEnums.Tilled);
     }
 
     public void TryTillTile(Vector2 playerPosition)
@@ -61,7 +78,7 @@ public partial class FarmManager : Node
 
         if (this.tile.Crop != null)
         {
-            this.tile.Watered = true;
+            this.tile.Crop.Watered = true;
         }
     }
 
@@ -69,10 +86,9 @@ public partial class FarmManager : Node
     {
         this.CheckViableTile(playerPosition);
 
-        if (!this.tile.Tilled || this.tile.Crop != null)
+        if (!this.tile.Tilled || this.tile.Crop != null || GameManager.Instance.OwnedSeeds[cropData] <= 0)
         {
             return;
-            //Plus have no Crop Seed
         }
 
         var crop = this.cropScene.Instantiate<Crop>();
@@ -83,7 +99,7 @@ public partial class FarmManager : Node
 
         this.tile.Crop = crop;
 
-
+        GameSignals.Instance.EmitSignal(SignalConsts.ConsumeSeed, cropData);
     }
 
     public void TryHarvestTile(Vector2 playerPosition)
@@ -94,11 +110,15 @@ public partial class FarmManager : Node
         {
             return;
         }
+
+        GameManager.Instance.HarvestCrop(this.tile.Crop);
+        this.tile.Crop = null;
     }
 
     private bool IsTileWatered(Vector2 position)
     {
-        return false;
+        this.CheckViableTile(position);
+        return this.tile.Watered;
     }
 
     private void SetTileState(TileTypeEnums tileType)
@@ -127,5 +147,11 @@ public partial class FarmManager : Node
     {
         this.coords = this.tileMapLayer.LocalToMap(playerPosition);
         this.tileInfo.TryGetValue(this.coords, out this.tile);
+    }
+
+    public override void _ExitTree()
+    {
+        GameSignals.Instance.Disconnect(SignalConsts.NewDay, new Callable(this, nameof(OnNewDay)));
+        GameSignals.Instance.Disconnect(SignalConsts.HarvestCrop, new Callable(this, nameof(OnHarvestCrop)));
     }
 }

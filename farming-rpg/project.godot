@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GameSignals="*res://Scripts/Manager/AutoLoad/GameSignals.cs"
 GameManager="*res://Scripts/Manager/AutoLoad/GameManager.cs"
 
 [dotnet]

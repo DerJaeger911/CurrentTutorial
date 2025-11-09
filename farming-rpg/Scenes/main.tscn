@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cls15jfxl08xd"]
+[gd_scene load_steps=38 format=4 uid="uid://cls15jfxl08xd"]
 
 [ext_resource type="Texture2D" uid="uid://c6a4hg7rsnyg2" path="res://Assets/Sprites/Player/Player.png" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dq76x635bvef4" path="res://Scripts/Manager/FarmManager.cs" id="1_jjvhh"]
@@ -6,10 +6,16 @@
 [ext_resource type="Script" uid="uid://cwjqkq4g4cprp" path="res://Scripts/Player/Player.cs" id="3_kry3j"]
 [ext_resource type="Script" uid="uid://valg5w4xqm1h" path="res://Scripts/Player/PlayerTools.cs" id="5_344ge"]
 [ext_resource type="PackedScene" uid="uid://76nypdynq02e" path="res://Scenes/ToolButton.tscn" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://cjd43vq45dwag" path="res://Scripts/Manager/UiManager.cs" id="6_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://b74hfhsig3x3a" path="res://Assets/Sprites/UI/Hoe_Icon.png" id="7_hptm8"]
 [ext_resource type="Texture2D" uid="uid://c10h0d7duvcdv" path="res://Assets/Sprites/UI/WaterBucket_Icon.png" id="8_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://d3xy2xba34j2t" path="res://Assets/Sprites/UI/Scythe_Icon.png" id="9_6iyac"]
+[ext_resource type="Resource" uid="uid://ckbwj1i6wuojc" path="res://Resources/Crops/tomato.tres" id="10_6iyac"]
 [ext_resource type="Texture2D" uid="uid://4kdkn3ytrr21" path="res://Assets/Sprites/UI/TomatoSeed_Icon.png" id="10_fdnlq"]
+[ext_resource type="Texture2D" uid="uid://dpj3c2feyltok" path="res://Assets/Sprites/UI/CornSeed_Icon.png" id="10_k12tt"]
+[ext_resource type="Resource" uid="uid://c3nh6d7hde424" path="res://Resources/Crops/corn.tres" id="12_fdnlq"]
+[ext_resource type="Script" uid="uid://wvut5d5mpsv6" path="res://Scripts/UI/BuySeedButton.cs" id="14_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://cjkcnjyw64g6t" path="res://Assets/Sprites/UI/ItemBox.png" id="15_k12tt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
 texture = ExtResource("3_8gbba")
@@ -189,6 +195,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_fdnlq"]
+font_size = 50
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h1bgf"]
+font_size = 40
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
 [node name="Main" type="Node2D"]
 
 [node name="FarmManager" type="Node" parent="."]
@@ -220,8 +236,279 @@ animation = &"idle_down"
 script = ExtResource("5_344ge")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("6_fdnlq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="DayText" type="Label" parent="CanvasLayer"]
+offset_left = 33.0
+offset_top = 32.0
+offset_right = 196.0
+offset_bottom = 101.0
+text = "Day 50"
+label_settings = SubResource("LabelSettings_fdnlq")
+
+[node name="MoneyText" type="Label" parent="CanvasLayer"]
+offset_left = 33.0
+offset_top = 121.0
+offset_right = 196.0
+offset_bottom = 190.0
+text = "$300"
+label_settings = SubResource("LabelSettings_fdnlq")
+
+[node name="BuySeedButton" type="BaseButton" parent="CanvasLayer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(0, 0)
+layout_direction = 0
+layout_mode = 3
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 32.0
+offset_top = 198.0
+offset_right = 209.4035
+offset_bottom = 277.0
+grow_horizontal = 1
+grow_vertical = 1
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+localize_numeral_system = true
+tooltip_text = ""
+tooltip_auto_translate_mode = 0
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 2
+focus_behavior_recursive = 0
+mouse_filter = 0
+mouse_behavior_recursive = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+accessibility_name = ""
+accessibility_description = ""
+accessibility_live = 0
+accessibility_controls_nodes = Array[NodePath]([])
+accessibility_described_by_nodes = Array[NodePath]([])
+accessibility_labeled_by_nodes = Array[NodePath]([])
+accessibility_flow_to_nodes = Array[NodePath]([])
+theme = null
+theme_type_variation = &""
+disabled = false
+toggle_mode = false
+button_pressed = false
+action_mode = 1
+button_mask = 1
+keep_pressed_outside = false
+button_group = null
+shortcut = null
+shortcut_feedback = true
+shortcut_in_tooltip = true
+script = ExtResource("14_wsu2k")
+cropData = ExtResource("10_6iyac")
+metadata/_custom_type_script = "uid://wvut5d5mpsv6"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/BuySeedButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_k12tt")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/BuySeedButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -25.5
+offset_right = 61.0
+offset_bottom = 26.5
+grow_vertical = 2
+texture = ExtResource("10_k12tt")
+
+[node name="PriceText" type="Label" parent="CanvasLayer/BuySeedButton"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -109.4035
+offset_top = -25.5
+offset_right = -7.0
+offset_bottom = 25.849998
+grow_horizontal = 0
+grow_vertical = 2
+text = "100$"
+label_settings = SubResource("LabelSettings_h1bgf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuySeedButton2" type="BaseButton" parent="CanvasLayer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(0, 0)
+layout_direction = 0
+layout_mode = 3
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 32.0
+offset_top = 280.0
+offset_right = 209.4035
+offset_bottom = 359.0
+grow_horizontal = 1
+grow_vertical = 1
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+localize_numeral_system = true
+tooltip_text = ""
+tooltip_auto_translate_mode = 0
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 2
+focus_behavior_recursive = 0
+mouse_filter = 0
+mouse_behavior_recursive = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+accessibility_name = ""
+accessibility_description = ""
+accessibility_live = 0
+accessibility_controls_nodes = Array[NodePath]([])
+accessibility_described_by_nodes = Array[NodePath]([])
+accessibility_labeled_by_nodes = Array[NodePath]([])
+accessibility_flow_to_nodes = Array[NodePath]([])
+theme = null
+theme_type_variation = &""
+disabled = false
+toggle_mode = false
+button_pressed = false
+action_mode = 1
+button_mask = 1
+keep_pressed_outside = false
+button_group = null
+shortcut = null
+shortcut_feedback = true
+shortcut_in_tooltip = true
+script = ExtResource("14_wsu2k")
+cropData = ExtResource("12_fdnlq")
+metadata/_custom_type_script = "uid://wvut5d5mpsv6"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/BuySeedButton2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_k12tt")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/BuySeedButton2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -25.5
+offset_right = 61.0
+offset_bottom = 26.5
+grow_vertical = 2
+texture = ExtResource("10_k12tt")
+
+[node name="PriceText" type="Label" parent="CanvasLayer/BuySeedButton2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -109.4035
+offset_top = -25.5
+offset_right = -7.0
+offset_bottom = 25.849998
+grow_horizontal = 0
+grow_vertical = 2
+text = "100$"
+label_settings = SubResource("LabelSettings_h1bgf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ToolButtons" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -236,35 +523,53 @@ grow_vertical = 0
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Hoe" parent="CanvasLayer/HBoxContainer" instance=ExtResource("6_21xkr")]
+[node name="Hoe" parent="CanvasLayer/ToolButtons" instance=ExtResource("6_21xkr")]
 layout_mode = 2
 
-[node name="ToolIcon" parent="CanvasLayer/HBoxContainer/Hoe" index="0"]
+[node name="ToolIcon" parent="CanvasLayer/ToolButtons/Hoe" index="0"]
 texture = ExtResource("7_hptm8")
 
-[node name="WatwerBucket" parent="CanvasLayer/HBoxContainer" instance=ExtResource("6_21xkr")]
+[node name="WatwerBucket" parent="CanvasLayer/ToolButtons" instance=ExtResource("6_21xkr")]
 layout_mode = 2
+tool = 1
 
-[node name="ToolIcon" parent="CanvasLayer/HBoxContainer/WatwerBucket" index="0"]
+[node name="ToolIcon" parent="CanvasLayer/ToolButtons/WatwerBucket" index="0"]
 texture = ExtResource("8_d1ilt")
 
-[node name="Scythe" parent="CanvasLayer/HBoxContainer" instance=ExtResource("6_21xkr")]
+[node name="Scythe" parent="CanvasLayer/ToolButtons" instance=ExtResource("6_21xkr")]
 layout_mode = 2
+tool = 2
 
-[node name="ToolIcon" parent="CanvasLayer/HBoxContainer/Scythe" index="0"]
+[node name="ToolIcon" parent="CanvasLayer/ToolButtons/Scythe" index="0"]
 texture = ExtResource("9_6iyac")
 
-[node name="Tomato" parent="CanvasLayer/HBoxContainer" instance=ExtResource("6_21xkr")]
+[node name="Tomato" parent="CanvasLayer/ToolButtons" instance=ExtResource("6_21xkr")]
 layout_mode = 2
+tool = 3
+seed = ExtResource("10_6iyac")
 
-[node name="ToolIcon" parent="CanvasLayer/HBoxContainer/Tomato" index="0"]
+[node name="ToolIcon" parent="CanvasLayer/ToolButtons/Tomato" index="0"]
 texture = ExtResource("10_fdnlq")
 
-[node name="Corn" parent="CanvasLayer/HBoxContainer" instance=ExtResource("6_21xkr")]
+[node name="Corn" parent="CanvasLayer/ToolButtons" instance=ExtResource("6_21xkr")]
 layout_mode = 2
+tool = 3
+seed = ExtResource("12_fdnlq")
 
-[editable path="CanvasLayer/HBoxContainer/Hoe"]
-[editable path="CanvasLayer/HBoxContainer/WatwerBucket"]
-[editable path="CanvasLayer/HBoxContainer/Scythe"]
-[editable path="CanvasLayer/HBoxContainer/Tomato"]
-[editable path="CanvasLayer/HBoxContainer/Corn"]
+[node name="NextDayButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -304.0
+offset_top = 23.0
+offset_right = -20.0
+offset_bottom = 111.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 50
+text = "Next Day"
+
+[editable path="CanvasLayer/ToolButtons/Hoe"]
+[editable path="CanvasLayer/ToolButtons/WatwerBucket"]
+[editable path="CanvasLayer/ToolButtons/Scythe"]
+[editable path="CanvasLayer/ToolButtons/Tomato"]
+[editable path="CanvasLayer/ToolButtons/Corn"]

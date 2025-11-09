@@ -1,7 +1,7 @@
 using FarmingRpg.Scripts.Consts;
 using Godot;
 
-namespace FarmingRpg.Scripts;
+namespace FarmingRpg.Scripts.Player;
 
 public partial class Player : CharacterBody2D
 {

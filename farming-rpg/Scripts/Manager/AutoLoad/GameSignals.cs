@@ -9,7 +9,7 @@ namespace FarmingRpg.Scripts.Manager.AutoLoad
         public delegate void NewDayEventHandler(int day);
 
         [Signal]
-        public delegate void PlayerToolEventHandler(ToolEnums tool, CropData seed);
+        public delegate void PlayerToolEventHandler(int tool, CropData seed);
 
         [Signal]
         public delegate void HarvestCropEventHandler(Crop crop);
@@ -19,6 +19,9 @@ namespace FarmingRpg.Scripts.Manager.AutoLoad
 
         [Signal]
         public delegate void ChangeMoneyEventHandler(int money);
+
+        [Signal]
+        public delegate void ConsumeSeedEventHandler(CropData cropData);
 
         public static GameSignals Instance { get; private set; }
 
@@ -30,7 +33,7 @@ namespace FarmingRpg.Scripts.Manager.AutoLoad
                 this.QueueFree();
                 return;
             }
-
+            GD.Print("Signals initialized");
             Instance = this;
         }
     }

@@ -7,7 +7,7 @@ namespace FarmingRpg.Scripts;
 public partial class CropData : Resource
 {
     [Export]
-    private Array<Texture2D> growthSprite = [];
+    private Array<Texture2D> growthSprites = [];
     [Export]
     private int daysToGrow = 8;
     [Export]
@@ -15,7 +15,7 @@ public partial class CropData : Resource
     [Export]
     private int sellPrice = 20;
 
-    public Array<Texture2D> GrowthSprite { get => this.growthSprite; set => this.growthSprite = value; }
+    public Array<Texture2D> GrowthSprites { get => this.growthSprites; set => this.growthSprites = value; }
     public int DaysToGrow { get => this.daysToGrow; set => this.daysToGrow = value; }
     public int SeedPrice { get => this.seedPrice; set => this.seedPrice = value; }
     public int SellPrice { get => this.sellPrice; set => this.sellPrice = value; }
