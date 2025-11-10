@@ -17,11 +17,20 @@ public partial class FarmManager : Node
     private Vector2I coords;
     private TileInfo tile;
 
+    private AudioStreamPlayer tillSound;
+    private AudioStreamPlayer harvestSound;
+    private AudioStreamPlayer waterSound;
+    private AudioStreamPlayer plantSeedSound;
+
     public override void _Ready()
     {
         GameSignals.Instance.Connect(SignalConsts.NewDay, new Callable(this, nameof(OnNewDay)));
         GameSignals.Instance.Connect(SignalConsts.HarvestCrop, new Callable(this, nameof(OnHarvestCrop)));
 
+        this.tillSound = this.GetNode<AudioStreamPlayer>("TillSound");
+        this.harvestSound = this.GetNode<AudioStreamPlayer>("HarvestSound");
+        this.waterSound = this.GetNode<AudioStreamPlayer>("WaterSound");
+        this.plantSeedSound = this.GetNode<AudioStreamPlayer>("PlantSeedSound");
 
         this.tileMapLayer = this.GetNode<TileMapLayer>("FarmTileMap");
 
@@ -63,6 +72,7 @@ public partial class FarmManager : Node
         }
 
         this.SetTileState(TileTypeEnums.Tilled);
+        this.tillSound.Play();
     }
 
     public void TryWaterTile(Vector2 playerPosition)
@@ -75,6 +85,7 @@ public partial class FarmManager : Node
         }
 
         this.SetTileState(TileTypeEnums.TilledWatered);
+        this.waterSound.Play();
 
         if (this.tile.Crop != null)
         {
@@ -100,19 +111,23 @@ public partial class FarmManager : Node
         this.tile.Crop = crop;
 
         GameSignals.Instance.EmitSignal(SignalConsts.ConsumeSeed, cropData);
+
+        this.plantSeedSound.Play();
     }
 
     public void TryHarvestTile(Vector2 playerPosition)
     {
         this.CheckViableTile(playerPosition);
 
-        if (this.tile?.Crop is { Harvestable: false })
+        if (this.tile?.Crop == null || this.tile?.Crop is { Harvestable: false })
         {
             return;
         }
 
         GameManager.Instance.HarvestCrop(this.tile.Crop);
         this.tile.Crop = null;
+
+        this.harvestSound.Play();
     }
 
     private bool IsTileWatered(Vector2 position)

@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\farming-rpg\\scripts\\manager\\autoload\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|solutionrelative:scripts\\manager\\autoload\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\UI\\Menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\UI\\Menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\farming-rpg\\scripts\\manager\\farmmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|solutionrelative:scripts\\manager\\farmmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\farming-rpg\\scripts\\crops\\crop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|solutionrelative:scripts\\crops\\crop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,16 +31,8 @@
       "RelativeMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|solutionrelative:scripts\\ui\\toolbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\farming-rpg\\scripts\\manager\\autoload\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|solutionrelative:scripts\\manager\\autoload\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\farming-rpg\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|solutionrelative:scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\farming-rpg\\scripts\\manager\\farmmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|solutionrelative:scripts\\manager\\farmmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{47638FA3-213C-4D5C-A992-1D2F7FB9DEC9}|FarmingRpg.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\farming-rpg\\scripts\\enums\\toolenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -111,6 +115,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\UI\\Menu.cs",
+              "RelativeDocumentMoniker": "Scripts\\UI\\Menu.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\UI\\Menu.cs",
+              "RelativeToolTip": "Scripts\\UI\\Menu.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T19:26:57.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "BuySeedButton.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\UI\\BuySeedButton.cs",
               "RelativeDocumentMoniker": "Scripts\\UI\\BuySeedButton.cs",
@@ -118,12 +135,11 @@
               "RelativeToolTip": "Scripts\\UI\\BuySeedButton.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAQwCMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T19:24:34.646Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-09T19:24:34.646Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "UiManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Manager\\UiManager.cs",
               "RelativeDocumentMoniker": "Scripts\\Manager\\UiManager.cs",
@@ -131,51 +147,50 @@
               "RelativeToolTip": "Scripts\\Manager\\UiManager.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAYwEkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T16:56:02.496Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-09T16:56:02.496Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "FarmManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Manager\\FarmManager.cs",
               "RelativeDocumentMoniker": "Scripts\\Manager\\FarmManager.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Manager\\FarmManager.cs",
               "RelativeToolTip": "Scripts\\Manager\\FarmManager.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAhwFAAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAjwHkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T13:32:05.868Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Manager\\AutoLoad\\GameManager.cs",
               "RelativeDocumentMoniker": "Scripts\\Manager\\AutoLoad\\GameManager.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Manager\\AutoLoad\\GameManager.cs",
               "RelativeToolTip": "Scripts\\Manager\\AutoLoad\\GameManager.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAIwD8AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwCUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-02T17:30:40.047Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Crop.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Crops\\Crop.cs",
               "RelativeDocumentMoniker": "Scripts\\Crops\\Crop.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Crops\\Crop.cs",
               "RelativeToolTip": "Scripts\\Crops\\Crop.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-01T19:01:38.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "SignalConsts.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Consts\\SignalConsts.cs",
               "RelativeDocumentMoniker": "Scripts\\Consts\\SignalConsts.cs",
@@ -183,12 +198,11 @@
               "RelativeToolTip": "Scripts\\Consts\\SignalConsts.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvw8AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T18:08:27.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-02T18:08:27.789Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ToolButton.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\UI\\ToolButton.cs",
               "RelativeDocumentMoniker": "Scripts\\UI\\ToolButton.cs",
@@ -196,12 +210,11 @@
               "RelativeToolTip": "Scripts\\UI\\ToolButton.cs",
               "ViewState": "AgIAAEYAAAAAAAAAAADwv04AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T15:54:23.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-02T15:54:23.802Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "CropData.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Crops\\CropData.cs",
               "RelativeDocumentMoniker": "Scripts\\Crops\\CropData.cs",
@@ -209,12 +222,11 @@
               "RelativeToolTip": "Scripts\\Crops\\CropData.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T18:46:30.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-01T18:46:30.563Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "GameSignals.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Manager\\AutoLoad\\GameSignals.cs",
               "RelativeDocumentMoniker": "Scripts\\Manager\\AutoLoad\\GameSignals.cs",
@@ -222,12 +234,11 @@
               "RelativeToolTip": "Scripts\\Manager\\AutoLoad\\GameSignals.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAAAAsAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T19:14:34.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T19:14:34.961Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "TileInfo.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\TileData\\TileInfo.cs",
               "RelativeDocumentMoniker": "Scripts\\TileData\\TileInfo.cs",
@@ -235,12 +246,11 @@
               "RelativeToolTip": "Scripts\\TileData\\TileInfo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T19:32:25.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-01T19:32:25.173Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ToolEnums.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Enums\\ToolEnums.cs",
               "RelativeDocumentMoniker": "Scripts\\Enums\\ToolEnums.cs",
@@ -248,12 +258,11 @@
               "RelativeToolTip": "Scripts\\Enums\\ToolEnums.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T11:45:28.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-02T11:45:28.273Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\Player.cs",
@@ -261,12 +270,11 @@
               "RelativeToolTip": "Scripts\\Player\\Player.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwAMAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T14:19:48.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-01T14:19:48.334Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "TileMapDict.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\TileData\\TileMapDict.cs",
               "RelativeDocumentMoniker": "Scripts\\TileData\\TileMapDict.cs",
@@ -274,12 +282,11 @@
               "RelativeToolTip": "Scripts\\TileData\\TileMapDict.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T10:46:53.109Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-02T10:46:53.109Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "PlayerTools.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Player\\PlayerTools.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\PlayerTools.cs",
@@ -291,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "PlayerInputConsts.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Consts\\PlayerInputConsts.cs",
               "RelativeDocumentMoniker": "Scripts\\Consts\\PlayerInputConsts.cs",
@@ -303,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "AnimationConsts.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Consts\\AnimationConsts.cs",
               "RelativeDocumentMoniker": "Scripts\\Consts\\AnimationConsts.cs",
@@ -315,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "TileTypeEnums.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\farming-rpg\\Scripts\\Enums\\TileTypeEnums.cs",
               "RelativeDocumentMoniker": "Scripts\\Enums\\TileTypeEnums.cs",

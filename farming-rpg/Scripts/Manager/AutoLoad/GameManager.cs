@@ -18,25 +18,41 @@ public partial class GameManager : Node
 
     private Dictionary<CropData, int> ownedSeeds = [];
 
-   
-
     public static GameManager Instance { get; private set; }
     public Dictionary<CropData, int> OwnedSeeds { get => this.ownedSeeds; set => this.ownedSeeds = value; }
 
     public override void _Ready()
     {
+        this.GetTree().SceneChanged += this.OnSceneChanged;
 
-
-        if (Instance != null)
+            if (Instance != null)
         {
             this.QueueFree();
             return;
         }
         Instance = this;
 
+
+        if (this.GetTree().CurrentScene.Name == "Main")
+        {
+            this.OnSceneChanged();
+        }
+
+
+    }
+
+    private void OnSceneChanged()
+    {
+        if(this.GetTree().CurrentScene.Name != "Main")
+        {
+            return;
+        }
+        GD.Print("Isse good");
+
         this.CallDeferred(nameof(this.DeferredInit));
         this.CallDeferred(nameof(this.GiveMoney), 10);
         this.CallDeferred(nameof(this.SetNextDay));
+
     }
 
     private void DeferredInit()
