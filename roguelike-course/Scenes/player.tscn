@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8wj7nru8csnm"]
+
+[ext_resource type="Script" uid="uid://0i0emdhmrbh6" path="res://Scripts/Player.cs" id="1_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://dy253l2ijyuqb" path="res://Assets/Sprites/People.png" id="2_vgqql"]
+[ext_resource type="Texture2D" uid="uid://dq3boaqnrlhny" path="res://Assets/Sprites/Weapons.png" id="3_fkybt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_evi0p"]
+radius = 3.0
+height = 8.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_6t5aa")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_vgqql")
+region_enabled = true
+region_rect = Rect2(2, 162, 7, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_evi0p")
+
+[node name="Weapon" type="Node2D" parent="."]
+
+[node name="WeaponSprite" type="Sprite2D" parent="Weapon"]
+position = Vector2(0, -3)
+rotation = -0.7853982
+texture = ExtResource("3_fkybt")
+region_enabled = true
+region_rect = Rect2(21, 81, 8, 8)
+
+[node name="Muzzle" type="Node2D" parent="Weapon"]
+position = Vector2(0, -5)
