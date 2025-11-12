@@ -7,6 +7,5 @@ public partial class Registry : Node
 	{
 		this.AddChild(new SingletonRegistry());
 		this.AddChild(new RootTreeAdd());
-		GD.Print("HI");
 	}
 }

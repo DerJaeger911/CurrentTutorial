@@ -5,6 +5,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="Scripts\Manager\Signals\" />
     <Folder Include="Scripts\Manager\Registration\" />
   </ItemGroup>
 </Project>
