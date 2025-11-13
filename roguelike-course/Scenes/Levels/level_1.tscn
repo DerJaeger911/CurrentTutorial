@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyvx23mhejhvo"]
+[gd_scene load_steps=6 format=3 uid="uid://dyvx23mhejhvo"]
 
 [ext_resource type="Script" uid="uid://cgxjx4lwk0xgj" path="res://Scripts/RoomGeneration.cs" id="1_3mqfk"]
 [ext_resource type="PackedScene" uid="uid://c8wj7nru8csnm" path="res://Scenes/player.tscn" id="1_4dpyx"]
+[ext_resource type="Script" uid="uid://yi7qua87wea6" path="res://Scripts/Projectile.cs" id="3_iixi8"]
+[ext_resource type="Texture2D" uid="uid://dq3boaqnrlhny" path="res://Assets/Sprites/Weapons.png" id="4_cyadu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xgxfi"]
+radius = 2.0
 
 [node name="Main" type="Node2D"]
 
@@ -11,5 +16,17 @@ script = ExtResource("1_3mqfk")
 [node name="Player" parent="." instance=ExtResource("1_4dpyx")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1151, 646)
-zoom = Vector2(0.5, 0.5)
+position = Vector2(563, 318)
+
+[node name="Projectile" type="Area2D" parent="."]
+position = Vector2(22, 0)
+script = ExtResource("3_iixi8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Projectile"]
+rotation = -0.7853982
+texture = ExtResource("4_cyadu")
+region_enabled = true
+region_rect = Rect2(45, 20, 5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Projectile"]
+shape = SubResource("CircleShape2D_xgxfi")

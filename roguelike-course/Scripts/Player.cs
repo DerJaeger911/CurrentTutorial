@@ -1,9 +1,10 @@
 using Godot;
+using RoguelikeCourse.Scripts.Interfaces;
 using System;
 
 namespace RoguelikeCourse.Scripts;
 
-public partial class Player : CharacterBody2D
+public partial class Player : CharacterBody2D, IEntity
 {
 	[Export]
 	private float moveSpeed = 50;
@@ -33,5 +34,9 @@ public partial class Player : CharacterBody2D
 		this.weaponOrigin.RotationDegrees = Mathf.RadToDeg(mouseDirection.Angle()) + 90;
 
 		this.sprite.FlipH = mouseDirection.X > 0;
+	}
+
+	public void TakeDamage(int value) 
+	{ 
 	}
 }

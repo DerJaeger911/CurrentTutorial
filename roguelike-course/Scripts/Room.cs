@@ -1,7 +1,101 @@
 using Godot;
+using System;
+using System.Transactions;
 
 namespace RoguelikeCourse.Scripts;
 
 public partial class Room : StaticBody2D
 {
+    [Export]
+    private bool doorsAlwaysOpen = false;
+
+    private int enemiesInRoom;
+
+    private RoomEntrance roomEntranceNorth;
+    private RoomEntrance roomEntranceSouth;
+    private RoomEntrance roomEntranceWest;
+    private RoomEntrance roomEntranceEast;
+
+    public override void _Ready()
+    {
+        this.roomEntranceNorth = this.GetNode<RoomEntrance>("EntranceNorth");
+        this.roomEntranceSouth = this.GetNode<RoomEntrance>("EntranceSouth");
+        this.roomEntranceWest = this.GetNode<RoomEntrance>("EntranceWest");
+        this.roomEntranceEast = this.GetNode<RoomEntrance>("EntranceEast");
+    }
+
+    public void Initialize()
+    {
+
+    }
+
+    public void SetNeighbor(int neighborDirectionAsInt, Room neighborRoom)
+    {
+        DirectionEnums neighborDirection = (DirectionEnums)neighborDirectionAsInt;
+
+        RoomEntrance entrance = neighborDirection switch
+        {
+            DirectionEnums.North => this.roomEntranceNorth,
+            DirectionEnums.South => this.roomEntranceSouth,
+            DirectionEnums.West => this.roomEntranceWest,
+            DirectionEnums.East => this.roomEntranceEast,
+            _ => throw new ArgumentOutOfRangeException(nameof(neighborDirection), neighborDirection, "Invalid direction")
+        };
+
+        entrance.SetNeighbor(neighborRoom);
+    }
+
+    public void PlayerEnter(int entryDirectionAsInt, CharacterBody2D player, bool firstRoom = false)
+    {
+        DirectionEnums entryDirection = (DirectionEnums)entryDirectionAsInt;
+        //if firstRoom = true -> Keep this.
+        Vector2 currentSpawn = this.GlobalPosition;
+        if (firstRoom)
+        {
+            currentSpawn = this.GlobalPosition;
+        }
+        else if (!firstRoom) 
+        {
+            currentSpawn = entryDirection switch
+            {
+                DirectionEnums.North => this.roomEntranceNorth.PlayerSpawn.GlobalPosition,
+                DirectionEnums.South => this.roomEntranceSouth.PlayerSpawn.GlobalPosition,
+                DirectionEnums.West => this.roomEntranceWest.PlayerSpawn.GlobalPosition,
+                DirectionEnums.East => this.roomEntranceEast.PlayerSpawn.GlobalPosition,
+                _ => player.GlobalPosition
+            };
+        }
+        player.GlobalPosition = currentSpawn;
+        
+
+        if(this.enemiesInRoom > 0 && !this.doorsAlwaysOpen)
+        {
+            this.CloseDoors();
+        }
+        else
+        {
+            this.OpenDoors();
+        }
+    }
+
+    private void OnDefeatEnemy(Node enemy)
+    {
+
+    }
+
+    private void OpenDoors()
+    {
+        this.roomEntranceNorth.OpenDoor();
+        this.roomEntranceSouth.OpenDoor();
+        this.roomEntranceWest.OpenDoor();
+        this.roomEntranceEast.OpenDoor();
+    }
+
+    private void CloseDoors()
+    {
+        this.roomEntranceNorth.CloseDoor();
+        this.roomEntranceSouth.CloseDoor();
+        this.roomEntranceWest.CloseDoor();
+        this.roomEntranceEast.CloseDoor();
+    }
 }

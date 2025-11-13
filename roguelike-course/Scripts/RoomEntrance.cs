@@ -19,6 +19,8 @@ public partial class RoomEntrance : Node2D
 
     private Room neighbor;
 
+    public Node2D PlayerSpawn { get => this.playerSpawn; set => this.playerSpawn = value; }
+
     public override void _Ready()
     {
         this.barrier = this.GetNode<StaticBody2D>("Barrier");
@@ -28,13 +30,15 @@ public partial class RoomEntrance : Node2D
         this.doorShut = this.GetNode<StaticBody2D>("Door/DoorShut");
         this.doorShutCollider = this.GetNode<CollisionShape2D>("Door/DoorShut/CollisionShape2D");
 
-        this.playerSpawn = this.GetNode<Node2D>("PlayerSpawn");
-        this.exitTrigger = this.GetNode<Area2D>("ExxitTrigger");
+        this.PlayerSpawn = this.GetNode<Node2D>("PlayerSpawn");
+        this.exitTrigger = this.GetNode<Area2D>("ExitTrigger");
 
         this.exitTrigger.BodyEntered += this.OnBodyEnteredExitTrigger;
+
+        this.ToggleBarrier(true);
     }
 
-    private void SetNeighbor(Room neighborRoom)
+    public void SetNeighbor(Room neighborRoom)
     {
         this.neighbor = neighborRoom;
         this.ToggleBarrier(false);
@@ -48,7 +52,7 @@ public partial class RoomEntrance : Node2D
         this.door.Visible = !toggle;
     }
 
-    private void OpenDoor()
+    public void OpenDoor()
     {
         if (this.barrier.Visible)
         {
@@ -59,7 +63,7 @@ public partial class RoomEntrance : Node2D
         this.doorShutCollider.Disabled = true;
     }
 
-    private void CloseDoor()
+    public void CloseDoor()
     {
         if (this.barrier.Visible)
         {
