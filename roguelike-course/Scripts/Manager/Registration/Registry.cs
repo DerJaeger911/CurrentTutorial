@@ -1,5 +1,6 @@
 using Godot;
-using RoguelikeCourse.Scripts.Manager;
+
+namespace RoguelikeCourse.Scripts.Manager.Registration;
 
 public partial class Registry : Node
 {

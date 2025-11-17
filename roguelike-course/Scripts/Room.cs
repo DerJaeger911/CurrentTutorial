@@ -1,6 +1,6 @@
 using Godot;
+using RoguelikeCourse.Scripts.Manager.Signals;
 using System;
-using System.Transactions;
 
 namespace RoguelikeCourse.Scripts;
 
@@ -39,7 +39,7 @@ public partial class Room : StaticBody2D
             DirectionEnums.South => this.roomEntranceSouth,
             DirectionEnums.West => this.roomEntranceWest,
             DirectionEnums.East => this.roomEntranceEast,
-            _ => throw new ArgumentOutOfRangeException(nameof(neighborDirection), neighborDirection, "Invalid direction")
+            _ => throw new ArgumentOutOfRangeException(nameof(neighborDirectionAsInt), neighborDirection, "Invalid direction")
         };
 
         entrance.SetNeighbor(neighborRoom);
@@ -66,9 +66,10 @@ public partial class Room : StaticBody2D
             };
         }
         player.GlobalPosition = currentSpawn;
-        
 
-        if(this.enemiesInRoom > 0 && !this.doorsAlwaysOpen)
+        GameSignals.Instance.EmitSignal(nameof(GameSignals.PlayerEnteredRoom), this);
+
+        if (this.enemiesInRoom > 0 && !this.doorsAlwaysOpen)
         {
             this.CloseDoors();
         }

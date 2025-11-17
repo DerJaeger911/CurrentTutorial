@@ -9,6 +9,12 @@ public partial class Player : CharacterBody2D, IEntity
 	[Export]
 	private float moveSpeed = 50;
 
+	[Export]
+	private double shootRate = 0.4;
+	private double lastShootTime;
+
+	private PackedScene projectileScene = GD.Load<PackedScene>("res://Scenes/Projectiles/projectile.tscn");
+
 	private Sprite2D sprite;
 	private Node2D weaponOrigin;
 	private Node2D muzzle;
@@ -34,6 +40,25 @@ public partial class Player : CharacterBody2D, IEntity
 		this.weaponOrigin.RotationDegrees = Mathf.RadToDeg(mouseDirection.Angle()) + 90;
 
 		this.sprite.FlipH = mouseDirection.X > 0;
+
+		if (Input.IsActionPressed("attack"))
+		{
+			if(Time.GetUnixTimeFromSystem() - this.lastShootTime > this.shootRate)
+			{
+				this.Shoot();
+			}
+		}
+	}
+
+	private void Shoot()
+	{
+		this.lastShootTime = Time.GetUnixTimeFromSystem();
+
+		Projectile projectile = this.projectileScene.Instantiate<Projectile>();
+		this.GetTree().Root.AddChild(projectile);
+		projectile.GlobalPosition = this.muzzle.GlobalPosition;
+		projectile.Rotation = this.weaponOrigin.Rotation;
+		projectile.ownerCharacter = this;
 	}
 
 	public void TakeDamage(int value) 
