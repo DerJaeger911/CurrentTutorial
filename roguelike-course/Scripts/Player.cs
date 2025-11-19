@@ -4,7 +4,7 @@ using System;
 
 namespace RoguelikeCourse.Scripts;
 
-public partial class Player : CharacterBody2D, IEntity
+public partial class Player : CharacterBody2D, IPlayer
 {
 	[Export]
 	private float moveSpeed = 50;

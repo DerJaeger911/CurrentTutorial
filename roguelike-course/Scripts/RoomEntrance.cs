@@ -1,4 +1,5 @@
 using Godot;
+using RoguelikeCourse.Scripts.Interfaces;
 
 namespace RoguelikeCourse.Scripts;
 
@@ -76,7 +77,10 @@ public partial class RoomEntrance : Node2D
 
     private void OnBodyEnteredExitTrigger(Node body) 
     { 
-        
+        if(body is IPlayer && body is CharacterBody2D playerBody)
+        {
+            this.neighbor.PlayerEnter((int)this.GetNeighborEntryDirection(), playerBody);
+        }
     }
 
     private DirectionEnums GetNeighborEntryDirection()

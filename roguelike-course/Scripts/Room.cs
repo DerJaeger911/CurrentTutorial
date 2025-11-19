@@ -86,17 +86,17 @@ public partial class Room : StaticBody2D
 
     private void OpenDoors()
     {
-        this.roomEntranceNorth.OpenDoor();
-        this.roomEntranceSouth.OpenDoor();
-        this.roomEntranceWest.OpenDoor();
-        this.roomEntranceEast.OpenDoor();
+        this.roomEntranceNorth.CallDeferred("OpenDoor");
+        this.roomEntranceSouth.CallDeferred("OpenDoor");
+        this.roomEntranceWest.CallDeferred("OpenDoor");
+        this.roomEntranceEast.CallDeferred("OpenDoor");
     }
 
     private void CloseDoors()
     {
-        this.roomEntranceNorth.CloseDoor();
-        this.roomEntranceSouth.CloseDoor();
-        this.roomEntranceWest.CloseDoor();
-        this.roomEntranceEast.CloseDoor();
+        this.roomEntranceNorth.CallDeferred("CloseDoor");
+        this.roomEntranceSouth.CallDeferred("CloseDoor");
+        this.roomEntranceWest.CallDeferred("CloseDoor");
+        this.roomEntranceEast.CallDeferred("CloseDoor");
     }
 }
