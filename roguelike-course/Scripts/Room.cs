@@ -1,4 +1,5 @@
 using Godot;
+using RoguelikeCourse.Scripts.Enums;
 using RoguelikeCourse.Scripts.Manager.Signals;
 using System;
 
@@ -50,6 +51,7 @@ public partial class Room : StaticBody2D
         DirectionEnums entryDirection = (DirectionEnums)entryDirectionAsInt;
         //if firstRoom = true -> Keep this.
         Vector2 currentSpawn = this.GlobalPosition;
+
         if (firstRoom)
         {
             currentSpawn = this.GlobalPosition;

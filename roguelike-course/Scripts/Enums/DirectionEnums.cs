@@ -1,4 +1,4 @@
-namespace RoguelikeCourse.Scripts;
+namespace RoguelikeCourse.Scripts.Enums;
 
 public enum DirectionEnums
 {

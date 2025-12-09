@@ -1,5 +1,5 @@
 using Godot;
-using RoguelikeCourse.Scripts.Interfaces;
+using RoguelikeCourse.Scripts.Entities.Bases;
 
 namespace RoguelikeCourse.Scripts;
 
@@ -32,7 +32,7 @@ public partial class Projectile : Area2D
             return;
         }
 
-        if (body is IEntity entity)
+        if (body is Entity entity)
         {
             entity.TakeDamage(1);
         }

@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\roomgeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\roomgeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\interfaces\\iplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\interfaces\\iplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\roomentrance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\roomentrance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\interfaces\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\interfaces\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\roomgeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\roomgeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\interfaces\\iplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\interfaces\\iplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\interfaces\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\interfaces\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\manager\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,10 +59,6 @@
       "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\manager\\dummymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\roguelike-course\\scripts\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CED7B270-82E6-4F8F-A0CF-E1A37FA678F3}|RoguelikeCourse.csproj|solutionrelative:scripts\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\AppData\\Local\\Temp\\VSGeneratedDocuments\\6e3c4241-084f-d541-d228-665ef279b458\\RoguelikeCourse.Scripts.RoomEntrance_ScriptMethods.generated.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -72,7 +72,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 175,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -104,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "IPlayer.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Interfaces\\IPlayer.cs",
               "RelativeDocumentMoniker": "Scripts\\Interfaces\\IPlayer.cs",
@@ -112,24 +112,24 @@
               "RelativeToolTip": "Scripts\\Interfaces\\IPlayer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T19:33:25.956Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T19:33:25.956Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "CameraController.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\CameraController.cs",
               "RelativeDocumentMoniker": "Scripts\\CameraController.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\CameraController.cs",
               "RelativeToolTip": "Scripts\\CameraController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA8AAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T20:21:03.559Z"
+              "WhenOpened": "2025-11-17T20:21:03.559Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "InputManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Manager\\InputManager.cs",
               "RelativeDocumentMoniker": "Scripts\\Manager\\InputManager.cs",
@@ -141,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Entity.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Interfaces\\Entity.cs",
               "RelativeDocumentMoniker": "Scripts\\Interfaces\\Entity.cs",
@@ -153,46 +153,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Player.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Player.cs",
               "RelativeToolTip": "Scripts\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T16:30:10.88Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T16:30:10.88Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "RoomEntrance.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\RoomEntrance.cs",
               "RelativeDocumentMoniker": "Scripts\\RoomEntrance.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\RoomEntrance.cs",
               "RelativeToolTip": "Scripts\\RoomEntrance.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAcwFEAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T18:37:41.96Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Room.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Room.cs",
               "RelativeDocumentMoniker": "Scripts\\Room.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Room.cs",
               "RelativeToolTip": "Scripts\\Room.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAowGMAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAADgvz0AAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T18:36:36.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T18:36:36.056Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "RoomGeneration.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\RoomGeneration.cs",
               "RelativeDocumentMoniker": "Scripts\\RoomGeneration.cs",
@@ -200,12 +198,23 @@
               "RelativeToolTip": "Scripts\\RoomGeneration.cs",
               "ViewState": "AgIAAGwAAAAAAAAAAAAswIIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T18:39:23.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T18:39:23.349Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
+              "Title": "Projectile.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Projectile.cs",
+              "RelativeDocumentMoniker": "Scripts\\Projectile.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Projectile.cs",
+              "RelativeToolTip": "Scripts\\Projectile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:44:17.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "RootTreeAdd..cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Manager\\Registration\\RootTreeAdd..cs",
               "RelativeDocumentMoniker": "Scripts\\Manager\\Registration\\RootTreeAdd..cs",
@@ -217,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "GameSignals.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Manager\\Signals\\GameSignals.cs",
               "RelativeDocumentMoniker": "Scripts\\Manager\\Signals\\GameSignals.cs",
@@ -229,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Registry.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Manager\\Registration\\Registry.cs",
               "RelativeDocumentMoniker": "Scripts\\Manager\\Registration\\Registry.cs",
@@ -241,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "DummyManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Manager\\DummyManager.cs",
               "RelativeDocumentMoniker": "Scripts\\Manager\\DummyManager.cs",
@@ -253,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "SingletonRegistry.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Manager\\Registration\\SingletonRegistry.cs",
               "RelativeDocumentMoniker": "Scripts\\Manager\\Registration\\SingletonRegistry.cs",
@@ -262,18 +271,6 @@
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwA4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T19:50:02.684Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Projectile.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Projectile.cs",
-              "RelativeDocumentMoniker": "Scripts\\Projectile.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\roguelike-course\\Scripts\\Projectile.cs",
-              "RelativeToolTip": "Scripts\\Projectile.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwCQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T19:44:17.02Z"
             },
             {
               "$type": "Document",

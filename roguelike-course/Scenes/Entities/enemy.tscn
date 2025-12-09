@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckrgiirqywvdm"]
+
+[ext_resource type="Script" uid="uid://c0iuyba7ckj3f" path="res://Scripts/Entities/Enemy.cs" id="1_o6kgl"]
+[ext_resource type="Texture2D" uid="uid://dj67j1veyogdi" path="res://Assets/Sprites/Creatures.png" id="2_ge2ll"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xgxfi"]
+radius = 4.0
+height = 10.0
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_o6kgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xgxfi")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_ge2ll")
+region_enabled = true
+region_rect = Rect2(90, 70, 9, 10)

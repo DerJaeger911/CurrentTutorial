@@ -1,5 +1,6 @@
 using Godot;
 using Godot.Collections;
+using RoguelikeCourse.Scripts.Enums;
 
 namespace RoguelikeCourse.Scripts;
 
@@ -26,7 +27,7 @@ public partial class RoomGeneration : Node
     {
         if (this.player == null)
         {
-            PackedScene playerScene = GD.Load<PackedScene>("res://Scenes/player.tscn");
+            PackedScene playerScene = GD.Load<PackedScene>("res://Scenes/Entities/player.tscn");
             this.player = playerScene.Instantiate() as CharacterBody2D;
             this.GetTree().Root.CallDeferred(Node.MethodName.AddChild,this.player);
         }

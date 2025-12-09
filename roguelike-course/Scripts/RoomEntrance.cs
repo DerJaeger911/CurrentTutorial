@@ -1,5 +1,6 @@
 using Godot;
-using RoguelikeCourse.Scripts.Interfaces;
+using RoguelikeCourse.Scripts.Entities.Bases;
+using RoguelikeCourse.Scripts.Enums;
 
 namespace RoguelikeCourse.Scripts;
 
@@ -85,21 +86,13 @@ public partial class RoomEntrance : Node2D
 
     private DirectionEnums GetNeighborEntryDirection()
     {
-        if(this.direction == DirectionEnums.North)
+        return this.direction switch
         {
-            return DirectionEnums.South;
-        }
-        else if (this.direction == DirectionEnums.South)
-        {
-            return DirectionEnums.North;
-        }
-        else if (this.direction == DirectionEnums.West)
-        {
-            return DirectionEnums.East;
-        }
-        else
-        {
-            return DirectionEnums.South;
-        }
+            DirectionEnums.North => DirectionEnums.South,
+            DirectionEnums.South => DirectionEnums.North,
+            DirectionEnums.West => DirectionEnums.East,
+            DirectionEnums.East => DirectionEnums.West,
+            _ => DirectionEnums.South
+        };
     }
 }
