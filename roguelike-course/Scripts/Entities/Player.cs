@@ -10,6 +10,7 @@ public partial class Player : Entity, IPlayer
 
 	[Export]
 	private double shootRate = 0.4;
+	private double initialShootRate;
 	private double lastShootTime;
 
 	private PackedScene projectileScene = GD.Load<PackedScene>("res://Scenes/Projectiles/projectile.tscn");
@@ -18,19 +19,19 @@ public partial class Player : Entity, IPlayer
 	private Node2D weaponOrigin;
 	private Node2D muzzle;
 
-	public override void _Ready()
+    public double ShootRate { get => this.shootRate; set => this.shootRate = value; }
+
+    public override void _Ready()
 	{
-		this.CollisionLayer = LayerMasks.PlayerLayer;
-		this.CollisionMask = LayerMasks.PlayerMasks;
+        base._Ready();
+        this.CollisionLayer = LayerMasks.PlayerLayer;
 		this.AddToGroup("Player");
 		this.sprite = this.GetNode<Sprite2D>("Sprite");
 		this.weaponOrigin = this.GetNode<Node2D>("Weapon");
 		this.muzzle = this.GetNode<Node2D>("Weapon/Muzzle");
-
 		this.MoveSpeed = 100;
 		this.MaxHp = 4;
-
-		base._Ready();
+		this.initialShootRate = this.shootRate;
     }
 
 	public override void _PhysicsProcess(Double delta)
@@ -50,7 +51,7 @@ public partial class Player : Entity, IPlayer
 
 		if (Input.IsActionPressed("attack"))
 		{
-			if(Time.GetUnixTimeFromSystem() - this.lastShootTime > this.shootRate)
+			if(Time.GetUnixTimeFromSystem() - this.lastShootTime > this.ShootRate)
 			{
 				this.Shoot();
 			}
@@ -67,8 +68,18 @@ public partial class Player : Entity, IPlayer
 		projectile.Rotation = this.weaponOrigin.Rotation;
 		projectile.ownerCharacter = this;
 	}
+
+	public void InternalStatResets(StatEnum stat)
+	{
+		switch (stat)
+		{
+			case StatEnum.ShootRate:
+				this.ShootRate = this.initialShootRate;
+			break;
+		}
+	}
+
     protected override void Die()
     {
-
     }
 }

@@ -1,5 +1,6 @@
 using Godot;
 using RoguelikeCourse.Scripts.Entities.Bases;
+using RoguelikeCourse.Scripts.Statics;
 
 namespace RoguelikeCourse.Scripts;
 
@@ -14,6 +15,8 @@ public partial class Projectile : Area2D
 
     public override void _Ready()
     {
+        this.CollisionLayer = LayerMasks.ProjectileLayer;
+        this.CollisionMask = LayerMasks.ProjectileMask;
         this.autoDestroytimer = this.GetNode<Timer>("Timer");
         this.autoDestroytimer.Timeout += this.OnTimeOut;
 
@@ -34,7 +37,7 @@ public partial class Projectile : Area2D
 
         if (body is Entity entity)
         {
-            entity.TakeDamage(1);
+            entity.TakeDamage(1, entity);
         }
         this.QueueFree();
     }

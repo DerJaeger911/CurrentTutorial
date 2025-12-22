@@ -4,8 +4,9 @@
     "\\Scenes",
     "\\Scripts",
     "\\Scripts\\Entities",
-    "\\Scripts\\Entities\\Bases"
+    "\\Scripts\\Entities\\Bases",
+    "\\Scripts\\Statics"
   ],
-  "SelectedNode": "\\Scripts\\Entities\\Bases\\Entity.cs.uid",
+  "SelectedNode": "\\Scripts\\Room.cs",
   "PreviewInSolutionExplorer": false
 }

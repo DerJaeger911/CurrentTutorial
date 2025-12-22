@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://chxs5rxtx3t16"]
+
+[ext_resource type="PackedScene" uid="uid://6vyy1ybua4vf" path="res://Scenes/Rooms/room_template.tscn" id="1_7pshu"]
+[ext_resource type="Script" uid="uid://c24kewa4ymm6x" path="res://Scripts/Items/RoomItemSpawner.cs" id="2_7pshu"]
+
+[node name="RoomTemplate" instance=ExtResource("1_7pshu")]
+doorsAlwaysOpen = true
+
+[node name="RoomItemSpawner" type="Node2D" parent="." index="9"]
+script = ExtResource("2_7pshu")

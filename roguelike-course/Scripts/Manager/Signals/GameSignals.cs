@@ -15,4 +15,15 @@ public partial class GameSignals : Node
 
     [Signal] 
     public delegate void PlayerEnteredRoomEventHandler(Room room);
+
+    [Signal]
+    public delegate void EnemyDefeatedEventHandler(Enemy enemy);
+
+    [Signal]
+    public delegate void InMenuStateEventHandler(bool isInMenu);
+
+    public void EmitInMenuState(bool isInMenu)
+    {
+        this.EmitSignal(nameof(InMenuState), isInMenu);
+    }
 }

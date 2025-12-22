@@ -1,6 +1,7 @@
 using Godot;
 using RoguelikeCourse.Scripts.Entities.Bases;
 using RoguelikeCourse.Scripts.Enums;
+using RoguelikeCourse.Scripts.Statics;
 
 namespace RoguelikeCourse.Scripts;
 
@@ -35,6 +36,8 @@ public partial class RoomEntrance : Node2D
         this.PlayerSpawn = this.GetNode<Node2D>("PlayerSpawn");
         this.exitTrigger = this.GetNode<Area2D>("ExitTrigger");
 
+        this.exitTrigger.CollisionMask = LayerMasks.PlayerLayer;
+
         this.exitTrigger.BodyEntered += this.OnBodyEnteredExitTrigger;
 
         this.ToggleBarrier(true);
@@ -54,24 +57,29 @@ public partial class RoomEntrance : Node2D
         this.door.Visible = !toggle;
     }
 
-    public void OpenDoor()
+    private void BarrierIsVisible()
     {
         if (this.barrier.Visible)
         {
+            this.exitTrigger.CollisionMask = LayerMasks.PlayerLayer;
             return;
         }
+    }
 
+    public void OpenDoor()
+    {
+        this.BarrierIsVisible();
+
+        this.exitTrigger.CollisionMask = LayerMasks.PlayerLayer;
         this.doorShut.Visible = false;
         this.doorShutCollider.Disabled = true;
     }
 
     public void CloseDoor()
     {
-        if (this.barrier.Visible)
-        {
-            return;
-        }
+        this.BarrierIsVisible();
 
+        this.exitTrigger.CollisionMask = 0;
         this.doorShut.Visible = true;
         this.doorShutCollider.Disabled = false;
     }

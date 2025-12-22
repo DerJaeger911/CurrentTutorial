@@ -1,4 +1,7 @@
 using Godot;
+using RoguelikeCourse.Scripts.Manager.PreloadManagers.AssetPreloads;
+using RoguelikeCourse.Scripts.Manager.PreloadManagers.ItemPreloads;
+using RoguelikeCourse.Scripts.Manager.PreloadManagers.LevelPreloads;
 using RoguelikeCourse.Scripts.Manager.Signals;
 using System;
 using System.Collections.Generic;
@@ -11,8 +14,14 @@ public partial class SingletonRegistry : Node
 
 	public override void _Ready()
 	{
-		Register(DummyManager.Instance);
-		Register(GameSignals.Instance);
+        Register(GameSignals.Instance);
+		Register(AssetPreloads.Instance);
+        Register(LevelPreloads.Instance);
+		Register(ItemPreloads.Instance);
+
+        Register(DummyManager.Instance);
+        Register(GameStateManager.Instance);
+
 	}
 
 	private static void Register<T>(T instance)

@@ -1,13 +1,14 @@
 using Godot;
 using RoguelikeCourse.Scripts;
 using RoguelikeCourse.Scripts.Entities.Bases;
+using RoguelikeCourse.Scripts.Manager.Signals;
 using RoguelikeCourse.Scripts.Statics;
 
 public partial class Enemy : Entity
 {
     [Export]
-    private float attackRate = 0.5f;
-    private float lastAttackTime;
+    private double attackRate = 0.5;
+    private double lastAttackTime;
 
     private Sprite2D sprite;
 
@@ -21,11 +22,14 @@ public partial class Enemy : Entity
 
     public override void _Ready()
     {
+        base._Ready();
         this.CollisionLayer = LayerMasks.EnemyLayer;
-        this.CollisionMask = LayerMasks.EnemyMasks;
         this.MoveSpeed = 20;
         this.sprite = this.GetNode<Sprite2D>("Sprite");
-        base._Ready();
+
+        GameSignals.Instance.PlayerEnteredRoom += this.OnPlayerEnteredRoom;
+
+
         this.CallDeferred(nameof(FindPlayer));
     }
 
@@ -34,22 +38,24 @@ public partial class Enemy : Entity
         this.player = this.GetTree().GetFirstNodeInGroup("Player") as Player;
     }
 
-    private void Initialize()
+    public void Initialize(Room inRoom)
     {
-
+        this.isActive = false;
+        this.room = inRoom;
     }
 
-    private void OnPlayerEnterRoom(Room playerRoom)
+    private void OnPlayerEnteredRoom(Room playerRoom)
     {
-
+        this.isActive = playerRoom == this.room;
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        if (this.player is null)
+        if (this.player is null || !this.isActive)
         {
             return;
         }
+
         this.playerDirection = this.GlobalPosition.DirectionTo(this.player.GlobalPosition);
         this.playerDistance = this.GlobalPosition.DistanceTo(this.player.GlobalPosition);
         this.sprite.FlipH = this.playerDirection.X < 0;
@@ -66,11 +72,23 @@ public partial class Enemy : Entity
 
     private void TryAttack()
     {
-
+        double time = Time.GetUnixTimeFromSystem();
+        if ( time - this.lastAttackTime < this.attackRate)
+        {
+            return;
+        }
+        this.lastAttackTime = time;
+        this.player.TakeDamage(this.AttackDamage, this.player); 
     }
 
     protected override void Die()
     {
+        GameSignals.Instance.EmitSignal(nameof(GameSignals.EnemyDefeated), this);
         this.QueueFree();
+    }
+
+    public override void _ExitTree()
+    {
+        GameSignals.Instance.PlayerEnteredRoom -= this.OnPlayerEnteredRoom;
     }
 }

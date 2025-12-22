@@ -19,10 +19,20 @@ public partial class Room : StaticBody2D
 
     public override void _Ready()
     {
+        GameSignals.Instance.EnemyDefeated += this.OnEnemyDefeated;
         this.roomEntranceNorth = this.GetNode<RoomEntrance>("EntranceNorth");
         this.roomEntranceSouth = this.GetNode<RoomEntrance>("EntranceSouth");
         this.roomEntranceWest = this.GetNode<RoomEntrance>("EntranceWest");
         this.roomEntranceEast = this.GetNode<RoomEntrance>("EntranceEast");
+
+        foreach (Node child in this.GetChildren())
+        {
+            if (child is Enemy enemy)
+            {
+                this.enemiesInRoom += 1;
+                enemy.Initialize(this);
+            }
+        }
     }
 
     public void Initialize()
@@ -81,11 +91,6 @@ public partial class Room : StaticBody2D
         }
     }
 
-    private void OnDefeatEnemy(Node enemy)
-    {
-
-    }
-
     private void OpenDoors()
     {
         this.roomEntranceNorth.CallDeferred("OpenDoor");
@@ -100,5 +105,23 @@ public partial class Room : StaticBody2D
         this.roomEntranceSouth.CallDeferred("CloseDoor");
         this.roomEntranceWest.CallDeferred("CloseDoor");
         this.roomEntranceEast.CallDeferred("CloseDoor");
+    }
+
+    private void OnEnemyDefeated(Enemy enemy)
+    {
+        if(enemy.GetParent() == this)
+        {
+            this.enemiesInRoom -= 1;
+        }
+
+        if(this.enemiesInRoom <= 0)
+        {
+            this.OpenDoors();
+        }
+    }
+
+    public override void _ExitTree()
+    {
+        GameSignals.Instance.EnemyDefeated -= this.OnEnemyDefeated;
     }
 }

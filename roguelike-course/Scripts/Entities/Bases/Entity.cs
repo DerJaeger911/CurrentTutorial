@@ -1,4 +1,5 @@
 using Godot;
+using RoguelikeCourse.Scripts.Statics;
 
 namespace RoguelikeCourse.Scripts.Entities.Bases;
 
@@ -22,19 +23,20 @@ public abstract partial class Entity : CharacterBody2D
     private float attackRange = 10;
     private float initialAttackRange;
 
-    public Entity()
+    public override void _Ready()
     {
         this.initialMoveSpeed = this.moveSpeed;
         this.initialMaxHp = this.maxHp;
-        this.currentHP = this.maxHp;
+        this.CurrentHP = this.maxHp;
         this.initialAttackDamage = this.attackDamage;
         this.initialAttackRange = this.attackRange;
+        this.CollisionMask = LayerMasks.EntityMask;
     }
 
-    protected float MoveSpeed
+    public float MoveSpeed
     {
         get => this.moveSpeed;
-        set => this.moveSpeed = this.moveSpeed == this.initialMoveSpeed ? value : this.moveSpeed;
+        set => this.moveSpeed =  value;
     }
 
     protected float MaxHp
@@ -43,7 +45,7 @@ public abstract partial class Entity : CharacterBody2D
         set => this.maxHp = this.maxHp == this.initialMaxHp ? (int)value : this.maxHp;
     }
 
-    protected float AttackDamage
+    public int AttackDamage
     {
         get => this.attackDamage;
         set => this.attackDamage = this.attackDamage == this.initialAttackDamage ? (int)value : this.attackDamage;
@@ -54,13 +56,40 @@ public abstract partial class Entity : CharacterBody2D
         get => this.attackRange;
         set => this.attackRange = this.attackRange == this.initialAttackRange ? value : this.attackRange;
     }
+    public int CurrentHP { get => this.currentHP; set => this.currentHP = value; }
 
-    public void TakeDamage(int amaount)
+    public void Heal(int amount)
     {
+        if (this.CurrentHP + amount < this.maxHp)
+        {
+            this.CurrentHP += amount;
+        }
+        else
+        {
+            this.CurrentHP = this.maxHp;
+        }
+    }
 
-        if (this.currentHP <= 0)
+    public void TakeDamage(int amaount, Node target)
+    {
+        this.CurrentHP -= amaount;
+
+        if (this.CurrentHP <= 0)
         {
             this.Die();
+        }
+    }
+
+    public void ResetStat(StatEnum stat, Entity entity)
+    {
+        if(entity is Player player)
+        {
+            switch (stat)
+            {
+                case StatEnum.ShootRate:
+                    player.InternalStatResets(stat);
+                    break;
+            }
         }
     }
 
