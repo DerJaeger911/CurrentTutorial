@@ -12,7 +12,7 @@ namespace RoguelikeCourse.Scripts.Items
 				switch (value)
 				{
 					case StatEnum.Health:
-						GD.Print($"{value}: {player.CurrentHP}");
+						GD.Print($"{value}: {player.CurrentHp}");
 						break;
 					case StatEnum.Damage:
 						GD.Print($"{value}: {player.AttackDamage}");

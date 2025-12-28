@@ -3,6 +3,7 @@ using RoguelikeCourse.Scripts;
 using RoguelikeCourse.Scripts.Entities.Bases;
 using RoguelikeCourse.Scripts.Manager.Signals;
 using RoguelikeCourse.Scripts.Statics;
+using System.Threading.Tasks;
 
 public partial class Enemy : Entity
 {
@@ -87,7 +88,7 @@ public partial class Enemy : Entity
         this.QueueFree();
     }
 
-    public override void _ExitTree()
+	public override void _ExitTree()
     {
         GameSignals.Instance.PlayerEnteredRoom -= this.OnPlayerEnteredRoom;
     }

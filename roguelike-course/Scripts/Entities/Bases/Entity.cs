@@ -1,5 +1,6 @@
 using Godot;
 using RoguelikeCourse.Scripts.Statics;
+using System.Threading.Tasks;
 
 namespace RoguelikeCourse.Scripts.Entities.Bases;
 
@@ -13,7 +14,7 @@ public abstract partial class Entity : CharacterBody2D
     [Export]
     private int maxHp = 4;
     private int initialMaxHp;
-    private int currentHP;
+    private int currentHp;
 
     [Export]
     private int attackDamage = 1;
@@ -27,7 +28,7 @@ public abstract partial class Entity : CharacterBody2D
     {
         this.initialMoveSpeed = this.moveSpeed;
         this.initialMaxHp = this.maxHp;
-        this.CurrentHP = this.maxHp;
+        this.CurrentHp = this.maxHp;
         this.initialAttackDamage = this.attackDamage;
         this.initialAttackRange = this.attackRange;
         this.CollisionMask = LayerMasks.EntityMask;
@@ -39,11 +40,10 @@ public abstract partial class Entity : CharacterBody2D
         set => this.moveSpeed =  value;
     }
 
-    protected float MaxHp
+    public int MaxHp
     {
-        get => this.maxHp;
-        set => this.maxHp = this.maxHp == this.initialMaxHp ? (int)value : this.maxHp;
-    }
+		get => this.maxHp; set => this.maxHp = value;
+	}
 
     public int AttackDamage
     {
@@ -56,31 +56,43 @@ public abstract partial class Entity : CharacterBody2D
         get => this.attackRange;
         set => this.attackRange = this.attackRange == this.initialAttackRange ? value : this.attackRange;
     }
-    public int CurrentHP { get => this.currentHP; set => this.currentHP = value; }
+    public int CurrentHp { get => this.currentHp; set => this.currentHp = value; }
 
-    public void Heal(int amount)
+    public virtual void Heal(int amount)
     {
-        if (this.CurrentHP + amount < this.maxHp)
+        if (this.CurrentHp + amount < this.maxHp)
         {
-            this.CurrentHP += amount;
+            this.CurrentHp += amount;
         }
         else
         {
-            this.CurrentHP = this.maxHp;
+            this.CurrentHp = this.maxHp;
         }
     }
 
-    public void TakeDamage(int amaount, Node target)
+    public virtual void TakeDamage(int amaount, Node target)
     {
-        this.CurrentHP -= amaount;
+        this.CurrentHp -= amaount;
 
-        if (this.CurrentHP <= 0)
+		_ = this.DamageFlashAsync();
+
+		if (this.CurrentHp <= 0)
         {
             this.Die();
         }
     }
 
-    public void ResetStat(StatEnum stat, Entity entity)
+	private async Task DamageFlashAsync()
+	{
+		this.Visible = false;
+		var timer = this.GetTree().CreateTimer(0.07f);
+		await this.ToSignal(timer, "timeout");
+		this.Visible = true;
+		timer = this.GetTree().CreateTimer(0.1f);
+		await this.ToSignal(timer, "timeout");
+	}
+
+	public void ResetStat(StatEnum stat, Entity entity)
     {
         if(entity is Player player)
         {

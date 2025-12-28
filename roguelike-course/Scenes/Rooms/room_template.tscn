@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=4 uid="uid://6vyy1ybua4vf"]
 
 [ext_resource type="TileSet" uid="uid://cjockfim7h68j" path="res://Resources/TileSets/tileset.tres" id="1_11dti"]
-[ext_resource type="Script" uid="uid://d4guw36nhop0t" path="res://Scripts/Room.cs" id="1_s3j8h"]
-[ext_resource type="Script" uid="uid://cl8b7niiwmtlq" path="res://Scripts/RoomEntrance.cs" id="2_s3j8h"]
+[ext_resource type="Script" uid="uid://bi500dutueb7v" path="res://Scripts/Room/Room.cs" id="1_s3j8h"]
+[ext_resource type="Script" uid="uid://c2qwv3wswgdlj" path="res://Scripts/Room/RoomEntrance.cs" id="2_s3j8h"]
 [ext_resource type="Texture2D" uid="uid://divmryxvl32mh" path="res://Assets/Sprites/Tiles.png" id="3_h1l6b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mqfk"]

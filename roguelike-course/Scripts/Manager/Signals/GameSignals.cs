@@ -22,6 +22,9 @@ public partial class GameSignals : Node
     [Signal]
     public delegate void InMenuStateEventHandler(bool isInMenu);
 
+    [Signal]
+    public delegate void PlayerUpdateHealthEventHandler(int currentHp, int maxHp);
+
     public void EmitInMenuState(bool isInMenu)
     {
         this.EmitSignal(nameof(InMenuState), isInMenu);

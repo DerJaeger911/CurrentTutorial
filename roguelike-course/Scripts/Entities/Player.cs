@@ -1,5 +1,6 @@
 using Godot;
 using RoguelikeCourse.Scripts.Entities.Bases;
+using RoguelikeCourse.Scripts.Manager.Signals;
 using RoguelikeCourse.Scripts.Statics;
 using System;
 
@@ -32,7 +33,8 @@ public partial class Player : Entity, IPlayer
 		this.MoveSpeed = 100;
 		this.MaxHp = 4;
 		this.initialShootRate = this.shootRate;
-    }
+		GameSignals.Instance.EmitSignal(nameof(GameSignals.PlayerUpdateHealth), this.CurrentHp, this.MaxHp);
+	}
 
 	public override void _PhysicsProcess(Double delta)
 	{
@@ -67,6 +69,20 @@ public partial class Player : Entity, IPlayer
 		projectile.GlobalPosition = this.muzzle.GlobalPosition;
 		projectile.Rotation = this.weaponOrigin.Rotation;
 		projectile.ownerCharacter = this;
+	}
+
+    public override void TakeDamage(int amaount, Node target)
+    {
+        base.TakeDamage(amaount, target);
+
+		GameSignals.Instance.EmitSignal(nameof(GameSignals.PlayerUpdateHealth), this.CurrentHp, this.MaxHp);
+	}
+
+    public override void Heal(int amount)
+    {
+        base.Heal(amount);
+
+		GameSignals.Instance.EmitSignal(nameof(GameSignals.PlayerUpdateHealth), this.CurrentHp, this.MaxHp);
 	}
 
 	public void InternalStatResets(StatEnum stat)
