@@ -26,17 +26,19 @@ public partial class RoomGeneration : Node
 	[Export]
 	CharacterBody2D player;
 
-	public override void _Ready()
+    public System.Int32 MapSize { get => this.mapSize; set => this.mapSize = value; }
+
+    public override void _Ready()
 	{
 		this.AddPlayer();
 
 		this.Generate();
 
 		// Optional: print map for debugging
-		foreach (var x in GD.Range(this.mapSize))
+		foreach (var x in GD.Range(this.MapSize))
 		{
 			string line = string.Empty;
-			foreach (var y in GD.Range(this.mapSize))
+			foreach (var y in GD.Range(this.MapSize))
 			{
 				line += this.GetMap(x, y) ? "# " : "0 ";
 			}
@@ -56,7 +58,7 @@ public partial class RoomGeneration : Node
 	private void Generate()
 	{
 		this.roomCount = 0;
-		this.map.Resize(this.mapSize * this.mapSize);
+		this.map.Resize(this.MapSize * this.MapSize);
 
 		this.CheckRoom(this.firstRoomX, this.firstRoomY, Vector2.Zero, true);
 		this.InstantiateRooms();
@@ -65,7 +67,7 @@ public partial class RoomGeneration : Node
 	private void CheckRoom(int x, int y, Vector2 desiredDirection, bool isFirstRoom = false)
 	{
 		if (this.roomCount >= this.roomsToGenerate
-			|| x < 0 || x >= this.mapSize || y < 0 || y >= this.mapSize
+			|| x < 0 || x >= this.MapSize || y < 0 || y >= this.MapSize
 			|| this.GetMap(x, y))
 		{
 			return;
@@ -103,9 +105,9 @@ public partial class RoomGeneration : Node
 	private void InstantiateRooms()
 	{
 		// Instantiate all rooms
-		foreach (var x in GD.Range(this.mapSize))
+		foreach (var x in GD.Range(this.MapSize))
 		{
-			foreach (var y in GD.Range(this.mapSize))
+			foreach (var y in GD.Range(this.MapSize))
 			{
 				if (!this.GetMap(x, y))
 				{
@@ -149,12 +151,12 @@ public partial class RoomGeneration : Node
 				room.CallDeferred(nameof(Room.SetNeighbor), (int)DirectionEnums.North, this.GetRoomFromMap(x, y - 1));
 			}
 
-			if (y < this.mapSize - 1 && this.GetMap(x, y + 1))
+			if (y < this.MapSize - 1 && this.GetMap(x, y + 1))
 			{
 				room.CallDeferred(nameof(Room.SetNeighbor), (int)DirectionEnums.South, this.GetRoomFromMap(x, y + 1));
 			}
 
-			if (x < this.mapSize - 1 && this.GetMap(x + 1, y))
+			if (x < this.MapSize - 1 && this.GetMap(x + 1, y))
 			{
 				room.CallDeferred(nameof(Room.SetNeighbor), (int)DirectionEnums.East, this.GetRoomFromMap(x + 1, y));
 			}
@@ -168,7 +170,7 @@ public partial class RoomGeneration : Node
 		this.firstRoom.CallDeferred(nameof(Room.PlayerEnter), (int)DirectionEnums.North, this.player, true);
 	}
 
-	private Room GetRoomFromMap(int x, int y)
+	public Room GetRoomFromMap(int x, int y)
 	{
 		foreach (Room room in this.rooms)
 		{
@@ -187,6 +189,6 @@ public partial class RoomGeneration : Node
 		return new Vector2I((int)pos.X, (int)pos.Y);
 	}
 
-	private bool GetMap(int x, int y) => this.map[x + y * this.mapSize];
-	private void SetMap(int x, int y, bool value) => this.map[x + y * this.mapSize] = value;
+	private bool GetMap(int x, int y) => this.map[x + y * this.MapSize];
+	private void SetMap(int x, int y, bool value) => this.map[x + y * this.MapSize] = value;
 }
