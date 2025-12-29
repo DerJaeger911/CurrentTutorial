@@ -41,9 +41,10 @@ public partial class InputManager : Node
 
 	private void ShowCrosshair(bool isInMenu)
 	{
-        this.showCrosshair = !isInMenu;
+       this.showCrosshair = !isInMenu;
        Input.MouseMode = this.showCrosshair ? Input.MouseModeEnum.Hidden : Input.MouseModeEnum.Visible;
        this.crosshair.Visible = this.showCrosshair ? true : false;
+        GD.Print("worked");
     }
 
     public override void _ExitTree()

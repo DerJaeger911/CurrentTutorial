@@ -20,6 +20,7 @@ internal class GameStateManager
     {
         this.IsInMenu = true;
         GameSignals.Instance.EmitSignal(nameof(GameSignals.InMenuState), this.IsInMenu);
+        GD.Print("InMenu");
     }
     public void ExitMenu()
     {

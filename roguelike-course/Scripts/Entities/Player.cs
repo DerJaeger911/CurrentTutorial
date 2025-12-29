@@ -1,5 +1,6 @@
 using Godot;
 using RoguelikeCourse.Scripts.Entities.Bases;
+using RoguelikeCourse.Scripts.Manager;
 using RoguelikeCourse.Scripts.Manager.Signals;
 using RoguelikeCourse.Scripts.Statics;
 using System;
@@ -111,5 +112,7 @@ public partial class Player : Entity, IPlayer
 
     protected override void Die()
     {
-    }
+		GameStateManager.Instance.EnterMenu();
+		this.GetTree().ChangeSceneToFile("res://Scenes/menu.tscn");
+	}
 }

@@ -51,7 +51,7 @@ public partial class RoomGeneration : Node
 		if (this.player == null)
 		{
 			this.player = AssetPreloads.Player;
-			this.GetTree().Root.CallDeferred("add_child", this.player);
+			this.GetTree().Root.GetNode("/root/Main").CallDeferred("add_child", this.player);
 		}
 	}
 
@@ -132,7 +132,7 @@ public partial class RoomGeneration : Node
 					room = LevelPreloads.Instance.GetRandomRoom(LevelSets.InnerRooms.ToArray());
 				}
 
-				this.GetTree().Root.CallDeferred(Node.MethodName.AddChild, room);
+				this.GetTree().Root.GetNode("/root/Main").CallDeferred(Node.MethodName.AddChild, room);
 				this.rooms.Add(room);
 				room.GlobalPosition = new Vector2(x, y) * this.roomPositionOffset;
 
@@ -195,10 +195,13 @@ public partial class RoomGeneration : Node
 
 		while (i < 100)
 		{
+			i++;
+
 			int x = GD.RandRange(0, this.mapSize - 1);
 			int y = GD.RandRange(0, this.mapSize - 1);
-
-			if(this.firstRoomX == x && this.firstRoomY == y)
+			GD.Print($"I is {i}");
+			GD.Print($"FX={this.firstRoomX}, FY={this.firstRoomY}, X={x}, Y={y}");
+			if (this.firstRoomX == x && this.firstRoomY == y)
 			{
 				continue;
 			}
