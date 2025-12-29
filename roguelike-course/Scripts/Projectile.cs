@@ -37,7 +37,14 @@ public partial class Projectile : Area2D
 
         if (body is Entity entity)
         {
-            entity.TakeDamage(1, entity);
+            if (this.ownerCharacter is IAttacker attacker)
+            {
+				entity.TakeDamage(attacker.AttackDamage, entity);
+			}
+            else
+            {
+                entity.TakeDamage(1, entity);
+            }
         }
         this.QueueFree();
     }

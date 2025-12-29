@@ -40,6 +40,8 @@ public partial class Player : Entity, IPlayer
 		this.initialShootRate = this.shootRate;
 		GameSignals.Instance.EmitSignal(nameof(GameSignals.PlayerUpdateHealth), this.CurrentHp, this.MaxHp);
 
+		GD.Print(this.AttackDamage);
+
 		this.shootSound = this.GetNode<AudioStreamPlayer2D>("ShootSound");
 		this.ItemCollectedSound = this.GetNode<AudioStreamPlayer2D>("ItemCollected");
 	}
@@ -71,6 +73,8 @@ public partial class Player : Entity, IPlayer
 	private void Shoot()
 	{
 		this.lastShootTime = Time.GetUnixTimeFromSystem();
+
+		GD.Print(this.AttackDamage);
 
 		Projectile projectile = this.projectileScene.Instantiate<Projectile>();
 		this.GetTree().Root.AddChild(projectile);

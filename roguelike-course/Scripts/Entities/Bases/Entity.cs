@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace RoguelikeCourse.Scripts.Entities.Bases;
 
-public abstract partial class Entity : CharacterBody2D
+public abstract partial class Entity : CharacterBody2D, IAttacker
 {
 
     [Export]
@@ -49,10 +49,10 @@ public abstract partial class Entity : CharacterBody2D
 		get => this.maxHp; set => this.maxHp = value;
 	}
 
-    public int AttackDamage
+    public int AttackDamage 
     {
         get => this.attackDamage;
-        set => this.attackDamage = this.attackDamage == this.initialAttackDamage ? (int)value : this.attackDamage;
+        set => this.attackDamage = value;
     }
 
     protected float AttackRange
@@ -74,9 +74,11 @@ public abstract partial class Entity : CharacterBody2D
         }
     }
 
-    public virtual void TakeDamage(int amaount, Node target)
+    public virtual void TakeDamage(int amount, Node target)
     {
-        this.CurrentHp -= amaount;
+        GD.Print(amount);
+
+        this.CurrentHp -= amount;
 
         this.damageSound.Play();
 

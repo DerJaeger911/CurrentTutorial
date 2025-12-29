@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfk32wiuoes"]
+[gd_scene load_steps=3 format=3 uid="uid://cfk32wiuoes"]
 
 [ext_resource type="PackedScene" uid="uid://ckrgiirqywvdm" path="res://Scenes/Entities/enemy.tscn" id="1_0dst6"]
+[ext_resource type="Script" uid="uid://cvlrhrwhrccwp" path="res://Scripts/Entities/Boss.cs" id="2_houfh"]
 
 [node name="Enemy" instance=ExtResource("1_0dst6")]
-maxHp = 20
-attackRange = 15.0
+script = ExtResource("2_houfh")
 
 [node name="Sprite" parent="." index="1"]
 region_rect = Rect2(6, 150, 18, 10)

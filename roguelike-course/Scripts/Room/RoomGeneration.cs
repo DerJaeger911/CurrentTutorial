@@ -123,6 +123,10 @@ public partial class RoomGeneration : Node
 				{
 					room = LevelPreloads.Instance.InstantiateRoom(LevelEnum.Empty);
 				}
+				else if (x == bossRoomPosition.X && y == bossRoomPosition.Y)
+				{
+					room = LevelPreloads.Instance.InstantiateRoom(LevelEnum.Boss);
+				}
 				else
 				{
 					room = LevelPreloads.Instance.GetRandomRoom(LevelSets.InnerRooms.ToArray());

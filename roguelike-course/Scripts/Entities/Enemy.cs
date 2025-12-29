@@ -3,7 +3,6 @@ using RoguelikeCourse.Scripts;
 using RoguelikeCourse.Scripts.Entities.Bases;
 using RoguelikeCourse.Scripts.Manager.Signals;
 using RoguelikeCourse.Scripts.Statics;
-using System.Threading.Tasks;
 
 public partial class Enemy : Entity
 {
