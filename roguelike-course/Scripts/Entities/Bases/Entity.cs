@@ -24,6 +24,8 @@ public abstract partial class Entity : CharacterBody2D
     private float attackRange = 10;
     private float initialAttackRange;
 
+    private AudioStreamPlayer2D damageSound;
+
     public override void _Ready()
     {
         this.initialMoveSpeed = this.moveSpeed;
@@ -32,6 +34,8 @@ public abstract partial class Entity : CharacterBody2D
         this.initialAttackDamage = this.attackDamage;
         this.initialAttackRange = this.attackRange;
         this.CollisionMask = LayerMasks.EntityMask;
+
+        this.damageSound = this.GetNode<AudioStreamPlayer2D>("DamageSound");
     }
 
     public float MoveSpeed
@@ -73,6 +77,8 @@ public abstract partial class Entity : CharacterBody2D
     public virtual void TakeDamage(int amaount, Node target)
     {
         this.CurrentHp -= amaount;
+
+        this.damageSound.Play();
 
 		_ = this.DamageFlashAsync();
 

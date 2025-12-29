@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyvx23mhejhvo"]
+[gd_scene load_steps=9 format=3 uid="uid://dyvx23mhejhvo"]
 
 [ext_resource type="Script" uid="uid://divdoj62yxf8e" path="res://Scripts/Room/RoomGeneration.cs" id="1_3mqfk"]
 [ext_resource type="Script" uid="uid://cg4i6oy8p30k" path="res://Scripts/CameraController.cs" id="2_4dpyx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cbm17r6wgxe0" path="res://Assets/Sprites/Items/heart_full.tres" id="3_cyadu"]
 [ext_resource type="Script" uid="uid://cmr54he0yjx4e" path="res://Scripts/UI/MiniMap.cs" id="3_iixi8"]
 [ext_resource type="Script" uid="uid://b6024be1t4myy" path="res://Scripts/UI/PlayerHealth.cs" id="3_xgxfi"]
+[ext_resource type="AudioStream" uid="uid://cihymk0555uom" path="res://Assets/Audio/Music.mp3" id="7_5f3p6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dpyx"]
 bg_color = Color(0.103675395, 0.103675395, 0.103675395, 1)
@@ -366,3 +367,8 @@ texture = ExtResource("3_3mqfk")
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 texture = ExtResource("3_3mqfk")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_5f3p6")
+volume_db = -20.0
+autoplay = true

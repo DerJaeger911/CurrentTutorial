@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxk8sbm6abhy0"]
+
+[ext_resource type="PackedScene" uid="uid://6vyy1ybua4vf" path="res://Scenes/Rooms/room_template.tscn" id="1_1xiol"]
+[ext_resource type="PackedScene" uid="uid://cfk32wiuoes" path="res://Scenes/Entities/enemy_boss.tscn" id="2_ymbll"]
+[ext_resource type="PackedScene" uid="uid://ckrgiirqywvdm" path="res://Scenes/Entities/enemy.tscn" id="3_xyp6w"]
+
+[node name="RoomTemplate" instance=ExtResource("1_1xiol")]
+
+[node name="Enemy" parent="." index="9" instance=ExtResource("2_ymbll")]
+
+[node name="Enemy2" parent="." index="10" instance=ExtResource("3_xyp6w")]
+position = Vector2(-46, -46)
+
+[node name="Enemy3" parent="." index="11" instance=ExtResource("3_xyp6w")]
+position = Vector2(46, 46)

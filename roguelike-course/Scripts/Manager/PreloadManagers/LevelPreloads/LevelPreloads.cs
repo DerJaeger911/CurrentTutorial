@@ -18,7 +18,8 @@ namespace RoguelikeCourse.Scripts.Manager.PreloadManagers.LevelPreloads
             this.Rooms[LevelEnum.Enemy3] = ResourceLoader.Load<PackedScene>("res://Scenes/Rooms/UsedRooms/room_enemy3.tscn");
             this.Rooms[LevelEnum.Enemy4] = ResourceLoader.Load<PackedScene>("res://Scenes/Rooms/UsedRooms/room_enemy4.tscn");
             this.Rooms[LevelEnum.Item] = ResourceLoader.Load<PackedScene>("res://Scenes/Rooms/UsedRooms/room_item.tscn");
-        }
+            this.Rooms[LevelEnum.Boss] = ResourceLoader.Load<PackedScene>("res://Scenes/Rooms/UsedRooms/room_boss.tscn");
+		}
 
         public Room InstantiateRoom(LevelEnum key)
         {

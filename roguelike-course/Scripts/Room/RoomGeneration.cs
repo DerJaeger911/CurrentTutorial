@@ -26,7 +26,7 @@ public partial class RoomGeneration : Node
 	[Export]
 	CharacterBody2D player;
 
-    public System.Int32 MapSize { get => this.mapSize; set => this.mapSize = value; }
+    public int MapSize { get => this.mapSize; set => this.mapSize = value; }
 
     public override void _Ready()
 	{
@@ -104,6 +104,8 @@ public partial class RoomGeneration : Node
 
 	private void InstantiateRooms()
 	{
+		Vector2 bossRoomPosition = this.DecideBossRoom();
+
 		// Instantiate all rooms
 		foreach (var x in GD.Range(this.MapSize))
 		{
@@ -182,6 +184,31 @@ public partial class RoomGeneration : Node
 		}
 		return null;
 	}
+
+	private Vector2 DecideBossRoom()
+	{
+		int i = 0;
+
+		while (i < 100)
+		{
+			int x = GD.RandRange(0, this.mapSize - 1);
+			int y = GD.RandRange(0, this.mapSize - 1);
+
+			if(this.firstRoomX == x && this.firstRoomY == y)
+			{
+				continue;
+			}
+
+			if (this.GetMap(x, y))
+			{
+				return new Vector2(x, y);
+			}
+		}
+
+
+		return new Vector2(0, 0);
+	}
+
 
 	private Vector2I GetMapIndex(Room room)
 	{

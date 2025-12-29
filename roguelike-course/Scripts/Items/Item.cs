@@ -47,6 +47,8 @@ public partial class Item : Area2D
                 player.MoveSpeed += this.itemValue;
 				break;
 		}
+		player.ItemCollectedSound.Play();
+
 		PrintStats.AllStats(player, this.itemType);
 		this.QueueFree();
 	}

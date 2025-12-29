@@ -20,7 +20,12 @@ public partial class Player : Entity, IPlayer
 	private Node2D weaponOrigin;
 	private Node2D muzzle;
 
-    public double ShootRate { get => this.shootRate; set => this.shootRate = value; }
+	private AudioStreamPlayer2D shootSound;
+	private AudioStreamPlayer2D itemCollectedSound;
+
+
+	public double ShootRate { get => this.shootRate; set => this.shootRate = value; }
+    public AudioStreamPlayer2D ItemCollectedSound { get => this.itemCollectedSound; set => this.itemCollectedSound = value; }
 
     public override void _Ready()
 	{
@@ -34,6 +39,9 @@ public partial class Player : Entity, IPlayer
 		this.MaxHp = 4;
 		this.initialShootRate = this.shootRate;
 		GameSignals.Instance.EmitSignal(nameof(GameSignals.PlayerUpdateHealth), this.CurrentHp, this.MaxHp);
+
+		this.shootSound = this.GetNode<AudioStreamPlayer2D>("ShootSound");
+		this.ItemCollectedSound = this.GetNode<AudioStreamPlayer2D>("ItemCollected");
 	}
 
 	public override void _PhysicsProcess(Double delta)
@@ -69,6 +77,8 @@ public partial class Player : Entity, IPlayer
 		projectile.GlobalPosition = this.muzzle.GlobalPosition;
 		projectile.Rotation = this.weaponOrigin.Rotation;
 		projectile.ownerCharacter = this;
+
+		this.shootSound.Play();
 	}
 
     public override void TakeDamage(int amaount, Node target)
