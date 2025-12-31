@@ -1,3 +1,4 @@
+using bullethellcourse.Scripts.Statics;
 using Godot;
 using System;
 
@@ -19,6 +20,8 @@ public partial class Player : Entity
 	public override void _Ready()
 	{
 		this.sprite = this.GetNode<Sprite2D>("Sprite");
+		this.CollisionLayer = LayerMask.PlayerLayer;
+		this.CollisionMask = LayerMask.EntityMask;
 	}
 
 	public override void _PhysicsProcess(Double delta)

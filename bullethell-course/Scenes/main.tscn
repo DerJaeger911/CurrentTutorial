@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bmhovkx45777b"]
+[gd_scene load_steps=7 format=4 uid="uid://bmhovkx45777b"]
 
 [ext_resource type="Texture2D" uid="uid://dqjdo4r1llm36" path="res://Assets/Sprites/Spritesheet.png" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://vkmx37dngohp" path="res://Scenes/player.tscn" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://ctscv0ahv3c63" path="res://Scripts/Bullets/Bullet.cs" id="3_8gbba"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bo1nx"]
 texture = ExtResource("1_jjgbg")
@@ -2906,6 +2907,9 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_bo1nx")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
+size = Vector2(20, 6)
+
 [node name="Main" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -2917,3 +2921,19 @@ position = Vector2(-85, 30)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="Bullet" type="Area2D" parent="."]
+position = Vector2(-120, 23)
+script = ExtResource("3_8gbba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+shape = SubResource("RectangleShape2D_bo1nx")
+
+[node name="Sprite" type="Sprite2D" parent="Bullet"]
+texture = ExtResource("1_jjgbg")
+region_enabled = true
+region_rect = Rect2(1829, 300, 22, 6)
+
+[node name="DestroyTimer" type="Timer" parent="Bullet"]
+wait_time = 4.0
+autostart = true
