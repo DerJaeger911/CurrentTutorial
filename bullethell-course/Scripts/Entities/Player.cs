@@ -1,3 +1,4 @@
+using bullethellcourse.Scripts.Bullets;
 using bullethellcourse.Scripts.Statics;
 using Godot;
 using System;
@@ -19,6 +20,7 @@ public partial class Player : Entity
 
 	public override void _Ready()
 	{
+		base._Ready();
 		this.sprite = this.GetNode<Sprite2D>("Sprite");
 		this.CollisionLayer = LayerMask.PlayerLayer;
 		this.CollisionMask = LayerMask.EntityMask;
@@ -42,5 +44,13 @@ public partial class Player : Entity
     public override void _Process(Double delta)
     {
         this.sprite.FlipH = this.GetGlobalMousePosition().X >this.GlobalPosition.X;
+
+		if (Input.IsActionPressed("shoot")) 
+		{
+			if(Time.GetUnixTimeFromSystem() - lastShootTime > shootRate)
+			{
+				this.Shoot(BulletTypeEnum.Arrow);
+			}
+		}
     }
 }
