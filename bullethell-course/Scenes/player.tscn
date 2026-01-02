@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://vkmx37dngohp"]
+[gd_scene load_steps=5 format=3 uid="uid://vkmx37dngohp"]
 
 [ext_resource type="Script" uid="uid://d4mfxnsm4r3yf" path="res://Scripts/Entities/Player.cs" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dqjdo4r1llm36" path="res://Assets/Sprites/Spritesheet.png" id="2_6t5aa"]
+[ext_resource type="Script" uid="uid://b64w0hcqol44e" path="res://Scripts/Bullets/PlayerBulletPool.cs" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8gbba"]
 height = 32.0
@@ -21,3 +22,6 @@ shape = SubResource("CapsuleShape2D_8gbba")
 
 [node name="Muzzle" type="Node2D" parent="."]
 position = Vector2(0, -10)
+
+[node name="PlayerBulletPool" type="Node" parent="."]
+script = ExtResource("3_6t5aa")

@@ -18,6 +18,12 @@ public partial class Player : Entity
 
 	private Sprite2D sprite;
 
+	private PlayerBulletPool playerBulletPool = new();
+
+    protected override BulletPool bulletPool => this.playerBulletPool;
+
+	protected override EntityTypeEnum EntityType => EntityTypeEnum.Player;
+
 	public override void _Ready()
 	{
 		base._Ready();
@@ -53,4 +59,13 @@ public partial class Player : Entity
 			}
 		}
     }
+
+	protected override Vector2 BulletDirection()
+	{
+		var mousePosition = this.GetGlobalMousePosition();
+
+		var shootDirection = this.muzzle.GlobalPosition.DirectionTo(mousePosition);
+
+		return shootDirection;
+	}
 }

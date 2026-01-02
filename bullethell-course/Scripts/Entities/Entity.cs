@@ -3,7 +3,7 @@ using Godot;
 
 namespace bullethellcourse.Scripts.Entities;
 
-public partial class Entity : CharacterBody2D
+public abstract partial class Entity : CharacterBody2D
 {
 	[Export]
 	protected double shootRate = 0.1f;
@@ -13,6 +13,12 @@ public partial class Entity : CharacterBody2D
 	protected Node2D muzzle;
 
 	protected PackedScene bulletScene;
+
+	private Bullet bullet;
+
+	protected abstract BulletPool bulletPool {  get; }
+
+	protected abstract EntityTypeEnum EntityType { get; }
 
     public override void _Ready()
     {
@@ -25,11 +31,20 @@ public partial class Entity : CharacterBody2D
 	{
 		this.lastShootTime = Time.GetUnixTimeFromSystem();
 
-		Bullet bullet = this.bulletScene.Instantiate<Bullet>();
-		bullet.Init(bulletType);
+		this.InstantiateBullet(bulletType);
+
+		this.bullet.MoveDirection = this.BulletDirection();
+
+		
+	}
+
+	private void InstantiateBullet(BulletTypeEnum bulletType)
+	{
+		this.bullet = (Bullet)this.bulletPool.Spawn();
+		bullet.Init(this.EntityType ,bulletType);
 		this.GetTree().CurrentScene.CallDeferred(Node.MethodName.AddChild, bullet);
 		bullet.GlobalPosition = this.muzzle.GlobalPosition;
-
-		var nmousePosition = this.GetGlobalMousePosition();
 	}
+
+	protected abstract Vector2 BulletDirection();
 }

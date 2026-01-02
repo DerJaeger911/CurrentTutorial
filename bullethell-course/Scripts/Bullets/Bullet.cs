@@ -1,7 +1,8 @@
-using bullethellcourse.Scripts.Bullets;
-using bullethellcourse.Scripts.Statics;
+using bullethellcourse.Scripts.Entities;
 using Godot;
 using System;
+
+namespace bullethellcourse.Scripts.Bullets;
 
 public partial class Bullet : Area2D
 {
@@ -12,10 +13,12 @@ public partial class Bullet : Area2D
 
 	private Timer destroyTimer;
 
-	private Vector2 moveDirection;
+	public Vector2 MoveDirection { get; set; }
 
 	[Export]
 	private BulletTypeEnum bulletType = BulletTypeEnum.Arrow;
+
+	private EntityTypeEnum entityType;
 
 	public override void _Ready()
     {
@@ -28,14 +31,16 @@ public partial class Bullet : Area2D
 		this.destroyTimer.Timeout += this.OnDestroyTimerTimeout;
     }
 
-	public void Init(BulletTypeEnum bulletType)
+	public void Init(EntityTypeEnum entityType ,BulletTypeEnum bulletType)
 	{
+		this.entityType = entityType;
 		this.bulletType = bulletType;
 	}
 
     public override void _Process(Double delta)
     {
-		this.Translate(this.moveDirection * this.speed * (float)delta);
+		this.Translate(this.MoveDirection * this.speed * (float)delta);
+		this.Rotation = this.MoveDirection.Angle();
     }
 
 	private void OnBodyEntered(Node body)
@@ -46,6 +51,14 @@ public partial class Bullet : Area2D
 
 	private void OnDestroyTimerTimeout()
 	{
-		this.QueueFree();
+		this.Visible = false;
+	}
+
+	private void OnVisibilityChanged()
+	{
+		if(this.Visible && this.destroyTimer != null)
+		{
+			destroyTimer.Start();
+		}
 	}
 }

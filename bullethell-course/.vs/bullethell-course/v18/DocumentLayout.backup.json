@@ -3,27 +3,40 @@
   "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\bullets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\bullets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\entities\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\entities\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\bullets\\bulletpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\bullets\\bulletpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\WorkInProgress\\FinishedTutorials\\roguelike-course\\Scripts\\Room\\RoomGeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\entities\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\entities\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\entities\\entitytypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\entities\\entitytypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\bullets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\bullets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\bullets\\playerbulletpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\bullets\\playerbulletpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\bullets\\enemybulletpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\bullets\\enemybulletpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\bullets\\bullettypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\bullets\\bullettypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\entities\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\entities\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\statics\\layermask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,7 +79,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,20 +115,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RoomGeneration.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\FinishedTutorials\\roguelike-course\\Scripts\\Room\\RoomGeneration.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\FinishedTutorials\\roguelike-course\\Scripts\\Room\\RoomGeneration.cs",
-              "ToolTip": "D:\\WorkInProgress\\FinishedTutorials\\roguelike-course\\Scripts\\Room\\RoomGeneration.cs",
-              "RelativeToolTip": "..\\..\\..\\FinishedTutorials\\roguelike-course\\Scripts\\Room\\RoomGeneration.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADUAAABUAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "EnemyBulletPool.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Bullets\\EnemyBulletPool.cs",
+              "RelativeDocumentMoniker": "Scripts\\Bullets\\EnemyBulletPool.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Bullets\\EnemyBulletPool.cs",
+              "RelativeToolTip": "Scripts\\Bullets\\EnemyBulletPool.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-01T19:02:29.162Z",
+              "WhenOpened": "2026-01-02T11:34:42.037Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "BulletPool.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Bullets\\BulletPool.cs",
+              "RelativeDocumentMoniker": "Scripts\\Bullets\\BulletPool.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Bullets\\BulletPool.cs",
+              "RelativeToolTip": "Scripts\\Bullets\\BulletPool.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAUwBsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T11:30:20.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EntityTypeEnum.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\EntityTypeEnum.cs",
+              "RelativeDocumentMoniker": "Scripts\\Entities\\EntityTypeEnum.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\EntityTypeEnum.cs",
+              "RelativeToolTip": "Scripts\\Entities\\EntityTypeEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T10:49:36.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlayerBulletPool.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Bullets\\PlayerBulletPool.cs",
+              "RelativeDocumentMoniker": "Scripts\\Bullets\\PlayerBulletPool.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Bullets\\PlayerBulletPool.cs",
+              "RelativeToolTip": "Scripts\\Bullets\\PlayerBulletPool.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T10:42:13.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "BulletTypeEnum.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Bullets\\BulletTypeEnum.cs",
               "RelativeDocumentMoniker": "Scripts\\Bullets\\BulletTypeEnum.cs",
@@ -128,33 +180,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Enemy.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Enemy.cs",
               "RelativeDocumentMoniker": "Scripts\\Entities\\Enemy.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Enemy.cs",
               "RelativeToolTip": "Scripts\\Entities\\Enemy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-01T17:41:25.212Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Bullet.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Bullets\\Bullet.cs",
               "RelativeDocumentMoniker": "Scripts\\Bullets\\Bullet.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Bullets\\Bullet.cs",
               "RelativeToolTip": "Scripts\\Bullets\\Bullet.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAUwBcAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAcwDoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-01T17:39:55.097Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "LayerMask.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Statics\\LayerMask.cs",
               "RelativeDocumentMoniker": "Scripts\\Statics\\LayerMask.cs",
@@ -162,12 +214,11 @@
               "RelativeToolTip": "Scripts\\Statics\\LayerMask.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAwwBIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T12:01:02.271Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-31T12:01:02.271Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "LayerMasks.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\FinishedTutorials\\roguelike-course\\Scripts\\Statics\\LayerMasks.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\FinishedTutorials\\roguelike-course\\Scripts\\Statics\\LayerMasks.cs",
@@ -179,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Menu.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Menu.cs",
               "RelativeDocumentMoniker": "Scripts\\Menu.cs",
@@ -191,33 +242,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Entities\\Player.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Player.cs",
               "RelativeToolTip": "Scripts\\Entities\\Player.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAYwDIAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-30T14:26:17.593Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Entity.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Entity.cs",
               "RelativeDocumentMoniker": "Scripts\\Entities\\Entity.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Entity.cs",
               "RelativeToolTip": "Scripts\\Entities\\Entity.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAmwB0AAABNAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAIwC4AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-30T14:26:15.963Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "DummyManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\FinishedTutorials\\roguelike-course\\Scripts\\Manager\\DummyManager.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\FinishedTutorials\\roguelike-course\\Scripts\\Manager\\DummyManager.cs",
@@ -229,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "DummyManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\DummyManager.cs",
               "RelativeDocumentMoniker": "Scripts\\Managers\\DummyManager.cs",
@@ -241,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "RootTreeAdd..cs",
               "DocumentMoniker": "D:\\WorkInProgress\\FinishedTutorials\\roguelike-course\\Scripts\\Manager\\Registration\\RootTreeAdd..cs",
               "RelativeDocumentMoniker": "..\\..\\..\\FinishedTutorials\\roguelike-course\\Scripts\\Manager\\Registration\\RootTreeAdd..cs",
@@ -253,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Registry.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\Registration\\Registry.cs",
               "RelativeDocumentMoniker": "Scripts\\Managers\\Registration\\Registry.cs",
@@ -265,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "SingletonRegistry.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\Registration\\SingletonRegistry.cs",
               "RelativeDocumentMoniker": "Scripts\\Managers\\Registration\\SingletonRegistry.cs",
@@ -277,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "RootTreeAdd.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\Registration\\RootTreeAdd.cs",
               "RelativeDocumentMoniker": "Scripts\\Managers\\Registration\\RootTreeAdd.cs",
