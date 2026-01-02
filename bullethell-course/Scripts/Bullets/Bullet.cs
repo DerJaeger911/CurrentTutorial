@@ -39,6 +39,10 @@ public partial class Bullet : Area2D
 
     public override void _Process(Double delta)
     {
+		if (!this.Visible)
+		{
+			return;
+		}
 		this.Translate(this.MoveDirection * this.speed * (float)delta);
 		this.Rotation = this.MoveDirection.Angle();
     }
@@ -52,6 +56,7 @@ public partial class Bullet : Area2D
 	private void OnDestroyTimerTimeout()
 	{
 		this.Visible = false;
+		this.GetParent()?.RemoveChild(this);
 	}
 
 	private void OnVisibilityChanged()

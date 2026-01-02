@@ -9,25 +9,27 @@ public abstract partial class BulletPool : Node
 	private PackedScene nodeScene = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
 	private List<Node2D> cachedNodes = new();
 
-	private Node2D CreateNew()
+	private Node2D CreateNew(Node parent)
 	{
 		Node2D node = this.nodeScene.Instantiate<Node2D>();
 		this.cachedNodes.Add(node);
-		this.GetTree().GetRoot().CallDeferred(Node.MethodName.AddChild, node);
+		parent.CallDeferred(Node.MethodName.AddChild, node);
 
 		return node;
 	}
 
-	public Node2D Spawn()
+	public Node2D Spawn(Node parent)
 	{
-		foreach (Node2D node in this.cachedNodes)
+		foreach (Node2D node in cachedNodes)
 		{
 			if (!node.Visible)
 			{
 				node.Visible = true;
+				parent.CallDeferred(Node.MethodName.AddChild, node);
 				return node;
 			}
 		}
-		return this.CreateNew();
+
+		return this.CreateNew(parent);
 	}
 }

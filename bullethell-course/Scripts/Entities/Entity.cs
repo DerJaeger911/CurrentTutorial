@@ -40,10 +40,10 @@ public abstract partial class Entity : CharacterBody2D
 
 	private void InstantiateBullet(BulletTypeEnum bulletType)
 	{
-		this.bullet = (Bullet)this.bulletPool.Spawn();
-		bullet.Init(this.EntityType ,bulletType);
-		this.GetTree().CurrentScene.CallDeferred(Node.MethodName.AddChild, bullet);
-		bullet.GlobalPosition = this.muzzle.GlobalPosition;
+		Node parent = this.GetTree().CurrentScene;
+		this.bullet = (Bullet)this.bulletPool.Spawn(parent);
+		this.bullet.Init(this.EntityType, bulletType);
+		this.bullet.GlobalPosition = this.muzzle.GlobalPosition;
 	}
 
 	protected abstract Vector2 BulletDirection();

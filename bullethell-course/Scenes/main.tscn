@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bmhovkx45777b"]
+[gd_scene load_steps=6 format=4 uid="uid://bmhovkx45777b"]
 
 [ext_resource type="Texture2D" uid="uid://dqjdo4r1llm36" path="res://Assets/Sprites/Spritesheet.png" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://vkmx37dngohp" path="res://Scenes/player.tscn" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://64afsru40gqs" path="res://Scripts/CameraController.cs" id="3_8gbba"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bo1nx"]
 texture = ExtResource("1_jjgbg")
@@ -2917,3 +2918,4 @@ position = Vector2(-85, 30)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+script = ExtResource("3_8gbba")
