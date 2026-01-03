@@ -6,45 +6,51 @@ namespace bullethellcourse.Scripts.Entities;
 public abstract partial class Entity : CharacterBody2D
 {
 	[Export]
+	protected float maxSpeed = 100;
+	[Export]
+	protected float acceleration = 0.2f;
+	[Export]
 	protected double shootRate = 0.1f;
 
 	protected double lastShootTime;
 	
 	protected Node2D muzzle;
 
-	protected PackedScene bulletScene;
-
 	private Bullet bullet;
 
 	protected abstract BulletPool bulletPool {  get; }
 
-	protected abstract EntityTypeEnum EntityType { get; }
+	protected Sprite2D sprite;
+
+	protected abstract EntityTypeEnum entityType { get; }
 
     public override void _Ready()
     {
 		this.muzzle = this.GetNode<Node2D>("Muzzle");
-
-		this.bulletScene = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
+		this.sprite = this.GetNode<Sprite2D>("Sprite");
 	}
 
 	protected void Shoot(BulletTypeEnum bulletType)
 	{
-		this.lastShootTime = Time.GetUnixTimeFromSystem();
+		if (Time.GetUnixTimeFromSystem() - lastShootTime > shootRate)
+		{
+			this.lastShootTime = Time.GetUnixTimeFromSystem();
 
-		this.InstantiateBullet(bulletType);
+			this.InstantiateBullet(bulletType);
 
-		this.bullet.MoveDirection = this.BulletDirection();
-
-		
+			this.bullet.MoveDirection = this.BulletDirection();
+		}
 	}
 
 	private void InstantiateBullet(BulletTypeEnum bulletType)
 	{
 		Node parent = this.GetTree().CurrentScene;
 		this.bullet = (Bullet)this.bulletPool.Spawn(parent);
-		this.bullet.Init(this.EntityType, bulletType);
+		this.bullet.Init(this.entityType, bulletType);
 		this.bullet.GlobalPosition = this.muzzle.GlobalPosition;
 	}
 
 	protected abstract Vector2 BulletDirection();
+
+	protected abstract void FlipH();
 }

@@ -49,13 +49,18 @@ public partial class Bullet : Area2D
 
 	private void OnBodyEntered(Node body)
 	{
-		//Logic
-		this.QueueFree();
+		this.Visible = false;
+		this.CallDeferred(nameof(this.RemoveFromParent));
 	}
 
 	private void OnDestroyTimerTimeout()
 	{
 		this.Visible = false;
+		this.RemoveFromParent();
+	}
+
+	private void RemoveFromParent()
+	{
 		this.GetParent()?.RemoveChild(this);
 	}
 

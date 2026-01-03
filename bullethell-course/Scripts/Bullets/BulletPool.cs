@@ -1,3 +1,4 @@
+using bullethellcourse.Scripts.Managers;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ namespace bullethellcourse.Scripts.Bullets;
 
 public abstract partial class BulletPool : Node
 {
-	private PackedScene nodeScene = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
+	protected abstract PackedScene nodeScene {  get; } 
 	private List<Node2D> cachedNodes = new();
 
 	private Node2D CreateNew(Node parent)
