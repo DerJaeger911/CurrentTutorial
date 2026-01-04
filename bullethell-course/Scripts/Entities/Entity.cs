@@ -1,38 +1,75 @@
 using bullethellcourse.Scripts.Bullets;
+using bullethellcourse.Scripts.Pools;
+using bullethellcourse.Scripts.Statics;
 using Godot;
+using System.Threading.Tasks;
 
 namespace bullethellcourse.Scripts.Entities;
 
 public abstract partial class Entity : CharacterBody2D
 {
-	[Export]
-	protected float maxSpeed = 100;
-	[Export]
+    [Export]
+    private float maxSpeed = 100;
+    [Export]
 	protected float acceleration = 0.2f;
-	[Export]
-	protected double shootRate = 0.1f;
+    [Export]
+    private double shootRate = 0.1f;
+    protected abstract int MaxHp { get; set; }
+	protected int CurrentHp { get; set; }
+
+	protected bool isMoving;
 
 	protected double lastShootTime;
-	
+
 	protected Node2D muzzle;
 
 	private Bullet bullet;
 
-	protected abstract BulletPool bulletPool {  get; }
-
 	protected Sprite2D sprite;
 
-	protected abstract EntityTypeEnum entityType { get; }
+	private ProgressBar healthbar;
+
+	protected abstract BulletPool BulletPool { get; }
+
+	protected abstract float moveWobbleAmount { get; }
+
+	protected abstract Color FlashColor { get; }
+
+	public abstract EntityTypeEnum BulletOwner { get; }
+    public double ShootRate { get => this.shootRate; set => this.shootRate = value; }
+	public float MaxSpeed { get => this.maxSpeed; set => this.maxSpeed = value; }
 
     public override void _Ready()
-    {
+	{
+		this.CollisionMask = LayerMask.EntityMask;
 		this.muzzle = this.GetNode<Node2D>("Muzzle");
 		this.sprite = this.GetNode<Sprite2D>("Sprite");
+		this.healthbar = this.GetNode<ProgressBar>("HealthBar");
+		this.healthbar.MaxValue = this.MaxHp;
+		this.ResetHealth();
+	}
+
+	protected void ResetHealth()
+	{
+		this.CurrentHp = this.MaxHp;
+		this.healthbar.Value = this.CurrentHp;
+	}
+
+	public override void _Process(System.Double delta)
+	{
+		this.FlipH();
+		this.MoveWobble();
+
+	}
+
+	public override void _PhysicsProcess(System.Double delta)
+	{
+
 	}
 
 	protected void Shoot(BulletTypeEnum bulletType)
 	{
-		if (Time.GetUnixTimeFromSystem() - lastShootTime > shootRate)
+		if (Time.GetUnixTimeFromSystem() - this.lastShootTime > this.ShootRate)
 		{
 			this.lastShootTime = Time.GetUnixTimeFromSystem();
 
@@ -42,13 +79,62 @@ public abstract partial class Entity : CharacterBody2D
 		}
 	}
 
+	private void MoveWobble()
+	{
+		if (!this.isMoving)
+		{
+			this.sprite.RotationDegrees = 0;
+			return;
+		}
+
+		double t = Time.GetUnixTimeFromSystem();
+		double rotation = Mathf.Sin(t * 20) * this.moveWobbleAmount;
+
+		this.sprite.RotationDegrees = (float)rotation;
+	}
+
 	private void InstantiateBullet(BulletTypeEnum bulletType)
 	{
 		Node parent = this.GetTree().CurrentScene;
-		this.bullet = (Bullet)this.bulletPool.Spawn(parent);
-		this.bullet.Init(this.entityType, bulletType);
+		this.bullet = (Bullet)this.BulletPool.Spawn(parent);
+		this.bullet.Init(this.BulletOwner, bulletType);
 		this.bullet.GlobalPosition = this.muzzle.GlobalPosition;
 	}
+
+	public void TakeDamage(int damage)
+	{
+		this.CurrentHp -= damage;
+		this.healthbar.Value = this.CurrentHp;
+		_ = this.DamageFlash();
+
+		if (this.CurrentHp <= 0)
+		{
+			this.Die();
+		}
+	}
+
+	protected async Task DamageFlash()
+	{
+		this.sprite.Modulate = this.FlashColor;
+
+		var timer = this.GetTree().CreateTimer(0.05f);
+		await this.ToSignal(timer, "timeout");
+
+		this.sprite.Modulate = Colors.White;
+	}
+
+	public void Heal(int amount)
+	{
+		this.CurrentHp += amount;
+
+		if(this.CurrentHp > this.MaxHp)
+		{
+			this.CurrentHp = this.MaxHp;
+		}
+		this.healthbar.Value = this.CurrentHp;
+	}
+
+	protected abstract void Die();
 
 	protected abstract Vector2 BulletDirection();
 

@@ -1,9 +1,14 @@
-[gd_scene load_steps=8 format=4 uid="uid://14b45je381ro"]
+[gd_scene load_steps=17 format=4 uid="uid://14b45je381ro"]
 
 [ext_resource type="Texture2D" uid="uid://dqjdo4r1llm36" path="res://Assets/Sprites/Spritesheet.png" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://vkmx37dngohp" path="res://Scenes/player.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://64afsru40gqs" path="res://Scripts/CameraController.cs" id="3_8gbba"]
-[ext_resource type="PackedScene" uid="uid://c62x7xg2fxjw2" path="res://Scenes/enemy.tscn" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://c0csmh1vsrv0c" path="res://Scripts/Entities/EnemySpawner.cs" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://ceyxrm4bcvdx6" path="res://Scripts/Pools/BossPool.cs" id="6_6bp64"]
+[ext_resource type="Script" uid="uid://dwoli3pvr3pb1" path="res://Scripts/Pools/EnemyPool.cs" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://bh6ejrt3pyr1w" path="res://Scenes/health_potion.tscn" id="7_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://ce2ttshu3s7cw" path="res://Scenes/move_speed_potion.tscn" id="8_hptm8"]
+[ext_resource type="PackedScene" uid="uid://cn76rx6phc5ko" path="res://Scenes/shoot_speed_potion.tscn" id="9_d1ilt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bo1nx"]
 texture = ExtResource("1_jjgbg")
@@ -2908,8 +2913,19 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_bo1nx")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
-size = Vector2(32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21xkr"]
+size = Vector2(129, 129)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_21xkr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6bp64"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_344ge"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ynf5e"]
+normal = Vector2(1, 0)
 
 [node name="Main" type="Node2D"]
 
@@ -2928,20 +2944,59 @@ limit_right = 448
 limit_bottom = 448
 script = ExtResource("3_8gbba")
 
-[node name="Enemy" parent="." groups=["Enemies"] instance=ExtResource("4_jjvhh")]
-position = Vector2(227, -1)
-drag = 0.9
-stopRange = 100.0
-maxSpeed = 50.0
-acceleration = 10.0
+[node name="EnemySpawner" type="Node" parent="."]
+script = ExtResource("5_kry3j")
 
-[node name="TempOpstacle" type="StaticBody2D" parent="."]
-position = Vector2(119, 1)
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
+one_shot = true
 
-[node name="Sprite" type="Sprite2D" parent="TempOpstacle"]
-texture = ExtResource("1_jjgbg")
-region_enabled = true
-region_rect = Rect2(1312, 512, 32, 32)
+[node name="EnemyPool" type="Node" parent="EnemySpawner"]
+script = ExtResource("6_21xkr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TempOpstacle"]
-shape = SubResource("RectangleShape2D_jjvhh")
+[node name="BossPool" type="Node" parent="EnemySpawner"]
+script = ExtResource("6_6bp64")
+
+[node name="EnemySpawner" type="Node2D" parent="EnemySpawner"]
+position = Vector2(-287, -287)
+
+[node name="EnemySpawner2" type="Node2D" parent="EnemySpawner"]
+position = Vector2(288, -287)
+
+[node name="EnemySpawner3" type="Node2D" parent="EnemySpawner"]
+position = Vector2(288, 288)
+
+[node name="EnemySpawner4" type="Node2D" parent="EnemySpawner"]
+position = Vector2(-287, 288)
+
+[node name="CenterObstacle" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenterObstacle"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_21xkr")
+
+[node name="OuterBoundary" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OuterBoundary"]
+position = Vector2(0, 448)
+shape = SubResource("WorldBoundaryShape2D_21xkr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="OuterBoundary"]
+position = Vector2(448, 0)
+shape = SubResource("WorldBoundaryShape2D_6bp64")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="OuterBoundary"]
+position = Vector2(0, -448)
+shape = SubResource("WorldBoundaryShape2D_344ge")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="OuterBoundary"]
+position = Vector2(-448, 0)
+shape = SubResource("WorldBoundaryShape2D_ynf5e")
+
+[node name="Potion" parent="." instance=ExtResource("7_ynf5e")]
+position = Vector2(-73, 130)
+
+[node name="Potion2" parent="." instance=ExtResource("8_hptm8")]
+position = Vector2(-10, 131)
+
+[node name="Potion3" parent="." instance=ExtResource("9_d1ilt")]
+position = Vector2(44, 131)

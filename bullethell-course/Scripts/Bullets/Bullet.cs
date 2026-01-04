@@ -1,4 +1,5 @@
 using bullethellcourse.Scripts.Entities;
+using bullethellcourse.Scripts.Statics;
 using Godot;
 using System;
 
@@ -8,8 +9,6 @@ public partial class Bullet : Area2D
 {
 	[Export]
 	private float speed = 200;
-	[Export]
-	private string owner;
 
 	private Timer destroyTimer;
 
@@ -18,14 +17,14 @@ public partial class Bullet : Area2D
 	[Export]
 	private BulletTypeEnum bulletType = BulletTypeEnum.Arrow;
 
-	private EntityTypeEnum entityType;
+	private EntityTypeEnum owner;
 
 	public override void _Ready()
     {
 		this.destroyTimer = this.GetNode<Timer>("DestroyTimer");
 
-		//this.CollisionLayer = LayerMask.ProjectileLayer;
-		//this.CollisionMask = LayerMask.ProjectileMask;
+		this.CollisionLayer = LayerMask.ProjectileLayer;
+		this.CollisionMask = LayerMask.ProjectileMask;
 
 		this.BodyEntered += this.OnBodyEntered;
 		this.destroyTimer.Timeout += this.OnDestroyTimerTimeout;
@@ -33,7 +32,7 @@ public partial class Bullet : Area2D
 
 	public void Init(EntityTypeEnum entityType ,BulletTypeEnum bulletType)
 	{
-		this.entityType = entityType;
+		this.owner = entityType;
 		this.bulletType = bulletType;
 	}
 
@@ -49,6 +48,15 @@ public partial class Bullet : Area2D
 
 	private void OnBodyEntered(Node body)
 	{
+		if (body is Entity entity)
+		{
+			if(entity.BulletOwner == this.owner)
+			{
+				return;
+			}
+
+			entity.TakeDamage(1);
+		}
 		this.Visible = false;
 		this.CallDeferred(nameof(this.RemoveFromParent));
 	}
@@ -68,7 +76,7 @@ public partial class Bullet : Area2D
 	{
 		if(this.Visible && this.destroyTimer != null)
 		{
-			destroyTimer.Start();
+            this.destroyTimer.Start();
 		}
 	}
 }

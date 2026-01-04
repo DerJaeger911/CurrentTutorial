@@ -11,6 +11,8 @@ namespace bullethellcourse.Scripts.Managers.Registration;
 	public override void _Ready()
 	{
 		Register(DummyManager.Instance);
+		Register(BulletLoadManager.Instance);
+		Register(EnemyLoadManager.Instance);
 	}
 
 	private static void Register<T>(T instance)

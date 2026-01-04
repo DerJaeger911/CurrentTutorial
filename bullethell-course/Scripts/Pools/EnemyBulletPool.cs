@@ -1,12 +1,9 @@
+using bullethellcourse.Scripts.Bullets;
+using bullethellcourse.Scripts.Entities;
 using bullethellcourse.Scripts.Managers;
 using Godot;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace bullethellcourse.Scripts.Bullets;
+namespace bullethellcourse.Scripts.Pools;
 
 public partial class EnemyBulletPool : BulletPool
 {

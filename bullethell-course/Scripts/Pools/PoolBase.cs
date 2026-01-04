@@ -1,13 +1,11 @@
-using bullethellcourse.Scripts.Managers;
 using Godot;
-using System;
 using System.Collections.Generic;
 
-namespace bullethellcourse.Scripts.Bullets;
+namespace bullethellcourse.Scripts.Pools;
 
-public abstract partial class BulletPool : Node
+public abstract partial class PoolBase : Node
 {
-	protected abstract PackedScene nodeScene {  get; } 
+	protected abstract PackedScene nodeScene { get; }
 	private List<Node2D> cachedNodes = new();
 
 	private Node2D CreateNew(Node parent)
@@ -21,7 +19,7 @@ public abstract partial class BulletPool : Node
 
 	public Node2D Spawn(Node parent)
 	{
-		foreach (Node2D node in cachedNodes)
+		foreach (Node2D node in this.cachedNodes)
 		{
 			if (!node.Visible)
 			{

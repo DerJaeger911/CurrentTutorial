@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://djwh2nttt8lwr"]
+
+[ext_resource type="PackedScene" uid="uid://c62x7xg2fxjw2" path="res://Scenes/enemy.tscn" id="1_54mmy"]
+[ext_resource type="Script" uid="uid://d1lbv3nbpdmcn" path="res://Scripts/Entities/Boss.cs" id="2_hu4bx"]
+
+[node name="Enemy" instance=ExtResource("1_54mmy")]
+script = ExtResource("2_hu4bx")
+isFlipped = true
+shootRate = 0.1
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2(0, 6)
+region_rect = Rect2(1445, 32, 22, 28)
+
+[node name="EnemyBulletPool" parent="." index="3"]
+script = null

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://qf1jyjlshkgn"]
+
+[ext_resource type="PackedScene" uid="uid://u7gi5d7wekiu" path="res://Scenes/enemy_bullet.tscn" id="1_bxm02"]
+
+[node name="Bullet" instance=ExtResource("1_bxm02")]
+bulletType = 2
+
+[node name="Sprite" parent="." index="1"]
+region_rect = Rect2(2016, 1226, 13, 15)

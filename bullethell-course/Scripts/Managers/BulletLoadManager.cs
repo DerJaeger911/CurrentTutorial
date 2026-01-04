@@ -17,12 +17,13 @@ internal class BulletLoadManager
 
 	private BulletLoadManager()
 	{
-		bulletScenes[BulletTypeEnum.Arrow] = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
-		bulletScenes[BulletTypeEnum.Fire] = GD.Load<PackedScene>("res://Scenes/enemy_bullet.tscn");
+        this.bulletScenes[BulletTypeEnum.Arrow] = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
+        this.bulletScenes[BulletTypeEnum.Fire] = GD.Load<PackedScene>("res://Scenes/enemy_bullet.tscn");
+		this.bulletScenes[BulletTypeEnum.Star] = GD.Load<PackedScene>("res://Scenes/boss_bullet.tscn");
 	}
 
 	public PackedScene GetBullet(BulletTypeEnum key)
 	{
-		return bulletScenes.TryGetValue(key, out var scene) ? scene : null;
+		return this.bulletScenes.TryGetValue(key, out var scene) ? scene : null;
 	}
 }

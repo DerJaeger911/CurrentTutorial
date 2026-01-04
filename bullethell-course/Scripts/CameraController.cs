@@ -12,7 +12,7 @@ public partial class CameraController : Camera2D
     public override void _Ready()
     {
 		this.target = this.GetNode<Node2D>("../Player");
-        this.GlobalPosition = target.GlobalPosition;
+        this.GlobalPosition = this.target.GlobalPosition;
 	}
 
     public override void _Process(Double delta)
