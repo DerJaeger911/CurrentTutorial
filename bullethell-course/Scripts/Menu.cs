@@ -1,6 +1,7 @@
 using Godot;
 using System;
 
+namespace bullethellcourse.Scripts;
 public partial class Menu : Control
 {
 	private Button playButton;

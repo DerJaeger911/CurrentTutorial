@@ -70,6 +70,10 @@ internal partial class Enemy : Entity
 
 	public override void _Process(System.Double delta)
 	{
+		if (this.player == null)
+		{
+			return;
+		}
 		base._Process(delta);
 
 		this.playerDistance = this.GlobalPosition.DistanceTo(this.player.GlobalPosition);
@@ -83,6 +87,10 @@ internal partial class Enemy : Entity
 
 	public override void _PhysicsProcess(System.Double delta)
 	{
+		if (this.player == null)
+		{
+			return;
+		}
 		base._PhysicsProcess(delta);
 
 		var moveDirection = this.playerDirection;

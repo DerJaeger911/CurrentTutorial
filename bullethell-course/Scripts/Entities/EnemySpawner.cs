@@ -77,12 +77,16 @@ public partial class EnemySpawner : Node
 	{
 		Node parent = this.GetTree().CurrentScene;
 		Enemy enemy = (Enemy)this.enemyPools[this.GetRandomEnemyIndex()].Spawn(parent);
-		//Enemy enemy = (Enemy)this.enemyPools[1].Spawn(parent);
 		Vector2 spawnpoint = this.spawnPoints[GD.RandRange(0, this.spawnPoints.Count - 1)].GlobalPosition;
 		enemy.CallDeferred(nameof(Enemy.ResetFailSafe));
 		enemy.GlobalPosition = spawnpoint;
 
 
 		this.spawnTimer.Start(this.spawnRate);
+	}
+
+    public override void _ExitTree()
+    {
+		this.spawnTimer.Timeout -= this.OnSpawnTimerTimeout;
 	}
 }

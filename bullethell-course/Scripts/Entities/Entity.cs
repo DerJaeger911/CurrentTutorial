@@ -31,6 +31,8 @@ public abstract partial class Entity : CharacterBody2D
 
 	protected abstract BulletPool BulletPool { get; }
 
+	public float AdditionalBulletSpeed { get; set; }
+
 	protected abstract float moveWobbleAmount { get; }
 
 	protected abstract Color FlashColor { get; }
@@ -75,6 +77,7 @@ public abstract partial class Entity : CharacterBody2D
 
 			this.InstantiateBullet(bulletType);
 
+			this.bullet.AdditionalSpeed = this.AdditionalBulletSpeed;
 			this.bullet.MoveDirection = this.BulletDirection();
 		}
 	}
@@ -101,7 +104,7 @@ public abstract partial class Entity : CharacterBody2D
 		this.bullet.GlobalPosition = this.muzzle.GlobalPosition;
 	}
 
-	public void TakeDamage(int damage)
+	public virtual void TakeDamage(int damage)
 	{
 		this.CurrentHp -= damage;
 		this.healthbar.Value = this.CurrentHp;

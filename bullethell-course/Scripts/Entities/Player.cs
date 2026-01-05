@@ -14,6 +14,10 @@ public partial class Player : Entity
 	[Export]
 	private int maxHp = 50;
 
+	private Main mainScene;
+
+	private CameraController camera;
+
 	private Vector2 moveInput;
 
 	private PlayerBulletPool playerBulletPool = new();
@@ -35,6 +39,8 @@ public partial class Player : Entity
 	public override void _Ready()
 	{
 		base._Ready();
+		this.mainScene = this.GetNode<Main>("../");
+		this.camera = this.GetNode<CameraController>("../Camera2D");
 		this.CollisionLayer = LayerMask.PlayerLayer;
 	}
 
@@ -81,8 +87,15 @@ public partial class Player : Entity
 		return shootDirection;
 	}
 
+    public override void TakeDamage(Int32 damage)
+    {
+        base.TakeDamage(damage);
+		this.camera.DamageShake();
+
+	}
+
 	protected override void Die()
 	{
-		GD.Print("Gamel over");
+		this.mainScene.SetGameOver();
 	}
 }

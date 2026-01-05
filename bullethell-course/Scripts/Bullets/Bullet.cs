@@ -12,6 +12,8 @@ public partial class Bullet : Area2D
 
 	private Timer destroyTimer;
 
+	public float AdditionalSpeed { get; set; }
+
 	public Vector2 MoveDirection { get; set; }
 
 	[Export]
@@ -42,7 +44,7 @@ public partial class Bullet : Area2D
 		{
 			return;
 		}
-		this.Translate(this.MoveDirection * this.speed * (float)delta);
+		this.Translate(this.MoveDirection * (this.speed + this.AdditionalSpeed) * (float)delta);
 		this.Rotation = this.MoveDirection.Angle();
     }
 
@@ -77,6 +79,7 @@ public partial class Bullet : Area2D
 		if(this.Visible && this.destroyTimer != null)
 		{
             this.destroyTimer.Start();
+			this.AdditionalSpeed = 0;
 		}
 	}
 }

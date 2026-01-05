@@ -13,6 +13,11 @@ public abstract partial class Item : Area2D
 		this.BodyEntered += this.OnBodyEntered;
 	}
 
+    public override void _Process(System.Double delta)
+    {
+		this.AnimateItem();
+    }
+
 	private void OnBodyEntered(Node body)
 	{
 		if(body is Player player)
@@ -28,6 +33,8 @@ public abstract partial class Item : Area2D
 	}
 
 	protected abstract void ProcessItemEffects(Player player);
+
+	protected abstract void AnimateItem();
 
     public override void _ExitTree()
     {

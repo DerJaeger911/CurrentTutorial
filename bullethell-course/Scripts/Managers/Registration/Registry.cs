@@ -7,7 +7,11 @@ public partial class Registry : Node
 {
     public override void _Ready()
     {
-        this.AddChild(new SingletonRegistry());
-        this.AddChild(new RootTreeAdd());
-    }
+		_ = DummyManager.Instance;
+		_ = BulletLoadManager.Instance;
+		_ = ItemLoadManager.Instance;
+		_ = EnemyLoadManager.Instance;
+		_ = GameManager.Instance;
+		//this.AddChild(new InputManager());
+	}
 }
