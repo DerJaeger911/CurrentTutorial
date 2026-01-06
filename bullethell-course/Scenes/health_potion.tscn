@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh6ejrt3pyr1w"]
-
-[ext_resource type="PackedScene" uid="uid://bxqv6x5wusvei" path="res://Scenes/potion.tscn" id="1_00e4y"]
-
-[node name="Potion" instance=ExtResource("1_00e4y")]
-potionValue = 20
-
-[node name="Sprite2D" parent="." index="0"]
-region_rect = Rect2(968, 771, 22, 26)
