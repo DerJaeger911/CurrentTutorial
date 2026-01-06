@@ -35,5 +35,6 @@ public partial class Potion : Item
                 player.MaxSpeed *= (int)this.potionValue;
                 break;
         }
+        player.PlayPotionSound();
     }
 }

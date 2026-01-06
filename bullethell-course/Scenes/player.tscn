@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://vkmx37dngohp"]
+[gd_scene load_steps=10 format=3 uid="uid://vkmx37dngohp"]
 
 [ext_resource type="Script" uid="uid://d4mfxnsm4r3yf" path="res://Scripts/Entities/Player.cs" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dqjdo4r1llm36" path="res://Assets/Sprites/Spritesheet.png" id="2_6t5aa"]
 [ext_resource type="Script" uid="uid://b64w0hcqol44e" path="res://Scripts/Pools/PlayerBulletPool.cs" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://cp6sgt02b1k5x" path="res://Assets/Audio/PlayerAttack.wav" id="4_vgqql"]
+[ext_resource type="AudioStream" uid="uid://bsq2y77nkpu5r" path="res://Assets/Audio/PlayerDamaged.wav" id="5_fkybt"]
+[ext_resource type="AudioStream" uid="uid://shah2gk3gr03" path="res://Assets/Audio/DrinkPotion.wav" id="6_x3wgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8gbba"]
 height = 32.0
@@ -42,3 +45,12 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_vgqql")
 max_value = 50.0
 value = 25.0
 show_percentage = false
+
+[node name="ShootAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vgqql")
+
+[node name="DamageAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_fkybt")
+
+[node name="PotionAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_x3wgy")

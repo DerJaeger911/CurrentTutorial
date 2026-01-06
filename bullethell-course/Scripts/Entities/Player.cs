@@ -22,6 +22,12 @@ public partial class Player : Entity
 
 	private PlayerBulletPool playerBulletPool = new();
 
+	private AudioStreamPlayer2D shootSound;
+
+	private AudioStreamPlayer2D damageSound;
+
+	private AudioStreamPlayer2D potionSound;
+
 	protected override int MaxHp
 	{
 		get => this.maxHp;
@@ -41,6 +47,9 @@ public partial class Player : Entity
 		base._Ready();
 		this.mainScene = this.GetNode<Main>("../");
 		this.camera = this.GetNode<CameraController>("../Camera2D");
+		this.shootSound = this.GetNode<AudioStreamPlayer2D>("ShootAudio");
+		this.damageSound = this.GetNode<AudioStreamPlayer2D>("DamageAudio");
+		this.potionSound = this.GetNode<AudioStreamPlayer2D>("PotionAudio");
 		this.CollisionLayer = LayerMask.PlayerLayer;
 	}
 
@@ -87,6 +96,16 @@ public partial class Player : Entity
 		return shootDirection;
 	}
 
+	protected override void PlayShootSound()
+	{
+		this.shootSound.Play();
+	}
+
+    protected override void PlayDamageSound()
+    {
+        this.damageSound.Play();
+    }
+
     public override void TakeDamage(Int32 damage)
     {
         base.TakeDamage(damage);
@@ -97,5 +116,10 @@ public partial class Player : Entity
 	protected override void Die()
 	{
 		this.mainScene.SetGameOver();
+	}
+
+	public void PlayPotionSound()
+	{
+		this.potionSound.Play();
 	}
 }

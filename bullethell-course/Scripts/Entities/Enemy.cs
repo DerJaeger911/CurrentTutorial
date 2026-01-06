@@ -33,6 +33,8 @@ internal partial class Enemy : Entity
 	private float playerDistance;
 	private Vector2 playerDirection;
 
+	private AudioStreamPlayer2D damageSound;
+
 	private EnemyBulletPool enemyBulletPool = new();
 
 	protected override Color FlashColor => Colors.Red;
@@ -53,6 +55,7 @@ internal partial class Enemy : Entity
 			this.VisibilityChanged += this.OnVisibilityChanged;
 			this.isVisibilityConnected = true;
 		}
+		this.damageSound = this.GetNode<AudioStreamPlayer2D>("DamageAudio");
 		this.CollisionLayer = LayerMask.EnemyLayer;
 		this.player = this.GetTree().GetFirstNodeInGroup("Player") as Player;
 		this.avoidanceRay = this.GetNode<RayCast2D>("AvoidanceRay");
@@ -191,4 +194,14 @@ internal partial class Enemy : Entity
 	{
 		this.Disconnect();
 	}
+
+    protected override void PlayShootSound()
+    {
+		return;
+    }
+
+    protected override void PlayDamageSound()
+    {
+		this.damageSound.Play();
+    }
 }

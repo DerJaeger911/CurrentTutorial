@@ -79,6 +79,7 @@ public abstract partial class Entity : CharacterBody2D
 
 			this.bullet.AdditionalSpeed = this.AdditionalBulletSpeed;
 			this.bullet.MoveDirection = this.BulletDirection();
+			this.PlayShootSound();
 		}
 	}
 
@@ -106,13 +107,16 @@ public abstract partial class Entity : CharacterBody2D
 
 	public virtual void TakeDamage(int damage)
 	{
-		this.CurrentHp -= damage;
-		this.healthbar.Value = this.CurrentHp;
-		_ = this.DamageFlash();
-
 		if (this.CurrentHp <= 0)
 		{
 			this.Die();
+		}
+		else
+		{
+			this.CurrentHp -= damage;
+			this.healthbar.Value = this.CurrentHp;
+			_ = this.DamageFlash();
+			this.PlayDamageSound();
 		}
 	}
 
@@ -138,6 +142,10 @@ public abstract partial class Entity : CharacterBody2D
 	}
 
 	protected abstract void Die();
+
+	protected abstract void PlayShootSound();
+
+	protected abstract void PlayDamageSound();
 
 	protected abstract Vector2 BulletDirection();
 

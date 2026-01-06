@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\entities\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\entities\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,8 +15,12 @@
       "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\entities\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\entities\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\entities\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\entities\\boss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\entities\\boss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -87,10 +91,6 @@
       "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\pools\\bossbulletpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\entities\\boss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\entities\\boss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\bullethell-course\\scripts\\bullets\\bullettypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80486CC9-1FA3-4255-A452-E97035474420}|bullethell-course.csproj|solutionrelative:scripts\\bullets\\bullettypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -122,73 +122,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 14,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Menu.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Menu.cs",
-              "RelativeDocumentMoniker": "Scripts\\Menu.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Menu.cs",
-              "RelativeToolTip": "Scripts\\Menu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T19:06:21.028Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CameraController.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\CameraController.cs",
-              "RelativeDocumentMoniker": "Scripts\\CameraController.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\CameraController.cs",
-              "RelativeToolTip": "Scripts\\CameraController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwB0AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T19:05:59.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Main.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Main.cs",
-              "RelativeDocumentMoniker": "Scripts\\Main.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Main.cs",
-              "RelativeToolTip": "Scripts\\Main.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwC0AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T18:41:28.077Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Registry.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\Registration\\Registry.cs",
-              "RelativeDocumentMoniker": "Scripts\\Managers\\Registration\\Registry.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\Registration\\Registry.cs",
-              "RelativeToolTip": "Scripts\\Managers\\Registration\\Registry.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T18:27:07.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\GameManager.cs",
-              "RelativeDocumentMoniker": "Scripts\\Managers\\GameManager.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\GameManager.cs",
-              "RelativeToolTip": "Scripts\\Managers\\GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T18:19:48.174Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -223,26 +158,87 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Menu.cs",
+              "RelativeDocumentMoniker": "Scripts\\Menu.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Menu.cs",
+              "RelativeToolTip": "Scripts\\Menu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T19:06:21.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CameraController.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\CameraController.cs",
+              "RelativeDocumentMoniker": "Scripts\\CameraController.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\CameraController.cs",
+              "RelativeToolTip": "Scripts\\CameraController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwB0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T19:05:59.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Main.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Main.cs",
+              "RelativeDocumentMoniker": "Scripts\\Main.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Main.cs",
+              "RelativeToolTip": "Scripts\\Main.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwC0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T18:41:28.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Registry.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\Registration\\Registry.cs",
+              "RelativeDocumentMoniker": "Scripts\\Managers\\Registration\\Registry.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\Registration\\Registry.cs",
+              "RelativeToolTip": "Scripts\\Managers\\Registration\\Registry.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T18:27:07.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\GameManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\Managers\\GameManager.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\GameManager.cs",
+              "RelativeToolTip": "Scripts\\Managers\\GameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T18:19:48.174Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Entities\\Player.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Player.cs",
               "RelativeToolTip": "Scripts\\Entities\\Player.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAawCoAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAUwGYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-04T13:56:42.905Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Enemy.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Enemy.cs",
               "RelativeDocumentMoniker": "Scripts\\Entities\\Enemy.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Enemy.cs",
               "RelativeToolTip": "Scripts\\Entities\\Enemy.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAIwFsAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAALkAAAAAAAAAAAAAwMQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-04T13:57:58.435Z",
               "EditorCaption": ""
@@ -255,14 +251,27 @@
               "RelativeDocumentMoniker": "Scripts\\Entities\\Entity.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Entity.cs",
               "RelativeToolTip": "Scripts\\Entities\\Entity.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAUwGoAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAA2wHAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-04T13:55:21.553Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
+              "Title": "Boss.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Boss.cs",
+              "RelativeDocumentMoniker": "Scripts\\Entities\\Boss.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Boss.cs",
+              "RelativeToolTip": "Scripts\\Entities\\Boss.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T17:22:14.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "BulletLoadManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\BulletLoadManager.cs",
               "RelativeDocumentMoniker": "Scripts\\Managers\\BulletLoadManager.cs",
@@ -270,12 +279,11 @@
               "RelativeToolTip": "Scripts\\Managers\\BulletLoadManager.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAwwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T18:02:57.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T18:02:57.982Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "EnemyLoadManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\EnemyLoadManager.cs",
               "RelativeDocumentMoniker": "Scripts\\Managers\\EnemyLoadManager.cs",
@@ -283,12 +291,11 @@
               "RelativeToolTip": "Scripts\\Managers\\EnemyLoadManager.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAxwA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T17:19:39.129Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T17:19:39.129Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "LayerMask.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Statics\\LayerMask.cs",
               "RelativeDocumentMoniker": "Scripts\\Statics\\LayerMask.cs",
@@ -296,12 +303,11 @@
               "RelativeToolTip": "Scripts\\Statics\\LayerMask.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T19:00:05.403Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T19:00:05.403Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "PotionSpawner.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Items\\PotionSpawner.cs",
               "RelativeDocumentMoniker": "Scripts\\Items\\PotionSpawner.cs",
@@ -309,12 +315,11 @@
               "RelativeToolTip": "Scripts\\Items\\PotionSpawner.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAIwBIAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T17:14:05.85Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T17:14:05.85Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ItemLoadManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Managers\\ItemLoadManager.cs",
               "RelativeDocumentMoniker": "Scripts\\Managers\\ItemLoadManager.cs",
@@ -322,12 +327,11 @@
               "RelativeToolTip": "Scripts\\Managers\\ItemLoadManager.cs",
               "ViewState": "AgIAABAAAAAAAAAAAIAwwBoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T17:32:02.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T17:32:02.987Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Potion.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Items\\Potion.cs",
               "RelativeDocumentMoniker": "Scripts\\Items\\Potion.cs",
@@ -335,12 +339,11 @@
               "RelativeToolTip": "Scripts\\Items\\Potion.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAgwA8AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T19:18:32.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T19:18:32.397Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "PotionTypeEnum.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Items\\PotionTypeEnum.cs",
               "RelativeDocumentMoniker": "Scripts\\Items\\PotionTypeEnum.cs",
@@ -348,12 +351,11 @@
               "RelativeToolTip": "Scripts\\Items\\PotionTypeEnum.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T19:20:07.9Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T19:20:07.9Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "PoolBase.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Pools\\PoolBase.cs",
               "RelativeDocumentMoniker": "Scripts\\Pools\\PoolBase.cs",
@@ -361,12 +363,11 @@
               "RelativeToolTip": "Scripts\\Pools\\PoolBase.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAYwA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T13:57:23.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T13:57:23.037Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "EnemySpawner.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\EnemySpawner.cs",
               "RelativeDocumentMoniker": "Scripts\\Entities\\EnemySpawner.cs",
@@ -374,12 +375,11 @@
               "RelativeToolTip": "Scripts\\Entities\\EnemySpawner.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAQwFkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T13:17:47.249Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T13:17:47.249Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Item.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Items\\Item.cs",
               "RelativeDocumentMoniker": "Scripts\\Items\\Item.cs",
@@ -387,12 +387,11 @@
               "RelativeToolTip": "Scripts\\Items\\Item.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T19:18:29.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T19:18:29.367Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Bullet.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Bullets\\Bullet.cs",
               "RelativeDocumentMoniker": "Scripts\\Bullets\\Bullet.cs",
@@ -400,12 +399,11 @@
               "RelativeToolTip": "Scripts\\Bullets\\Bullet.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAkwFEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T14:22:00.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T14:22:00.961Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "EnemyTypeEnum.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\EnemyTypeEnum.cs",
               "RelativeDocumentMoniker": "Scripts\\Entities\\EnemyTypeEnum.cs",
@@ -413,12 +411,11 @@
               "RelativeToolTip": "Scripts\\Entities\\EnemyTypeEnum.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T15:32:04.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T15:32:04.557Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "BossBulletPool.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Pools\\BossBulletPool.cs",
               "RelativeDocumentMoniker": "Scripts\\Pools\\BossBulletPool.cs",
@@ -426,20 +423,7 @@
               "RelativeToolTip": "Scripts\\Pools\\BossBulletPool.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T18:15:07.925Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Boss.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Boss.cs",
-              "RelativeDocumentMoniker": "Scripts\\Entities\\Boss.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\bullethell-course\\Scripts\\Entities\\Boss.cs",
-              "RelativeToolTip": "Scripts\\Entities\\Boss.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T17:22:14.894Z"
+              "WhenOpened": "2026-01-04T18:15:07.925Z"
             },
             {
               "$type": "Document",
@@ -475,8 +459,7 @@
               "RelativeToolTip": "Scripts\\Pools\\EnemyBulletPool.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T17:55:52.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T17:55:52.983Z"
             },
             {
               "$type": "Document",
