@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://der6403d6xbel"]
+
+[ext_resource type="Texture2D" uid="uid://u41jedtjm8mt" path="res://Graphics/ui/tools.png" id="1_rervw"]
+
+[node name="PlayerUI" type="Node2D"]
+
+[node name="Tools" type="Node2D" parent="."]
+
+[node name="Main" type="Sprite2D" parent="Tools"]
+texture = ExtResource("1_rervw")
+
+[node name="LeftSprite" type="Sprite2D" parent="Tools"]
+
+[node name="RightSprite" type="Sprite2D" parent="Tools"]
