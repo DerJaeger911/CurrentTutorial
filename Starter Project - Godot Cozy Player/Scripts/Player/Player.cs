@@ -1,3 +1,4 @@
+using Dcozysandbox.Scripts.AutoLoads.Busses;
 using Dcozysandbox.Scripts.Constants;
 using Dcozysandbox.Scripts.Constants.Paths;
 using Dcozysandbox.Scripts.Enums;
@@ -34,12 +35,14 @@ public partial class Player : Entity
 	{
 
 		this.direction = Input.GetVector("left", "right", "up", "down");
+
 		this.action = Input.IsActionJustPressed("action");
 		if (Input.IsActionJustPressed("tool_backward") || Input.IsActionJustPressed("tool_forward"))
 		{
 			int toggleDirection = (int)Input.GetAxis("tool_backward", "tool_forward");
 			int nextIndex = Mathf.PosMod(this.currentTool + toggleDirection, ToolConstants.All.Length);
 			this.currentTool = nextIndex;
+			SignalBus.Instance.EmitSignal(SignalBus.SignalName.ToolChanged, nextIndex);
 		}
 	}
 
@@ -47,23 +50,23 @@ public partial class Player : Entity
 	{
 		if (this.action)
 		{
+			string toolName = ToolConstants.All[this.currentTool];
 			this.toolStateMachine.Travel(ToolConstants.All[this.currentTool]);
 			this.animationTree.Set(AnimationPaths.OsRequest, (int)AnimationNodeOneShot.OneShotRequest.Fire);
 			this.canMove = false;
 			this.action = false;
+			this.animationTree.Set(AnimationPaths.ToolStateMachine + "/" + toolName + AnimationPaths.BlendPosition, this.lastDirection);
 		}
 
 		if (this.direction != Vector2.Zero)
 		{
 			this.moveStateMachine.Travel("move");
-			this.lastDirection = this.direction.Sign();
-
-			this.animationTree.Set(AnimationPaths.MsmIdleBlend, this.lastDirection);
-			this.animationTree.Set(AnimationPaths.MsmMoveBlend, this.lastDirection);
-
-			foreach (string tool in ToolConstants.All)
+			var newDirection = this.direction.Normalized().Round();
+			if(newDirection != this.lastDirection)
 			{
-				this.animationTree.Set(AnimationPaths.ToolStateMachine + "/" + tool + AnimationPaths.BlendPosition, this.lastDirection);
+				this.animationTree.Set(AnimationPaths.MsmMoveBlend, newDirection);
+				this.animationTree.Set(AnimationPaths.MsmIdleBlend, newDirection);
+				this.lastDirection = newDirection;
 			}
 		}
 		else

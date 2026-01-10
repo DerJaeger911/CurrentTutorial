@@ -1,3 +1,4 @@
+using Dcozysandbox.Scripts.AutoLoads.Busses;
 using Godot;
 
 namespace Dcozysandbox.Scripts.Player;

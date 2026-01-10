@@ -1,14 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://der6403d6xbel"]
+[gd_scene load_steps=3 format=3 uid="uid://der6403d6xbel"]
 
+[ext_resource type="Script" uid="uid://dbpsg2k6net5p" path="res://Scripts/Player/PlayerUi.cs" id="1_2ncp2"]
 [ext_resource type="Texture2D" uid="uid://u41jedtjm8mt" path="res://Graphics/ui/tools.png" id="1_rervw"]
 
 [node name="PlayerUI" type="Node2D"]
+script = ExtResource("1_2ncp2")
 
 [node name="Tools" type="Node2D" parent="."]
 
 [node name="Main" type="Sprite2D" parent="Tools"]
+rotation = 0.0013892477
 texture = ExtResource("1_rervw")
+hframes = 5
 
 [node name="LeftSprite" type="Sprite2D" parent="Tools"]
+position = Vector2(-15, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_rervw")
+hframes = 5
+frame = 4
 
 [node name="RightSprite" type="Sprite2D" parent="Tools"]
+position = Vector2(15, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_rervw")
+hframes = 5
+frame = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

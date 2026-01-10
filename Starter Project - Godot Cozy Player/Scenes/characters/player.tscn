@@ -1,7 +1,8 @@
-[gd_scene load_steps=134 format=3 uid="uid://ca106qafnt25o"]
+[gd_scene load_steps=135 format=3 uid="uid://ca106qafnt25o"]
 
 [ext_resource type="Script" uid="uid://c6a48warfh546" path="res://Scripts/Player/Player.cs" id="1_yh67s"]
 [ext_resource type="Texture2D" uid="uid://dpfxibevth7y" path="res://Graphics/characters/player_animations.png" id="2_yewv4"]
+[ext_resource type="PackedScene" uid="uid://der6403d6xbel" path="res://Scenes/ui/player_ui.tscn" id="3_5cv2o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yewv4"]
 radius = 5.0
@@ -975,7 +976,7 @@ transitions = ["Start", "hoe", SubResource("AnimationNodeStateMachineTransition_
 graph_offset = Vector2(-177, -246)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6eyoc"]
-graph_offset = Vector2(-412.53497, 10.017487)
+graph_offset = Vector2(-632.806, 61.934692)
 nodes/output/position = Vector2(1100, 120)
 nodes/ToolStateMachine/node = SubResource("AnimationNodeStateMachine_vwwfy")
 nodes/ToolStateMachine/position = Vector2(160, 300)
@@ -1016,3 +1017,8 @@ parameters/MoveStateMachine/move/blend_position = Vector2(0, 0)
 parameters/OneShot/active = false
 parameters/OneShot/internal_active = false
 parameters/OneShot/request = 0
+
+[node name="PlayerUI" parent="." instance=ExtResource("3_5cv2o")]
+position = Vector2(0, -22.195)
+
+[node name="Camera2D" type="Camera2D" parent="."]
