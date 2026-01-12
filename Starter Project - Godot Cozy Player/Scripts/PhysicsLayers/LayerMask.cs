@@ -8,16 +8,16 @@ namespace Dcozysandbox.Scripts.PhysicsLayers;
 
 internal class LayerMask
 {
-	public static uint BaseLayer = 1 << 0;
-	public static uint TerainLayer = 1 << 1;
-	public static uint PlayerLayer = 1 << 2;
-	public static uint PlantLayer = 1 << 3;
-	public static uint EnemyLayer = 1 << 4;
+	public const uint BaseLayer = 1 << 0;
+	public const uint TerainLayer = 1 << 1;
+	public const uint PlayerLayer = 1 << 3;
+	public const uint PlantLayer = 1 << 4;
+	public const uint EnemyLayer = 1 << 5;
 
-	public static uint NoCollision = 0;
+	public const uint NoCollision = 0;
 
 	public static uint EnemyMask = BaseLayer;
-	public static uint PlayerMask = BaseLayer;
+	public static uint PlayerMask = BaseLayer | TerainLayer;
 	public static uint TerainMask = BaseLayer;
 	public static uint PlantMask = BaseLayer;
 

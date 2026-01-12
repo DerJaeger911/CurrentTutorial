@@ -2,6 +2,7 @@ using Dcozysandbox.Scripts.AutoLoads.Busses;
 using Dcozysandbox.Scripts.Constants;
 using Dcozysandbox.Scripts.Constants.Paths;
 using Dcozysandbox.Scripts.Enums;
+using Dcozysandbox.Scripts.PhysicsLayers;
 using Godot;
 using System;
 
@@ -19,6 +20,9 @@ public partial class Player : Entity
 	public override void _Ready()
 	{
 		base._Ready();
+
+		this.CollisionLayer = LayerMask.PlayerLayer;
+		this.CollisionMask = LayerMask.PlayerMask;
 
 		this.animationTree = this.GetNode<AnimationTree>(AnimationPaths.AnimationTree);
 		this.animationTree.Active = true;
