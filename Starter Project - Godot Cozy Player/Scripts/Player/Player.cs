@@ -8,6 +8,7 @@ using System;
 
 namespace Dcozysandbox.Scripts.Player;
 
+[Tool]
 public partial class Player : Entity
 {
 	private AnimationTree animationTree;
@@ -17,7 +18,6 @@ public partial class Player : Entity
 	private int currentTool = 0;
 	private string toolName;
 	private PlayerAudio playerAudio;
-
 
 	public override void _Ready()
 	{
