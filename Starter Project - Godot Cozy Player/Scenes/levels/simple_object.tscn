@@ -7,6 +7,7 @@
 size = Vector2(8, 8)
 
 [node name="SimpleObject" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_mpf5o")
 
 [node name="Sprite" type="Sprite2D" parent="."]

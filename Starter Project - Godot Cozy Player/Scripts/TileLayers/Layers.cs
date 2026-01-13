@@ -8,6 +8,8 @@ public partial class Layers : Node2D
 
     public override void _Ready()
     {
+		this.ZIndex = -2;
+
         this.waterLayer = this.GetNode<TileMapLayer>("WaterLayer");
 		this.hillsLayer = this.GetNode<TileMapLayer>("HillsLayer");
 

@@ -1,8 +1,13 @@
-[gd_scene load_steps=135 format=3 uid="uid://ca106qafnt25o"]
+[gd_scene load_steps=140 format=3 uid="uid://ca106qafnt25o"]
 
 [ext_resource type="Script" uid="uid://c6a48warfh546" path="res://Scripts/Player/Player.cs" id="1_yh67s"]
 [ext_resource type="Texture2D" uid="uid://dpfxibevth7y" path="res://Graphics/characters/player_animations.png" id="2_yewv4"]
 [ext_resource type="PackedScene" uid="uid://der6403d6xbel" path="res://Scenes/ui/player_ui.tscn" id="3_5cv2o"]
+[ext_resource type="Script" uid="uid://d3akk3q4mno5m" path="res://Scripts/Player/PlayerAudio.cs" id="4_kvnrr"]
+[ext_resource type="AudioStream" uid="uid://bxbb5os8ycr5w" path="res://Audio/hoe.wav" id="5_0r5da"]
+[ext_resource type="AudioStream" uid="uid://dtsnwvwr5w013" path="res://Audio/axe.wav" id="6_fgiwp"]
+[ext_resource type="AudioStream" uid="uid://b7jby13r7m7wu" path="res://Audio/fish.wav" id="7_8liwr"]
+[ext_resource type="AudioStream" uid="uid://b1sbhvfoqd0u1" path="res://Audio/water.ogg" id="8_5cq8p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yewv4"]
 radius = 5.0
@@ -1022,3 +1027,19 @@ parameters/OneShot/request = 0
 position = Vector2(0, -22.195)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -640
+
+[node name="Audio" type="Node" parent="."]
+script = ExtResource("4_kvnrr")
+
+[node name="HoeSound" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_0r5da")
+
+[node name="AxeSwordSound" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("6_fgiwp")
+
+[node name="FishSound" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("7_8liwr")
+
+[node name="WaterSound" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("8_5cq8p")
