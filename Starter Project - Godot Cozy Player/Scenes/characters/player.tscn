@@ -43,6 +43,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [6, 7, 8, 9]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayAxeSwordAudio"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_rpnd8"]
 resource_name = "axe_left"

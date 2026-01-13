@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{609AB8D9-876F-4B9E-AE9B-C032DF339EA9}|2D cozy sandbox.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\starter project - godot cozy player\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{609AB8D9-876F-4B9E-AE9B-C032DF339EA9}|2D cozy sandbox.csproj|solutionrelative:scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{609AB8D9-876F-4B9E-AE9B-C032DF339EA9}|2D cozy sandbox.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\starter project - godot cozy player\\scripts\\player\\playeraudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{609AB8D9-876F-4B9E-AE9B-C032DF339EA9}|2D cozy sandbox.csproj|solutionrelative:scripts\\player\\playeraudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{609AB8D9-876F-4B9E-AE9B-C032DF339EA9}|2D cozy sandbox.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\starter project - godot cozy player\\scripts\\constants\\toolconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{609AB8D9-876F-4B9E-AE9B-C032DF339EA9}|2D cozy sandbox.csproj|solutionrelative:scripts\\constants\\toolconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{609AB8D9-876F-4B9E-AE9B-C032DF339EA9}|2D cozy sandbox.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\starter project - godot cozy player\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{609AB8D9-876F-4B9E-AE9B-C032DF339EA9}|2D cozy sandbox.csproj|solutionrelative:scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{609AB8D9-876F-4B9E-AE9B-C032DF339EA9}|2D cozy sandbox.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\starter project - godot cozy player\\scripts\\player\\playerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -88,34 +88,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 12,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PlayerAudio.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\Scripts\\Player\\PlayerAudio.cs",
-              "RelativeDocumentMoniker": "Scripts\\Player\\PlayerAudio.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\Scripts\\Player\\PlayerAudio.cs",
-              "RelativeToolTip": "Scripts\\Player\\PlayerAudio.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwB0AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T18:49:39.002Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Game.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\Scripts\\Game.cs",
-              "RelativeDocumentMoniker": "Scripts\\Game.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\Scripts\\Game.cs",
-              "RelativeToolTip": "Scripts\\Game.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwCcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T17:24:39.041Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -150,6 +124,31 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerAudio.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\Scripts\\Player\\PlayerAudio.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\PlayerAudio.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\Scripts\\Player\\PlayerAudio.cs",
+              "RelativeToolTip": "Scripts\\Player\\PlayerAudio.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAYwBUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T18:49:39.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Game.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\Scripts\\Game.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\Scripts\\Game.cs",
+              "RelativeToolTip": "Scripts\\Game.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T17:24:39.041Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
               "Title": "SimpleObject.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\Scripts\\Objects\\SimpleObject.cs",
@@ -158,8 +157,7 @@
               "RelativeToolTip": "Scripts\\Objects\\SimpleObject.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T18:29:12.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-12T18:29:12.414Z"
             },
             {
               "$type": "Document",
@@ -171,18 +169,17 @@
               "RelativeToolTip": "Scripts\\TileLayers\\Layers.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwAoAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T14:03:15.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-11T14:03:15.322Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\Scripts\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\Player.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\Scripts\\Player\\Player.cs",
               "RelativeToolTip": "Scripts\\Player\\Player.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAlwFsAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAlwFUAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-06T18:09:55.402Z",
               "EditorCaption": ""
@@ -209,12 +206,11 @@
               "RelativeToolTip": "Scripts\\Player\\PlayerUi.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAhwCAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T14:01:10.305Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T14:01:10.305Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ToolConstants.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Starter Project - Godot Cozy Player\\Scripts\\Constants\\ToolConstants.cs",
               "RelativeDocumentMoniker": "Scripts\\Constants\\ToolConstants.cs",
@@ -222,8 +218,7 @@
               "RelativeToolTip": "Scripts\\Constants\\ToolConstants.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAQwAgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-08T18:41:19.615Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-08T18:41:19.615Z"
             },
             {
               "$type": "Document",
@@ -271,8 +266,7 @@
               "RelativeToolTip": "Scripts\\LookUps\\SeedResourceLookup.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T17:58:06.09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T17:58:06.09Z"
             },
             {
               "$type": "Document",

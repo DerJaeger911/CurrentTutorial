@@ -19,6 +19,11 @@ public partial class PlayerAudio : Node
 
 	}
 
+	public void PlayAxeSwordAudio()
+	{
+		this.axeSwordSound.Play();
+	}
+
 	public void PlayAudio(string tool)
 	{
 		switch (tool)
@@ -26,14 +31,13 @@ public partial class PlayerAudio : Node
 			case ToolConstants.Hoe:
 				this.hoeSound.Play();
 				break;
-			case ToolConstants.Axe:
-				this.axeSwordSound.Play();
-				break;
 			case ToolConstants.Fish:
 				this.fishSound.Play();
 				break;
 			case ToolConstants.Water:
 				this.waterSound.Play();
+				break;
+			default:
 				break;
 		}
 	}
