@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bf0yuue48pk6v"]
+[gd_scene load_steps=20 format=4 uid="uid://bf0yuue48pk6v"]
 
 [ext_resource type="Script" uid="uid://csgda7hk3eptq" path="res://Scripts/TileLayers/Layers.cs" id="1_44khf"]
 [ext_resource type="PackedScene" uid="uid://ca106qafnt25o" path="res://Scenes/characters/player.tscn" id="1_e6yxx"]
@@ -9,10 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://c2wuqqawpaphs" path="res://Scenes/levels/tree.tscn" id="5_2xl1j"]
 [ext_resource type="PackedScene" uid="uid://b5iqbfigbgqea" path="res://Scenes/levels/simple_object.tscn" id="7_x8qno"]
 [ext_resource type="Shader" uid="uid://27ibpyl2b1vu" path="res://Shaders/DayTransition.gdshader" id="9_1qves"]
+[ext_resource type="AudioStream" uid="uid://7a4rv3t3jhq3" path="res://Audio/music.mp3" id="10_ema05"]
 
 [sub_resource type="Gradient" id="Gradient_1qves"]
 offsets = PackedFloat32Array(0, 0.49832776, 1)
 colors = PackedColorArray(0.9137255, 0.827451, 0.7607843, 1, 0.9843137, 0.9843137, 0.9843137, 1, 0.24313726, 0.3372549, 0.58431375, 1)
+
+[sub_resource type="Curve" id="Curve_ema05"]
+_limits = [-30.0, 0.0, 0.0, 1.0]
+_data = [Vector2(0, -6.510926), 0.0, 0.0, 0, 0, Vector2(0.25239617, 0), 0.0, 0.0, 0, 0, Vector2(0.66773164, 0), 0.0, 0.0, 0, 0, Vector2(1, -30), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44khf"]
 texture = ExtResource("1_jcllw")
@@ -463,6 +469,7 @@ shader_parameter/progress = 0.0
 [node name="Game" type="Node2D"]
 script = ExtResource("1_p8ogu")
 dayTimeGradient = SubResource("Gradient_1qves")
+musicCurve = SubResource("Curve_ema05")
 
 [node name="Layers" type="Node2D" parent="."]
 script = ExtResource("1_44khf")
@@ -556,3 +563,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ema05")
+autoplay = true

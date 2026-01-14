@@ -7,8 +7,6 @@ using Godot;
 using System;
 
 namespace Dcozysandbox.Scripts.Player;
-
-[Tool]
 public partial class Player : Entity
 {
 	private AnimationTree animationTree;
@@ -41,6 +39,48 @@ public partial class Player : Entity
 		this.animationTree.AnimationFinished += this.OnAnimationFinished;
 	}
 
+    public override void _Input(InputEvent @event)
+    {
+		int nextIndex;
+		if (@event is InputEventKey keyEvent &&
+	keyEvent.Pressed &&
+	!keyEvent.Echo &&
+	keyEvent.Keycode >= Key.Key1 &&
+	keyEvent.Keycode <= Key.Key5)
+		{
+			switch (keyEvent.Keycode)
+			{
+				case Key.Key1:
+					nextIndex = 0;
+					break;
+				case Key.Key2:
+					nextIndex = 1;
+					break;
+				case Key.Key3:
+					nextIndex = 2;
+					break;
+				case Key.Key4:
+					nextIndex = 3;
+					break;
+				case Key.Key5:
+					nextIndex = 4;
+					break;
+				default:
+					nextIndex = this.currentTool;
+					break;
+			}
+			SignalBus.Instance.EmitSignal(SignalBus.SignalName.ToolChanged, nextIndex);
+			this.SetTool(nextIndex);
+		}
+	}
+
+	private void SetTool(int index)
+	{
+		this.currentTool = index;
+		this.toolName = ToolConstants.All[this.currentTool];
+		GD.Print($"{this.toolName} is {this.currentTool}");
+	}
+
 	protected override void GetInput()
 	{
 
@@ -51,8 +91,7 @@ public partial class Player : Entity
 		{
 			int toggleDirection = (int)Input.GetAxis("tool_backward", "tool_forward");
 			int nextIndex = Mathf.PosMod(this.currentTool + toggleDirection, ToolConstants.All.Length);
-			this.currentTool = nextIndex;
-			this.toolName = ToolConstants.All[this.currentTool];
+			this.SetTool(nextIndex);
 			SignalBus.Instance.EmitSignal(SignalBus.SignalName.ToolChanged, nextIndex);
 		}
 	}
@@ -78,6 +117,7 @@ public partial class Player : Entity
 				this.animationTree.Set(AnimationPaths.MsmIdleBlend, newDirection);
 				this.lastDirection = newDirection;
 			}
+			this.playerAudio.PlayWalkSound();
 		}
 		else
 		{
@@ -88,8 +128,6 @@ public partial class Player : Entity
 	private void OnAnimationFinished(StringName animName)
 	{
 		this.canMove = true;
-
-		this.playerAudio.PlayAudio(this.toolName);
 	}
 
 	public override void _ExitTree()

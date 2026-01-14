@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Scripts",
+    "\\Scripts\\Player"
   ],
+  "SelectedNode": "\\Scripts\\Player\\Player.cs",
   "PreviewInSolutionExplorer": false
 }

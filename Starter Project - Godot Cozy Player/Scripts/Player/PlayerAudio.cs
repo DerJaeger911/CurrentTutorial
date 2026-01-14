@@ -8,7 +8,7 @@ public partial class PlayerAudio : Node
 	private AudioStreamPlayer axeSwordSound;
 	private AudioStreamPlayer fishSound;
 	private AudioStreamPlayer waterSound;
-
+	private AudioStreamPlayer walkSound;
 
 	public override void _Ready()
 	{
@@ -16,6 +16,7 @@ public partial class PlayerAudio : Node
 		this.axeSwordSound = this.GetNode<AudioStreamPlayer>("AxeSwordSound");
 		this.fishSound = this.GetNode<AudioStreamPlayer>("FishSound");
 		this.waterSound = this.GetNode<AudioStreamPlayer>("WaterSound");
+		this.walkSound = this.GetNode<AudioStreamPlayer>("WalkSound");
 
 	}
 
@@ -24,21 +25,27 @@ public partial class PlayerAudio : Node
 		this.axeSwordSound.Play();
 	}
 
-	public void PlayAudio(string tool)
+	public void PlayHoeAudio()
 	{
-		switch (tool)
+		this.hoeSound.Play();
+	}
+
+	public void PlayFishAudio()
+	{
+		this.fishSound.Play();
+	}
+
+	public void PlayWaterAudio()
+	{
+		this.waterSound.Play();
+	}
+
+	public void PlayWalkSound()
+	{
+		if (!this.walkSound.Playing)
 		{
-			case ToolConstants.Hoe:
-				this.hoeSound.Play();
-				break;
-			case ToolConstants.Fish:
-				this.fishSound.Play();
-				break;
-			case ToolConstants.Water:
-				this.waterSound.Play();
-				break;
-			default:
-				break;
+			this.walkSound.PitchScale = (float)GD.RandRange(0.9, 1.1);
+			this.walkSound.Play();
 		}
 	}
 }
