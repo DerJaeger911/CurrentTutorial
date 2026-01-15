@@ -44,7 +44,7 @@ public partial class AnimationControler : AnimationPlayer
 		Node rootNode = this.GetNode(this.RootNode);
 		anim.TrackSetPath(trackIndex, rootNode.GetPathTo(this.playerAudio));
 
-		var methodData = new Godot.Collections.Dictionary();
+		Godot.Collections.Dictionary methodData = [];
 
 		switch (animName)
 		{

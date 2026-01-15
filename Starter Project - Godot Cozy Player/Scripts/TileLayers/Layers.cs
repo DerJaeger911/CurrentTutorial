@@ -13,8 +13,8 @@ public partial class Layers : Node2D
         this.waterLayer = this.GetNode<TileMapLayer>("WaterLayer");
 		this.hillsLayer = this.GetNode<TileMapLayer>("HillsLayer");
 
-		var waterTileSet = this.waterLayer.TileSet;
-		var hillsTileSet = this.hillsLayer.TileSet;
+		TileSet waterTileSet = this.waterLayer.TileSet;
+		TileSet hillsTileSet = this.hillsLayer.TileSet;
 
 		waterTileSet.SetPhysicsLayerCollisionLayer(0, LayerMask.TerainLayer);
 		hillsTileSet.SetPhysicsLayerCollisionLayer(0, LayerMask.TerainLayer);

@@ -1,18 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2wuqqawpaphs"]
+[gd_scene load_steps=7 format=3 uid="uid://c2wuqqawpaphs"]
 
 [ext_resource type="Script" uid="uid://bgr0f3y4e5bs8" path="res://Scripts/Objects/Tree.cs" id="1_52gh2"]
 [ext_resource type="Texture2D" uid="uid://chw2vylxtva4g" path="res://Graphics/tilesets/trees.png" id="1_uttnv"]
+[ext_resource type="Shader" uid="uid://uu11bret1oiv" path="res://Shaders/Flash.gdshader" id="2_5wyeb"]
+[ext_resource type="Texture2D" uid="uid://dahacffulirf2" path="res://Graphics/plants/stump.png" id="4_ok6ef"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ok6ef"]
+shader = ExtResource("2_5wyeb")
+shader_parameter/progress = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uttnv"]
 size = Vector2(10, 23)
 
-[node name="Tree" type="StaticBody2D"]
+[node name="Tree" type="StaticBody2D" groups=["Trees"]]
 script = ExtResource("1_52gh2")
 
+[node name="Stump" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 10.5)
+texture = ExtResource("4_ok6ef")
+
 [node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ok6ef")
 texture = ExtResource("1_uttnv")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_uttnv")

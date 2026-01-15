@@ -12,10 +12,13 @@ public partial class Player : Entity
 	private AnimationTree animationTree;
 	private AnimationNodeStateMachinePlayback moveStateMachine;
 	private AnimationNodeStateMachinePlayback toolStateMachine;
-	private Vector2 lastDirection = new(0, 1);
-	private int currentTool = 0;
 	private string toolName;
 	private PlayerAudio playerAudio;
+
+	[Export]
+	public int ToolOffset { get; set; } = 20;
+	public int CurrentTool { get; set; } = 0;
+    public Vector2 LastDirection { get; set; } = new(0, 1);
 
 	public override void _Ready()
 	{
@@ -23,7 +26,7 @@ public partial class Player : Entity
 
 		this.playerAudio = (PlayerAudio)this.GetNode<Node>("Audio");
 
-		this.toolName = ToolConstants.All[this.currentTool];
+		this.toolName = ToolConstants.All[this.CurrentTool];
 
 		this.CollisionLayer = LayerMask.PlayerLayer;
 		this.CollisionMask = LayerMask.PlayerMask;
@@ -34,7 +37,7 @@ public partial class Player : Entity
 		this.toolStateMachine = (AnimationNodeStateMachinePlayback)this.animationTree.Get(AnimationPaths.TsmPlayback);
 
 		this.moveStateMachine.Travel("idle");
-		this.animationTree.Set(AnimationPaths.MsmIdleBlend, this.lastDirection);
+		this.animationTree.Set(AnimationPaths.MsmIdleBlend, this.LastDirection);
 
 		this.animationTree.AnimationFinished += this.OnAnimationFinished;
 	}
@@ -66,7 +69,7 @@ public partial class Player : Entity
 					nextIndex = 4;
 					break;
 				default:
-					nextIndex = this.currentTool;
+					nextIndex = this.CurrentTool;
 					break;
 			}
 			SignalBus.Instance.EmitSignal(SignalBus.SignalName.ToolChanged, nextIndex);
@@ -76,9 +79,9 @@ public partial class Player : Entity
 
 	private void SetTool(int index)
 	{
-		this.currentTool = index;
-		this.toolName = ToolConstants.All[this.currentTool];
-		GD.Print($"{this.toolName} is {this.currentTool}");
+		this.CurrentTool = index;
+		this.toolName = ToolConstants.All[this.CurrentTool];
+		GD.Print($"{this.toolName} is {this.CurrentTool}");
 	}
 
 	protected override void GetInput()
@@ -90,7 +93,7 @@ public partial class Player : Entity
 		if (Input.IsActionJustPressed("tool_backward") || Input.IsActionJustPressed("tool_forward"))
 		{
 			int toggleDirection = (int)Input.GetAxis("tool_backward", "tool_forward");
-			int nextIndex = Mathf.PosMod(this.currentTool + toggleDirection, ToolConstants.All.Length);
+			int nextIndex = Mathf.PosMod(this.CurrentTool + toggleDirection, ToolConstants.All.Length);
 			this.SetTool(nextIndex);
 			SignalBus.Instance.EmitSignal(SignalBus.SignalName.ToolChanged, nextIndex);
 		}
@@ -104,18 +107,18 @@ public partial class Player : Entity
 			this.animationTree.Set(AnimationPaths.OsRequest, (int)AnimationNodeOneShot.OneShotRequest.Fire);
 			this.canMove = false;
 			this.action = false;
-			this.animationTree.Set(AnimationPaths.ToolStateMachine + "/" + this.toolName + AnimationPaths.BlendPosition, this.lastDirection);
+			this.animationTree.Set(AnimationPaths.ToolStateMachine + "/" + this.toolName + AnimationPaths.BlendPosition, this.LastDirection);
 		}
 
 		if (this.direction != Vector2.Zero)
 		{
 			this.moveStateMachine.Travel("move");
-			var newDirection = this.direction.Normalized().Round();
-			if(newDirection != this.lastDirection)
+			Vector2 newDirection = this.direction.Normalized().Round();
+			if(newDirection != this.LastDirection)
 			{
 				this.animationTree.Set(AnimationPaths.MsmMoveBlend, newDirection);
 				this.animationTree.Set(AnimationPaths.MsmIdleBlend, newDirection);
-				this.lastDirection = newDirection;
+				this.LastDirection = newDirection;
 			}
 			this.playerAudio.PlayWalkSound();
 		}
