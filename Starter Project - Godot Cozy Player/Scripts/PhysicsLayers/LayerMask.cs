@@ -16,7 +16,7 @@ internal class LayerMask
 
 	public const uint NoCollision = 0;
 
-	public static uint EnemyMask = BaseLayer;
+	public static uint EnemyMask = BaseLayer | TerainLayer;
 	public static uint PlayerMask = BaseLayer | TerainLayer;
 	public static uint TerainMask = BaseLayer;
 	public static uint PlantMask = BaseLayer;

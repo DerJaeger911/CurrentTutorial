@@ -14,6 +14,7 @@ public partial class Player : Entity
 	private AnimationNodeStateMachinePlayback toolStateMachine;
 	private string toolName;
 	private PlayerAudio playerAudio;
+	private bool action;
 
 	[Export]
 	public int ToolOffset { get; set; } = 20;
@@ -84,10 +85,15 @@ public partial class Player : Entity
 		GD.Print($"{this.toolName} is {this.CurrentTool}");
 	}
 
-	protected override void GetInput()
+	protected override void GetDirection()
 	{
 
 		this.direction = Input.GetVector("left", "right", "up", "down");
+	}
+
+    public override void _Process(Double delta)
+    {
+        base._Process(delta);
 
 		this.action = Input.IsActionJustPressed("action");
 		if (Input.IsActionJustPressed("tool_backward") || Input.IsActionJustPressed("tool_forward"))

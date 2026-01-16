@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmxyeldsv2jw2"]
+[gd_scene load_steps=4 format=3 uid="uid://cmxyeldsv2jw2"]
 
 [ext_resource type="Texture2D" uid="uid://7gnm06d46nfg" path="res://Graphics/characters/blob.png" id="1_dt61o"]
+[ext_resource type="Script" uid="uid://bk5hx4su5bq5b" path="res://Scripts/Enemies/Blob.cs" id="1_r0gg4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r0gg4"]
 radius = 6.0827627
 
 [node name="Blob" type="CharacterBody2D"]
+script = ExtResource("1_r0gg4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dt61o")

@@ -10,22 +10,20 @@ public abstract partial class Entity : CharacterBody2D
 
 	protected Vector2 direction;
 
-    protected bool action;
-
 	protected bool canMove = true;
 
 	public override void _PhysicsProcess(System.Double delta)
     {
 		if (this.canMove)
 		{
-			this.GetInput();
+			this.GetDirection();
 		}
         this.SetAnimation();
 		this.Velocity = this.direction * this.speed * (this.canMove ? 1 : 0);
 		this.MoveAndSlide();
     }
 
-    protected abstract void GetInput();
+    protected abstract void GetDirection();
 
     protected abstract void SetAnimation();
 }
