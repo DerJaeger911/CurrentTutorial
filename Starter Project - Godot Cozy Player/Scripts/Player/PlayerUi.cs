@@ -35,6 +35,7 @@ public partial class PlayerUi : Node2D
 		this.leftSprite.Frame = Mathf.PosMod(tool - 1, this.leftSprite.Hframes);
 		this.rightSprite.Frame = Mathf.PosMod(tool + 1, this.rightSprite.Hframes);
 		this.Reveal();
+		this.ZIndex = 2;
 	}
 
 	private void OnTimerTimeOut()

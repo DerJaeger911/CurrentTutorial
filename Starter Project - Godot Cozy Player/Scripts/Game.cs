@@ -61,6 +61,10 @@ public partial class Game : Node2D
 	{
 		this.dayTimer.Start();
 		this.music.Play();
+		foreach(Tree tree in this.GetTree().GetNodesInGroup("Trees"))
+		{
+			tree.Reset();
+		}
 	}
 
 	private void OnToolInteract(int tool, Vector2 position)
@@ -69,14 +73,17 @@ public partial class Game : Node2D
 		GD.Print(position);
 		switch (ToolConstants.All[tool])
 		{
-			case "axe":
+			case ToolConstants.Axe:
 				foreach (Tree tree in this.GetTree().GetNodesInGroup("Trees"))
 				{
 					if (tree.Position.DistanceTo(position) < 16)
 					{
-						tree.Flash();
+						tree.Flash(1);
+						tree.GetApple();
 					}
 				}
+				break;
+			case ToolConstants.Sword:
 				break;
 		}
 	}

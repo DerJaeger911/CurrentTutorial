@@ -1,20 +1,20 @@
+using Dcozysandbox.Scripts.Constants;
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class AnimationControler : AnimationPlayer
 {
 	private List<string> animations = [];
-	private List<string> animationKeys = ["hoe", "axe", "sword", "fish", "water"];
+	private IReadOnlyList<string> animationKeys = ToolConstants.All;
 	private PlayerAudio playerAudio;
 
 	public override void _Ready()
 	{
 		this.playerAudio = this.GetNode<PlayerAudio>("../Audio");
-		foreach (string animationKey in this.animationKeys)
-		{
-			this.animations.AddRange([animationKey + "_down", animationKey + "_left", animationKey + "_right", animationKey + "_up"]);
-		}
+		this.animations =
+	ToolConstants.All.SelectMany(k => new[] {$"{k}_down", $"{k}_left", $"{k}_right", $"{k}_up"}).ToList();
 
 		foreach (string animName in this.animations)
 		{
@@ -48,19 +48,19 @@ public partial class AnimationControler : AnimationPlayer
 
 		switch (animName)
 		{
-			case string a when a.StartsWith("axe") || a.StartsWith("sword"):
+			case string a when a.StartsWith(ToolConstants.Axe) || a.StartsWith(ToolConstants.Sword):
 				methodData.Add("method", "PlayAxeSwordAudio");
 				break;
 
-			case string a when a.StartsWith("hoe"):
+			case string a when a.StartsWith(ToolConstants.Hoe):
 				methodData.Add("method", "PlayHoeAudio");
 				break;
 
-			case string a when a.StartsWith("fish"):
+			case string a when a.StartsWith(ToolConstants.Fish):
 				methodData.Add("method", "PlayFishAudio");
 				break;
 
-			case string a when a.StartsWith("water"):
+			case string a when a.StartsWith(ToolConstants.Water):
 				methodData.Add("method", "PlayWaterAudio");
 				break;
 
