@@ -10,17 +10,22 @@ public abstract partial class Entity : CharacterBody2D
 	[Export]
 	protected virtual int MaxHealth { get; set; } = 5;
 
+	protected int Health { get; set; }
+
     protected Vector2 Direction { get; set; }
 
 	protected Vector2 PushDirection { get; set; }
 	protected System.Boolean CanMove { get; set; } = true;
 
+	
 
 	public override void _Ready()
     {
         base._Ready();
 
 		GD.Print(this.MaxHealth);
+
+		this.Health = this.MaxHealth;
     }
 
 	public override void _PhysicsProcess(System.Double delta)

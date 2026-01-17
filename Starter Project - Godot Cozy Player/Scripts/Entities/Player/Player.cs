@@ -135,6 +135,18 @@ public partial class Player : Entity
 		this.canAct = true;
 	}
 
+	public void Stun(float stunTime)
+	{
+		this.CanMove = false;
+		this.canAct = false;
+
+		this.GetTree().CreateTimer(stunTime).Timeout += () => 
+		{
+			this.CanMove = true;
+			this.canAct = true;
+		};
+	}
+
 	public override void _ExitTree()
 	{
 		this.animationTree.AnimationFinished -= this.OnAnimationFinished;
