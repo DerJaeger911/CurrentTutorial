@@ -1,7 +1,5 @@
 using Dcozysandbox.Scripts.AutoLoads.Busses;
-using Dcozysandbox.Scripts.Constants;
 using Godot;
-using System;
 
 public partial class PlayerUi : Node2D
 {

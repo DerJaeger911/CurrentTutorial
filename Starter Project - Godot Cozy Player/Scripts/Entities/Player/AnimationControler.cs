@@ -1,8 +1,11 @@
+using Dcozysandbox.Scripts.AutoLoads.Busses;
 using Dcozysandbox.Scripts.Constants;
 using Godot;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
+namespace Dcozysandbox.Scripts.Entities.Player;
 
 public partial class AnimationControler : AnimationPlayer
 {
@@ -20,6 +23,7 @@ public partial class AnimationControler : AnimationPlayer
 		{
 			this.AddMethodKeyToAnimation(animName, 0.2);
 		}
+		this.AnimationFinished += this.OnAnimationFinished;
 	}
 
 	private void AddMethodKeyToAnimation(string animName, double time)
@@ -71,5 +75,14 @@ public partial class AnimationControler : AnimationPlayer
 		methodData.Add("args", new Godot.Collections.Array());
 
 		anim.TrackInsertKey(trackIndex, (float)time, methodData);
+	}
+
+	private void OnAnimationFinished(StringName animName)
+	{
+		string animationName = animName;
+		if (ToolConstants.All.Any(key => animationName.StartsWith(key)))
+		{
+			SignalBus.Instance.EmitSignal(SignalBus.SignalName.ToolAnimationFinished);
+		}
 	}
 }

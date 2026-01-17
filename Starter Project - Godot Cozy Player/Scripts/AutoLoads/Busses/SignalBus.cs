@@ -14,5 +14,8 @@ internal partial class SignalBus : GodotObject
 	public delegate void ToolChangedEventHandler( int index);
 
 	[Signal]
-	public delegate void ToolInteractEventHandler(int tool, Vector2 position); 
+	public delegate void ToolInteractEventHandler(int tool, Vector2 position);
+
+	[Signal]
+	public delegate void ToolAnimationFinishedEventHandler();
 }

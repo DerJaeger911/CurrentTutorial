@@ -1,5 +1,6 @@
 using Dcozysandbox.Scripts.AutoLoads.Busses;
 using Dcozysandbox.Scripts.Constants;
+using Dcozysandbox.Scripts.Enemies;
 using Godot;
 using System;
 
@@ -78,12 +79,18 @@ public partial class Game : Node2D
 				{
 					if (tree.Position.DistanceTo(position) < 16)
 					{
-						tree.Flash(1);
-						tree.GetApple();
+						tree.TakeDamage(1);
 					}
 				}
 				break;
 			case ToolConstants.Sword:
+				foreach (Enemy enemy in this.GetTree().GetNodesInGroup("Enemies"))
+				{
+					if (enemy.Position.DistanceTo(position) < 12)
+					{
+						enemy.TakeDamage(1);
+					}
+				}
 				break;
 		}
 	}

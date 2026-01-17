@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bf0yuue48pk6v"]
+[gd_scene load_steps=21 format=4 uid="uid://bf0yuue48pk6v"]
 
 [ext_resource type="Script" uid="uid://csgda7hk3eptq" path="res://Scripts/TileLayers/Layers.cs" id="1_44khf"]
 [ext_resource type="PackedScene" uid="uid://ca106qafnt25o" path="res://Scenes/characters/player.tscn" id="1_e6yxx"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b5iqbfigbgqea" path="res://Scenes/levels/simple_object.tscn" id="7_x8qno"]
 [ext_resource type="Shader" uid="uid://27ibpyl2b1vu" path="res://Shaders/DayTransition.gdshader" id="9_1qves"]
 [ext_resource type="AudioStream" uid="uid://7a4rv3t3jhq3" path="res://Audio/music.mp3" id="10_ema05"]
+[ext_resource type="PackedScene" uid="uid://cmxyeldsv2jw2" path="res://Scenes/characters/blob.tscn" id="11_bb7od"]
 
 [sub_resource type="Gradient" id="Gradient_1qves"]
 offsets = PackedFloat32Array(0, 0.49832776, 1)
@@ -489,7 +490,7 @@ tile_set = SubResource("TileSet_x8qno")
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="Objects" instance=ExtResource("1_e6yxx")]
+[node name="Player" parent="Objects" groups=["Player"] instance=ExtResource("1_e6yxx")]
 y_sort_enabled = true
 
 [node name="Tree" parent="Objects" instance=ExtResource("5_2xl1j")]
@@ -545,6 +546,9 @@ position = Vector2(-276, 52)
 
 [node name="SimpleObject11" parent="Objects" instance=ExtResource("7_x8qno")]
 position = Vector2(-303, 39)
+
+[node name="Blob" parent="Objects" groups=["Enemies"] instance=ExtResource("11_bb7od")]
+position = Vector2(-123, 9)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 

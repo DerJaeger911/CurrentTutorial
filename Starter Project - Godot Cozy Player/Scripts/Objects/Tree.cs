@@ -1,3 +1,4 @@
+using Dcozysandbox.Scripts.Helper;
 using Dcozysandbox.Scripts.Textures;
 using Godot;
 using System;
@@ -15,6 +16,7 @@ public partial class Tree : StaticBody2D
 	private Node2D applePositions;
 	private List<Marker2D> appleMarker;
 	private Node2D apple;
+	private bool isAlive;
 
 	public override void _Ready()
 	{
@@ -23,19 +25,16 @@ public partial class Tree : StaticBody2D
 		this.collisionShape = this.GetNode<CollisionShape2D>("CollisionShape2D");
 		this.applePositions = this.GetNode<Node2D>("ApplePositions");
 		this.appleMarker = new List<Marker2D>();
+		this.apple = this.GetNode<Node2D>("Apple");
 
-		foreach (var child in this.applePositions.GetChildren())
-		{
-			if (child is Marker2D marker)
-			{
-				this.appleMarker.Add(marker);
-			}
-		}
+		this.isAlive = GD.Randf() > 0.5f;
+		this.SetTreeState(this.isAlive);
+
+		this.appleMarker = this.applePositions.GetChildren().OfType<Marker2D>().ToList();
 
 		int[] frames = { 0, 1 };
 		this.treeSprite.Frame = frames[(int)(GD.Randi() % (uint)frames.Length)];
-		this.apple = this.GetNode<Node2D>("Apple");
-
+		
 		//Because "this.treeSprite.Material.ResourceLocalToScene = true;" not working
 		if (this.treeSprite.Material != null)
 		{
@@ -43,39 +42,40 @@ public partial class Tree : StaticBody2D
 		}
 
 		this.CreateApples(GD.RandRange(0,3));
-		this.stump.Hide();
 	}
 
-	public void Flash(int damage)
+	public void TakeDamage(int damage)
 	{
-		Tween tween = this.GetTree().CreateTween();
-		tween.TweenProperty(this.treeSprite.Material, "shader_parameter/progress", 1.0, 0.2);
-		tween.TweenProperty(this.treeSprite.Material, "shader_parameter/progress", 0.0, 0.4);
 		this.health -= damage;
+
+		ShaderHelper.Flash(this, this.treeSprite.Material);
+		this.GetApple();
+
 		if (this.health <= 0)
 		{
-			this.stump.Show();
-			this.treeSprite.Hide();
-			this.collisionShape.Position = new Vector2(0, 10);
-			this.collisionShape.Scale = new Vector2(1, 0.4f);
-			this.apple.Hide();
-			if (this.apple.GetChildCount() >= 0)
-			{
-				foreach (var apple in this.apple.GetChildren())
-				{
-					apple.QueueFree();
-					
-				}
-			}
+			this.Die();
 		}
 	}
 
-	public void GetApple()
+	private void Die() => this.SetTreeState(false);
+
+	private void SetTreeState(bool isAlive)
 	{
-		if (this.apple.GetChildCount() > 0)
-		{
-			this.apple.GetChildren().PickRandom().QueueFree();
-		}
+		this.stump.Visible = !isAlive;
+		this.treeSprite.Visible = isAlive;
+		this.apple.Visible = isAlive;
+
+		this.collisionShape.Position = isAlive ? Vector2.Zero : new Vector2(0, 10);
+		this.collisionShape.Scale = isAlive ? Vector2.One : new Vector2(1, 0.4f);
+
+		this.FreeApples();
+	}
+
+	public void Reset()
+	{
+		this.health = 5;
+		this.SetTreeState(true);
+		this.CreateApples(GD.RandRange(0, 3));
 	}
 
 	private void CreateApples(int value)
@@ -97,6 +97,25 @@ public partial class Tree : StaticBody2D
 		}
 	}
 
+	public void GetApple()
+	{
+		if (this.apple.GetChildCount() > 0)
+		{
+			this.apple.GetChildren().PickRandom().QueueFree();
+		}
+	}
+
+	private void FreeApples()
+	{
+		if (this.apple.GetChildCount() >= 0)
+		{
+			foreach (var apple in this.apple.GetChildren())
+			{
+				apple.QueueFree();
+			}
+		}
+	}
+
 	private Marker2D PopRandomMarker()
 	{
 		if (this.appleMarker.Count == 0)
@@ -108,24 +127,5 @@ public partial class Tree : StaticBody2D
 		Marker2D marker = this.appleMarker[index];
 		this.appleMarker.RemoveAt(index);
 		return marker;
-	}
-
-	public void Reset()
-	{
-		this.health = 5;
-		this.stump.Hide();
-		this.treeSprite.Show();
-		this.collisionShape.Position = new Vector2(0, 0);
-		this.collisionShape.Scale = new Vector2(1, 1);
-		this.CreateApples(GD.RandRange(0, 3));
-		this.apple.Show();
-		if (this.apple.GetChildCount() >= 0)
-		{
-			foreach (var apple in this.apple.GetChildren())
-			{
-				apple.QueueFree();
-
-			}
-		}
 	}
 }

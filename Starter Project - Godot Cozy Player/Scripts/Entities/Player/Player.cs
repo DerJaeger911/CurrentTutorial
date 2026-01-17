@@ -1,12 +1,10 @@
 using Dcozysandbox.Scripts.AutoLoads.Busses;
 using Dcozysandbox.Scripts.Constants;
 using Dcozysandbox.Scripts.Constants.Paths;
-using Dcozysandbox.Scripts.Enums;
 using Dcozysandbox.Scripts.PhysicsLayers;
 using Godot;
-using System;
 
-namespace Dcozysandbox.Scripts.Player;
+namespace Dcozysandbox.Scripts.Entities.Player;
 public partial class Player : Entity
 {
 	private AnimationTree animationTree;
@@ -15,11 +13,14 @@ public partial class Player : Entity
 	private string toolName;
 	private PlayerAudio playerAudio;
 	private bool action;
+	private bool canAct = true;
 
 	[Export]
 	public int ToolOffset { get; set; } = 20;
 	public int CurrentTool { get; set; } = 0;
     public Vector2 LastDirection { get; set; } = new(0, 1);
+
+	protected override int MaxHealth { get; set; } = 10;
 
 	public override void _Ready()
 	{
@@ -43,39 +44,44 @@ public partial class Player : Entity
 		this.animationTree.AnimationFinished += this.OnAnimationFinished;
 	}
 
-    public override void _Input(InputEvent @event)
-    {
-		int nextIndex;
-		if (@event is InputEventKey keyEvent &&
-	keyEvent.Pressed &&
-	!keyEvent.Echo &&
-	keyEvent.Keycode >= Key.Key1 &&
-	keyEvent.Keycode <= Key.Key5)
+	public override void _Input(InputEvent @event)
+	{
+		float toggleDirection = Input.GetAxis("tool_backward", "tool_forward");
+		if (!Mathf.IsZeroApprox(toggleDirection))
 		{
-			switch (keyEvent.Keycode)
-			{
-				case Key.Key1:
-					nextIndex = 0;
-					break;
-				case Key.Key2:
-					nextIndex = 1;
-					break;
-				case Key.Key3:
-					nextIndex = 2;
-					break;
-				case Key.Key4:
-					nextIndex = 3;
-					break;
-				case Key.Key5:
-					nextIndex = 4;
-					break;
-				default:
-					nextIndex = this.CurrentTool;
-					break;
-			}
-			SignalBus.Instance.EmitSignal(SignalBus.SignalName.ToolChanged, nextIndex);
-			this.SetTool(nextIndex);
+			int nextIndex = Mathf.PosMod(this.CurrentTool + (int)toggleDirection, ToolConstants.All.Length);
+			this.ChangeTool(nextIndex);
 		}
+
+		if (@event is InputEventKey { Pressed: true, Echo: false } keyEvent)
+		{
+			if (keyEvent.Keycode >= Key.Key1 && keyEvent.Keycode <= Key.Key5)
+			{
+				int nextIndex = (int)(keyEvent.Keycode - Key.Key1);
+
+				if (nextIndex < ToolConstants.All.Length)
+				{
+					this.ChangeTool(nextIndex);
+				}
+			}
+		}
+
+		if (this.canAct)
+		{
+			this.action = Input.IsActionPressed("action");
+			this.canAct = !this.action;
+		}
+	}
+
+	private void ChangeTool(int nextIndex)
+	{
+		if (this.CurrentTool == nextIndex)
+		{
+			return;
+		}
+
+		this.SetTool(nextIndex);
+		SignalBus.Instance.EmitSignal(SignalBus.SignalName.ToolChanged, nextIndex);
 	}
 
 	private void SetTool(int index)
@@ -88,21 +94,7 @@ public partial class Player : Entity
 	protected override void GetDirection()
 	{
 
-		this.direction = Input.GetVector("left", "right", "up", "down");
-	}
-
-    public override void _Process(Double delta)
-    {
-        base._Process(delta);
-
-		this.action = Input.IsActionJustPressed("action");
-		if (Input.IsActionJustPressed("tool_backward") || Input.IsActionJustPressed("tool_forward"))
-		{
-			int toggleDirection = (int)Input.GetAxis("tool_backward", "tool_forward");
-			int nextIndex = Mathf.PosMod(this.CurrentTool + toggleDirection, ToolConstants.All.Length);
-			this.SetTool(nextIndex);
-			SignalBus.Instance.EmitSignal(SignalBus.SignalName.ToolChanged, nextIndex);
-		}
+		this.Direction = Input.GetVector("left", "right", "up", "down");
 	}
 
 	protected override void SetAnimation()
@@ -111,22 +103,25 @@ public partial class Player : Entity
 		{
 			this.toolStateMachine.Travel(this.toolName);
 			this.animationTree.Set(AnimationPaths.OsRequest, (int)AnimationNodeOneShot.OneShotRequest.Fire);
-			this.canMove = false;
+			this.CanMove = false;
 			this.action = false;
 			this.animationTree.Set(AnimationPaths.ToolStateMachine + "/" + this.toolName + AnimationPaths.BlendPosition, this.LastDirection);
 		}
 
-		if (this.direction != Vector2.Zero)
+		if (this.Direction != Vector2.Zero)
 		{
 			this.moveStateMachine.Travel("move");
-			Vector2 newDirection = this.direction.Normalized().Round();
+			Vector2 newDirection = this.Direction.Normalized().Round();
 			if(newDirection != this.LastDirection)
 			{
 				this.animationTree.Set(AnimationPaths.MsmMoveBlend, newDirection);
 				this.animationTree.Set(AnimationPaths.MsmIdleBlend, newDirection);
 				this.LastDirection = newDirection;
 			}
-			this.playerAudio.PlayWalkSound();
+			if (this.CanMove)
+			{
+				this.playerAudio.PlayWalkSound();
+			}
 		}
 		else
 		{
@@ -136,7 +131,8 @@ public partial class Player : Entity
 
 	private void OnAnimationFinished(StringName animName)
 	{
-		this.canMove = true;
+		this.CanMove = true;
+		this.canAct = true;
 	}
 
 	public override void _ExitTree()

@@ -1,12 +1,13 @@
-[gd_scene load_steps=142 format=3 uid="uid://ca106qafnt25o"]
+[gd_scene load_steps=143 format=3 uid="uid://ca106qafnt25o"]
 
-[ext_resource type="Script" uid="uid://c6a48warfh546" path="res://Scripts/Player/Player.cs" id="1_yh67s"]
+[ext_resource type="Script" uid="uid://c6a48warfh546" path="res://Scripts/Entities/Player/Player.cs" id="1_2si0u"]
 [ext_resource type="Texture2D" uid="uid://dpfxibevth7y" path="res://Graphics/characters/player_animations.png" id="2_yewv4"]
+[ext_resource type="Script" uid="uid://dk113fdhldh4w" path="res://Scripts/Entities/Player/AnimationControler.cs" id="3_2smwd"]
 [ext_resource type="PackedScene" uid="uid://der6403d6xbel" path="res://Scenes/ui/player_ui.tscn" id="3_5cv2o"]
-[ext_resource type="Script" uid="uid://dk113fdhldh4w" path="res://Scripts/Player/AnimationControler.cs" id="3_8liwr"]
-[ext_resource type="Script" uid="uid://d3akk3q4mno5m" path="res://Scripts/Player/PlayerAudio.cs" id="4_kvnrr"]
 [ext_resource type="AudioStream" uid="uid://bxbb5os8ycr5w" path="res://Audio/hoe.wav" id="5_0r5da"]
+[ext_resource type="Script" uid="uid://dbpsg2k6net5p" path="res://Scripts/Entities/Player/PlayerUi.cs" id="5_gul8o"]
 [ext_resource type="AudioStream" uid="uid://dtsnwvwr5w013" path="res://Audio/axe.wav" id="6_fgiwp"]
+[ext_resource type="Script" uid="uid://d3akk3q4mno5m" path="res://Scripts/Entities/Player/PlayerAudio.cs" id="6_tf8qx"]
 [ext_resource type="AudioStream" uid="uid://b7jby13r7m7wu" path="res://Audio/fish.wav" id="7_8liwr"]
 [ext_resource type="AudioStream" uid="uid://b1sbhvfoqd0u1" path="res://Audio/water.ogg" id="8_5cq8p"]
 [ext_resource type="AudioStream" uid="uid://dff6xghytlqqh" path="res://Audio/step.mp3" id="10_5cq8p"]
@@ -1007,10 +1008,10 @@ nodes/OneShot/node = SubResource("AnimationNodeOneShot_yh67s")
 nodes/OneShot/position = Vector2(620, 120)
 node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"MoveStateMachine", &"OneShot", 1, &"ToolStateMachine"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 13
-script = ExtResource("1_yh67s")
+script = ExtResource("1_2si0u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_yewv4")
@@ -1024,7 +1025,7 @@ shape = SubResource("CapsuleShape2D_yewv4")
 libraries = {
 &"": SubResource("AnimationLibrary_atpat")
 }
-script = ExtResource("3_8liwr")
+script = ExtResource("3_2smwd")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_6eyoc")
@@ -1042,12 +1043,13 @@ parameters/OneShot/request = 0
 
 [node name="PlayerUI" parent="." instance=ExtResource("3_5cv2o")]
 position = Vector2(0, -22.195)
+script = ExtResource("5_gul8o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -640
 
 [node name="Audio" type="Node" parent="."]
-script = ExtResource("4_kvnrr")
+script = ExtResource("6_tf8qx")
 
 [node name="HoeSound" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("5_0r5da")

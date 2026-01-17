@@ -1,8 +1,7 @@
 using Dcozysandbox.Scripts.AutoLoads.Busses;
-using Dcozysandbox.Scripts.Constants;
-using Dcozysandbox.Scripts.Player;
 using Godot;
-using System;
+
+namespace Dcozysandbox.Scripts.Entities.Player;
 
 public partial class PlayerAudio : Node
 {
