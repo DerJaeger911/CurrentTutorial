@@ -1,3 +1,4 @@
+using Dcozysandbox.Scripts.Enums;
 using Godot;
 
 namespace Dcozysandbox.Scripts.AutoLoads.Busses;
@@ -18,4 +19,13 @@ internal partial class SignalBus : GodotObject
 
 	[Signal]
 	public delegate void ToolAnimationFinishedEventHandler();
+
+	[Signal]
+	public delegate void CanFishEventHandler(bool canFish);
+
+	[Signal]
+	public delegate void SeedChangedEventHandler(int seed);
+
+	[Signal]
+	public delegate void SeedInteractEventHandler(int seed, Vector2 position);
 }

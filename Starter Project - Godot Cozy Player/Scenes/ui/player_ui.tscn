@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://der6403d6xbel"]
+[gd_scene load_steps=5 format=3 uid="uid://der6403d6xbel"]
 
 [ext_resource type="Script" uid="uid://dbpsg2k6net5p" path="res://Scripts/Entities/Player/PlayerUi.cs" id="1_2ncp2"]
 [ext_resource type="Texture2D" uid="uid://u41jedtjm8mt" path="res://Graphics/ui/tools.png" id="1_rervw"]
+[ext_resource type="Texture2D" uid="uid://bontbnxlphj0g" path="res://Graphics/ui/seeds.png" id="3_hx53g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ncp2"]
-font_size = 12
+font_size = 5
 
 [node name="PlayerUI" type="Node2D"]
 script = ExtResource("1_2ncp2")
@@ -30,13 +31,19 @@ texture = ExtResource("1_rervw")
 hframes = 5
 frame = 1
 
+[node name="Seeds" type="Sprite2D" parent="."]
+texture = ExtResource("3_hx53g")
+hframes = 3
+
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Label" type="Label" parent="."]
-offset_left = 24.0
-offset_top = 11.0
-offset_right = 54.0
-offset_bottom = 34.0
+[node name="StunLabel" type="Label" parent="."]
+offset_left = -15.0
+offset_top = -18.0
+offset_right = 15.0
+offset_bottom = -10.0
 text = " Stun Time"
 label_settings = SubResource("LabelSettings_2ncp2")
+horizontal_alignment = 1
+vertical_alignment = 1

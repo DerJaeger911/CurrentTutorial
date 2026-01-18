@@ -12,36 +12,38 @@ public abstract partial class Entity : CharacterBody2D
 
 	protected int Health { get; set; }
 
-    protected Vector2 Direction { get; set; }
+	protected Vector2 Direction { get; set; }
 
 	protected Vector2 PushDirection { get; set; }
 	protected System.Boolean CanMove { get; set; } = true;
 
-	
+
 
 	public override void _Ready()
-    {
-        base._Ready();
-
-		GD.Print(this.MaxHealth);
+	{
+		base._Ready();
 
 		this.Health = this.MaxHealth;
-    }
+	}
 
 	public override void _PhysicsProcess(System.Double delta)
-    {
+	{
+		this.GetDirection();
+
+
+		this.SetAnimation();
 		if (this.CanMove)
 		{
-			this.GetDirection();
+			this.Velocity = this.Direction * this.Speed + this.PushDirection;
 		}
-
-        this.SetAnimation();
-		this.Velocity = this.Direction * this.Speed + this.PushDirection;
-		GD.Print(this.Velocity);
-		this.MoveAndSlide();
-    }
+		else
+		{
+			this.Velocity = Vector2.Zero;
+		}
+			this.MoveAndSlide();
+	}
 
 	protected abstract void GetDirection();
 
-    protected abstract void SetAnimation();
+	protected abstract void SetAnimation();
 }

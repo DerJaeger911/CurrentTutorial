@@ -21,6 +21,12 @@ internal static class AnimationPaths
 	public const string TsmPlayback = ToolStateMachine + "/playback";
 	public const string TsmSwordBlend = ToolStateMachine + "/sword/blend_position";
 
+	public const string FishBlendSpace = Parameters + "/FishBlendSpace";
+	public const string FBSBlend = FishBlendSpace + "/blend_position";
+
+	public const string FishBlend = Parameters + "/FishBlend";
+	public const string FishBlendAmount = FishBlend + "/blend_amount";
+
 	public const string OneShot = Parameters + "/OneShot";
 	public const string OsRequest = OneShot + "/request";
 

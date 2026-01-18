@@ -5,7 +5,4 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>Dcozysandbox</RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\AutoLoads\Managers\" />
-  </ItemGroup>
 </Project>

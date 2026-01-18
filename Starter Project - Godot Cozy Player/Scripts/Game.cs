@@ -1,8 +1,10 @@
 using Dcozysandbox.Scripts.AutoLoads.Busses;
+using Dcozysandbox.Scripts.AutoLoads.Managers;
 using Dcozysandbox.Scripts.Constants;
 using Dcozysandbox.Scripts.Enemies;
 using Godot;
 using System;
+using System.Linq;
 
 public partial class Game : Node2D
 {
@@ -12,22 +14,50 @@ public partial class Game : Node2D
 	private Curve musicCurve;
 	private CanvasModulate canvasModulate;
 	private Timer dayTimer;
+	private Timer blobSpawnTimer;
 	private CanvasLayer canvasLayer;
 	private ColorRect dayTransition;
 	private AudioStreamPlayer music;
+	private Node2D gameObjects;
+	private Node blobSpawnPositions;
+	private TileMapLayer waterLayer;
+	private TileMapLayer grassLayer;
+	private TileMapLayer soilLayer;
+	private TileMapLayer soilWaterLayer;
+	private Layers layers;
+	private bool isRaining;
+	private GpuParticles2D rainFloor;
+	private GpuParticles2D rain;
+	private AudioStreamPlayer rainSound;
+
+
 
 	private double daytimePoint = 0;
 	private bool fadeOut;
 
 	public override void _Ready()
 	{
+		this.gameObjects = this.GetNode<Node2D>("Objects");
+		this.layers = this.GetNode<Layers>("Layers");
 		this.canvasLayer = this.GetNode<CanvasLayer>("CanvasLayer");
 		this.dayTransition = this.canvasLayer.GetNode<ColorRect>("DayTransition");
 		this.canvasModulate = this.GetNode<CanvasModulate>("CanvasModulate");
-		this.dayTimer = this.GetNode<Timer>("DayTimer");
+		this.dayTimer = this.GetNode<Timer>("Timer/DayTimer");
+		this.blobSpawnTimer = this.GetNode<Timer>("Timer/BlobSpawnTimer");
+		this.blobSpawnPositions = this.GetNode<Node>("BlobSpawnPositions");
 		this.music = this.GetNode<AudioStreamPlayer>("Music");
+		this.waterLayer = this.GetNode<TileMapLayer>("Layers/WaterLayer");
+		this.grassLayer = this.GetNode<TileMapLayer>("Layers/GrassLayer");
+		this.soilLayer = this.GetNode<TileMapLayer>("Layers/SoilLayer");
+		this.soilWaterLayer = this.GetNode<TileMapLayer>("Layers/SoilWaterLayer");
+		this.rain = this.GetNode<GpuParticles2D>("Overlay/RainParticles");
+		this.rainFloor = this.GetNode<GpuParticles2D>("Layers/FloorRainParticles");
+		this.rainSound = this.GetNode<AudioStreamPlayer>("RainSound");
 		SignalBus.Instance.ToolInteract += this.OnToolInteract;
-
+		SignalBus.Instance.SeedInteract += this.OnSeedInteract;
+		this.blobSpawnTimer.Timeout += this.OnBlobSpawnTimerTimeOut;
+		this.isRaining = GD.Randf() > 0.5f;
+		this.RainEmit();
 	}
 
 	public override void _Process(Double delta)
@@ -62,6 +92,16 @@ public partial class Game : Node2D
 	{
 		this.dayTimer.Start();
 		this.music.Play();
+		this.soilWaterLayer.Clear();
+		this.isRaining = GD.Randf() > 0.5f;
+		this.RainEmit();
+		if (this.isRaining)
+		{
+			foreach(var cell in this.soilLayer.GetUsedCells())
+			{
+				this.soilWaterLayer.SetCell(cell, 0, new Vector2I(GD.RandRange(0, 2), 0));
+			}
+		}
 		foreach(Tree tree in this.GetTree().GetNodesInGroup("Trees"))
 		{
 			tree.Reset();
@@ -70,10 +110,28 @@ public partial class Game : Node2D
 
 	private void OnToolInteract(int tool, Vector2 position)
 	{
-		GD.Print(ToolConstants.All[tool]);
-		GD.Print(position);
+		Vector2I SoilgridPosition;
+		TileData Soildata;
 		switch (ToolConstants.All[tool])
 		{
+			case ToolConstants.Hoe:
+				Vector2I grassGridPosition = this.grassLayer.LocalToMap(this.grassLayer.ToLocal(position));
+				TileData grassData = this.grassLayer.GetCellTileData(grassGridPosition);
+				if (this.grassLayer is not null && (bool)grassData.GetCustomData("farmable") == true)
+				{
+					this.layers.AddSoil(grassGridPosition);
+				}
+				if (this.isRaining)
+				{
+
+					SoilgridPosition = this.soilLayer.LocalToMap(this.soilLayer.ToLocal(position));
+					Soildata = this.soilLayer.GetCellTileData(SoilgridPosition);
+					if (Soildata != null)
+					{
+						this.soilWaterLayer.SetCell(SoilgridPosition, 0, new Vector2I(GD.RandRange(0, 2), 0));
+					}
+				}
+				break;
 			case ToolConstants.Axe:
 				foreach (Tree tree in this.GetTree().GetNodesInGroup("Trees"))
 				{
@@ -92,11 +150,80 @@ public partial class Game : Node2D
 					}
 				}
 				break;
+			case ToolConstants.Fish:
+				this.CheckFishing(position);
+				break;
+			case ToolConstants.Water:
+				SoilgridPosition = this.soilLayer.LocalToMap(this.soilLayer.ToLocal(position));
+				Soildata = this.soilLayer.GetCellTileData(SoilgridPosition);
+				if (Soildata != null) 
+				{
+					this.soilWaterLayer.SetCell(SoilgridPosition, 0, new Vector2I(GD.RandRange(0, 2), 0));
+				}
+
+				break;
 		}
 	}
+
+	private void OnSeedInteract(int seed, Vector2 position)
+	{
+		GD.Print(seed);
+	}
+
+	private void CheckFishing(Vector2 position)
+	{
+		if (this.waterLayer == null)
+		{
+			return;
+		}
+		Vector2I gridPosition = this.waterLayer.LocalToMap(this.waterLayer.ToLocal(position));
+		TileData data = this.waterLayer.GetCellTileData(gridPosition);
+
+		if (data == null)
+		{
+			SignalBus.Instance.EmitSignal(SignalBus.SignalName.CanFish, false);
+		}
+		else
+		{
+			SignalBus.Instance.EmitSignal(SignalBus.SignalName.CanFish, true);
+		}
+	}
+
+	private void OnBlobSpawnTimerTimeOut()
+	{
+		Blob blob = ScenePreloadManager.Instance.Instantiate<Blob>(PreloadEnum.Blob);
+		this.gameObjects.CallDeferred(Node.MethodName.AddChild, blob);
+		var spawnPoints = this.blobSpawnPositions.GetChildren().OfType<Marker2D>().ToList();
+
+		if (spawnPoints.Count > 0)
+		{
+			int randomIndex = GD.RandRange(0, spawnPoints.Count - 1);
+			var randomMarker = spawnPoints[randomIndex];
+
+			blob.GlobalPosition = randomMarker.GlobalPosition;
+		}
+	}
+
+	private void RainEmit()
+	{
+		this.rain.Emitting = this.isRaining;
+		this.rainFloor.Emitting = this.isRaining;
+		if (this.isRaining)
+		{
+			this.rainSound.Play();
+		}
+		else
+		{
+			this.rainSound.Stop();
+		}
+	}
+
 
 	public override void _ExitTree()
 	{
 		SignalBus.Instance.ToolInteract -= this.OnToolInteract;
+		this.blobSpawnTimer.Timeout -= this.OnBlobSpawnTimerTimeOut;
+		SignalBus.Instance.SeedInteract -= this.OnSeedInteract;
+
 	}
 }
