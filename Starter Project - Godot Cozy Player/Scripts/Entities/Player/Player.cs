@@ -23,6 +23,7 @@ public partial class Player : Entity
 	private bool animationFinished = true;
 	private bool fishingAction;
 	private FishGame fishGame;
+	private Timer plantTimer;
 
 
 	[Export]
@@ -47,6 +48,8 @@ public partial class Player : Entity
 
 		this.fishDelayTimer = this.GetNode<Timer>("Timer/FishDelayTimer");
 
+		this.plantTimer = this.GetNode<Timer>("Timer/PlantTimer");
+
 		this.fishGame = this.GetNode<FishGame>("FishGameContainer/FishGame");
 
 		this.CollisionLayer = LayerMask.PlayerLayer;
@@ -62,6 +65,7 @@ public partial class Player : Entity
 
 		this.animationTree.AnimationFinished += this.OnAnimationFinished;
 		SignalBus.Instance.CanFish += this.OnCanFish;
+		this.plantTimer.Timeout += this.OnPlantTimerTimeout;
 	}
 
 	public override void _Input(InputEvent @event)
@@ -78,6 +82,8 @@ public partial class Player : Entity
 			{
 				var interactionPosition = this.Position + this.LastDirection * this.ToolOffset;
 				SignalBus.Instance.EmitSignal(SignalBus.SignalName.SeedInteract, (int)this.CurrentSeed, interactionPosition);
+				this.PlayerCantAct();
+				this.plantTimer.Start();
 			}
 		}
 
@@ -242,11 +248,12 @@ public partial class Player : Entity
 		this.StunTimer.Start();
 	}
 
-	public override void _ExitTree()
+	private void OnPlantTimerTimeout()
 	{
-		this.animationTree.AnimationFinished -= this.OnAnimationFinished;
-		SignalBus.Instance.CanFish -= this.OnCanFish;
+		this.PlayerCanAct();
 	}
+
+
 
 	private void OnCanFish(bool canFish)
 	{
@@ -278,5 +285,12 @@ public partial class Player : Entity
 			this.fishingAction = false;
 			this.fishGame.GetFish();
 		}
+	}
+
+	public override void _ExitTree()
+	{
+		this.animationTree.AnimationFinished -= this.OnAnimationFinished;
+		SignalBus.Instance.CanFish -= this.OnCanFish;
+		this.plantTimer.Timeout -= this.OnPlantTimerTimeout;
 	}
 }

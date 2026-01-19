@@ -4,6 +4,7 @@ using Dcozysandbox.Scripts.Constants;
 using Dcozysandbox.Scripts.Enemies;
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 public partial class Game : Node2D
@@ -167,7 +168,23 @@ public partial class Game : Node2D
 
 	private void OnSeedInteract(int seed, Vector2 position)
 	{
-		GD.Print(seed);
+		Vector2I soilGridPosition = this.soilLayer.LocalToMap(this.soilLayer.ToLocal(position));
+		TileData soildata = this.soilLayer.GetCellTileData(soilGridPosition);
+
+		List<Vector2I> existingPlantCells = [];
+		foreach(Plant plant in this.GetTree().GetNodesInGroup("Plants"))
+		{
+			existingPlantCells.Add(plant.SoilGridCell);
+		}
+
+		if (soildata != null && !existingPlantCells.Contains(soilGridPosition))
+		{
+			Plant plant = ScenePreloadManager.Instance.Instantiate<Plant>(PreloadEnum.Plant);
+			this.gameObjects.CallDeferred(Node.MethodName.AddChild, plant);
+			Vector2 worldPosition = this.soilLayer.MapToLocal(soilGridPosition);
+			plant.GlobalPosition = this.soilLayer.ToGlobal(worldPosition - new Vector2 (0, 12));
+			plant.Setup(seed, soilGridPosition);
+		}
 	}
 
 	private void CheckFishing(Vector2 position)

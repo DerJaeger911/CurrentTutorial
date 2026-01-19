@@ -10,7 +10,8 @@ internal partial class ScenePreloadManager : GodotObject
 
 	private readonly string[] scenesToLoad =
 	{
-		"res://Scenes/characters/blob.tscn"
+		"res://Scenes/characters/blob.tscn",
+		"res://Scenes/levels/plant.tscn"
 	};
 
 	private readonly Dictionary<PreloadEnum, PackedScene> cache = new();

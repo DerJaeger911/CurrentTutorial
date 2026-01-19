@@ -9,4 +9,5 @@ namespace Dcozysandbox.Scripts.AutoLoads.Managers;
 internal enum PreloadEnum
 {
 	Blob,
+	Plant,
 }

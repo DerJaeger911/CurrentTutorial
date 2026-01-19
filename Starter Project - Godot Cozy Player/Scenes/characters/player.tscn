@@ -1042,7 +1042,7 @@ transitions = ["Start", "hoe", SubResource("AnimationNodeStateMachineTransition_
 graph_offset = Vector2(-144, -13)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6eyoc"]
-graph_offset = Vector2(-47.526, 37.53952)
+graph_offset = Vector2(-237.71814, 71.06065)
 nodes/output/position = Vector2(1440, 120)
 nodes/ToolStateMachine/node = SubResource("AnimationNodeStateMachine_vwwfy")
 nodes/ToolStateMachine/position = Vector2(160, 300)
@@ -1119,6 +1119,10 @@ stream = ExtResource("10_5cq8p")
 
 [node name="FishDelayTimer" type="Timer" parent="Timer"]
 wait_time = 5.0
+one_shot = true
+
+[node name="PlantTimer" type="Timer" parent="Timer"]
+wait_time = 0.5
 one_shot = true
 
 [node name="FishGameContainer" type="Control" parent="."]
