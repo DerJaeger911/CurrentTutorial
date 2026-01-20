@@ -93,8 +93,8 @@ public partial class Game : Node2D
 	{
 		this.dayTimer.Start();
 		this.music.Play();
-		this.soilWaterLayer.Clear();
 		this.isRaining = GD.Randf() > 0.5f;
+		this.isRaining = false;
 		this.RainEmit();
 		if (this.isRaining)
 		{
@@ -107,6 +107,12 @@ public partial class Game : Node2D
 		{
 			tree.Reset();
 		}
+		foreach(Plant plant in this.GetTree().GetNodesInGroup("Plants"))
+		{
+			bool isWatered = this.soilWaterLayer.GetUsedCells().Contains(plant.SoilGridCell);
+			plant.Grow(isWatered);
+		}
+		this.soilWaterLayer.Clear();
 	}
 
 	private void OnToolInteract(int tool, Vector2 position)
@@ -124,7 +130,6 @@ public partial class Game : Node2D
 				}
 				if (this.isRaining)
 				{
-
 					SoilgridPosition = this.soilLayer.LocalToMap(this.soilLayer.ToLocal(position));
 					Soildata = this.soilLayer.GetCellTileData(SoilgridPosition);
 					if (Soildata != null)

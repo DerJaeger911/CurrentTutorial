@@ -19,7 +19,7 @@ internal class LayerMask
 	public static uint EnemyMask = BaseLayer | TerainLayer;
 	public static uint PlayerMask = BaseLayer | TerainLayer;
 	public static uint TerainMask = BaseLayer;
-	public static uint PlantMask = BaseLayer;
+	public static uint PlantMask = PlayerLayer;
 	public static uint EnemyAttackMask = PlayerLayer;
 
 

@@ -1,6 +1,8 @@
 using Dcozysandbox.Scripts.Constants.Paths;
+using Dcozysandbox.Scripts.Entities.Player;
 using Dcozysandbox.Scripts.Enums;
 using Dcozysandbox.Scripts.Objects;
+using Dcozysandbox.Scripts.PhysicsLayers;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -9,9 +11,10 @@ public partial class Plant : StaticBody2D
 {
 	private SeedEnum currentSeed;
 	private Sprite2D currentPlantSprite;
-	private int age;
+	private float age;
 	private int maxAge = 3;
 	private PlantData plantData;
+	private Area2D collectArea;
 
 	private readonly Dictionary<SeedEnum, PlantData> Plants = new() 
 	{ 
@@ -28,16 +31,35 @@ public partial class Plant : StaticBody2D
 		this.SoilGridCell = gridPosition;
 		this.currentSeed = (SeedEnum)seed;
 		this.plantData = this.Plants[this.currentSeed];
+		this.collectArea = this.GetNode<Area2D>("CollectArea");
+
+		this.collectArea.CollisionMask = LayerMask.PlantMask;
 
 		this.currentPlantSprite.Texture = GD.Load<Texture2D>(this.plantData.Path);
+		this.collectArea.BodyEntered += this.OnBodyEnteredCollectionArea;
 	}
 
 	public void Grow(bool watered)
 	{
 		if (watered && this.age <= this.maxAge)
 		{
-			this.age += (int)Mathf.Floor(this.plantData.GrowthSpeed);
-			this.currentPlantSprite.Frame = this.age;
+			this.age += this.plantData.GrowthSpeed;
+			this.currentPlantSprite.Frame = (int)Mathf.Floor(this.age);
+
+			GD.Print("Age ", this.age, "  Max Age ", this.maxAge);
 		}
+	}
+
+	private void OnBodyEnteredCollectionArea(Node body)
+	{
+		if (body.IsInGroup("Player") && this.age >= this.maxAge)
+		{
+			this.QueueFree();
+		}
+	}
+
+	public override void _ExitTree()
+    {
+		this.collectArea.BodyEntered -= this.OnBodyEnteredCollectionArea;
 	}
 }
