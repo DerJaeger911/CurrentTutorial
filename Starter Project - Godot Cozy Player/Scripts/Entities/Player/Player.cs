@@ -284,6 +284,7 @@ public partial class Player : Entity
 		{
 			this.fishingAction = false;
 			this.fishGame.GetFish();
+			this.StopFishing();
 		}
 	}
 

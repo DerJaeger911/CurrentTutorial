@@ -1,3 +1,5 @@
+using Dcozysandbox.Scripts.AutoLoads.Managers;
+using Dcozysandbox.Scripts.Enums;
 using Godot;
 using System;
 using System.Runtime.CompilerServices;
@@ -19,6 +21,8 @@ public partial class FishGame : Control
     {
         if(MathF.Abs(this.fishRect.OffsetLeft) < 40)
         {
+            PlayerResourceManager.Instance.AddResource(ResourceEnum.Fish, 1);
+            PlayerResourceManager.Instance.PrintAll();
             return true;
         }
         return false;

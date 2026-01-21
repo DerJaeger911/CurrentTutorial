@@ -9,5 +9,7 @@ internal partial class Registry : Node
 	{
 		_ = SignalBus.Instance;
 		_ = ScenePreloadManager.Instance;
+		_ = PlayerResourceManager.Instance;
+		PlayerResourceManager.Instance.PrintAll();
 	}
 }

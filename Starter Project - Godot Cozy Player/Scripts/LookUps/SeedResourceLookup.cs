@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Dcozysandbox.Scripts.LookUps;
 
-internal class SeedResourceLookup
+internal static class SeedResourceLookup
 {
 	public static readonly IReadOnlyDictionary<SeedEnum, ResourceEnum> ResourceSeedConnection =
 		new Dictionary<SeedEnum, ResourceEnum>

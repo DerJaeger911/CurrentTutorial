@@ -2,6 +2,8 @@ using Dcozysandbox.Scripts.AutoLoads.Busses;
 using Dcozysandbox.Scripts.AutoLoads.Managers;
 using Dcozysandbox.Scripts.Constants;
 using Dcozysandbox.Scripts.Enemies;
+using Dcozysandbox.Scripts.Enums;
+using Dcozysandbox.Scripts.LookUps;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -173,22 +175,28 @@ public partial class Game : Node2D
 
 	private void OnSeedInteract(int seed, Vector2 position)
 	{
-		Vector2I soilGridPosition = this.soilLayer.LocalToMap(this.soilLayer.ToLocal(position));
-		TileData soildata = this.soilLayer.GetCellTileData(soilGridPosition);
-
-		List<Vector2I> existingPlantCells = [];
-		foreach(Plant plant in this.GetTree().GetNodesInGroup("Plants"))
+		int seedsToUse = 1;
+		ResourceEnum currentResource = SeedResourceLookup.ResourceSeedConnection[(SeedEnum)seed];
+		if (PlayerResourceManager.Instance.CheckResource(currentResource, seedsToUse))
 		{
-			existingPlantCells.Add(plant.SoilGridCell);
-		}
+			Vector2I soilGridPosition = this.soilLayer.LocalToMap(this.soilLayer.ToLocal(position));
+			TileData soildata = this.soilLayer.GetCellTileData(soilGridPosition);
 
-		if (soildata != null && !existingPlantCells.Contains(soilGridPosition))
-		{
-			Plant plant = ScenePreloadManager.Instance.Instantiate<Plant>(PreloadEnum.Plant);
-			this.gameObjects.CallDeferred(Node.MethodName.AddChild, plant);
-			Vector2 worldPosition = this.soilLayer.MapToLocal(soilGridPosition);
-			plant.GlobalPosition = this.soilLayer.ToGlobal(worldPosition - new Vector2 (0, 12));
-			plant.Setup(seed, soilGridPosition);
+			List<Vector2I> existingPlantCells = [];
+			foreach (Plant plant in this.GetTree().GetNodesInGroup("Plants"))
+			{
+				existingPlantCells.Add(plant.SoilGridCell);
+			}
+
+			if (soildata != null && !existingPlantCells.Contains(soilGridPosition))
+			{
+				Plant plant = ScenePreloadManager.Instance.Instantiate<Plant>(PreloadEnum.Plant);
+				this.gameObjects.CallDeferred(Node.MethodName.AddChild, plant);
+				Vector2 worldPosition = this.soilLayer.MapToLocal(soilGridPosition);
+				plant.GlobalPosition = this.soilLayer.ToGlobal(worldPosition - new Vector2(0, 12));
+				PlayerResourceManager.Instance.SubtractResource(currentResource, seedsToUse);
+				plant.Setup(seed, soilGridPosition);
+			}
 		}
 	}
 

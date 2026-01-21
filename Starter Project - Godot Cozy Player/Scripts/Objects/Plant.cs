@@ -1,6 +1,8 @@
+using Dcozysandbox.Scripts.AutoLoads.Managers;
 using Dcozysandbox.Scripts.Constants.Paths;
 using Dcozysandbox.Scripts.Entities.Player;
 using Dcozysandbox.Scripts.Enums;
+using Dcozysandbox.Scripts.LookUps;
 using Dcozysandbox.Scripts.Objects;
 using Dcozysandbox.Scripts.PhysicsLayers;
 using Godot;
@@ -27,6 +29,7 @@ public partial class Plant : StaticBody2D
 
     public void Setup(int seed, Vector2I gridPosition)
 	{
+		PlayerResourceManager.Instance.PrintAll();
 		this.currentPlantSprite = this.GetNode<Sprite2D>("Sprite2D");
 		this.SoilGridCell = gridPosition;
 		this.currentSeed = (SeedEnum)seed;
@@ -54,6 +57,8 @@ public partial class Plant : StaticBody2D
 	{
 		if (body.IsInGroup("Player") && this.age >= this.maxAge)
 		{
+			PlayerResourceManager.Instance.AddResource(SeedResourceLookup.ResourceSeedConnection[this.currentSeed], 3);
+			PlayerResourceManager.Instance.PrintAll();
 			this.QueueFree();
 		}
 	}

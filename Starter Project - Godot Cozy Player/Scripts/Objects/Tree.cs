@@ -1,3 +1,6 @@
+using Dcozysandbox.Scripts.AutoLoads.Managers;
+using Dcozysandbox.Scripts.Entities.Player;
+using Dcozysandbox.Scripts.Enums;
 using Dcozysandbox.Scripts.Helper;
 using Dcozysandbox.Scripts.Textures;
 using Godot;
@@ -17,6 +20,7 @@ public partial class Tree : StaticBody2D
 	private List<Marker2D> appleMarker;
 	private Node2D apple;
 	private bool isAlive;
+	private Player player;
 
 	public override void _Ready()
 	{
@@ -26,6 +30,7 @@ public partial class Tree : StaticBody2D
 		this.applePositions = this.GetNode<Node2D>("ApplePositions");
 		this.appleMarker = new List<Marker2D>();
 		this.apple = this.GetNode<Node2D>("Apple");
+		this.player = (Player)this.GetTree().GetFirstNodeInGroup("Player");
 
 		this.isAlive = GD.Randf() > 0.5f;
 		this.SetTreeState(this.isAlive);
@@ -54,6 +59,7 @@ public partial class Tree : StaticBody2D
 		if (this.health <= 0)
 		{
 			this.Die();
+			PlayerResourceManager.Instance.AddResource(ResourceEnum.Wood, 1);
 		}
 	}
 
@@ -101,6 +107,8 @@ public partial class Tree : StaticBody2D
 	{
 		if (this.apple.GetChildCount() > 0)
 		{
+			PlayerResourceManager.Instance.AddResource(ResourceEnum.Apple, 1);
+			PlayerResourceManager.Instance.PrintAll();
 			this.apple.GetChildren().PickRandom().QueueFree();
 		}
 	}
