@@ -147,8 +147,7 @@
               "RelativeToolTip": "Scripts\\AutoLoads\\Managers\\PlayerResourceManager.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAA7wCoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T19:09:38.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-20T19:09:38.334Z"
             },
             {
               "$type": "Document",
@@ -160,8 +159,7 @@
               "RelativeToolTip": "Scripts\\AutoLoads\\Managers\\IPlayerResourceManager.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-21T18:15:23.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-21T18:15:23.021Z"
             },
             {
               "$type": "Document",
@@ -173,8 +171,7 @@
               "RelativeToolTip": "Scripts\\AutoLoads\\Managers\\ScenePreloadManager.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-19T18:11:47.365Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-19T18:11:47.365Z"
             },
             {
               "$type": "Document",
@@ -186,8 +183,7 @@
               "RelativeToolTip": "Scripts\\Game.cs",
               "ViewState": "AgIAAKYAAAAAAAAAAAAWwMQAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T17:24:39.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-13T17:24:39.041Z"
             },
             {
               "$type": "Document",
@@ -199,8 +195,7 @@
               "RelativeToolTip": "Scripts\\Entities\\Player\\PlayerUi.cs",
               "ViewState": "AgIAAFYAAAAAAAAAAAAqwDcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T20:50:27.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-18T20:50:27.203Z"
             },
             {
               "$type": "Document",
@@ -212,8 +207,7 @@
               "RelativeToolTip": "Scripts\\Entities\\Player\\Player.cs",
               "ViewState": "AgIAAEYAAAAAAAAAAAAwwFsAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T20:26:48.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-18T20:26:48.569Z"
             },
             {
               "$type": "Document",
@@ -225,8 +219,7 @@
               "RelativeToolTip": "Scripts\\AutoLoads\\Managers\\PreloadEnum.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-19T18:12:53.501Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-19T18:12:53.501Z"
             },
             {
               "$type": "Document",
@@ -238,8 +231,7 @@
               "RelativeToolTip": "Scripts\\AutoLoads\\Busses\\SignalBus.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAQwCAAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T20:48:16.933Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-18T20:48:16.933Z"
             },
             {
               "$type": "Document",
