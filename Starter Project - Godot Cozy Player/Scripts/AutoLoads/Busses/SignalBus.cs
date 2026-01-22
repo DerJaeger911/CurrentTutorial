@@ -28,4 +28,7 @@ internal partial class SignalBus : GodotObject
 
 	[Signal]
 	public delegate void SeedInteractEventHandler(int seed, Vector2 position);
+
+	[Signal]
+	public delegate void ResourceCountChangedEventHandler();
 }

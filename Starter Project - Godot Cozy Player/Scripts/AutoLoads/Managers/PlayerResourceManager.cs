@@ -1,3 +1,4 @@
+using Dcozysandbox.Scripts.AutoLoads.Busses;
 using Dcozysandbox.Scripts.Enums;
 using Godot;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ internal class PlayerResourceManager : IPlayerResourceManager
 	{
 		Stocks[resource] += amount;
 		GD.Print($"{amount} {resource} hinzugefügt. Neuer Stand: {Stocks[resource]}");
+		SignalBus.Instance.EmitSignal(SignalBus.SignalName.ResourceCountChanged);
 	}
 
     public bool CheckResource(ResourceEnum resource, int amount)
@@ -36,10 +38,16 @@ internal class PlayerResourceManager : IPlayerResourceManager
         return false;
     }
 
+	public int GetResourceCount(ResourceEnum resource)
+	{
+		return Stocks[resource];
+	}
+
 	public void SubtractResource(ResourceEnum resource, int amount)
 	{
 		Stocks[resource] -= amount;
 		GD.Print($"{amount} {resource} hinzugefügt. Neuer Stand: {Stocks[resource]}");
+		SignalBus.Instance.EmitSignal(SignalBus.SignalName.ResourceCountChanged);
 	}
 
 	public void PrintAll()

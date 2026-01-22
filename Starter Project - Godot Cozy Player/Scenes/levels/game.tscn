@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bf0yuue48pk6v"]
+[gd_scene load_steps=34 format=4 uid="uid://bf0yuue48pk6v"]
 
 [ext_resource type="Script" uid="uid://csgda7hk3eptq" path="res://Scripts/TileLayers/Layers.cs" id="1_44khf"]
 [ext_resource type="PackedScene" uid="uid://ca106qafnt25o" path="res://Scenes/characters/player.tscn" id="1_e6yxx"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cc3c5w3cngbit" path="res://Graphics/rain/floor.png" id="8_exg1t"]
 [ext_resource type="Shader" uid="uid://27ibpyl2b1vu" path="res://Shaders/DayTransition.gdshader" id="9_1qves"]
 [ext_resource type="AudioStream" uid="uid://7a4rv3t3jhq3" path="res://Audio/music.mp3" id="10_ema05"]
+[ext_resource type="PackedScene" uid="uid://c7ugfviixr43k" path="res://Scenes/ui/resource_ui.tscn" id="13_j3djs"]
 [ext_resource type="Texture2D" uid="uid://e5sdpu0o05kg" path="res://Graphics/rain/drops.png" id="14_2hlsy"]
 [ext_resource type="AudioStream" uid="uid://pbohj8jumnb2" path="res://Audio/rain.mp3" id="15_p0nof"]
 
@@ -903,8 +904,8 @@ particles_anim_loop = false
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p0nof"]
 particle_flag_disable_z = true
-emission_shape_offset = Vector3(-100, 0, 0)
-emission_shape_scale = Vector3(600, 300, 1)
+emission_shape_offset = Vector3(-300, 0, 0)
+emission_shape_scale = Vector3(900, 300, 1)
 emission_shape = 3
 emission_box_extents = Vector3(1, 1, 1)
 gravity = Vector3(-70, 98, 0)
@@ -1018,6 +1019,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="ResourceUi" parent="CanvasLayer" instance=ExtResource("13_j3djs")]
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ema05")
 autoplay = true
@@ -1072,7 +1075,6 @@ autostart = true
 
 [node name="RainParticles" type="GPUParticles2D" parent="Overlay"]
 material = SubResource("CanvasItemMaterial_2hlsy")
-emitting = false
 amount = 5000
 texture = ExtResource("14_2hlsy")
 process_material = SubResource("ParticleProcessMaterial_p0nof")

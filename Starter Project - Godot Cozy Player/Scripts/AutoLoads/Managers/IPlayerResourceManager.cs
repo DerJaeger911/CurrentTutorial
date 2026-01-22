@@ -15,5 +15,7 @@ internal interface IPlayerResourceManager
 
 	void SubtractResource(ResourceEnum resource, int amount);
 
+	int GetResourceCount(ResourceEnum resource);
+
 	void PrintAll();
 }
