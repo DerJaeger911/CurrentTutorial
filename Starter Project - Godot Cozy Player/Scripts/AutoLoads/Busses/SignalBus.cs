@@ -31,4 +31,13 @@ internal partial class SignalBus : GodotObject
 
 	[Signal]
 	public delegate void ResourceCountChangedEventHandler();
+
+	[Signal]
+	public delegate void BuildModeEventHandler();
+
+	[Signal]
+	public delegate void BuildEventHandler(Vector2I position, ObjectEnum buildObject);
+
+	[Signal]
+	public delegate void DeleteBuildEventHandler(Vector2I position);
 }

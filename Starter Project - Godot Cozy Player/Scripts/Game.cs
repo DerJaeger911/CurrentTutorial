@@ -27,13 +27,15 @@ public partial class Game : Node2D
 	private TileMapLayer grassLayer;
 	private TileMapLayer soilLayer;
 	private TileMapLayer soilWaterLayer;
+	private TileMapLayer wallsLayer;
+	private TileMapLayer floorLayer;
 	private Layers layers;
 	private bool isRaining;
 	private GpuParticles2D rainFloor;
 	private GpuParticles2D rain;
 	private AudioStreamPlayer rainSound;
-
-
+	private BuildOverlay buildOverlay;
+	private CharacterBody2D player;
 
 	private double daytimePoint = 0;
 	private bool fadeOut;
@@ -53,12 +55,19 @@ public partial class Game : Node2D
 		this.grassLayer = this.GetNode<TileMapLayer>("Layers/GrassLayer");
 		this.soilLayer = this.GetNode<TileMapLayer>("Layers/SoilLayer");
 		this.soilWaterLayer = this.GetNode<TileMapLayer>("Layers/SoilWaterLayer");
+		this.floorLayer = this.GetNode<TileMapLayer>("Layers/HouseFloorLayer");
+		this.wallsLayer = this.GetNode<TileMapLayer>("Objects/WallLayer");
 		this.rain = this.GetNode<GpuParticles2D>("Overlay/RainParticles");
 		this.rainFloor = this.GetNode<GpuParticles2D>("Layers/FloorRainParticles");
 		this.rainSound = this.GetNode<AudioStreamPlayer>("RainSound");
+		this.buildOverlay = this.GetNode<BuildOverlay>("Overlay/BuildOverlay");
+		this.player = this.GetNode<CharacterBody2D>("Objects/Player");
 		SignalBus.Instance.ToolInteract += this.OnToolInteract;
 		SignalBus.Instance.SeedInteract += this.OnSeedInteract;
 		this.blobSpawnTimer.Timeout += this.OnBlobSpawnTimerTimeOut;
+		SignalBus.Instance.BuildMode += this.OnPlayerBuildMode;
+		SignalBus.Instance.Build += this.OnBuild;
+		SignalBus.Instance.DeleteBuild += this.OnDeleteBuild;
 		this.isRaining = GD.Randf() > 0.5f;
 		this.RainEmit();
 	}
@@ -248,12 +257,32 @@ public partial class Game : Node2D
 		}
 	}
 
+	private void OnPlayerBuildMode()
+	{
+		this.dayTimer.Paused = true;
+		this.buildOverlay.Reveal(this.player.GlobalPosition);
+	}
+
+	private void OnBuild(Vector2I position, ObjectEnum buildObject)
+	{
+		this.wallsLayer.SetCellsTerrainConnect([position], 0, 0);
+		this.floorLayer.SetCell(position, 0, Vector2I.Zero);
+	}
+
+	private void OnDeleteBuild(Vector2I position)
+	{
+		this.floorLayer.EraseCell(position);
+		this.wallsLayer.SetCellsTerrainConnect([position], 0, -1);
+	}
 
 	public override void _ExitTree()
 	{
 		SignalBus.Instance.ToolInteract -= this.OnToolInteract;
 		this.blobSpawnTimer.Timeout -= this.OnBlobSpawnTimerTimeOut;
 		SignalBus.Instance.SeedInteract -= this.OnSeedInteract;
+		SignalBus.Instance.BuildMode -= this.OnPlayerBuildMode;
+		SignalBus.Instance.Build -= this.OnBuild;
+		SignalBus.Instance.DeleteBuild -= this.OnDeleteBuild;
 
 	}
 }

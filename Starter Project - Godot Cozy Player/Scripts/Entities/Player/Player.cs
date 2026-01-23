@@ -24,11 +24,14 @@ public partial class Player : Entity
 	private bool fishingAction;
 	private FishGame fishGame;
 	private Timer plantTimer;
+	private BuildOverlay buildOverlay;
 
 
 	[Export]
 	public int ToolOffset { get; set; } = 20;
 	public int CurrentTool { get; set; } = 0;
+
+	public bool IsBuilding {  get; set; }
 
 	public SeedEnum CurrentSeed { get; set; } = SeedEnum.Corn;
 	public Vector2 LastDirection { get; set; } = new(0, 1);
@@ -52,6 +55,8 @@ public partial class Player : Entity
 
 		this.fishGame = this.GetNode<FishGame>("FishGameContainer/FishGame");
 
+		this.buildOverlay = this.GetNode<BuildOverlay>("../../Overlay/BuildOverlay");
+
 		this.CollisionLayer = LayerMask.PlayerLayer;
 		this.CollisionMask = LayerMask.PlayerMask;
 
@@ -66,6 +71,7 @@ public partial class Player : Entity
 		this.animationTree.AnimationFinished += this.OnAnimationFinished;
 		SignalBus.Instance.CanFish += this.OnCanFish;
 		this.plantTimer.Timeout += this.OnPlantTimerTimeout;
+		
 	}
 
 	public override void _Input(InputEvent @event)
@@ -90,6 +96,21 @@ public partial class Player : Entity
 		if (this.IsFishing && !this.canAct)
 		{
 			this.fishingAction = Input.IsActionJustPressed("action");
+		}
+
+		if (Input.IsActionJustPressed("build"))
+		{
+			this.PlayerCantAct();
+			this.IsBuilding = true;
+			SignalBus.Instance.EmitSignal(SignalBus.SignalName.BuildMode);
+			this.animationTree.Set(AnimationPaths.MsmIdleBlend, new Vector2 (0, 1));
+		}
+
+		if (this.IsBuilding && Input.IsActionJustPressed("ui_cancel"))
+		{
+			this.PlayerCanAct();
+			this.IsBuilding = false;
+			this.buildOverlay.UnReveal();
 		}
 	}
 
@@ -148,7 +169,10 @@ public partial class Player : Entity
 
 	protected override void GetDirection()
 	{
-		this.Direction = Input.GetVector("left", "right", "up", "down");
+		if (this.CanMove)
+		{
+			this.Direction = Input.GetVector("left", "right", "up", "down");
+		}
 	}
 
 	protected override void SetAnimation()
@@ -287,6 +311,8 @@ public partial class Player : Entity
 			this.StopFishing();
 		}
 	}
+
+
 
 	public override void _ExitTree()
 	{
