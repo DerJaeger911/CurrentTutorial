@@ -5,6 +5,8 @@ using System;
 
 public partial class DoorChecker : Area2D
 {
+    private Vector2I doorCoordinate;
+
     public override void _Ready()
     {
         this.CollisionMask = LayerMask.DoorMask;

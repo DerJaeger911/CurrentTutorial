@@ -40,4 +40,7 @@ internal partial class SignalBus : GodotObject
 
 	[Signal]
 	public delegate void DeleteBuildEventHandler(Vector2I position);
+
+	[Signal]
+	public delegate void DoorChangedEventHandler(Vector2I gridCoordinate, bool open); 
 }
