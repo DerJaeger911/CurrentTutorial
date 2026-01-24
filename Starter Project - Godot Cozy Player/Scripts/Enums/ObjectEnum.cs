@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dcozysandbox.Scripts.Enums;
 
-internal enum ObjectEnum
+public enum ObjectEnum
 {
 	Walls,
 	Door,

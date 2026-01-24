@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmpddbu3rjqkr"]
+
+[ext_resource type="Script" uid="uid://74eq7uw1rew6" path="res://Scripts/Objects/BuildObject.cs" id="1_efjkw"]
+[ext_resource type="Texture2D" uid="uid://3pkldf7cfcvi" path="res://Graphics/ui/objects.png" id="1_orup3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efjkw"]
+size = Vector2(16, 16)
+
+[node name="BuildObject" type="StaticBody2D"]
+script = ExtResource("1_efjkw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_orup3")
+hframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_efjkw")

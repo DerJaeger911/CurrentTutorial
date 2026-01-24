@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dcozysandbox.Scripts.PhysicsLayers;
 
-internal class LayerMask
+internal static class LayerMask
 {
 	public const uint BaseLayer = 1 << 0;
 	public const uint TerainLayer = 1 << 1;
@@ -21,6 +21,7 @@ internal class LayerMask
 	public static uint TerainMask = BaseLayer;
 	public static uint PlantMask = PlayerLayer;
 	public static uint EnemyAttackMask = PlayerLayer;
+	public static uint DoorMask = PlayerLayer;
 
 
 	public static uint DisableMasks(uint currentMask, uint layerToDisable)

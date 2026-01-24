@@ -1,6 +1,7 @@
 using Dcozysandbox.Scripts.Extensions;
 using Godot;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Dcozysandbox.Scripts.AutoLoads.Managers;
 
@@ -11,8 +12,11 @@ internal partial class ScenePreloadManager : GodotObject
 	private readonly string[] scenesToLoad =
 	{
 		"res://Scenes/characters/blob.tscn",
-		"res://Scenes/levels/plant.tscn"
+		"res://Scenes/levels/plant.tscn",
+		"res://Scenes/levels/build_object.tscn",
+		"res://Scenes/levels/door_checker.tscn",
 	};
+
 
 	private readonly Dictionary<PreloadEnum, PackedScene> cache = new();
 
@@ -27,6 +31,8 @@ internal partial class ScenePreloadManager : GodotObject
 		foreach (string path in this.scenesToLoad)
 		{
 			string keyString = path.GetBaseName().GetFile().CapitalizeFirst();
+			keyString = Regex.Replace(keyString, @"[^a-zA-Z0-9]", "");
+
 
 			if (System.Enum.TryParse(keyString, out PreloadEnum keyEnum))
 			{

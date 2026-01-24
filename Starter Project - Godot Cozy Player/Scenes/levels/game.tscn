@@ -1374,6 +1374,8 @@ process_material = SubResource("ParticleProcessMaterial_2hlsy")
 tile_map_data = PackedByteArray("AADn/wAAAQAAAAAAAADo/wAAAQAAAAAAAADp/wAAAQAAAAAAAADq/wAAAQAAAAAAAADr/wAAAQAAAAAAAADr/wEAAQAAAAAAAADr/wIAAQAAAAAAAADq/wIAAQAAAAAAAADp/wIAAQAAAAAAAADo/wIAAQAAAAAAAADn/wIAAQAAAAAAAADn/wEAAQAAAAAAAADo/wEAAQAAAAAAAADp/wEAAQAAAAAAAADq/wEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_ug1qi")
 
+[node name="CarpetLayer" type="Node2D" parent="Layers"]
+
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
 

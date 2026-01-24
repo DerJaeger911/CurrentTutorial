@@ -10,4 +10,6 @@ internal enum PreloadEnum
 {
 	Blob,
 	Plant,
+	Buildobject,
+	Doorchecker
 }

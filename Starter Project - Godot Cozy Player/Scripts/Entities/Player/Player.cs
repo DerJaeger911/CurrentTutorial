@@ -41,6 +41,8 @@ public partial class Player : Entity
 
 	public bool IsFishing { get; set; }
 
+	public bool CanChangeElemnts { get; set; } = true;
+
 	public override void _Ready()
 	{
 		base._Ready();
@@ -76,9 +78,12 @@ public partial class Player : Entity
 
 	public override void _Input(InputEvent @event)
 	{
-		this.ToggleTool();
-		this.ChangeToolWithKey(@event);
-		this.ToggleSeed();
+		if (this.CanChangeElemnts)
+		{
+			this.ToggleTool();
+			this.ChangeToolWithKey(@event);
+			this.ToggleSeed();
+		}
 
 		if (this.canAct)
 		{
@@ -104,6 +109,7 @@ public partial class Player : Entity
 			this.IsBuilding = true;
 			SignalBus.Instance.EmitSignal(SignalBus.SignalName.BuildMode);
 			this.animationTree.Set(AnimationPaths.MsmIdleBlend, new Vector2 (0, 1));
+			this.CanChangeElemnts = false;
 		}
 
 		if (this.IsBuilding && Input.IsActionJustPressed("ui_cancel"))
@@ -111,6 +117,7 @@ public partial class Player : Entity
 			this.PlayerCanAct();
 			this.IsBuilding = false;
 			this.buildOverlay.UnReveal();
+			this.CanChangeElemnts = true;
 		}
 	}
 

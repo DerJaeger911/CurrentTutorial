@@ -4,6 +4,7 @@ using Dcozysandbox.Scripts.Entities.Player;
 using Dcozysandbox.Scripts.Enums;
 using Godot;
 using System;
+using System.Diagnostics;
 
 public partial class BuildOverlay : Node2D
 {
@@ -12,10 +13,12 @@ public partial class BuildOverlay : Node2D
 	[Export]
 	private Vector2I startGridPosition = new Vector2I(2, 0);
 	private ObjectEnum currentBuildObject = ObjectEnum.Walls;
+	private Sprite2D previewSprite;
 
     public override void _Ready()
     {
 		this.player = this.GetNode<Player>("../../Objects/Player");
+		this.previewSprite = this.GetNode<Sprite2D>("PreviewSprite");
     }
 
     public override void _Input(InputEvent @event)
@@ -34,6 +37,16 @@ public partial class BuildOverlay : Node2D
 			if (Input.IsActionJustPressed("ui_text_backspace"))
 			{
 				SignalBus.Instance.EmitSignal(SignalBus.SignalName.DeleteBuild, this.currentGridPosition);
+			}
+			
+			float toggleDirection = Input.GetAxis("tool_backward", "tool_forward");
+			if (!Mathf.IsZeroApprox(toggleDirection))
+			{
+				int enumSize = System.Enum.GetValues(typeof(ObjectEnum)).Length;
+				int nextIndex = Mathf.PosMod((int)this.currentBuildObject + (int)toggleDirection, enumSize);
+				this.currentBuildObject = (ObjectEnum)nextIndex;
+				this.previewSprite.Frame = nextIndex;
+				GD.Print(nextIndex);
 			}
 		}
 

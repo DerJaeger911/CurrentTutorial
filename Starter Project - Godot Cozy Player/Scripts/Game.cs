@@ -265,8 +265,33 @@ public partial class Game : Node2D
 
 	private void OnBuild(Vector2I position, ObjectEnum buildObject)
 	{
-		this.wallsLayer.SetCellsTerrainConnect([position], 0, 0);
-		this.floorLayer.SetCell(position, 0, Vector2I.Zero);
+		if (buildObject == ObjectEnum.Walls)
+		{
+			this.wallsLayer.SetCellsTerrainConnect([position], 0, 0);
+			this.floorLayer.SetCell(position, 0, Vector2I.Zero);
+		}
+
+		if (buildObject == ObjectEnum.Door)
+		{
+			this.wallsLayer.SetCell(position, 0, new Vector2I(0, 4));
+			DoorChecker doorChecker = ScenePreloadManager.Instance.Instantiate<DoorChecker>(PreloadEnum.Doorchecker);
+			this.gameObjects.CallDeferred(Node.MethodName.AddChild, doorChecker);
+			doorChecker.Setup(position);
+		}
+
+		if (buildObject is not ObjectEnum.Walls and not ObjectEnum.Door)
+		{
+			BuildObject buildObjectScene = ScenePreloadManager.Instance.Instantiate<BuildObject>(PreloadEnum.Buildobject);
+			buildObjectScene.Setup(buildObject);
+			Node2D targetGroup = this.gameObjects;
+			if (buildObject == ObjectEnum.Carpet)
+			{
+				targetGroup = this.GetNode<Node2D>("Layers/CarpetLayer");
+			}
+			
+			targetGroup.CallDeferred(Node.MethodName.AddChild, buildObjectScene);
+			buildObjectScene.Position = position * 16 + new Vector2I(8, 8);
+		}
 	}
 
 	private void OnDeleteBuild(Vector2I position)
@@ -283,6 +308,5 @@ public partial class Game : Node2D
 		SignalBus.Instance.BuildMode -= this.OnPlayerBuildMode;
 		SignalBus.Instance.Build -= this.OnBuild;
 		SignalBus.Instance.DeleteBuild -= this.OnDeleteBuild;
-
 	}
 }
