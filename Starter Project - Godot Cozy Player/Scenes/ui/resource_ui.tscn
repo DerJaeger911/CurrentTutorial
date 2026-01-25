@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cjr603d480bnf" path="res://Graphics/ui/tomato.png" id="6_atn7t"]
 [ext_resource type="Texture2D" uid="uid://dfe8dxw6ptaea" path="res://Graphics/ui/pumpkin.png" id="7_4s7cv"]
 
-[node name="ResourceUi" type="Control"]
+[node name="ResourceUi" type="Control" groups=["ResourceUI"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

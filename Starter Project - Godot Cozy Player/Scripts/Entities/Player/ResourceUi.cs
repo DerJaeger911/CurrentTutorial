@@ -65,7 +65,7 @@ public partial class ResourceUi : Control
         this.TweenAnimation(1.15f);
 	}
 
-    private void TweenAnimation(float target)
+    public void TweenAnimation(float target)
     {
 		Tween tween = this.GetTree().CreateTween();
 		tween.SetParallel(true);

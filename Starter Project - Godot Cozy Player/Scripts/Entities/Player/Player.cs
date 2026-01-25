@@ -118,6 +118,8 @@ public partial class Player : Entity
 			this.IsBuilding = false;
 			this.buildOverlay.UnReveal();
 			this.CanChangeElemnts = true;
+			ResourceUi resourceUi = (ResourceUi)this.GetTree().GetFirstNodeInGroup("ResourceUI");
+			resourceUi.TweenAnimation(1.15f);
 		}
 	}
 

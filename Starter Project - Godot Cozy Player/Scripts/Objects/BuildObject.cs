@@ -56,4 +56,15 @@ public partial class BuildObject : StaticBody2D
 		}
 	}
 
+	public bool CanDelete(Vector2I checkGridPosition)
+	{
+		if (this.collisionShape.Shape is RectangleShape2D rectShape)
+		{
+			Rect2 objectRect = new Rect2(this.GlobalPosition, rectShape.Size);
+			objectRect.Position -= rectShape.Size / 2;
+			Vector2 checkWorldPoint = (Vector2)checkGridPosition * 16 + new Vector2(8, 8);
+			return objectRect.HasPoint(checkWorldPoint);
+		}
+		return false;
+	}
 }

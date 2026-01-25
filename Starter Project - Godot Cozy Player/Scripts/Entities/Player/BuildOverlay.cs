@@ -1,8 +1,10 @@
 using Dcozysandbox.Scripts.AutoLoads.Busses;
+using Dcozysandbox.Scripts.AutoLoads.Managers;
 using Dcozysandbox.Scripts.Constants;
 using Dcozysandbox.Scripts.Entities.Player;
 using Dcozysandbox.Scripts.Enums;
 using Godot;
+using Godot.Collections;
 using System;
 using System.Diagnostics;
 
@@ -14,8 +16,10 @@ public partial class BuildOverlay : Node2D
 	private Vector2I startGridPosition = new Vector2I(2, 0);
 	private ObjectEnum currentBuildObject = ObjectEnum.Walls;
 	private Sprite2D previewSprite;
+	private double moveTimer = 0.0;
+	private const double MoveDelay = 0.15;
 
-    public override void _Ready()
+	public override void _Ready()
     {
 		this.player = this.GetNode<Player>("../../Objects/Player");
 		this.previewSprite = this.GetNode<Sprite2D>("PreviewSprite");
@@ -25,13 +29,13 @@ public partial class BuildOverlay : Node2D
     {
         if (this.player.IsBuilding)
 		{
-			Vector2I direction = (Vector2I)Input.GetVector("left", "right", "up", "down");
-			this.currentGridPosition += direction;
-			this.Position = this.currentGridPosition * GameConstants.TileSize;
-
 			if (Input.IsActionJustPressed("action"))
 			{
-				SignalBus.Instance.EmitSignal(SignalBus.SignalName.Build, this.currentGridPosition, (int)this.currentBuildObject);
+				if(PlayerResourceManager.Instance.CheckResource(ResourceEnum.Wood, 1))
+				{
+					SignalBus.Instance.EmitSignal(SignalBus.SignalName.Build, this.currentGridPosition, (int)this.currentBuildObject);
+					PlayerResourceManager.Instance.SubtractResource(ResourceEnum.Wood, 1);
+				}
 			}
 
 			if (Input.IsActionJustPressed("ui_text_backspace"))
@@ -51,6 +55,26 @@ public partial class BuildOverlay : Node2D
 		}
 
     }
+
+    public override void _Process(Double delta)
+    {
+		if (this.player.IsBuilding)
+		{
+            this.moveTimer += delta;
+
+			if (this.moveTimer >= MoveDelay)
+			{
+				Vector2I direction = (Vector2I)Input.GetVector("left", "right", "up", "down");
+
+				if (direction != Vector2I.Zero)
+				{
+					this.currentGridPosition += direction;
+					this.Position = this.currentGridPosition * GameConstants.TileSize;
+                    this.moveTimer = 0.0;
+				}
+			}
+		}
+	}
 
 	public void Reveal(Vector2 worldPosition)
 	{

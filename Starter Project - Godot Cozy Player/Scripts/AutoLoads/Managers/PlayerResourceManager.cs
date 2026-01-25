@@ -13,7 +13,7 @@ internal class PlayerResourceManager : IPlayerResourceManager
 	private static Dictionary<ResourceEnum, int> Stocks { get; set; } = new()
 	{
 		{ ResourceEnum.Apple, 0 },
-		{ ResourceEnum.Wood, 0 },
+		{ ResourceEnum.Wood, 5 },
 		{ ResourceEnum.Fish, 0 },
 		{ ResourceEnum.Corn, 1 },
 		{ ResourceEnum.Tomato, 1 },

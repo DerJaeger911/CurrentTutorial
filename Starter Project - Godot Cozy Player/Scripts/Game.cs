@@ -36,6 +36,7 @@ public partial class Game : Node2D
 	private AudioStreamPlayer rainSound;
 	private BuildOverlay buildOverlay;
 	private CharacterBody2D player;
+	private ResourceUi resourceUi;
 
 	private double daytimePoint = 0;
 	private bool fadeOut;
@@ -62,6 +63,7 @@ public partial class Game : Node2D
 		this.rainSound = this.GetNode<AudioStreamPlayer>("RainSound");
 		this.buildOverlay = this.GetNode<BuildOverlay>("Overlay/BuildOverlay");
 		this.player = this.GetNode<CharacterBody2D>("Objects/Player");
+		this.resourceUi = this.GetNode<ResourceUi>("CanvasLayer/ResourceUi");
 		SignalBus.Instance.ToolInteract += this.OnToolInteract;
 		SignalBus.Instance.SeedInteract += this.OnSeedInteract;
 		this.blobSpawnTimer.Timeout += this.OnBlobSpawnTimerTimeOut;
@@ -70,6 +72,8 @@ public partial class Game : Node2D
 		SignalBus.Instance.DeleteBuild += this.OnDeleteBuild;
 		this.isRaining = GD.Randf() > 0.5f;
 		this.RainEmit();
+		SignalBus.Instance.DoorChanged += this.DoorHandler;
+		this.canvasLayer.Visible = true;
 	}
 
 	public override void _Process(Double delta)
@@ -191,6 +195,14 @@ public partial class Game : Node2D
 			Vector2I soilGridPosition = this.soilLayer.LocalToMap(this.soilLayer.ToLocal(position));
 			TileData soildata = this.soilLayer.GetCellTileData(soilGridPosition);
 
+			foreach (var floor in this.floorLayer.GetUsedCells())
+			{
+				if (floor == soilGridPosition)
+				{
+					return;
+				}
+			}
+
 			List<Vector2I> existingPlantCells = [];
 			foreach (Plant plant in this.GetTree().GetNodesInGroup("Plants"))
 			{
@@ -261,6 +273,7 @@ public partial class Game : Node2D
 	{
 		this.dayTimer.Paused = true;
 		this.buildOverlay.Reveal(this.player.GlobalPosition);
+		this.resourceUi.TweenAnimation(1);
 	}
 
 	private void OnBuild(Vector2I position, ObjectEnum buildObject)
@@ -273,14 +286,34 @@ public partial class Game : Node2D
 
 		if (buildObject == ObjectEnum.Door)
 		{
-			this.wallsLayer.SetCell(position, 0, new Vector2I(0, 4));
-			DoorChecker doorChecker = ScenePreloadManager.Instance.Instantiate<DoorChecker>(PreloadEnum.Doorchecker);
-			this.gameObjects.CallDeferred(Node.MethodName.AddChild, doorChecker);
-			doorChecker.Setup(position);
+			TileData currentCell = (TileData)this.wallsLayer.GetCellTileData(position);
+			if (currentCell != null)
+			{
+				bool isDoor = (bool)currentCell.GetCustomData("Door");
+				if (!isDoor)
+				{
+					this.wallsLayer.SetCell(position, 0, new Vector2I(0, 4));
+					DoorChecker doorChecker = ScenePreloadManager.Instance.Instantiate<DoorChecker>(PreloadEnum.Doorchecker);
+					this.gameObjects.CallDeferred(Node.MethodName.AddChild, doorChecker);
+					doorChecker.Setup(position);
+				}
+			}
 		}
 
 		if (buildObject is not ObjectEnum.Walls and not ObjectEnum.Door)
 		{
+			foreach (Node obj in this.GetTree().GetNodesInGroup("Objects"))
+			{
+				if (obj is BuildObject newBo)
+				{
+					GD.Print("jo");
+					if (newBo.CanDelete(position))
+					{
+						obj.QueueFree();
+					}
+				}
+			}
+
 			BuildObject buildObjectScene = ScenePreloadManager.Instance.Instantiate<BuildObject>(PreloadEnum.Buildobject);
 			buildObjectScene.Setup(buildObject);
 			Node2D targetGroup = this.gameObjects;
@@ -296,8 +329,50 @@ public partial class Game : Node2D
 
 	private void OnDeleteBuild(Vector2I position)
 	{
+		foreach(Node node in this.GetTree().GetNodesInGroup("Objects"))
+		{
+			if (node is BuildObject buildObject)
+			{
+				if (buildObject.CanDelete(position))
+				{
+					node.QueueFree();
+					return;
+				}
+			}
+		}
+
+		TileData tileData = (TileData)this.wallsLayer.GetCellTileData(position);
+
+		if (tileData != null && (bool)tileData.GetCustomData("Door"))
+		{
+			foreach (DoorChecker doorChecker in this.GetTree().GetNodesInGroup("DoorChecker"))
+			{
+				if (doorChecker.DoorCoordinate == position)
+				{
+					doorChecker.QueueFree();
+					this.floorLayer.SetCell(position, 0, Vector2I.Zero);
+					this.wallsLayer.SetCellsTerrainConnect([position], 0, 0);
+					return;
+				}
+			}
+		}
+
 		this.floorLayer.EraseCell(position);
 		this.wallsLayer.SetCellsTerrainConnect([position], 0, -1);
+	}
+
+	private void DoorHandler(Vector2I doorCordinate,bool isOpen)
+	{
+		GD.Print(doorCordinate);
+		GD.Print(isOpen);
+		if (isOpen)
+		{
+			this.wallsLayer.SetCell(doorCordinate, 0, new Vector2I(1, 1));
+		}
+		else
+		{
+			this.wallsLayer.SetCell(doorCordinate, 0, new Vector2I(0, 4));
+		}
 	}
 
 	public override void _ExitTree()

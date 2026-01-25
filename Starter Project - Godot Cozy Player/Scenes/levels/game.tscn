@@ -1241,6 +1241,7 @@ texture = ExtResource("11_y8yof")
 10:3/0/terrains_peering_bit/top_left_corner = 0
 10:3/0/terrains_peering_bit/top_side = 0
 0:4/0 = 0
+0:4/0/custom_data_0 = true
 4:4/0 = 0
 4:4/0/terrain_set = 0
 4:4/0/terrain = 0
@@ -1313,6 +1314,8 @@ physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.48186773, 0.003032815, 0.8911823, 1)
+custom_data_layer_0/name = "Door"
+custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_ksopp")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ema05"]
@@ -1379,14 +1382,14 @@ tile_set = SubResource("TileSet_ug1qi")
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="Player" parent="Objects" instance=ExtResource("1_e6yxx")]
+y_sort_enabled = true
+
 [node name="WallLayer" type="TileMapLayer" parent="Objects"]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AADo/wIAAAACAAMAAADn/wIAAAAEAAMAAADn/wEAAAADAAEAAADn/wAAAAAEAAAAAADo/wAAAAABAAMAAADp/wAAAAABAAMAAADq/wAAAAABAAMAAADr/wAAAAAHAAAAAADr/wEAAAADAAEAAADr/wIAAAAHAAMAAADq/wIAAAAAAAMAAAA=")
 tile_set = SubResource("TileSet_d7kan")
 script = ExtResource("12_2m8uk")
-
-[node name="Player" parent="Objects" instance=ExtResource("1_e6yxx")]
-y_sort_enabled = true
 
 [node name="Tree" parent="Objects" instance=ExtResource("5_2xl1j")]
 y_sort_enabled = true
@@ -1445,6 +1448,7 @@ position = Vector2(-303, 39)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="DayTransition" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_ema05")
