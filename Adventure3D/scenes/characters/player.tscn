@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjgjyxpjvtnkd"]
+[gd_scene load_steps=5 format=3 uid="uid://bjgjyxpjvtnkd"]
 
 [ext_resource type="PackedScene" uid="uid://d2x1bkgp1xag" path="res://scenes/characters/character.tscn" id="1_yewv4"]
 [ext_resource type="PackedScene" uid="uid://b0d2yj6cs7jem" path="res://scenes/characters/player_skin.tscn" id="2_76oj4"]
+[ext_resource type="Script" uid="uid://q4fqq13fhlbx" path="res://Scripts/Characters/Player/Player.cs" id="2_dyp2m"]
+[ext_resource type="PackedScene" uid="uid://c0jhnaoec34na" path="res://scenes/characters/camera_controller.tscn" id="3_76oj4"]
 
 [node name="Player" instance=ExtResource("1_yewv4")]
+script = ExtResource("2_dyp2m")
 
 [node name="PlayerSkin" parent="." index="1" instance=ExtResource("2_76oj4")]
 
-[node name="Camera3D" type="Camera3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+[node name="CameraController" parent="." index="2" instance=ExtResource("3_76oj4")]
+transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0, 1.4, 0)

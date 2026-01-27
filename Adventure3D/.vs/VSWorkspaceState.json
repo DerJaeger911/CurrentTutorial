@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Scripts",
+    "\\Scripts\\Global"
   ],
+  "SelectedNode": "\\Scripts\\Global\\Global.cs",
   "PreviewInSolutionExplorer": false
 }
