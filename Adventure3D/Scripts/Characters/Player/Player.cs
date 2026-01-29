@@ -17,24 +17,30 @@ public partial class Player : Character
     private Camera3D camera;
     private Node3D playerSkin;
     private WeaponData currentWeapon;
+    private ShieldData currentShield;
     private int weaponIndex;
     private BoneAttachment3D rightHand;
+    private BoneAttachment3D leftHand;
 
 	override public void _Ready()
     {
         base._Ready();
 		this.playerSkin = this.GetNode<Node3D>("PlayerSkin");
 		this.rightHand = this.playerSkin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/RightHand");
-        this.currentWeapon = Global.Instance.Weapons["staff"];
+		this.leftHand = this.playerSkin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/LeftHand");
+		this.currentWeapon = Global.Instance.Weapons["dagger"];
+        this.currentShield = Global.Instance.Shields["round"];
         this.camera = this.GetNode<Camera3D>("CameraController/Camera3D");
 		this.Equip(this.currentWeapon, this.rightHand);
+		this.Equip(this.currentShield, this.leftHand);
 	}
 
 	public override void _PhysicsProcess(Double delta)
     {
         this.MoveLogic(delta);
         this.JumpLogic(delta);
-        this.MoveAndSlide();
+        this.AbbilityLogic();
+		this.MoveAndSlide();
     }
 
     private void MoveLogic(Double delta)
@@ -81,6 +87,15 @@ public partial class Player : Character
 		var gravity = this.JumpVelocity < 0 ? this.JumpGravity : this.FallGravity;
         this.ApplyGravity(gravity, delta);
 	}
+
+    private void AbbilityLogic()
+    {
+        if (Input.IsActionJustPressed("attack") && !this.Attacking)
+        {
+            this.AnimationTree.Set("parameters/AttackOneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
+            this.Attacking = true;
+		}
+    }
 
     private void ApplyGravity(float gravity, double delta)
     {
