@@ -7,8 +7,24 @@
       "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\characters\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\items\\style.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\items\\style.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\items\\shield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\items\\shield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\globaldata\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\globaldata\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\characters\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\characters\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\globaldata\\objectdataclasses\\shielddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,14 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\items\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\items\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\globaldata\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\globaldata\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\globaldata\\objectdataclasses\\itemdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\globaldata\\objectdataclasses\\styledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\globaldata\\objectdataclasses\\styledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\characters\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\characters\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,21 +58,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 13,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Shield.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Items\\Shield.cs",
-              "RelativeDocumentMoniker": "Scripts\\Items\\Shield.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Items\\Shield.cs",
-              "RelativeToolTip": "Scripts\\Items\\Shield.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T19:18:07.772Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -103,7 +94,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "Style.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Items\\Style.cs",
+              "RelativeDocumentMoniker": "Scripts\\Items\\Style.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Items\\Style.cs",
+              "RelativeToolTip": "Scripts\\Items\\Style.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T18:58:58.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Shield.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Items\\Shield.cs",
+              "RelativeDocumentMoniker": "Scripts\\Items\\Shield.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Items\\Shield.cs",
+              "RelativeToolTip": "Scripts\\Items\\Shield.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T19:18:07.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Weapon.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Items\\Weapon.cs",
               "RelativeDocumentMoniker": "Scripts\\Items\\Weapon.cs",
@@ -111,12 +128,11 @@
               "RelativeToolTip": "Scripts\\Items\\Weapon.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T16:41:58.791Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T16:41:58.791Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "ShieldData.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\GlobalData\\ObjectDataClasses\\ShieldData.cs",
               "RelativeDocumentMoniker": "Scripts\\GlobalData\\ObjectDataClasses\\ShieldData.cs",
@@ -124,18 +140,17 @@
               "RelativeToolTip": "Scripts\\GlobalData\\ObjectDataClasses\\ShieldData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T16:16:07.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T16:16:07.119Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Characters\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Characters\\Player\\Player.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Characters\\Player\\Player.cs",
               "RelativeToolTip": "Scripts\\Characters\\Player\\Player.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAkwB8AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwCcAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-27T20:14:40.631Z",
               "EditorCaption": ""
@@ -148,14 +163,14 @@
               "RelativeDocumentMoniker": "Scripts\\Characters\\Character.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Characters\\Character.cs",
               "RelativeToolTip": "Scripts\\Characters\\Character.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAuwEsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAADwv04AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-27T20:12:19.146Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ItemDataBase.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\GlobalData\\ObjectDataClasses\\ItemDataBase.cs",
               "RelativeDocumentMoniker": "Scripts\\GlobalData\\ObjectDataClasses\\ItemDataBase.cs",
@@ -163,12 +178,11 @@
               "RelativeToolTip": "Scripts\\GlobalData\\ObjectDataClasses\\ItemDataBase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T18:13:49.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-25T18:13:49.194Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "StyleData.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\GlobalData\\ObjectDataClasses\\StyleData.cs",
               "RelativeDocumentMoniker": "Scripts\\GlobalData\\ObjectDataClasses\\StyleData.cs",
@@ -180,7 +194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "WeaponData.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\GlobalData\\ObjectDataClasses\\WeaponData.cs",
               "RelativeDocumentMoniker": "Scripts\\GlobalData\\ObjectDataClasses\\WeaponData.cs",
@@ -188,8 +202,7 @@
               "RelativeToolTip": "Scripts\\GlobalData\\ObjectDataClasses\\WeaponData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T18:12:54.187Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-25T18:12:54.187Z"
             },
             {
               "$type": "Document",
@@ -199,14 +212,14 @@
               "RelativeDocumentMoniker": "Scripts\\GlobalData\\Global.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\GlobalData\\Global.cs",
               "RelativeToolTip": "Scripts\\GlobalData\\Global.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAswC4AAABFAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowCEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-25T17:30:54.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "CameraController.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Characters\\Player\\CameraController.cs",
               "RelativeDocumentMoniker": "Scripts\\Characters\\Player\\CameraController.cs",
@@ -214,11 +227,12 @@
               "RelativeToolTip": "Scripts\\Characters\\Player\\CameraController.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAcwCcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T18:31:19.117Z"
+              "WhenOpened": "2026-01-27T18:31:19.117Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": ".editorconfig",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\.editorconfig",
               "RelativeDocumentMoniker": ".editorconfig",
@@ -226,8 +240,7 @@
               "RelativeToolTip": ".editorconfig",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-01-25T18:19:14.61Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-25T18:19:14.61Z"
             }
           ]
         }

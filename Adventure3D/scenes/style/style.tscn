@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://cdjerqdye3bf8"]
+[gd_scene load_steps=2 format=3 uid="uid://clcsce6nf5jpt"]
+
+[ext_resource type="Script" uid="uid://b8eshjtauaw3u" path="res://Scripts/Items/Style.cs" id="1_fq28g"]
 
 [node name="Style" type="Node3D"]
+script = ExtResource("1_fq28g")

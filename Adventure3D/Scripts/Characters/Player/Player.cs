@@ -18,9 +18,11 @@ public partial class Player : Character
     private Node3D playerSkin;
     private WeaponData currentWeapon;
     private ShieldData currentShield;
-    private int weaponIndex;
+    private StyleData currentStyle;
+	private int weaponIndex;
     private BoneAttachment3D rightHand;
     private BoneAttachment3D leftHand;
+    private BoneAttachment3D head;
 
 	override public void _Ready()
     {
@@ -28,11 +30,14 @@ public partial class Player : Character
 		this.playerSkin = this.GetNode<Node3D>("PlayerSkin");
 		this.rightHand = this.playerSkin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/RightHand");
 		this.leftHand = this.playerSkin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/LeftHand");
+		this.head = this.playerSkin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/Head");
 		this.currentWeapon = Global.Instance.Weapons["dagger"];
         this.currentShield = Global.Instance.Shields["round"];
-        this.camera = this.GetNode<Camera3D>("CameraController/Camera3D");
+        this.currentStyle = Global.Instance.Style["duckhat"];
+		this.camera = this.GetNode<Camera3D>("CameraController/Camera3D");
 		this.Equip(this.currentWeapon, this.rightHand);
 		this.Equip(this.currentShield, this.leftHand);
+        this.Equip(this.currentStyle, this.head);
 	}
 
 	public override void _PhysicsProcess(Double delta)
@@ -90,10 +95,13 @@ public partial class Player : Character
 
     private void AbbilityLogic()
     {
-        if (Input.IsActionJustPressed("attack") && !this.Attacking)
+        this.Defending = Input.IsActionPressed("defend");
+		if (Input.IsActionJustPressed("attack") && !this.Attacking)
         {
             this.AnimationTree.Set("parameters/AttackOneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
             this.Attacking = true;
+            GD.
+                Print(this.Attacking);
 		}
     }
 

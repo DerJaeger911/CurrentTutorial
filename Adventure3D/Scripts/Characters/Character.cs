@@ -15,34 +15,43 @@ public partial class Character : CharacterBody3D
 	private float jumpTimeToPeak = 0.4f;
 	[Export]
 	private float jumpTimeToDescent = 0.3f;
-	private float jumpVelocity;
-	private float jumpGravity;
-	private float fallGravity;
-	private bool attacking;
 
-	private AnimationTree animationTree;
+	private bool defending;
+
 	private AnimationNodeStateMachinePlayback moveStateMachine;
 	private AnimationNodeAnimation attackAnimation;
 
 	public Single BaseSpeed { get => this.baseSpeed; set => this.baseSpeed = value; }
     public Vector2 MovementInput { get; set; }
-    public Single JumpVelocity { get => this.jumpVelocity; set => this.jumpVelocity = value; }
-    public Single JumpGravity { get => this.jumpGravity; set => this.jumpGravity = value; }
-    public Single FallGravity { get => this.fallGravity; set => this.fallGravity = value; }
-    public AnimationTree AnimationTree { get => this.animationTree; set => this.animationTree = value; }
-    public Boolean Attacking { get => this.attacking; set => this.attacking = value; }
+    public Single JumpVelocity { get; set; }
+    public Single JumpGravity { get; set; }
+    public Single FallGravity { get; set; }
+    public AnimationTree AnimationTree { get; set; }
+    public Boolean Attacking { get; set; }
 
-    public override void _Ready()
+	public Boolean Defending 
+	{
+		get => this.defending;
+		set
+		{
+			if (this.defending != value)
+			{
+				this.defending = value;
+				this.DefendToggle(value);
+			}
+		}
+	}
+
+	public override void _Ready()
     {
         this.JumpVelocity = ((2 * this.jumpHeight) / this.jumpTimeToPeak) * -1;
 		this.JumpGravity = ((-2 * this.jumpHeight) / (this.jumpTimeToPeak * this.jumpTimeToPeak)) * -1;
 		this.FallGravity = ((-2 * this.jumpHeight) / (this.jumpTimeToDescent * this.jumpTimeToDescent)) * -1;
 		this.AnimationTree = this.GetNode<AnimationTree>("AnimationTree");
 		var root = this.AnimationTree.TreeRoot as AnimationNodeBlendTree;
-		GD.Print(root);
 		this.moveStateMachine = (AnimationNodeStateMachinePlayback)this.AnimationTree.Get("parameters/MoveStateMachine/playback");
 		this.attackAnimation = root.GetNode("AttackAnimation") as AnimationNodeAnimation;
-		this.animationTree.AnimationFinished += this.OnAnimationFinished;
+		this.AnimationTree.AnimationFinished += this.OnAnimationFinished;
 	}
 
 	public void SetMoveState(String stateName)
@@ -78,7 +87,8 @@ public partial class Character : CharacterBody3D
 		}
 		else if (data is StyleData style)
 		{
-			GD.Print("Geiler Style");
+			var itemScene = data.Scene.Instantiate<Node3D>();
+			slot.AddChild(itemScene);
 		}
 	}
 
@@ -88,5 +98,17 @@ public partial class Character : CharacterBody3D
 		{
 			this.Attacking = false;
 		}
+	}
+
+	public void DefendToggle(bool defending)
+	{
+		var tween = this.GetTree().CreateTween();
+		float defendingValue = defending ? 1.0f : 0.0f;
+		tween.TweenMethod(Callable.From<float>(this.DefendChange), 1 - defendingValue, defendingValue, 0.25f );
+	}
+
+	private void DefendChange(float value)
+	{
+		this.AnimationTree.Set("parameters/DefendBlend/blend_amount", value);
 	}
 }
