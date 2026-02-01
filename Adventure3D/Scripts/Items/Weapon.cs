@@ -1,10 +1,11 @@
+using Adventuregame.Scripts.GlobalData.Enums;
 using Godot;
 using System;
 
 namespace Adventuregame.Scripts.Items;
 public partial class Weapon : Node3D
 {
-    public const string EquipmentType = "Weapon";
+    public static ItemTypeEnum EquipmentType = ItemTypeEnum.Weapon;
     private string animation;
 	private int damage;
 	private float radius;

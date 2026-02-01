@@ -1,3 +1,4 @@
+using Adventuregame.Scripts.GlobalData.Enums;
 using Godot;
 
 namespace Adventuregame.Scripts.GlobalData.ObjectDataClasses;
@@ -6,7 +7,7 @@ public partial class WeaponData : ItemDataBase
 {
     public WeaponData()
     {
-        this.Type = "weapon";
+        this.Type = ItemTypeEnum.Weapon;
     }
     public int Damage { get; set; }
 	public string Animation { get; set; }

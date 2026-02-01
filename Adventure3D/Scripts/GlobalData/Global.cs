@@ -1,3 +1,4 @@
+using Adventuregame.Scripts.GlobalData.Enums;
 using Adventuregame.Scripts.GlobalData.ObjectDataClasses;
 using Godot;
 using System.Collections.Generic;
@@ -6,9 +7,9 @@ namespace Adventuregame.Scripts.GlobalData;
 
 public partial class Global : Node
 {
-	public Dictionary<string, WeaponData> Weapons { get; private set; }
-	public Dictionary<string, ShieldData> Shields { get; private set; }
-	public Dictionary<string, StyleData> Style { get; private set; }
+	public Dictionary<WeaponEnum, WeaponData> Weapons { get; private set; }
+	public Dictionary<ShieldEnum, ShieldData> Shields { get; private set; }
+	public Dictionary<StyleEnum, StyleData> Style { get; private set; }
 
 	public static Global Instance { get; private set; }
 
@@ -16,23 +17,23 @@ public partial class Global : Node
 	{
 		Instance = this;
 		this.Weapons = new() {
-			{ "dagger", this.CreateWeapon("dagger", 1, 1.2f, "1H_Melee_Attack_Stab") },
-			{ "sword",  this.CreateWeapon("sword", 2, 1.5f, "1H_Melee_Attack_Slice_Horizontal") },
-			{ "axe",    this.CreateWeapon("axe", 3, 1.3f, "2H_Melee_Attack_Spin") },
-			{ "staff",  this.CreateWeapon("staff", 1, 2.1f, "2H_Melee_Attack_Slice") },
+			{ WeaponEnum.Dagger, this.CreateWeapon("dagger", 1, 1.2f, "1H_Melee_Attack_Stab") },
+			{ WeaponEnum.Sword,  this.CreateWeapon("sword", 2, 1.5f, "1H_Melee_Attack_Slice_Horizontal") },
+			{ WeaponEnum.Axe,    this.CreateWeapon("axe", 3, 1.3f, "2H_Melee_Attack_Spin") },
+			{ WeaponEnum.Staff,  this.CreateWeapon("staff", 1, 2.1f, "2H_Melee_Attack_Slice") },
 		};
 
 		this.Shields = new() {
-			{ "square", this.CreateShield("square", 0.8f) },
-			{ "round",  this.CreateShield("round", 0.9f) },
-			{ "spike",  this.CreateShield("spike", 0.6f) },
+			{ ShieldEnum.Square, this.CreateShield("square", 0.8f) },
+			{ ShieldEnum.Round,  this.CreateShield("round", 0.9f) },
+			{ ShieldEnum.Spike,  this.CreateShield("spike", 0.6f) },
 		};
 
 		this.Style = new() {
-			{ "sunglasses", this.CreateStyle("sunglasses") },
-			{ "starglasses", this.CreateStyle("starglasses") },
-			{ "duckhat", this.CreateStyle("duckhat") },
-			{ "tophat", this.CreateStyle("tophat") },
+			{ StyleEnum.Sunglasses, this.CreateStyle("sunglasses") },
+			{ StyleEnum.Starglasses, this.CreateStyle("starglasses") },
+			{ StyleEnum.Duckhat, this.CreateStyle("duckhat") },
+			{ StyleEnum.Tophat, this.CreateStyle("tophat") },
 		};
 	}
 

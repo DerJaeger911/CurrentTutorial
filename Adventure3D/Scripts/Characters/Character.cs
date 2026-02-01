@@ -15,6 +15,14 @@ public partial class Character : CharacterBody3D
 	private float jumpTimeToPeak = 0.4f;
 	[Export]
 	private float jumpTimeToDescent = 0.3f;
+	[Export]
+	private float runSpeed = 8;
+	[Export]
+	private float defendSpeed = 2;
+	[Export]
+	private int jumpCount = 1;
+	[Export]
+	private int maxJumpCount = 2;
 
 	private bool defending;
 
@@ -28,6 +36,10 @@ public partial class Character : CharacterBody3D
     public Single FallGravity { get; set; }
     public AnimationTree AnimationTree { get; set; }
     public Boolean Attacking { get; set; }
+	public Single RunSpeed { get => this.runSpeed; set => this.runSpeed = value; }
+	public Single DefendSpeed { get => this.defendSpeed; set => this.defendSpeed = value; }
+	public Int32 JumpCount { get => this.jumpCount; set => this.jumpCount = value; }
+	public Int32 MaxJumpCount { get => this.maxJumpCount; set => this.maxJumpCount = value; }
 
 	public Boolean Defending 
 	{
@@ -42,7 +54,7 @@ public partial class Character : CharacterBody3D
 		}
 	}
 
-	public override void _Ready()
+    public override void _Ready()
     {
         this.JumpVelocity = ((2 * this.jumpHeight) / this.jumpTimeToPeak) * -1;
 		this.JumpGravity = ((-2 * this.jumpHeight) / (this.jumpTimeToPeak * this.jumpTimeToPeak)) * -1;
@@ -68,27 +80,18 @@ public partial class Character : CharacterBody3D
 		{
 			child.QueueFree();
 		}
-		
 
-		if (data is WeaponData weapon)
+		var itemScene = data.Scene.Instantiate<Node3D>();
+		slot.AddChild(itemScene);
+
+		if (data is WeaponData weapon && itemScene is Weapon wScript)
 		{
-			var itemScene = data.Scene.Instantiate<Weapon>();
-			slot.AddChild(itemScene);
-			GD.Print("Waffe ausgerüstet! Schaden: " + weapon.Damage);
-			itemScene.Setup(weapon.Animation, weapon.Damage, weapon.Range, this);
+			wScript.Setup(weapon.Animation, weapon.Damage, weapon.Range, this);
 			this.attackAnimation.Animation = weapon.Animation;
 		}
-		else if (data is ShieldData shield)
+		else if (data is ShieldData shield && itemScene is Shield sScript)
 		{
-			var itemScene = data.Scene.Instantiate<Shield>();
-			slot.AddChild(itemScene);
-			itemScene.Setup(shield.Defense);
-			GD.Print("Schild ausgerüstet!");
-		}
-		else if (data is StyleData style)
-		{
-			var itemScene = data.Scene.Instantiate<Node3D>();
-			slot.AddChild(itemScene);
+			sScript.Setup(shield.Defense);
 		}
 	}
 

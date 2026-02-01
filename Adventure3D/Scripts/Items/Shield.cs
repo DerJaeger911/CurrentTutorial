@@ -1,9 +1,10 @@
+using Adventuregame.Scripts.GlobalData.Enums;
 using Godot;
 using System;
 
 public partial class Shield : Node3D
 {
-	public const string EquipmentType = "Shield";
+	public static ItemTypeEnum EquipmentType = ItemTypeEnum.Shield;
 	private float defense;
 
 	public void Setup( float defense)
