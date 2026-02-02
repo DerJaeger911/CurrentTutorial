@@ -1,3 +1,4 @@
+using Adventuregame.Scripts.GlobalData.Enums;
 using Adventuregame.Scripts.GlobalData.ObjectDataClasses;
 using Adventuregame.Scripts.Items;
 using Godot;
@@ -40,6 +41,12 @@ public partial class Character : CharacterBody3D
 	public Single DefendSpeed { get => this.defendSpeed; set => this.defendSpeed = value; }
 	public Int32 JumpCount { get => this.jumpCount; set => this.jumpCount = value; }
 	public Int32 MaxJumpCount { get => this.maxJumpCount; set => this.maxJumpCount = value; }
+
+	public readonly WeaponEnum[] AllWeapons = Enum.GetValues<WeaponEnum>();
+
+	public readonly ShieldEnum[] AllShields = Enum.GetValues<ShieldEnum>();
+
+	public readonly StyleEnum[] AllStyles = Enum.GetValues<StyleEnum>();
 
 	public Boolean Defending 
 	{

@@ -21,9 +21,6 @@ public partial class Player : Character
 	private WeaponData currentWeaponData;
 	private ShieldData currentShieldData;
 	private StyleData currentStyleData;
-	private readonly WeaponEnum[] allWeapons = Enum.GetValues<WeaponEnum>();
-	private readonly ShieldEnum[] allShields = Enum.GetValues<ShieldEnum>();
-	private readonly StyleEnum[] allStyles = Enum.GetValues<StyleEnum>();
 	private WeaponEnum currentWeaponIndex = WeaponEnum.Dagger;
 	private ShieldEnum currentShieldIndex = ShieldEnum.Square;
 	private StyleEnum currentStyleIndex = StyleEnum.Duckhat;
@@ -31,7 +28,7 @@ public partial class Player : Character
 	private BoneAttachment3D leftHand;
 	private BoneAttachment3D head;
 
-	override public void _Ready()
+    override public void _Ready()
 	{
 		base._Ready();
 		this.playerSkin = this.GetNode<Node3D>("PlayerSkin");
@@ -61,12 +58,12 @@ public partial class Player : Character
 		{
 			if (Input.IsActionJustPressed("switch_weapon"))
 			{
-				this.SwitchItem(ref this.currentWeaponIndex, this.allWeapons, Global.Instance.Weapons, this.rightHand);
+				this.SwitchItem(ref this.currentWeaponIndex, this.AllWeapons, Global.Instance.Weapons, this.rightHand);
 			}
 
 			if (Input.IsActionJustPressed("switch_shield"))
 			{
-				this.SwitchItem(ref this.currentShieldIndex, this.allShields, Global.Instance.Shields, this.leftHand);
+				this.SwitchItem(ref this.currentShieldIndex, this.AllShields, Global.Instance.Shields, this.leftHand);
 			}
 		}
 	}

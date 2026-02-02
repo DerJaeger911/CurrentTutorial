@@ -94,9 +94,9 @@ material = ExtResource("1_e6yxx")
 [node name="Characters" type="Node3D" parent="."]
 
 [node name="Player" parent="Characters" instance=ExtResource("2_eqihu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05407691, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.355434, -0.054080725, 12.743595)
 collision_layer = 2
 collision_mask = 5
 
 [node name="Skeleton" parent="Characters" instance=ExtResource("4_riktp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3017025, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.737009, 0, 6.750637)
