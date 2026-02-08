@@ -29,6 +29,8 @@ public partial class Character : CharacterBody3D
 
 	private AnimationNodeStateMachinePlayback moveStateMachine;
 	private AnimationNodeAnimation attackAnimation;
+	public Weapon CurrentWeaponNode {  get; private set; }
+	public Shield CurrentShieldNode {  get; private set; }
 
 	public Single BaseSpeed { get => this.baseSpeed; set => this.baseSpeed = value; }
     public Vector2 MovementInput { get; set; }
@@ -73,6 +75,11 @@ public partial class Character : CharacterBody3D
 		this.AnimationTree.AnimationFinished += this.OnAnimationFinished;
 	}
 
+	override public void _PhysicsProcess(double delta)
+	{
+		this.AttackLogic();
+	}
+
 	public void SetMoveState(String stateName)
 	{
 		if(this.moveStateMachine.GetCurrentNode() != stateName)
@@ -95,10 +102,13 @@ public partial class Character : CharacterBody3D
 		{
 			wScript.Setup(weapon.Animation, weapon.Damage, weapon.Range, this);
 			this.attackAnimation.Animation = weapon.Animation;
+			this.CurrentWeaponNode = wScript;
 		}
 		else if (data is ShieldData shield && itemScene is Shield sScript)
 		{
 			sScript.Setup(shield.Defense);
+			this.CurrentShieldNode = sScript;
+			this.CurrentShieldNode.Position = new Vector3(0, 0, 0.2f);
 		}
 	}
 
@@ -120,5 +130,23 @@ public partial class Character : CharacterBody3D
 	private void DefendChange(float value)
 	{
 		this.AnimationTree.Set("parameters/DefendBlend/blend_amount", value);
+	}
+
+	public void AttackLogic()
+	{
+		if (this.Attacking)
+		{
+			GodotObject collider = this.CurrentWeaponNode.GetCollider();
+			GD.Print(collider);
+			if (collider is not null && collider != this && collider.HasMethod("Hit"))
+			{
+				collider.Call("Hit", this.CurrentWeaponNode.Damage);
+			}
+		}
+	}
+
+	public void ApplyGravity(float gravity, double delta)
+	{
+		this.Velocity = new Vector3(this.Velocity.X, this.Velocity.Y - gravity * (float)delta, this.Velocity.Z);
 	}
 }

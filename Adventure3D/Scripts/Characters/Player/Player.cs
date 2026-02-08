@@ -46,6 +46,7 @@ public partial class Player : Character
 
 	public override void _PhysicsProcess(Double delta)
 	{
+		base._PhysicsProcess(delta);
 		this.MoveLogic(delta);
 		this.JumpLogic(delta);
 		this.AbbilityLogic();
@@ -143,10 +144,5 @@ public partial class Player : Character
 			this.AnimationTree.Set("parameters/AttackOneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
 			this.Attacking = true;
 		}
-	}
-
-	private void ApplyGravity(float gravity, double delta)
-	{
-		this.Velocity = new Vector3(this.Velocity.X, this.Velocity.Y - gravity * (float)delta, this.Velocity.Z);
 	}
 }
