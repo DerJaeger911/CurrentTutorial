@@ -17,7 +17,6 @@ public partial class Player : Character
 
 
 	private Camera3D camera;
-	private Node3D playerSkin;
 	private WeaponData currentWeaponData;
 	private ShieldData currentShieldData;
 	private StyleData currentStyleData;
@@ -31,10 +30,10 @@ public partial class Player : Character
     override public void _Ready()
 	{
 		base._Ready();
-		this.playerSkin = this.GetNode<Node3D>("PlayerSkin");
-		this.rightHand = this.playerSkin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/RightHand");
-		this.leftHand = this.playerSkin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/LeftHand");
-		this.head = this.playerSkin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/Head");
+		this.Skin = this.GetNode<Node3D>("PlayerSkin");
+		this.rightHand = this.Skin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/RightHand");
+		this.leftHand = this.Skin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/LeftHand");
+		this.head = this.Skin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/Head");
 		this.currentWeaponData = Global.Instance.Weapons[this.currentWeaponIndex];
 		this.currentShieldData = Global.Instance.Shields[this.currentShieldIndex];
 		this.currentStyleData = Global.Instance.Style[this.currentStyleIndex];
@@ -42,6 +41,8 @@ public partial class Player : Character
 		this.Equip(this.currentWeaponData, this.rightHand);
 		this.Equip(this.currentShieldData, this.leftHand);
 		this.Equip(this.currentStyleData, this.head);
+		this.InvincibilityTimer = this.GetNode<Timer>("Timers/InvincibleTimer");
+		this.InvincibilityTimer.Timeout += () => this.Invincible = false;
 	}
 
 	public override void _PhysicsProcess(Double delta)
@@ -94,8 +95,8 @@ public partial class Player : Character
 			velocity2d += this.MovementInput * speed * (float)delta * this.acceleration;
 			velocity2d = velocity2d.LimitLength(speed);
 			var targetAngle = -this.MovementInput.Angle() + float.Pi / 2;
-			double playerYRotation = Mathf.RotateToward(this.playerSkin.Rotation.Y, targetAngle, delta * 6);
-			this.playerSkin.Rotation = new Vector3(this.playerSkin.Rotation.X, (float)playerYRotation, this.playerSkin.Rotation.Z);
+			double playerYRotation = Mathf.RotateToward(this.Skin.Rotation.Y, targetAngle, delta * 6);
+			this.Skin.Rotation = new Vector3(this.Skin.Rotation.X, (float)playerYRotation, this.Skin.Rotation.Z);
 			if (this.IsOnFloor())
 			{
 				this.SetMoveState("Running_A");

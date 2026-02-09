@@ -18,3 +18,6 @@ shape = SubResource("CapsuleShape3D_f826p")
 [node name="AttackTimer" type="Timer" parent="Timers"]
 wait_time = 2.0
 autostart = true
+
+[node name="InvincibleTimer" type="Timer" parent="Timers"]
+one_shot = true

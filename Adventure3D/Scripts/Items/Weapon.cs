@@ -34,8 +34,6 @@ public partial class Weapon : Node3D
 			{
 				return obj;
 			}
-			// If it gets here, the ray is RED but the object is missing
-			GD.Print("Ghost Hit: Ray is red but collider is null. Check Player node type.");
 		}
 		return null;
 	}

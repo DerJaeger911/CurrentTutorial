@@ -2,10 +2,8 @@ using Adventuregame.Scripts.Characters;
 using Adventuregame.Scripts.Characters.Player;
 using Adventuregame.Scripts.GlobalData;
 using Adventuregame.Scripts.GlobalData.Enums;
-using Adventuregame.Scripts.Items;
 using Godot;
 using System;
-using System.Diagnostics;
 
 public partial class Skeleton : Character
 {
@@ -16,7 +14,6 @@ public partial class Skeleton : Character
 
 	private Player player;
 	private AnimationTree animationTree;
-	private Node3D skins;
 	private readonly Random range = new Random();
 	private float attackRadius = 3;
 	private WeaponEnum randomWeapon;
@@ -37,17 +34,17 @@ public partial class Skeleton : Character
 			child.Hide();
 		}
 
-		Node3D skin = (Node3D)skins.PickRandom();
-		skin.Show();
+		this.Skin = (Node3D)skins.PickRandom();
+		this.Skin.Show();
 
 		this.animationTree = this.GetNode<AnimationTree>("AnimationTree");
-		this.animationTree.AnimPlayer = $"../Skins/{skin.Name}/AnimationPlayer";
+		this.animationTree.AnimPlayer = $"../Skins/{this.Skin.Name}/AnimationPlayer";
 
 		this.randomWeapon = (WeaponEnum)this.range.Next(this.AllWeapons.Length);
 		//var selectWeapon = Global.Instance.Weapons[this.randomWeapon];
 		var selectWeapon = Global.Instance.Weapons[WeaponEnum.Sword];
 
-		this.Equip(selectWeapon, skin.GetNode<BoneAttachment3D>("Rig/Skeleton3D/RightHand"));
+		this.Equip(selectWeapon, this.Skin.GetNode<BoneAttachment3D>("Rig/Skeleton3D/RightHand"));
 		this.attackRadius = this.CurrentWeaponNode.Radius;
 
 		this.attackTimer.Timeout += this.OnAttackTimerTimeOut;

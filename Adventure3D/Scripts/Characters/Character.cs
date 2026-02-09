@@ -24,7 +24,9 @@ public partial class Character : CharacterBody3D
 	private int jumpCount = 1;
 	[Export]
 	private int maxJumpCount = 2;
-
+	
+	private float squashAndStretch = 1;
+	private bool hasHit;
 	private bool defending;
 
 	private AnimationNodeStateMachinePlayback moveStateMachine;
@@ -33,16 +35,19 @@ public partial class Character : CharacterBody3D
 	public Shield CurrentShieldNode {  get; private set; }
 
 	public Single BaseSpeed { get => this.baseSpeed; set => this.baseSpeed = value; }
-    public Vector2 MovementInput { get; set; }
+	public Node3D Skin { get; set; }
+	public Vector2 MovementInput { get; set; }
     public Single JumpVelocity { get; set; }
     public Single JumpGravity { get; set; }
     public Single FallGravity { get; set; }
     public AnimationTree AnimationTree { get; set; }
     public Boolean Attacking { get; set; }
+	public Boolean Invincible { get; set; }
 	public Single RunSpeed { get => this.runSpeed; set => this.runSpeed = value; }
 	public Single DefendSpeed { get => this.defendSpeed; set => this.defendSpeed = value; }
 	public Int32 JumpCount { get => this.jumpCount; set => this.jumpCount = value; }
 	public Int32 MaxJumpCount { get => this.maxJumpCount; set => this.maxJumpCount = value; }
+	protected Timer InvincibilityTimer { get; set; }
 
 	public readonly WeaponEnum[] AllWeapons = Enum.GetValues<WeaponEnum>();
 
@@ -63,6 +68,16 @@ public partial class Character : CharacterBody3D
 		}
 	}
 
+    public Single SquashAndStretch
+	{
+		get => this.squashAndStretch;
+		set
+		{
+			this.squashAndStretch = value;
+			float negative = 1 + (1 - value);
+			this.Skin.Scale = new Vector3(negative, value, negative);
+		}
+	}
     public override void _Ready()
     {
         this.JumpVelocity = ((2 * this.jumpHeight) / this.jumpTimeToPeak) * -1;
@@ -117,6 +132,7 @@ public partial class Character : CharacterBody3D
 		if (animName == this.attackAnimation.Animation)
 		{
 			this.Attacking = false;
+			this.hasHit = false;
 		}
 	}
 
@@ -134,15 +150,39 @@ public partial class Character : CharacterBody3D
 
 	public void AttackLogic()
 	{
-		if (this.Attacking)
+		if (this.Attacking && !this.hasHit)
 		{
 			GodotObject collider = this.CurrentWeaponNode.GetCollider();
-			GD.Print(collider);
-			if (collider is not null && collider != this && collider.HasMethod("Hit"))
+			if (collider is not null && collider != this && collider is Character character)
 			{
-				collider.Call("Hit", this.CurrentWeaponNode.Damage);
+				character.Hit(this.CurrentWeaponNode.Damage);
+				this.hasHit = true;
 			}
 		}
+	}
+
+	public void Hit(int damage)
+	{
+        if (this.Invincible)
+        {
+			GD.Print("Invincible");
+			return;
+        }
+        if (this.CurrentShieldNode is not null && this.Defending)
+		{
+			GD.Print(damage * this.CurrentShieldNode.Defense);
+		}
+		GD.Print($"Hit {this.Name}");
+		if (this.InvincibilityTimer != null)
+		{
+			this.Invincible = true;
+			this.InvincibilityTimer.Start();
+		}
+	}
+
+	private void DoSquashAndStrecth()
+	{
+
 	}
 
 	public void ApplyGravity(float gravity, double delta)

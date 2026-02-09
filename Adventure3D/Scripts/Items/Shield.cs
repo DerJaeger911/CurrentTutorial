@@ -5,10 +5,10 @@ using System;
 public partial class Shield : Node3D
 {
 	public static ItemTypeEnum EquipmentType = ItemTypeEnum.Shield;
-	private float defense;
+	public float Defense { get; set; }
 
 	public void Setup( float defense)
 	{
-		this.defense = defense;
+		this.Defense = defense;
 	}
 }
