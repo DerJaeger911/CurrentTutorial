@@ -3,6 +3,7 @@ using Adventuregame.Scripts.GlobalData.ObjectDataClasses;
 using Adventuregame.Scripts.Items;
 using Godot;
 using System;
+using System.Runtime.CompilerServices;
 
 namespace Adventuregame.Scripts.Characters;
 
@@ -24,13 +25,16 @@ public partial class Character : CharacterBody3D
 	private int jumpCount = 1;
 	[Export]
 	private int maxJumpCount = 2;
-	
+	[Export]
+	private int health = 5;
+
 	private float squashAndStretch = 1;
 	private bool hasHit;
 	private bool defending;
 
 	private AnimationNodeStateMachinePlayback moveStateMachine;
 	private AnimationNodeAnimation attackAnimation;
+	private AudioStreamPlayer3D hitSound;
 	public Weapon CurrentWeaponNode {  get; private set; }
 	public Shield CurrentShieldNode {  get; private set; }
 
@@ -47,6 +51,7 @@ public partial class Character : CharacterBody3D
 	public Single DefendSpeed { get => this.defendSpeed; set => this.defendSpeed = value; }
 	public Int32 JumpCount { get => this.jumpCount; set => this.jumpCount = value; }
 	public Int32 MaxJumpCount { get => this.maxJumpCount; set => this.maxJumpCount = value; }
+	public Int32 Health { get => this.health; set => this.health = value; }
 	protected Timer InvincibilityTimer { get; set; }
 
 	public readonly WeaponEnum[] AllWeapons = Enum.GetValues<WeaponEnum>();
@@ -78,7 +83,9 @@ public partial class Character : CharacterBody3D
 			this.Skin.Scale = new Vector3(negative, value, negative);
 		}
 	}
-    public override void _Ready()
+
+
+	public override void _Ready()
     {
         this.JumpVelocity = ((2 * this.jumpHeight) / this.jumpTimeToPeak) * -1;
 		this.JumpGravity = ((-2 * this.jumpHeight) / (this.jumpTimeToPeak * this.jumpTimeToPeak)) * -1;
@@ -87,7 +94,9 @@ public partial class Character : CharacterBody3D
 		var root = this.AnimationTree.TreeRoot as AnimationNodeBlendTree;
 		this.moveStateMachine = (AnimationNodeStateMachinePlayback)this.AnimationTree.Get("parameters/MoveStateMachine/playback");
 		this.attackAnimation = root.GetNode("AttackAnimation") as AnimationNodeAnimation;
+		this.hitSound = this.GetNode<AudioStreamPlayer3D>("HitSound");
 		this.AnimationTree.AnimationFinished += this.OnAnimationFinished;
+
 	}
 
 	override public void _PhysicsProcess(double delta)
@@ -118,6 +127,7 @@ public partial class Character : CharacterBody3D
 			wScript.Setup(weapon.Animation, weapon.Damage, weapon.Range, this);
 			this.attackAnimation.Animation = weapon.Animation;
 			this.CurrentWeaponNode = wScript;
+			this.CurrentWeaponNode.SetSound(weapon.Audio);
 		}
 		else if (data is ShieldData shield && itemScene is Shield sScript)
 		{
@@ -161,6 +171,11 @@ public partial class Character : CharacterBody3D
 		}
 	}
 
+	protected virtual void DeathLogic()
+	{
+		GD.Print("Die allready!");
+	}
+
 	public void Hit(int damage)
 	{
         if (this.Invincible)
@@ -168,25 +183,47 @@ public partial class Character : CharacterBody3D
 			GD.Print("Invincible");
 			return;
         }
+
         if (this.CurrentShieldNode is not null && this.Defending)
 		{
-			GD.Print(damage * this.CurrentShieldNode.Defense);
+			this.CurrentShieldNode.Flash();
+			this.Health -= (int)(damage * this.CurrentShieldNode.Defense);
+			this.CurrentShieldNode.PlaySound();
 		}
-		GD.Print($"Hit {this.Name}");
+		else
+		{
+			this.Health -= damage;
+			this.hitSound.Play();
+		}
+
 		if (this.InvincibilityTimer != null)
 		{
 			this.Invincible = true;
 			this.InvincibilityTimer.Start();
 		}
+
+		this.DoSquashAndStrecth(1.2f, 0.2f);
+		if (this.Health <= 0)
+		{
+			this.DeathLogic();
+		}
 	}
 
-	private void DoSquashAndStrecth()
+	private void DoSquashAndStrecth(float value, float duration)
 	{
+		Tween tween = this.CreateTween();
+		tween.TweenProperty(this, nameof(this.SquashAndStretch), value, duration);
+		tween.TweenProperty(this, nameof(this.SquashAndStretch), 1, duration * 1.8f).SetEase(Tween.EaseType.Out);
 
 	}
 
 	public void ApplyGravity(float gravity, double delta)
 	{
 		this.Velocity = new Vector3(this.Velocity.X, this.Velocity.Y - gravity * (float)delta, this.Velocity.Z);
+	}
+
+	public override void _ExitTree()
+	{
+		this.AnimationTree.AnimationFinished -= this.OnAnimationFinished;
 	}
 }

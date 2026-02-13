@@ -7,6 +7,7 @@ public partial class Weapon : Node3D
 {
     public static ItemTypeEnum EquipmentType = ItemTypeEnum.Weapon;
     private string animation;
+	private AudioStreamPlayer3D attackSound;
 	public int Damage { get; set; }
 	public float Radius {  get; set; }
 	private Node3D parent;
@@ -19,14 +20,17 @@ public partial class Weapon : Node3D
 		this.parent = parent;
 	}
 
+	override public void _Ready()
+	{
+		this.attackSound = this.GetNode<AudioStreamPlayer3D>("AttackSound");
+	}
+
 	public GodotObject GetCollider()
 	{
 		var ray = this.GetNode<RayCast3D>("RayCast3D");
 
-		// 1. Force the physics state to sync
 		ray.ForceRaycastUpdate();
 
-		// 2. Check the boolean first
 		if (ray.IsColliding())
 		{
 			var obj = ray.GetCollider();
@@ -36,5 +40,15 @@ public partial class Weapon : Node3D
 			}
 		}
 		return null;
+	}
+
+	public void SetSound(AudioStream audio)
+	{
+		this.attackSound.Stream = audio;
+	}
+
+	public void PlaySound()
+	{
+		this.attackSound.Play();
 	}
 }

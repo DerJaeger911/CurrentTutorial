@@ -144,6 +144,12 @@ public partial class Player : Character
 		{
 			this.AnimationTree.Set("parameters/AttackOneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
 			this.Attacking = true;
+			this.CurrentWeaponNode.PlaySound();
 		}
+	}
+
+	protected override void DeathLogic()
+	{
+		this.GetTree().Quit();
 	}
 }

@@ -52,17 +52,20 @@ public partial class Skeleton : Character
 
 	override public void _PhysicsProcess(Double delta)
 	{
-		base._PhysicsProcess(delta);
-		if (!this.IsOnFloor())
+		if (this.Health > 0)
 		{
-			this.ApplyGravity(this.FallGravity, delta);
+			base._PhysicsProcess(delta);
+			if (!this.IsOnFloor())
+			{
+				this.ApplyGravity(this.FallGravity, delta);
+			}
+			else
+			{
+				this.Velocity = new Vector3(this.Velocity.X, 0, this.Velocity.Z);
+			}
+			this.MoveToPlayer(delta);
+			this.MoveAndSlide();
 		}
-		else
-		{
-			this.Velocity = new Vector3(this.Velocity.X, 0, this.Velocity.Z);
-		}
-		this.MoveToPlayer(delta);
-		this.MoveAndSlide();
 	}
 
 	private void MoveToPlayer(double delta)
@@ -86,6 +89,19 @@ public partial class Skeleton : Character
 		}
 	}
 
+	protected override void DeathLogic()
+	{
+		Tween tween = this.CreateTween();
+		tween.TweenMethod(Callable.From<float>(this.DeathChange), 0, 1, 0.5f);
+	}
+
+	private void DeathChange(float value)
+	{
+		this.GetNode<CollisionShape3D>("CollisionShape3D").Disabled = true;
+		this.attackTimer.Stop();
+		this.animationTree.Set("parameters/DeathBlend/blend_amount", value);
+	}
+
 	private void OnAttackTimerTimeOut()
 	{
 		this.attackTimer.WaitTime = this.rng.RandfRange(2, 3.5f);
@@ -93,6 +109,7 @@ public partial class Skeleton : Character
 		{
 			this.animationTree.Set("parameters/AttackOneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
 			this.Attacking = true;
+			this.CurrentWeaponNode.PlaySound();
 		}
 	}
 }
