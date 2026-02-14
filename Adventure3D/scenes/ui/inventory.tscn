@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://db4e4w1nceqic"]
+
+[ext_resource type="Script" uid="uid://dhw8chf3e0330" path="res://Scripts/Ui/Inventory.cs" id="1_s6ek7"]
+[ext_resource type="StyleBox" uid="uid://b7vupwqu0cyut" path="res://graphics/style/InventoryPanel.tres" id="2_avmd0"]
+[ext_resource type="FontFile" uid="uid://bm53cv1klorfh" path="res://graphics/ui/The Wild Breath of Zelda.otf" id="3_xeaml"]
+[ext_resource type="PackedScene" uid="uid://0vtxtrxqc46v" path="res://scenes/ui/player_viewport.tscn" id="4_5yy05"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xeaml"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.16712198, 0.6845925, 3.85046e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avmd0"]
+bg_color = Color(0.05882353, 0.05882353, 0.05882353, 1)
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[node name="Inventory" type="Control" unique_id=2066931850 groups=["INVENTORY"]]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s6ek7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2071240363]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemPanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=714393519]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/panel = ExtResource("2_avmd0")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ItemPanelContainer" unique_id=469972925]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="HBoxContainer/ItemPanelContainer/MarginContainer" unique_id=797861441]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xeaml")
+
+[node name="Control" type="Control" parent="HBoxContainer/ItemPanelContainer" unique_id=585587731]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ItemPanelContainer/Control" unique_id=1696490396]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 54.0
+theme_override_colors/font_color = Color(0.16862746, 0.6862745, 0, 1)
+theme_override_fonts/font = ExtResource("3_xeaml")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_avmd0")
+text = "Weapons"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/ItemPanelContainer" unique_id=2870449]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="TabContainer" type="TabContainer" parent="HBoxContainer/ItemPanelContainer/MarginContainer2" unique_id=1840146170]
+layout_mode = 2
+current_tab = 0
+tabs_visible = false
+switch_on_drag_hover = false
+
+[node name="Weapons" type="GridContainer" parent="HBoxContainer/ItemPanelContainer/MarginContainer2/TabContainer" unique_id=1152749629]
+layout_mode = 2
+columns = 4
+metadata/_tab_index = 0
+
+[node name="Shields" type="GridContainer" parent="HBoxContainer/ItemPanelContainer/MarginContainer2/TabContainer" unique_id=1817389682]
+visible = false
+layout_mode = 2
+columns = 4
+metadata/_tab_index = 1
+
+[node name="Styles" type="GridContainer" parent="HBoxContainer/ItemPanelContainer/MarginContainer2/TabContainer" unique_id=552563337]
+visible = false
+layout_mode = 2
+columns = 4
+metadata/_tab_index = 2
+
+[node name="Spacer" type="Control" parent="HBoxContainer" unique_id=1978785091]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="PlayerPanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=1197244893]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_avmd0")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PlayerPanelContainer" unique_id=531285769]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="HBoxContainer/PlayerPanelContainer/MarginContainer" unique_id=24847312]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xeaml")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/PlayerPanelContainer" unique_id=1770805695]
+layout_mode = 2
+stretch = true
+
+[node name="PlayerViewport" parent="HBoxContainer/PlayerPanelContainer/SubViewportContainer" unique_id=143441030 instance=ExtResource("4_5yy05")]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(332, 548)
+render_target_update_mode = 0

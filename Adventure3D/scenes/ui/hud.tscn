@@ -1,17 +1,21 @@
 [gd_scene format=3 uid="uid://bcy56abjdvhme"]
 
-[ext_resource type="Texture2D" uid="uid://c1n1xh3vapavk" path="res://graphics/ui/heart.png" id="1_0mwgc"]
+[ext_resource type="Script" uid="uid://dcfl8e7nxwqfw" path="res://Scripts/Ui/Hud.cs" id="1_hqnrr"]
 
-[node name="HUD" type="Control" unique_id=503822309]
+[node name="HUD" type="Control" unique_id=503822309 groups=["HUD"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hqnrr")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1516331626]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_0mwgc")
+[node name="Hearts" type="HFlowContainer" parent="." unique_id=173975650]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.25
+anchor_bottom = 0.1
+offset_left = 15.0
+offset_top = 15.0

@@ -42,7 +42,7 @@ public partial class Skeleton : Character
 
 		this.randomWeapon = (WeaponEnum)this.range.Next(this.AllWeapons.Length);
 		//var selectWeapon = Global.Instance.Weapons[this.randomWeapon];
-		var selectWeapon = Global.Instance.Weapons[WeaponEnum.Sword];
+		var selectWeapon = Equipment.Instance.Weapons[WeaponEnum.Sword];
 
 		this.Equip(selectWeapon, this.Skin.GetNode<BoneAttachment3D>("Rig/Skeleton3D/RightHand"));
 		this.attackRadius = this.CurrentWeaponNode.Radius;

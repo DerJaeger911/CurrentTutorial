@@ -3,7 +3,6 @@ using Adventuregame.Scripts.GlobalData.ObjectDataClasses;
 using Adventuregame.Scripts.Items;
 using Godot;
 using System;
-using System.Runtime.CompilerServices;
 
 namespace Adventuregame.Scripts.Characters;
 
@@ -51,7 +50,19 @@ public partial class Character : CharacterBody3D
 	public Single DefendSpeed { get => this.defendSpeed; set => this.defendSpeed = value; }
 	public Int32 JumpCount { get => this.jumpCount; set => this.jumpCount = value; }
 	public Int32 MaxJumpCount { get => this.maxJumpCount; set => this.maxJumpCount = value; }
-	public Int32 Health { get => this.health; set => this.health = value; }
+	public Int32 Health 
+	{ 
+		get => this.health;
+		set 
+		{
+			this.health = value;
+			if (this is Player.Player)
+			{
+				Hud hud = (Hud)this.GetTree().GetFirstNodeInGroup("HUD");
+				hud.SetHealth(value);
+			}
+		} 
+	}
 	protected Timer InvincibilityTimer { get; set; }
 
 	public readonly WeaponEnum[] AllWeapons = Enum.GetValues<WeaponEnum>();

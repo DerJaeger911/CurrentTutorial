@@ -18,31 +18,48 @@ public partial class Player : Character
 
 	private Camera3D camera;
 	private WeaponData currentWeaponData;
+	List<WeaponData> collectedWeapons;
+	List<ShieldData> collectedShields;
+	List<StyleData> collectedStyles;
 	private ShieldData currentShieldData;
 	private StyleData currentStyleData;
-	private WeaponEnum currentWeaponIndex = WeaponEnum.Dagger;
-	private ShieldEnum currentShieldIndex = ShieldEnum.Square;
-	private StyleEnum currentStyleIndex = StyleEnum.Duckhat;
+	private int currentWeaponIndex = 0;
+	private int currentShieldIndex = 0;
+	private int currentStyleIndex = 0;
 	private BoneAttachment3D rightHand;
 	private BoneAttachment3D leftHand;
 	private BoneAttachment3D head;
+	private Hud hud;
 
-    override public void _Ready()
+	public int CurrentWeaponIndex { get => this.currentWeaponIndex; set => this.currentWeaponIndex = value; }
+	public int CurrentShieldIndex { get => this.currentShieldIndex; set => this.currentShieldIndex = value; }
+	public int CurrentStyleIndex { get => this.currentStyleIndex; set => this.currentStyleIndex = value; }
+	public List<WeaponData> CollectedWeapons { get => this.collectedWeapons; set => this.collectedWeapons = value; }
+	public List<ShieldData> CollectedShields { get => this.collectedShields; set => this.collectedShields = value; }
+	public List<StyleData> CollectedStyles { get => this.collectedStyles; set => this.collectedStyles = value; }
+
+	override public void _Ready()
 	{
 		base._Ready();
+		this.hud = (Hud)this.GetTree().GetFirstNodeInGroup("HUD");
+		this.hud.Setup(this.Health);
 		this.Skin = this.GetNode<Node3D>("PlayerSkin");
 		this.rightHand = this.Skin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/RightHand");
 		this.leftHand = this.Skin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/LeftHand");
 		this.head = this.Skin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/Head");
-		this.currentWeaponData = Global.Instance.Weapons[this.currentWeaponIndex];
-		this.currentShieldData = Global.Instance.Shields[this.currentShieldIndex];
-		this.currentStyleData = Global.Instance.Style[this.currentStyleIndex];
+		this.CollectedWeapons = new List<WeaponData>() { Equipment.Instance.Weapons[WeaponEnum.Staff], Equipment.Instance.Weapons[WeaponEnum.Sword], Equipment.Instance.Weapons[WeaponEnum.Axe] };
+		this.CollectedShields = new List<ShieldData>() { Equipment.Instance.Shields[ShieldEnum.Square], Equipment.Instance.Shields[ShieldEnum.Round] };
+		this.CollectedStyles = new List<StyleData>() { Equipment.Instance.Styles[StyleEnum.Duckhat] };
+		this.currentWeaponData = this.CollectedWeapons[this.CurrentWeaponIndex];
+		this.currentShieldData = this.CollectedShields[this.CurrentShieldIndex];
+		this.currentStyleData = this.CollectedStyles[this.CurrentStyleIndex];
 		this.camera = this.GetNode<Camera3D>("CameraController/Camera3D");
 		this.Equip(this.currentWeaponData, this.rightHand);
 		this.Equip(this.currentShieldData, this.leftHand);
 		this.Equip(this.currentStyleData, this.head);
 		this.InvincibilityTimer = this.GetNode<Timer>("Timers/InvincibleTimer");
 		this.InvincibilityTimer.Timeout += () => this.Invincible = false;
+		GD.Print("All Weapons are" + Equipment.Instance.Weapons.Count);
 	}
 
 	public override void _PhysicsProcess(Double delta)
@@ -60,27 +77,34 @@ public partial class Player : Character
 		{
 			if (Input.IsActionJustPressed("switch_weapon"))
 			{
-				this.SwitchItem(ref this.currentWeaponIndex, this.AllWeapons, Global.Instance.Weapons, this.rightHand);
+				this.CurrentWeaponIndex = this.SwitchItem(this.CurrentWeaponIndex, this.CollectedWeapons, this.rightHand);
 			}
 
 			if (Input.IsActionJustPressed("switch_shield"))
 			{
-				this.SwitchItem(ref this.currentShieldIndex, this.AllShields, Global.Instance.Shields, this.leftHand);
+				this.CurrentShieldIndex = this.SwitchItem(this.CurrentShieldIndex, this.CollectedShields, this.leftHand);
 			}
+		}
+
+		if (Input.IsActionJustPressed("menu"))
+		{
+			PauseLogic.Instance.TogglePause(true);
 		}
 	}
 
-	private void SwitchItem<TEnum, TData>(ref TEnum currentIndex, TEnum[] allValues, Dictionary<TEnum, TData> dataSource, BoneAttachment3D slot)
-		where TEnum : struct, Enum
-		where TData : ItemDataBase
+	private int SwitchItem<T>(int currentIndex,List<T> dataSource, BoneAttachment3D slot)
+	where T : ItemDataBase
 	{
-		int nextIntIndex = ((int)(object)currentIndex + 1) % allValues.Length;
-		currentIndex = allValues[nextIntIndex];
+		int nextIntIndex = (currentIndex + 1) % dataSource.Count;
 
-		if (dataSource.TryGetValue(currentIndex, out var data))
+		var data = dataSource[nextIntIndex];
+
+		if (data != null)
 		{
 			this.Equip(data, slot);
 		}
+
+		return nextIntIndex;
 	}
 
 	private void MoveLogic(Double delta)
