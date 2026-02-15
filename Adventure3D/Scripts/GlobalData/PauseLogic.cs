@@ -21,7 +21,6 @@ internal partial class PauseLogic : Node
 		this.pauseActivationTimer.WaitTime = 0.1f;
 		this.pauseActivationTimer.ProcessMode = ProcessModeEnum.Always;
 		this.AddChild(this.pauseActivationTimer);
-		this.pauseActivationTimer.Timeout += () => GD.Print("stop");
 	}
 
 	public void TogglePause(bool value)

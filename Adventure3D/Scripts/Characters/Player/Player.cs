@@ -47,8 +47,8 @@ public partial class Player : Character
 		this.rightHand = this.Skin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/RightHand");
 		this.leftHand = this.Skin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/LeftHand");
 		this.head = this.Skin.GetNode<BoneAttachment3D>("Rogue/Rig/Skeleton3D/Head");
-		this.CollectedWeapons = new List<WeaponData>() { Equipment.Instance.Weapons[WeaponEnum.Staff], Equipment.Instance.Weapons[WeaponEnum.Sword], Equipment.Instance.Weapons[WeaponEnum.Axe] };
-		this.CollectedShields = new List<ShieldData>() { Equipment.Instance.Shields[ShieldEnum.Square], Equipment.Instance.Shields[ShieldEnum.Round] };
+		this.CollectedWeapons = new List<WeaponData>() { Equipment.Instance.Weapons[WeaponEnum.Sword] };
+		this.CollectedShields = new List<ShieldData>() { Equipment.Instance.Shields[ShieldEnum.Round] };
 		this.CollectedStyles = new List<StyleData>() { Equipment.Instance.Styles[StyleEnum.Duckhat] };
 		this.currentWeaponData = this.CollectedWeapons[this.CurrentWeaponIndex];
 		this.currentShieldData = this.CollectedShields[this.CurrentShieldIndex];
@@ -59,7 +59,6 @@ public partial class Player : Character
 		this.Equip(this.currentStyleData, this.head);
 		this.InvincibilityTimer = this.GetNode<Timer>("Timers/InvincibleTimer");
 		this.InvincibilityTimer.Timeout += () => this.Invincible = false;
-		GD.Print("All Weapons are" + Equipment.Instance.Weapons.Count);
 	}
 
 	public override void _PhysicsProcess(Double delta)

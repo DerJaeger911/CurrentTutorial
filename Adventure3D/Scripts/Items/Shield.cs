@@ -19,7 +19,6 @@ public partial class Shield : Node3D
 	{
 		MeshInstance3D mesh = (MeshInstance3D)this.GetChild(0).GetChild(0);
 		this.flashMaterial = (ShaderMaterial)mesh.MaterialOverlay;
-		GD.Print(this.flashMaterial);
 		this.blockSound = this.GetNode<AudioStreamPlayer3D>("BlockSound");
 	}
 

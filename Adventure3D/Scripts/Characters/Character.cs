@@ -184,14 +184,13 @@ public partial class Character : CharacterBody3D
 
 	protected virtual void DeathLogic()
 	{
-		GD.Print("Die allready!");
+		//Ich bin leer, weiß gerade nicht, warum ich nicht abstrakt bin.
 	}
 
 	public void Hit(int damage)
 	{
         if (this.Invincible)
         {
-			GD.Print("Invincible");
 			return;
         }
 
