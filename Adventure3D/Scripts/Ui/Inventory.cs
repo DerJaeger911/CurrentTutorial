@@ -13,23 +13,36 @@ public partial class Inventory : Control
 	[Export]
 	private float panSpeed = 3;	
 
-	private Node3D playerPreview;
+	private Rogue playerPreview;
 	private Player player;
 	private GridContainer weaponsGrid;
 	private GridContainer shieldsGrid;
 	private GridContainer stylesGrid;
 	private TabContainer tabContainer;
+	private Label itemContainerLabel;
+	private Panel borderPanel;
+
+	private static readonly Color[] BorderColors =
+{
+	Colors.LimeGreen,
+	Colors.Firebrick,
+	Colors.Goldenrod
+};
 
 	public override void _Ready()
 	{
-		this.playerPreview = (Node3D)this.GetTree().GetFirstNodeInGroup("PlayerPreview");
+		this.Hide();
+		this.playerPreview = (Rogue)this.GetTree().GetFirstNodeInGroup("PlayerPreview");
 		this.player = (Player)this.GetTree().GetFirstNodeInGroup("Player");
 		this.tabContainer = this.GetNode<TabContainer>("HBoxContainer/ItemPanelContainer/MarginContainer2/TabContainer");
 		this.weaponsGrid = this.tabContainer.GetNode<GridContainer>("Weapons");
 		this.shieldsGrid = this.tabContainer.GetNode<GridContainer>("Shields");
 		this.stylesGrid = this.tabContainer.GetNode<GridContainer>("Styles");
-		
+		this.itemContainerLabel = this.GetNode<Label>("HBoxContainer/ItemPanelContainer/Control/ItemContainerLabel");
+		this.borderPanel = this.GetNode<Panel>("HBoxContainer/ItemPanelContainer/MarginContainer/Panel");
+
 	}
+
 	public override void _Input(InputEvent @event)
 	{
 		if (Input.IsActionJustPressed("menu"))
@@ -41,11 +54,22 @@ public partial class Inventory : Control
 		{
 			this.tabContainer.CurrentTab = Mathf.PosMod(this.tabContainer.CurrentTab + menuDir, this.tabContainer.GetTabCount());
 			this.Focus();
+			this.itemContainerLabel.Text = this.tabContainer.GetChild(this.tabContainer.CurrentTab).Name;
+			Color color = BorderColors[this.tabContainer.CurrentTab];
+			var stylebox = (StyleBoxFlat)this.borderPanel.GetThemeStylebox("panel");
+			stylebox.BorderColor = color;
+			this.itemContainerLabel.AddThemeColorOverride("font_color", color);
 		}
 
 		if (Input.IsActionJustPressed("ui_cancel"))
 		{
 			this.GetTree().Quit();
+		}
+
+		if (Input.IsActionJustPressed("run"))
+		{
+			this.playerPreview.Unequip();
+			this.player.Unequip();
 		}
 	}
 
@@ -59,6 +83,13 @@ public partial class Inventory : Control
 	{
 		this.Show();
 		Input.MouseMode = Input.MouseModeEnum.Visible;
+		foreach(GridContainer grid in this.tabContainer.GetChildren())
+		{
+			foreach(Node node in grid.GetChildren())
+			{
+				node.QueueFree();
+			}
+		}
 		this.CreateInventoryItems(this.weaponsGrid, this.player.CollectedWeapons, this.player.CurrentWeaponIndex);
 		this.CreateInventoryItems(this.shieldsGrid, this.player.CollectedShields, this.player.CurrentShieldIndex);
 		this.CreateInventoryItems(this.stylesGrid, this.player.CollectedStyles, this.player.CurrentStyleIndex);
@@ -67,9 +98,13 @@ public partial class Inventory : Control
 		this.Focus();
 	}
 
-	private void Focus()
+	private async void Focus()
 	{
-		this.tabContainer.GetChild<Control>(this.tabContainer.CurrentTab).GetChild<Control>(0).GrabFocus();
+		await this.ToSignal(this.GetTree().CreateTimer(0.1f), SceneTreeTimer.SignalName.Timeout);
+		if (this.tabContainer.GetChild<Control>(this.tabContainer.CurrentTab).GetChildCount() >0)
+		{
+			this.tabContainer.GetChild<Control>(this.tabContainer.CurrentTab).GetChild<Control>(0).GrabFocus();
+		}
 	}
 
 	private void CreateInventoryItems<T>(GridContainer container, List<T> equipnemtList, int index)
@@ -82,6 +117,10 @@ public partial class Inventory : Control
 			itemInstance.Setup(equipmentItem);
 			container.AddChild(itemInstance);
 			itemInstance.Highlight(i.Equals(index));
+			if(i == index)
+			{
+				this.playerPreview.AddEquipment(equipmentItem);
+			}
 		}
 	}
 }

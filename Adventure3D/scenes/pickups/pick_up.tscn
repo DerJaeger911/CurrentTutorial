@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c4j5vvdvvd0je"]
+
+[ext_resource type="PackedScene" uid="uid://c5b36cfgtna74" path="res://scenes/weapons/sword.tscn" id="1_k5bym"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_k5bym"]
+radius = 1.4009296
+
+[node name="PickUp" type="Node3D" unique_id=886903125]
+
+[node name="Sword" parent="." unique_id=1131908934 instance=ExtResource("1_k5bym")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=331659221]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1533432441]
+shape = SubResource("SphereShape3D_k5bym")

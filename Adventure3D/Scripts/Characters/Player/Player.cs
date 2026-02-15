@@ -172,6 +172,13 @@ public partial class Player : Character
 		}
 	}
 
+	public void Unequip()
+	{
+		foreach(Node child in this.head.GetChildren())
+		{
+			child.QueueFree();
+		}
+	}
 	protected override void DeathLogic()
 	{
 		this.GetTree().Quit();

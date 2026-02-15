@@ -25,7 +25,6 @@ expand_margin_right = 10.0
 
 [node name="Inventory" type="Control" unique_id=2066931850 groups=["INVENTORY"]]
 process_mode = 2
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,7 +65,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xeaml")
 [node name="Control" type="Control" parent="HBoxContainer/ItemPanelContainer" unique_id=585587731]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/ItemPanelContainer/Control" unique_id=1696490396]
+[node name="ItemContainerLabel" type="Label" parent="HBoxContainer/ItemPanelContainer/Control" unique_id=1696490396]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 54.0
@@ -136,4 +135,4 @@ stretch = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(332, 548)
-render_target_update_mode = 0
+render_target_update_mode = 4

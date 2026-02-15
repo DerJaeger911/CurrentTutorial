@@ -123,7 +123,7 @@ public partial class Character : CharacterBody3D
 		}
 	}
 
-	protected void Equip(ItemDataBase data, BoneAttachment3D slot)
+	public void Equip(ItemDataBase data, BoneAttachment3D slot)
 	{
 		foreach (Node3D child in slot.GetChildren())
 		{
