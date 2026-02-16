@@ -52,11 +52,11 @@ public partial class Player : Character
 		this.CollectedStyles = new List<StyleData>() { Equipment.Instance.Styles[StyleEnum.Duckhat] };
 		this.currentWeaponData = this.CollectedWeapons[this.CurrentWeaponIndex];
 		this.currentShieldData = this.CollectedShields[this.CurrentShieldIndex];
-		this.currentStyleData = this.CollectedStyles[this.CurrentStyleIndex];
+		//this.currentStyleData = this.CollectedStyles[this.CurrentStyleIndex];
 		this.camera = this.GetNode<Camera3D>("CameraController/Camera3D");
 		this.Equip(this.currentWeaponData, this.rightHand);
 		this.Equip(this.currentShieldData, this.leftHand);
-		this.Equip(this.currentStyleData, this.head);
+		//this.Equip(this.currentStyleData, this.head);
 		this.InvincibilityTimer = this.GetNode<Timer>("Timers/InvincibleTimer");
 		this.InvincibilityTimer.Timeout += () => this.Invincible = false;
 	}

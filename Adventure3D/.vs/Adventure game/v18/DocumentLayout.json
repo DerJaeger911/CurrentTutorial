@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\characters\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\characters\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\characters\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|solutionrelative:scripts\\characters\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E1466C5-DACD-4FDE-BFA4-7A462D109320}|Adventure game.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\adventure3d\\scripts\\items\\pickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -114,47 +114,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Character.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Characters\\Character.cs",
-              "RelativeDocumentMoniker": "Scripts\\Characters\\Character.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Characters\\Character.cs",
-              "RelativeToolTip": "Scripts\\Characters\\Character.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T18:18:02.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Player.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Characters\\Player\\Player.cs",
-              "RelativeDocumentMoniker": "Scripts\\Characters\\Player\\Player.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Characters\\Player\\Player.cs",
-              "RelativeToolTip": "Scripts\\Characters\\Player\\Player.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAwwDEAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T15:13:54.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PickUp.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Items\\PickUp.cs",
-              "RelativeDocumentMoniker": "Scripts\\Items\\PickUp.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Items\\PickUp.cs",
-              "RelativeToolTip": "Scripts\\Items\\PickUp.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAwwDwAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T14:21:15.892Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -189,6 +150,44 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Character.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Characters\\Character.cs",
+              "RelativeDocumentMoniker": "Scripts\\Characters\\Character.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Characters\\Character.cs",
+              "RelativeToolTip": "Scripts\\Characters\\Character.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAA/wAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T18:18:02.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Characters\\Player\\Player.cs",
+              "RelativeDocumentMoniker": "Scripts\\Characters\\Player\\Player.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Characters\\Player\\Player.cs",
+              "RelativeToolTip": "Scripts\\Characters\\Player\\Player.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAwwDYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T15:13:54.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PickUp.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Items\\PickUp.cs",
+              "RelativeDocumentMoniker": "Scripts\\Items\\PickUp.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\Items\\PickUp.cs",
+              "RelativeToolTip": "Scripts\\Items\\PickUp.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAwwDwAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T14:21:15.892Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
               "Title": "ItemEnumConverter.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\Adventure3D\\Scripts\\GlobalData\\Enums\\ItemEnumConverter.cs",
@@ -197,8 +196,7 @@
               "RelativeToolTip": "Scripts\\GlobalData\\Enums\\ItemEnumConverter.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAADwvw8AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T13:33:35.352Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-15T13:33:35.352Z"
             },
             {
               "$type": "Document",
@@ -210,8 +208,7 @@
               "RelativeToolTip": "Scripts\\Items\\Style.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T18:58:58.772Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T18:58:58.772Z"
             },
             {
               "$type": "Document",
@@ -223,8 +220,7 @@
               "RelativeToolTip": "Scripts\\Items\\Weapon.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAADMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T16:41:58.791Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T16:41:58.791Z"
             },
             {
               "$type": "Document",
@@ -236,8 +232,7 @@
               "RelativeToolTip": "Scripts\\GlobalData\\Equipment.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T17:30:54.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-25T17:30:54.103Z"
             },
             {
               "$type": "Document",
@@ -249,8 +244,7 @@
               "RelativeToolTip": "Scripts\\GlobalData\\Enums\\AllItemEnum.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAwwAgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T13:18:03.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-15T13:18:03.794Z"
             },
             {
               "$type": "Document",
@@ -262,8 +256,7 @@
               "RelativeToolTip": "Scripts\\Ui\\Item.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwD0AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T17:49:21.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T17:49:21.5Z"
             },
             {
               "$type": "Document",
@@ -275,8 +268,7 @@
               "RelativeToolTip": "Scripts\\Characters\\Skeleton\\Skeleton.cs",
               "ViewState": "AgIAAF4AAAAAAAAAAAAkwGMAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T18:30:54.199Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T18:30:54.199Z"
             },
             {
               "$type": "Document",
@@ -288,8 +280,7 @@
               "RelativeToolTip": "Scripts\\Ui\\Inventory.cs",
               "ViewState": "AgIAAFEAAAAAAAAAAAAzwFkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T11:59:59.993Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T11:59:59.993Z"
             },
             {
               "$type": "Document",
@@ -301,8 +292,7 @@
               "RelativeToolTip": "Scripts\\GlobalData\\Enums\\ItemTypeEnum.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T15:54:30.231Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T15:54:30.231Z"
             },
             {
               "$type": "Document",
@@ -314,8 +304,7 @@
               "RelativeToolTip": "Scripts\\GlobalData\\Enums\\ShieldEnum.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAmwAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T15:54:59.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T15:54:59.939Z"
             },
             {
               "$type": "Document",
@@ -327,8 +316,7 @@
               "RelativeToolTip": "Scripts\\GlobalData\\ObjectDataClasses\\WeaponData.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T18:12:54.187Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-25T18:12:54.187Z"
             },
             {
               "$type": "Document",
@@ -340,8 +328,7 @@
               "RelativeToolTip": "Scripts\\GlobalData\\Enums\\StyleEnum.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T15:54:52.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T15:54:52.523Z"
             },
             {
               "$type": "Document",
@@ -365,8 +352,7 @@
               "RelativeToolTip": "Scripts\\GlobalData\\Enums\\WeaponEnum.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T15:54:19.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T15:54:19.636Z"
             },
             {
               "$type": "Document",

@@ -142,3 +142,10 @@ defend={
 3d_physics/layer_1="terrain"
 3d_physics/layer_2="player"
 3d_physics/layer_3="enemies"
+
+[shader_globals]
+
+player_position={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
