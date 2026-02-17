@@ -1,8 +1,58 @@
 [gd_scene format=3 uid="uid://con2syxsujdow"]
 
 [ext_resource type="Script" uid="uid://dug30i0mjhgs" path="res://src/main/Game.cs" id="1_bhi3u"]
+[ext_resource type="Script" uid="uid://ccxtjvsfebund" path="res://src/main/HexTileMap.cs" id="2_lghd3"]
+[ext_resource type="Texture2D" uid="uid://bjmn8uy3mm1er" path="res://Assets-4XHexMap/hex_128.png" id="3_02q1w"]
+[ext_resource type="Texture2D" uid="uid://bqqbm1f14ymjl" path="res://Assets-4XHexMap/hex_overlays.png" id="4_02q1w"]
+[ext_resource type="Script" uid="uid://lfsb7x1676ng" path="res://src/main/Camera2d.cs" id="5_vp2t8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vp2t8"]
+texture = ExtResource("3_02q1w")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bhi3u"]
+tile_shape = 3
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_vp2t8")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cpn03"]
+texture = ExtResource("4_02q1w")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4n6et"]
+tile_shape = 3
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_cpn03")
+
+[sub_resource type="TileSet" id="TileSet_lghd3"]
+tile_shape = 3
+tile_size = Vector2i(128, 128)
 
 [node name="Game" type="Node" unique_id=1011030651]
 script = ExtResource("1_bhi3u")
 
 [node name="HexTileMap" type="Node2D" parent="." unique_id=1928960248]
+script = ExtResource("2_lghd3")
+
+[node name="BaseLayer" type="TileMapLayer" parent="HexTileMap" unique_id=687382864]
+tile_set = SubResource("TileSet_bhi3u")
+
+[node name="HexBordersLayer" type="TileMapLayer" parent="HexTileMap" unique_id=706319246]
+tile_set = SubResource("TileSet_4n6et")
+
+[node name="SelectionOverlayLayer" type="TileMapLayer" parent="HexTileMap" unique_id=416681582]
+tile_set = SubResource("TileSet_lghd3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1554654960]
+script = ExtResource("5_vp2t8")
