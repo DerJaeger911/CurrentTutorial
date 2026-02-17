@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://con2syxsujdow"]
+
+[ext_resource type="Script" uid="uid://dug30i0mjhgs" path="res://src/main/Game.cs" id="1_bhi3u"]
+
+[node name="Game" type="Node" unique_id=1011030651]
+script = ExtResource("1_bhi3u")
+
+[node name="HexTileMap" type="Node2D" parent="." unique_id=1928960248]
