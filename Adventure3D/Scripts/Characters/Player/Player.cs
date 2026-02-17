@@ -63,6 +63,7 @@ public partial class Player : Character
 
 	public override void _PhysicsProcess(Double delta)
 	{
+		RenderingServer.GlobalShaderParameterSet("player_position", this.GlobalPosition); 
 		base._PhysicsProcess(delta);
 		this.MoveLogic(delta);
 		this.JumpLogic(delta);

@@ -58,7 +58,7 @@ public partial class PickUp : Node3D
 					player.CollectedStyles.Contains(Equipment.Instance.Styles[(StyleEnum)this.specificItem]);
 				}
 			}
-			this.area.GetNode<CollisionShape3D>("CollisionShape3D").Disabled = true; 
+			this.area.GetNode<CollisionShape3D>("CollisionShape3D").SetDeferred(CollisionShape3D.PropertyName.Disabled, true);
 			Tween tween = this.CreateTween();
 			tween.TweenProperty(this, "scale", new Vector3(0.1f, 0.1f, 0.1f), 0.5);
 			tween.Finished += () => this.QueueFree();

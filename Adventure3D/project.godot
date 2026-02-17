@@ -15,17 +15,22 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Adventure game"
-run/main_scene="uid://c540cnf70st5l"
+run/main_scene="uid://hku5imurc77f"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Register="*uid://cn8kv2evsa04b"
+TransitionLayer="*uid://dirh4xhuy6epg"
 
 [dotnet]
 
 project/assembly_name="Adventure game"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg")
 
 [file_customization]
 
