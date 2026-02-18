@@ -55,4 +55,6 @@ tile_set = SubResource("TileSet_4n6et")
 tile_set = SubResource("TileSet_lghd3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1554654960]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 script = ExtResource("5_vp2t8")
