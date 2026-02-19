@@ -27,7 +27,6 @@ sources/0 = SubResource("TileSetAtlasSource_vp2t8")
 texture = ExtResource("4_02q1w")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
-1:0/0 = 0
 0:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_4n6et"]
@@ -35,20 +34,29 @@ tile_shape = 3
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_cpn03")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_inhak"]
+texture = ExtResource("4_02q1w")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_lghd3"]
 tile_shape = 3
 tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_inhak")
 
 [node name="Game" type="Node" unique_id=1011030651]
 script = ExtResource("1_bhi3u")
 
 [node name="HexTileMap" type="Node2D" parent="." unique_id=1928960248]
 script = ExtResource("2_lghd3")
+seed = 1
 
 [node name="BaseLayer" type="TileMapLayer" parent="HexTileMap" unique_id=687382864]
 tile_set = SubResource("TileSet_bhi3u")
 
 [node name="HexBordersLayer" type="TileMapLayer" parent="HexTileMap" unique_id=706319246]
+modulate = Color(1, 1, 1, 0.20392157)
 tile_set = SubResource("TileSet_4n6et")
 
 [node name="SelectionOverlayLayer" type="TileMapLayer" parent="HexTileMap" unique_id=416681582]

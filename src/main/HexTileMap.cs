@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using twentyfourtyeight.src.main;
@@ -10,9 +11,18 @@ public partial class HexTileMap : Node2D
 	private int width = 100;
 	[Export]
 	private int height = 100;
+	[Export]
+	private int seed = 100000;
+	[Export]
+	private bool useRandomizeTerrainSeed = false;
+	[Export]
+	private bool useRandomizeResourceSeed = false;
 
+	private Random rnd = new Random();
 
 	private TileMapLayer baseLayer, borderLayer, overlayLayer;
+
+	private Vector2I currentSelectedCell = new Vector2I(-1, -1);
 
 	private Dictionary<Vector2I, Hex> mapData = new Dictionary<Vector2I, Hex>();
 	private Dictionary<TerrainEnum, Vector2I> terrainTextures = new Dictionary<TerrainEnum, Vector2I>
@@ -37,6 +47,7 @@ public partial class HexTileMap : Node2D
 		this.overlayLayer = this.GetNode<TileMapLayer>("SelectionOverlayLayer");
 
 		this.GenerateTerrain();
+		this.GenerateResources();
 	}
 
 	public override void _UnhandledInput(InputEvent @event)
@@ -45,7 +56,48 @@ public partial class HexTileMap : Node2D
 		{
 			Vector2I mapCoords = this.baseLayer.LocalToMap(this.ToLocal(this.GetGlobalMousePosition()));
 
-			GD.Print(this.mapData[mapCoords]);
+			if(mapCoords.X >= 0 && mapCoords.X < this.Width && mapCoords.Y >= 0 && mapCoords.Y < this.Height)
+			{
+				if (mouse.ButtonMask == MouseButtonMask.Left)
+				{
+					GD.Print(this.mapData[mapCoords]);
+
+					if(mapCoords != this.currentSelectedCell)
+					{
+						this.overlayLayer.SetCell(this.currentSelectedCell, -1);
+					}
+
+					this.overlayLayer.SetCell(mapCoords, 0, new Vector2I(0, 1));
+
+					this.currentSelectedCell = mapCoords;
+				}
+				else
+				{
+					this.overlayLayer.SetCell(mapCoords, -1);
+					//this.currentSelectedCell = new Vector2I(-1, -1);
+				}
+			}
+		}
+	}
+
+	public void GenerateResources()
+	{
+		for (int x = 0; x < this.Width; x++)
+		{
+			for (int y = 0; y < this.Height; y++)
+			{
+				var cellRng = new RandomNumberGenerator();
+				ulong stableSeed = (ulong)(this.seed + (x * 31) + (y * 997));
+				cellRng.Seed = stableSeed;
+
+				Hex hex = this.mapData[new Vector2I(x, y)];
+				switch (hex.TerrainType)
+				{
+					case TerrainEnum.Plains:
+						hex.Food = this.useRandomizeResourceSeed ? this.rnd.Next(2, 6) : cellRng.RandiRange(2, 6);
+						break;
+				}
+			}
 		}
 	}
 
@@ -56,17 +108,15 @@ public partial class HexTileMap : Node2D
 		float[,] forestMap = new float[this.Width, this.Height];
 		float[,] mountainMap = new float[this.Width, this.Height];
 
-		Random rnd = new Random();
+		int finalSeed = this.useRandomizeTerrainSeed ? (int)GD.Randi() : this.seed;
 
-		int seed = rnd.Next(100000);
-
-		FastNoiseLite noise = this.CreateNoise(seed, 0.008f, 2.25f, 4, FastNoiseLite.NoiseTypeEnum.Perlin);
+		FastNoiseLite noise = this.CreateNoise(finalSeed, 0.008f, 2.25f, 4, FastNoiseLite.NoiseTypeEnum.Perlin);
 		float noiseMax = this.SetNoiseMax(noiseMap, noise);
-		FastNoiseLite forestnoise = this.CreateNoise(seed, 0.04f, 2, 1, FastNoiseLite.NoiseTypeEnum.Cellular);
+		FastNoiseLite forestnoise = this.CreateNoise(finalSeed, 0.04f, 2, 1, FastNoiseLite.NoiseTypeEnum.Cellular);
 		float forestNoiseMax = this.SetNoiseMax(forestMap, forestnoise);
-		FastNoiseLite desertNoise = this.CreateNoise(seed, 0.015f, 2, 1, FastNoiseLite.NoiseTypeEnum.SimplexSmooth);
+		FastNoiseLite desertNoise = this.CreateNoise(finalSeed, 0.015f, 2, 1, FastNoiseLite.NoiseTypeEnum.SimplexSmooth);
 		float desertNoiseMax = this.SetNoiseMax(desertMap, desertNoise);
-		FastNoiseLite mountainNoise = this.CreateNoise(seed, 0.02f, 2, 1, FastNoiseLite.NoiseTypeEnum.Simplex, FastNoiseLite.FractalTypeEnum.Ridged);
+		FastNoiseLite mountainNoise = this.CreateNoise(finalSeed, 0.02f, 2, 1, FastNoiseLite.NoiseTypeEnum.Simplex, FastNoiseLite.FractalTypeEnum.Ridged);
 		float mountainNoiseMax = this.SetNoiseMax(mountainMap, mountainNoise);
 
 
@@ -122,14 +172,14 @@ public partial class HexTileMap : Node2D
 		int maxIce = 5;
 		for(int x = 0; x < this.Width; x++)
 		{
-			for(int y = 0; y < rnd.Next(maxIce) + 1; y++)
+			for(int y = 0; y < this.rnd.Next(maxIce) + 1; y++)
 			{
 				Hex hex = this.mapData[new Vector2I(x, y)];
 				hex.TerrainType = TerrainEnum.Ice;
 				this.baseLayer.SetCell(new Vector2I(x, y), 0, this.terrainTextures[hex.TerrainType]);
 			}
 
-			for (int y = this.Height - 1; y > this.Height - 1 - rnd.Next(maxIce) - 1; y--)
+			for (int y = this.Height - 1; y > this.Height - 1 - this.rnd.Next(maxIce) - 1; y--)
 			{
 				Hex hex = this.mapData[new Vector2I(x, y)];
 				hex.TerrainType = TerrainEnum.Ice;

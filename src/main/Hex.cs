@@ -9,7 +9,10 @@ namespace twentyfourtyeight.src.main;
 
 internal class Hex
 {
-	public readonly Vector2I Coordinates;
+	public Vector2I Coordinates { get; init; }
+
+	public int Food { get; set; }
+	public int Production { get; set; }
 
 	public TerrainEnum TerrainType {  get; set; }
 
@@ -20,6 +23,6 @@ internal class Hex
 
 	public override String ToString()
 	{
-		return $"Hex({this.Coordinates.X}, {this.Coordinates.Y}) - {this.TerrainType}";
+		return $"Hex({this.Coordinates.X}, {this.Coordinates.Y}) Terrain-Type: {this.TerrainType} Food: {this.Food} Production: {this.Production}";
 	}
 }
