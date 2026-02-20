@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://7s55wbnqefug"]
+
+[ext_resource type="Script" uid="uid://cg1bgghea3y82" path="res://src/main/Ui/TerrainTileUi.cs" id="1_a2gyk"]
+[ext_resource type="Texture2D" uid="uid://hjq7rnts87gx" path="res://Assets-4XHexMap/plains.jpg" id="1_bo3he"]
+
+[node name="TerrainTileUi" type="Panel" unique_id=501203797]
+offset_right = 250.0
+offset_bottom = 260.0
+script = ExtResource("1_a2gyk")
+
+[node name="OuterContainer" type="VBoxContainer" parent="." unique_id=2045188928]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 260.0
+theme_override_constants/separation = 10
+
+[node name="TerrainImage" type="TextureRect" parent="OuterContainer" unique_id=1906019147]
+custom_minimum_size = Vector2(250, 160)
+layout_mode = 2
+texture = ExtResource("1_bo3he")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="InnerContainer" type="VBoxContainer" parent="OuterContainer" unique_id=178728553]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="TerrainLabel" type="Label" parent="OuterContainer/InnerContainer" unique_id=341963107]
+layout_mode = 2
+text = "Terrain:"
+
+[node name="FoodLabel" type="Label" parent="OuterContainer/InnerContainer" unique_id=221379380]
+layout_mode = 2
+text = "Food:"
+
+[node name="ProductionLabel" type="Label" parent="OuterContainer/InnerContainer" unique_id=1511538348]
+layout_mode = 2
+text = "Production:"

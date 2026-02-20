@@ -51,6 +51,9 @@ script = ExtResource("1_bhi3u")
 [node name="HexTileMap" type="Node2D" parent="." unique_id=1928960248]
 script = ExtResource("2_lghd3")
 seed = 1
+resourceSeed = 500
+useRandomizeTerrainSeed = true
+useRandomizedIceSeed = true
 
 [node name="BaseLayer" type="TileMapLayer" parent="HexTileMap" unique_id=687382864]
 tile_set = SubResource("TileSet_bhi3u")

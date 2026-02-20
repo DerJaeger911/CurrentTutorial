@@ -1,25 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\",
+  "WorkspaceRootPath": "H:\\Programming\\CurrentTutorial\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\hex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\hex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|h:\\programming\\currenttutorial\\src\\main\\seedgeneration\\seedgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\seedgeneration\\seedgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\hextilemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|h:\\programming\\currenttutorial\\src\\main\\hextilemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\hextilemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\camera2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|h:\\programming\\currenttutorial\\src\\main\\hex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\hex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|h:\\programming\\currenttutorial\\src\\main\\seedgeneration\\seedsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\seedgeneration\\seedsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|h:\\programming\\currenttutorial\\src\\main\\autoload\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\autoload\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|h:\\programming\\currenttutorial\\src\\main\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|h:\\programming\\currenttutorial\\src\\main\\camera2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\camera2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\terrainenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|h:\\programming\\currenttutorial\\src\\main\\terrainenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\terrainenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,37 +78,62 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SeedSettings.cs",
+              "DocumentMoniker": "H:\\Programming\\CurrentTutorial\\src\\main\\SeedGeneration\\SeedSettings.cs",
+              "RelativeDocumentMoniker": "src\\main\\SeedGeneration\\SeedSettings.cs",
+              "ToolTip": "H:\\Programming\\CurrentTutorial\\src\\main\\SeedGeneration\\SeedSettings.cs",
+              "RelativeToolTip": "src\\main\\SeedGeneration\\SeedSettings.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCkAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T13:24:34.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "SeedGenerator.cs",
+              "DocumentMoniker": "H:\\Programming\\CurrentTutorial\\src\\main\\SeedGeneration\\SeedGenerator.cs",
+              "RelativeDocumentMoniker": "src\\main\\SeedGeneration\\SeedGenerator.cs",
+              "ToolTip": "H:\\Programming\\CurrentTutorial\\src\\main\\SeedGeneration\\SeedGenerator.cs",
+              "RelativeToolTip": "src\\main\\SeedGeneration\\SeedGenerator.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAmwCsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:53:40.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Hex.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Hex.cs",
+              "DocumentMoniker": "H:\\Programming\\CurrentTutorial\\src\\main\\Hex.cs",
               "RelativeDocumentMoniker": "src\\main\\Hex.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Hex.cs",
+              "ToolTip": "H:\\Programming\\CurrentTutorial\\src\\main\\Hex.cs",
               "RelativeToolTip": "src\\main\\Hex.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAkwBYAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T13:11:02.399Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "TerrainEnum.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\TerrainEnum.cs",
+              "DocumentMoniker": "H:\\Programming\\CurrentTutorial\\src\\main\\TerrainEnum.cs",
               "RelativeDocumentMoniker": "src\\main\\TerrainEnum.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\TerrainEnum.cs",
+              "ToolTip": "H:\\Programming\\CurrentTutorial\\src\\main\\TerrainEnum.cs",
               "RelativeToolTip": "src\\main\\TerrainEnum.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T13:08:29.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T13:08:29.217Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Camera2d.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Camera2d.cs",
+              "DocumentMoniker": "H:\\Programming\\CurrentTutorial\\src\\main\\Camera2d.cs",
               "RelativeDocumentMoniker": "src\\main\\Camera2d.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Camera2d.cs",
+              "ToolTip": "H:\\Programming\\CurrentTutorial\\src\\main\\Camera2d.cs",
               "RelativeToolTip": "src\\main\\Camera2d.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAAYwB8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -105,28 +142,66 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "HexTileMap.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\HexTileMap.cs",
+              "DocumentMoniker": "H:\\Programming\\CurrentTutorial\\src\\main\\HexTileMap.cs",
               "RelativeDocumentMoniker": "src\\main\\HexTileMap.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\HexTileMap.cs",
+              "ToolTip": "H:\\Programming\\CurrentTutorial\\src\\main\\HexTileMap.cs",
               "RelativeToolTip": "src\\main\\HexTileMap.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwC8AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAswMQAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T19:34:52.832Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Game.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Game.cs",
+              "DocumentMoniker": "H:\\Programming\\CurrentTutorial\\src\\main\\Game.cs",
               "RelativeDocumentMoniker": "src\\main\\Game.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Game.cs",
+              "ToolTip": "H:\\Programming\\CurrentTutorial\\src\\main\\Game.cs",
               "RelativeToolTip": "src\\main\\Game.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T18:09:50.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "20b6e82d-0d80-4034-b8ea-253cf5f6eb16",
+        "Display": 1,
+        "X": 347,
+        "Y": 171,
+        "Width": 2218,
+        "Height": 1146,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Global.cs",
+              "DocumentMoniker": "H:\\Programming\\CurrentTutorial\\src\\main\\AutoLoad\\Global.cs",
+              "RelativeDocumentMoniker": "src\\main\\AutoLoad\\Global.cs",
+              "ToolTip": "H:\\Programming\\CurrentTutorial\\src\\main\\AutoLoad\\Global.cs",
+              "RelativeToolTip": "src\\main\\AutoLoad\\Global.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T13:28:07Z",
               "EditorCaption": ""
             }
           ]
