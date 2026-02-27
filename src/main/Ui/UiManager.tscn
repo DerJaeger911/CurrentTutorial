@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cyt332ps6pvfa"]
+
+[ext_resource type="Script" uid="uid://d32h5k2inklii" path="res://src/main/Ui/UiManager.cs" id="1_0bdrh"]
+
+[node name="UiManager" type="Node2D" unique_id=110476847]
+position = Vector2(0, 1)
+script = ExtResource("1_0bdrh")
