@@ -21,18 +21,23 @@ texture = ExtResource("1_bo3he")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="InnerContainer" type="VBoxContainer" parent="OuterContainer" unique_id=178728553]
+[node name="MarginContainer" type="MarginContainer" parent="OuterContainer" unique_id=77345842]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="InnerContainer" type="VBoxContainer" parent="OuterContainer/MarginContainer" unique_id=178728553]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="TerrainLabel" type="Label" parent="OuterContainer/InnerContainer" unique_id=341963107]
+[node name="TerrainLabel" type="Label" parent="OuterContainer/MarginContainer/InnerContainer" unique_id=341963107]
 layout_mode = 2
 text = "Terrain:"
 
-[node name="FoodLabel" type="Label" parent="OuterContainer/InnerContainer" unique_id=221379380]
+[node name="FoodLabel" type="Label" parent="OuterContainer/MarginContainer/InnerContainer" unique_id=221379380]
 layout_mode = 2
 text = "Food:"
 
-[node name="ProductionLabel" type="Label" parent="OuterContainer/InnerContainer" unique_id=1511538348]
+[node name="ProductionLabel" type="Label" parent="OuterContainer/MarginContainer/InnerContainer" unique_id=1511538348]
 layout_mode = 2
 text = "Production:"

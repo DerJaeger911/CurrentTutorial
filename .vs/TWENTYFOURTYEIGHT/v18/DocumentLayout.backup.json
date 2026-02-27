@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "H:\\Programming\\CurrentTutorial\\",
+  "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\",
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|h:\\programming\\currenttutorial\\src\\main\\seedgeneration\\seedgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,6 +45,45 @@
           "SelectedChildIndex": 10,
           "Children": [
             {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Hex.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Hex.cs",
+              "RelativeDocumentMoniker": "src\\main\\Hex.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Hex.cs",
+              "RelativeToolTip": "src\\main\\Hex.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T13:11:02.399Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TerrainTileUi.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\TerrainTileUi.cs",
+              "RelativeDocumentMoniker": "src\\main\\Ui\\TerrainTileUi.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\TerrainTileUi.cs",
+              "RelativeToolTip": "src\\main\\Ui\\TerrainTileUi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T21:19:30.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UiManager.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UiManager.cs",
+              "RelativeDocumentMoniker": "src\\main\\Ui\\UiManager.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UiManager.cs",
+              "RelativeToolTip": "src\\main\\Ui\\UiManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T21:16:38.626Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
@@ -67,10 +106,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Bookmark",
@@ -117,11 +152,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "TerrainEnum.cs",
-              "DocumentMoniker": "H:\\Programming\\CurrentTutorial\\src\\main\\TerrainEnum.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\TerrainEnum.cs",
               "RelativeDocumentMoniker": "src\\main\\TerrainEnum.cs",
-              "ToolTip": "H:\\Programming\\CurrentTutorial\\src\\main\\TerrainEnum.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\TerrainEnum.cs",
               "RelativeToolTip": "src\\main\\TerrainEnum.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -131,11 +166,11 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Camera2d.cs",
-              "DocumentMoniker": "H:\\Programming\\CurrentTutorial\\src\\main\\Camera2d.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Camera2d.cs",
               "RelativeDocumentMoniker": "src\\main\\Camera2d.cs",
-              "ToolTip": "H:\\Programming\\CurrentTutorial\\src\\main\\Camera2d.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Camera2d.cs",
               "RelativeToolTip": "src\\main\\Camera2d.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAYwB8AAAApAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwEAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T20:06:41.415Z",
               "EditorCaption": ""
@@ -194,15 +229,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Global.cs",
-              "DocumentMoniker": "H:\\Programming\\CurrentTutorial\\src\\main\\AutoLoad\\Global.cs",
-              "RelativeDocumentMoniker": "src\\main\\AutoLoad\\Global.cs",
-              "ToolTip": "H:\\Programming\\CurrentTutorial\\src\\main\\AutoLoad\\Global.cs",
-              "RelativeToolTip": "src\\main\\AutoLoad\\Global.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Title": "HexTileMap.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\HexTileMap.cs",
+              "RelativeDocumentMoniker": "src\\main\\HexTileMap.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\HexTileMap.cs",
+              "RelativeToolTip": "src\\main\\HexTileMap.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAcwHMAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T13:28:07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T19:34:52.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Game.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Game.cs",
+              "RelativeDocumentMoniker": "src\\main\\Game.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Game.cs",
+              "RelativeToolTip": "src\\main\\Game.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T18:09:50.956Z"
             }
           ]
         }

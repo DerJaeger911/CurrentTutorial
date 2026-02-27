@@ -3,12 +3,14 @@ using System;
 
 public partial class TerrainTileUi : Panel
 {
-	// Called when the node enters the scene tree for the first time.
+	private TextureRect terrainImage;
+
+	private Label terrainLabel, foodLabel, productionLabel;
+
 	public override void _Ready()
 	{
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 	}

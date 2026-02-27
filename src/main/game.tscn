@@ -69,3 +69,5 @@ tile_set = SubResource("TileSet_lghd3")
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("5_vp2t8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=261162031]
