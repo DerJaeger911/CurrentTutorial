@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace twentyfourtyeight.src.main;
 
-internal enum TerrainEnum
+public enum TerrainEnum
 {
 	Plains,
 	Water,
@@ -16,4 +16,5 @@ internal enum TerrainEnum
 	ShallowWater,
 	Forest,
 	Beach,
+	CivColorBase,
 }

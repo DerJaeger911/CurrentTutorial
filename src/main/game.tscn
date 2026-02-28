@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bjmn8uy3mm1er" path="res://Assets-4XHexMap/hex_128.png" id="3_02q1w"]
 [ext_resource type="Texture2D" uid="uid://bqqbm1f14ymjl" path="res://Assets-4XHexMap/hex_overlays.png" id="4_02q1w"]
 [ext_resource type="Script" uid="uid://lfsb7x1676ng" path="res://src/main/Camera2d.cs" id="5_vp2t8"]
+[ext_resource type="PackedScene" uid="uid://cyt332ps6pvfa" path="res://src/main/Ui/UiManager.tscn" id="6_cpn03"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vp2t8"]
 texture = ExtResource("3_02q1w")
@@ -22,6 +23,23 @@ texture_region_size = Vector2i(128, 128)
 tile_shape = 3
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_vp2t8")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hgmhw"]
+texture = ExtResource("3_02q1w")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cpn03"]
+tile_shape = 3
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_hgmhw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cpn03"]
 texture = ExtResource("4_02q1w")
@@ -58,6 +76,10 @@ useRandomizedIceSeed = true
 [node name="BaseLayer" type="TileMapLayer" parent="HexTileMap" unique_id=687382864]
 tile_set = SubResource("TileSet_bhi3u")
 
+[node name="CivColorLayer" type="TileMapLayer" parent="HexTileMap" unique_id=568909997]
+modulate = Color(1, 1, 1, 0.60784316)
+tile_set = SubResource("TileSet_cpn03")
+
 [node name="HexBordersLayer" type="TileMapLayer" parent="HexTileMap" unique_id=706319246]
 modulate = Color(1, 1, 1, 0.20392157)
 tile_set = SubResource("TileSet_4n6et")
@@ -71,3 +93,5 @@ position_smoothing_speed = 10.0
 script = ExtResource("5_vp2t8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=261162031]
+
+[node name="UiManager" parent="CanvasLayer" unique_id=110476847 instance=ExtResource("6_cpn03")]

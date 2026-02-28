@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace twentyfourtyeight.src.main;
 
-internal class Hex
+public class Hex
 {
 	public Vector2I Coordinates { get; init; }
 
@@ -15,6 +15,9 @@ internal class Hex
 	public int Production { get; set; }
 
 	public TerrainEnum TerrainType {  get; set; }
+	public City OwnerCity { get; set; }
+
+	public bool IsCityCenter { get; set; }
 
 	public Hex(Vector2I coordinates)
 	{
