@@ -120,7 +120,7 @@
               "RelativeDocumentMoniker": "src\\main\\Ui\\CityUi.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\CityUi.cs",
               "RelativeToolTip": "src\\main\\Ui\\CityUi.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAwCIAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T15:44:06.069Z",
               "EditorCaption": ""
@@ -135,8 +135,7 @@
               "RelativeToolTip": "src\\main\\Civilisation.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwBIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T14:40:16.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-28T14:40:16.713Z"
             },
             {
               "$type": "Document",
@@ -148,8 +147,7 @@
               "RelativeToolTip": "src\\main\\City.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAiwJUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T14:31:11.799Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-28T14:31:11.799Z"
             },
             {
               "$type": "Document",
@@ -161,8 +159,7 @@
               "RelativeToolTip": "src\\main\\Ui\\UiManager.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAcwDwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T09:39:21.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-28T09:39:21.609Z"
             },
             {
               "$type": "Document",
@@ -174,8 +171,7 @@
               "RelativeToolTip": "src\\main\\HexTileMap.cs",
               "ViewState": "AgIAAMwAAAAAAAAAAAD4v0QBAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T19:34:52.832Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T19:34:52.832Z"
             },
             {
               "$type": "Document",
@@ -187,8 +183,7 @@
               "RelativeToolTip": "src\\main\\Hex.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAuwBMAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T13:11:02.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T13:11:02.399Z"
             },
             {
               "$type": "Document",
@@ -200,8 +195,7 @@
               "RelativeToolTip": "src\\main\\Ui\\TerrainTileUi.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwBsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T21:19:30.109Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-27T21:19:30.109Z"
             },
             {
               "$type": "Document",
@@ -213,8 +207,7 @@
               "RelativeToolTip": "src\\main\\Ui\\GeneralUi.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAswBgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T16:29:58.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-07T16:29:58.601Z"
             },
             {
               "$type": "Document",
@@ -226,8 +219,7 @@
               "RelativeToolTip": "src\\main\\SignalHubs\\UISignals.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T16:53:46.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-07T16:53:46.203Z"
             },
             {
               "$type": "Document",
