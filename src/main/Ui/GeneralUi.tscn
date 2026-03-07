@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bx2cap7b73abv"]
+
+[ext_resource type="Script" uid="uid://dgdqhfhl72ywd" path="res://src/main/Ui/GeneralUi.cs" id="1_eklp3"]
+
+[node name="GeneralUi" type="Panel" unique_id=450857844]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -325.0
+offset_right = 325.0
+offset_bottom = 50.0
+grow_horizontal = 2
+script = ExtResource("1_eklp3")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=318491083]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=136266485]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Turn: 0"
+
+[node name="EndTurnButton" type="Button" parent="MarginContainer" unique_id=798561160]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "End Turn"

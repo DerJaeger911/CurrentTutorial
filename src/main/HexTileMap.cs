@@ -30,6 +30,10 @@ public partial class HexTileMap : Node2D
 	private bool useRandomizedIceSeed;
 	[Export]
 	private bool useTerrainSeedOnly;
+	[Export]
+	private int aiCivNumber = 6;
+	[Export]
+	private Color playerColor = new Color(255, 255, 255);
 
 	private PackedScene cityScene;
 
@@ -38,6 +42,8 @@ public partial class HexTileMap : Node2D
 	private SeedGenerator seedGenerator;
 
 	private TileMapLayer baseLayer, borderLayer, overlayLayer, civColorLayer;
+
+	private TileSetAtlasSource terrainAtlas;
 
 	private Vector2I currentSelectedCell = new Vector2I(-1, -1);
 
@@ -81,12 +87,23 @@ public partial class HexTileMap : Node2D
 
 		this.uiManager = this.GetNode<UiManager>("/root/Game/CanvasLayer/UiManager");
 
+		this.terrainAtlas = (TileSetAtlasSource)this.civColorLayer.TileSet.GetSource(0);
+
 		SeedSettings.Instance.SetSeedSettings(this.resourceSeed, this.terrianSeed, this.maxIce, this.useRandomizeResourceSeed, this.useRandomizeTerrainSeed, this.useRandomizedIceSeed, this.useTerrainSeedOnly);
 
 		this.seedGenerator = new();
 
 		this.GenerateTerrain();
 		this.GenerateResources();
+
+		List<Vector2I> startPoints = this.GenerateCivStartingLocations(this.aiCivNumber + 1);
+
+		Civilisation playerCiv = this.CreatePlayerCiv(startPoints[0]);
+		startPoints.RemoveAt(0);
+
+		this.GenerateAiCivs(startPoints);
+
+		UISignals.OnEndTurn += this.ProcessTurn;
 	}
 
 	public override void _UnhandledInput(InputEvent @event)
@@ -102,7 +119,14 @@ public partial class HexTileMap : Node2D
 					Hex hex = this.mapData[mapCoords];
 					GD.Print(this.mapData[mapCoords]);
 
-					HexSignals.EmitSendHexData(hex);
+					if (this.cities.ContainsKey(mapCoords))
+					{
+						HexSignals.EmitSendCityData(this.cities[mapCoords]);
+					}
+					else
+					{
+						HexSignals.EmitSendHexData(hex);
+					}
 
 					if (mapCoords != this.currentSelectedCell)
 					{
@@ -145,6 +169,40 @@ public partial class HexTileMap : Node2D
 		}
 	}
 
+	public void GenerateAiCivs(List<Vector2I> civStarts)
+	{
+		for (int i = 0; i < civStarts.Count; i++)
+		{
+			Civilisation currentCiv = new Civilisation
+			{
+				Id = i + 1,
+				IsPlayerCivilisation = false,
+				TerritoryColor = this.SetRandomColor(),
+			};
+
+			currentCiv.TerritoryColorAltTileId = this.SetTerritoryColorAltTileId(currentCiv);
+
+			this.CreateCity(currentCiv, civStarts[i], "City " + civStarts[i].X);
+			this.civs.Add(currentCiv);
+		}
+	}
+
+	public Civilisation CreatePlayerCiv(Vector2I startPosition)
+	{
+		Civilisation playerCiv = new Civilisation();
+		playerCiv.Id = 0;
+		playerCiv.IsPlayerCivilisation = true;
+		playerCiv.TerritoryColor = this.playerColor;
+
+		playerCiv.TerritoryColorAltTileId = this.SetTerritoryColorAltTileId(playerCiv);
+
+		this.civs.Add(playerCiv);
+
+		this.CreateCity(playerCiv, startPosition, "Player City");
+
+		return playerCiv;
+	}
+
 	public List<Vector2I> GenerateCivStartingLocations(int numLocations)
 	{
 		List<Vector2I> locations = new List<Vector2I>();
@@ -163,11 +221,11 @@ public partial class HexTileMap : Node2D
 				counter++;
 			}
 			this.plainsTiles.Remove(coord);
-			foreach(Hex h in this.GetSurroundingHexes(coord))
+			foreach (Hex h in this.GetSurroundingHexes(coord))
 			{
-				foreach(Hex j in this.GetSurroundingHexes(h.Coordinates))
+				foreach (Hex j in this.GetSurroundingHexes(h.Coordinates))
 				{
-					foreach(Hex k in this.GetSurroundingHexes(j.Coordinates))
+					foreach (Hex k in this.GetSurroundingHexes(j.Coordinates))
 					{
 						this.plainsTiles.Remove(h.Coordinates);
 						this.plainsTiles.Remove(j.Coordinates);
@@ -183,15 +241,15 @@ public partial class HexTileMap : Node2D
 
 	private bool IsValidLocation(Vector2I coord, List<Vector2I> locations)
 	{
-		if (coord.X < 3 || coord.X >this.Width - 3 ||
-			coord.Y < 3|| coord.Y > this.Height - 3)
+		if (coord.X < 3 || coord.X > this.Width - 3 ||
+			coord.Y < 3 || coord.Y > this.Height - 3)
 		{
 			return false;
 		}
 
 		foreach (Vector2I location in locations)
 		{
-			if(Math.Abs(coord.X - location.X) < 20 || Math.Abs(coord.Y - location.Y) < 20)
+			if (Math.Abs(coord.X - location.X) < 20 || Math.Abs(coord.Y - location.Y) < 20)
 			{
 				return false;
 			}
@@ -259,6 +317,11 @@ public partial class HexTileMap : Node2D
 
 	public bool IsInBounds(Vector2I coords) =>
 	coords.X >= 0 && coords.X < this.width && coords.Y >= 0 && coords.Y < this.height;
+
+	public void ProcessTurn()
+	{
+		GD.Print("Turn ended!");
+	}
 
 	public void GenerateTerrain()
 	{
@@ -389,5 +452,19 @@ public partial class HexTileMap : Node2D
 			}
 		}
 		return noiseMax;
+	}
+
+	private int SetTerritoryColorAltTileId(Civilisation currentCiv)
+	{
+		int id = this.terrainAtlas.CreateAlternativeTile(this.terrainTextures[TerrainEnum.CivColorBase]);
+		this.terrainAtlas.GetTileData(this.terrainTextures[TerrainEnum.CivColorBase], id).Modulate = currentCiv.TerritoryColor;
+
+		return id;
+	}
+
+	private Color SetRandomColor()
+	{
+		Random rnd = new Random();
+		return new Color(rnd.Next(255) / 255.0f, rnd.Next(255) / 255.0f, rnd.Next(255) / 255.0f);
 	}
 }

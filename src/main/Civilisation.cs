@@ -10,10 +10,5 @@ public partial class Civilisation
 	public Color TerritoryColor { get; set; }
 	public int TerritoryColorAltTileId { get; set; } 
 	public string TerritoryName { get; set; }
-	public bool PlayerCivilisation { get; set; }
-
-	public Civilisation()
-	{
-
-	}
+	public bool IsPlayerCivilisation { get; set; }
 }

@@ -72,6 +72,7 @@ seed = 1
 resourceSeed = 500
 useRandomizeTerrainSeed = true
 useRandomizedIceSeed = true
+playerColor = Color(0, 0, 0, 1)
 
 [node name="BaseLayer" type="TileMapLayer" parent="HexTileMap" unique_id=687382864]
 tile_set = SubResource("TileSet_bhi3u")
