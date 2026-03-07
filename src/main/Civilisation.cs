@@ -11,4 +11,12 @@ public partial class Civilisation
 	public int TerritoryColorAltTileId { get; set; } 
 	public string TerritoryName { get; set; }
 	public bool IsPlayerCivilisation { get; set; }
+
+	public void ProcessTurn()
+	{
+		foreach(City city in this.Cities)
+		{
+			city.ProcessTurn();
+		}
+	}
 }

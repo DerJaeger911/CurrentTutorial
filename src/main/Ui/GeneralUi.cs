@@ -23,6 +23,7 @@ public partial class GeneralUi : Panel
 	{
 		this.IncrementTurnCounter();
 		UISignals.EmitOnEndTurn();
+		GD.Print("Turn ended");
 	}
 
 	public void IncrementTurnCounter()

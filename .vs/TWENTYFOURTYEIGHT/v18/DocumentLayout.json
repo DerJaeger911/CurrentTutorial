@@ -3,52 +3,52 @@
   "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\cityui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\cityui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\generalui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\generalui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\hextilemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\hextilemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\signalhubs\\uisignals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\signalhubs\\uisignals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\signalhubs\\hexsignals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\signalhubs\\hexsignals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\terraintileui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\terraintileui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\mangager\\assetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\mangager\\assetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\cityui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\cityui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\hextilemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\hextilemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\civilisation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\civilisation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\terrainenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\terrainenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\hex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\hex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\signalhubs\\hexsignals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\signalhubs\\hexsignals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\mangager\\assetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\mangager\\assetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\terrainenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\terrainenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -114,6 +114,110 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CityUi.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\CityUi.cs",
+              "RelativeDocumentMoniker": "src\\main\\Ui\\CityUi.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\CityUi.cs",
+              "RelativeToolTip": "src\\main\\Ui\\CityUi.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAwCIAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T15:44:06.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Civilisation.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Civilisation.cs",
+              "RelativeDocumentMoniker": "src\\main\\Civilisation.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Civilisation.cs",
+              "RelativeToolTip": "src\\main\\Civilisation.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T14:40:16.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "City.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\City.cs",
+              "RelativeDocumentMoniker": "src\\main\\City.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\City.cs",
+              "RelativeToolTip": "src\\main\\City.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAiwJUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T14:31:11.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UiManager.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UiManager.cs",
+              "RelativeDocumentMoniker": "src\\main\\Ui\\UiManager.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UiManager.cs",
+              "RelativeToolTip": "src\\main\\Ui\\UiManager.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAcwDwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T09:39:21.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HexTileMap.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\HexTileMap.cs",
+              "RelativeDocumentMoniker": "src\\main\\HexTileMap.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\HexTileMap.cs",
+              "RelativeToolTip": "src\\main\\HexTileMap.cs",
+              "ViewState": "AgIAAMwAAAAAAAAAAAD4v0QBAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T19:34:52.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Hex.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Hex.cs",
+              "RelativeDocumentMoniker": "src\\main\\Hex.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Hex.cs",
+              "RelativeToolTip": "src\\main\\Hex.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T13:11:02.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TerrainTileUi.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\TerrainTileUi.cs",
+              "RelativeDocumentMoniker": "src\\main\\Ui\\TerrainTileUi.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\TerrainTileUi.cs",
+              "RelativeToolTip": "src\\main\\Ui\\TerrainTileUi.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T21:19:30.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GeneralUi.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\GeneralUi.cs",
+              "RelativeDocumentMoniker": "src\\main\\Ui\\GeneralUi.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\GeneralUi.cs",
+              "RelativeToolTip": "src\\main\\Ui\\GeneralUi.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAswBgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T16:29:58.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "UISignals.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SignalHubs\\UISignals.cs",
@@ -127,98 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GeneralUi.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\GeneralUi.cs",
-              "RelativeDocumentMoniker": "src\\main\\Ui\\GeneralUi.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\GeneralUi.cs",
-              "RelativeToolTip": "src\\main\\Ui\\GeneralUi.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T16:29:58.601Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CityUi.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\CityUi.cs",
-              "RelativeDocumentMoniker": "src\\main\\Ui\\CityUi.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\CityUi.cs",
-              "RelativeToolTip": "src\\main\\Ui\\CityUi.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T15:44:06.069Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Civilisation.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Civilisation.cs",
-              "RelativeDocumentMoniker": "src\\main\\Civilisation.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Civilisation.cs",
-              "RelativeToolTip": "src\\main\\Civilisation.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAD4vwoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T14:40:16.713Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "City.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\City.cs",
-              "RelativeDocumentMoniker": "src\\main\\City.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\City.cs",
-              "RelativeToolTip": "src\\main\\City.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAmwEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T14:31:11.799Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HexSignals.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SignalHubs\\HexSignals.cs",
-              "RelativeDocumentMoniker": "src\\main\\SignalHubs\\HexSignals.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SignalHubs\\HexSignals.cs",
-              "RelativeToolTip": "src\\main\\SignalHubs\\HexSignals.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T10:34:55.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UiManager.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UiManager.cs",
-              "RelativeDocumentMoniker": "src\\main\\Ui\\UiManager.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UiManager.cs",
-              "RelativeToolTip": "src\\main\\Ui\\UiManager.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAwAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T09:39:21.609Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HexTileMap.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\HexTileMap.cs",
-              "RelativeDocumentMoniker": "src\\main\\HexTileMap.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\HexTileMap.cs",
-              "RelativeToolTip": "src\\main\\HexTileMap.cs",
-              "ViewState": "AgIAAKkBAAAAAAAAAAAuwNYBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T19:34:52.832Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "AssetManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Mangager\\AssetManager.cs",
               "RelativeDocumentMoniker": "src\\main\\Mangager\\AssetManager.cs",
@@ -226,37 +239,23 @@
               "RelativeToolTip": "src\\main\\Mangager\\AssetManager.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAYwAsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T11:55:11.004Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-28T11:55:11.004Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TerrainTileUi.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\TerrainTileUi.cs",
-              "RelativeDocumentMoniker": "src\\main\\Ui\\TerrainTileUi.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\TerrainTileUi.cs",
-              "RelativeToolTip": "src\\main\\Ui\\TerrainTileUi.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBsAAAACAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "HexSignals.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SignalHubs\\HexSignals.cs",
+              "RelativeDocumentMoniker": "src\\main\\SignalHubs\\HexSignals.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SignalHubs\\HexSignals.cs",
+              "RelativeToolTip": "src\\main\\SignalHubs\\HexSignals.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T21:19:30.109Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-28T10:34:55.547Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Hex.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Hex.cs",
-              "RelativeDocumentMoniker": "src\\main\\Hex.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Hex.cs",
-              "RelativeToolTip": "src\\main\\Hex.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T13:11:02.399Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "TerrainEnum.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\TerrainEnum.cs",
               "RelativeDocumentMoniker": "src\\main\\TerrainEnum.cs",

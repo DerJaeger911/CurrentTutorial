@@ -1,7 +1,6 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-using System.Xml.Linq;
 using twentyfourtyeight.src.main;
 
 public partial class City : Node2D
@@ -11,6 +10,7 @@ public partial class City : Node2D
 
 	private int population = 1;
 
+	public static Dictionary<Hex, City> InvalidTiles = new Dictionary<Hex, City>();
 
 	public HexTileMap Map {  get; set; }
 	public Vector2I CenterCoordinates { get; set; }
@@ -21,12 +21,84 @@ public partial class City : Node2D
 	public Int32 Population { get => this.population; set => this.population = value; }
 	public int TotalFood { get; set; }
 	public int TotalProduction { get; set; }
+	public int PopulationGrowthThreshold { get; set; }
+	public int PopulationGrowthTracker { get; set; }
+
+	private const int populationThreshholdIncrease = 15;
 
 	public override void _Ready()
 	{
 		this.label = this.GetNode<Label>("Label");
 		this.sprite = this.GetNode<Sprite2D>("Sprite2D");
 		this.label.Text = this.CityName;
+	}
+
+	public void ProcessTurn()
+	{
+		this.CleanUpBoarderPool();
+		this.PopulationGrowthTracker += this.TotalFood;
+		if(this.PopulationGrowthTracker > this.PopulationGrowthThreshold)
+		{
+			this.Population++;
+			this.PopulationGrowthTracker = 0;
+			this.PopulationGrowthThreshold += populationThreshholdIncrease;
+			this.AddRandomNewTile();
+			this.Map.UpdateCivTerritoryMap(this.Civ);
+		}
+	}
+
+	public void CleanUpBoarderPool()
+	{
+		List<Hex> toRemove = new List<Hex>();
+		foreach (Hex hex in this.BorderTilePool)
+		{
+			if (InvalidTiles.ContainsKey(hex) && InvalidTiles[hex] != this)
+			{
+				toRemove.Add(hex);
+			}
+		}
+
+		foreach(Hex hex in toRemove)
+		{
+			this.BorderTilePool.Remove(hex);
+		}
+	}
+
+	public void AddValidNeighborsToBorderPool(Hex hex)
+	{
+		List<Hex> neighbors = this.Map.GetSurroundingHexes(hex.Coordinates);
+
+		foreach(Hex neighborHex in neighbors)
+		{
+			if (this.IsValidNeighborTile(neighborHex))
+			{
+				this.BorderTilePool.Add(neighborHex);
+				InvalidTiles[neighborHex] = this;
+			}
+		}
+	}
+
+	public bool IsValidNeighborTile(Hex neighborHex)
+	{
+		if(neighborHex.TerrainType == TerrainEnum.Water ||
+			neighborHex.TerrainType == TerrainEnum.Ice||
+			neighborHex.TerrainType == TerrainEnum.ShallowWater||
+			neighborHex.TerrainType == TerrainEnum.Mountain)
+		{
+			return false; 
+		}
+
+		if (neighborHex.OwnerCity != null && neighborHex.OwnerCity.Civ != null)
+		{
+			return false;
+		}
+
+		if(InvalidTiles.ContainsKey(neighborHex) && InvalidTiles[neighborHex] != this)
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 	public void CalculateTerritoryResourceTotals()
@@ -41,11 +113,23 @@ public partial class City : Node2D
 		}
 	}
 
+	public void AddRandomNewTile()
+	{
+		if (this.BorderTilePool.Count > 0)
+		{
+			Random rnd = new Random();
+			int index = rnd.Next(this.BorderTilePool.Count);
+			this.AddTerritory(new List<Hex> { this.BorderTilePool[index] });
+			this.BorderTilePool.RemoveAt(index);
+		}
+	}
+
 	public void AddTerritory(List<Hex> territoryToAdd)
 	{
 		foreach (Hex hex in territoryToAdd) 
 		{
 			hex.OwnerCity = this;
+			this.AddValidNeighborsToBorderPool(hex);
 		}
 
 		this.Territory.AddRange(territoryToAdd);

@@ -320,7 +320,10 @@ public partial class HexTileMap : Node2D
 
 	public void ProcessTurn()
 	{
-		GD.Print("Turn ended!");
+		foreach(Civilisation civ in this.civs)
+		{
+			civ.ProcessTurn();
+		}
 	}
 
 	public void GenerateTerrain()
