@@ -11,14 +11,17 @@ public partial class CityUi : Panel
 
 	public override void _Ready()
 	{
-		VBoxContainer uiHolder = this.GetNode<VBoxContainer>("VBoxContainer");
-		VBoxContainer labelHolder = uiHolder.GetNode<VBoxContainer>("MarginContainer/VBoxContainer");
+		VBoxContainer uiContainer = this.GetNode<VBoxContainer>("VBoxContainer");
+		VBoxContainer outerContainer = uiContainer.GetNode<VBoxContainer>("MarginContainer/OuterContainer");
+		VBoxContainer cityContainer = outerContainer.GetNode<VBoxContainer>("CityContainer");
+		VBoxContainer buildContainer = outerContainer.GetNode<VBoxContainer>("BuildContainer");
+		VBoxContainer queueContainer = outerContainer.GetNode<VBoxContainer>("QueueContainer");
 
-		this.cityImage = uiHolder.GetNode<TextureRect>("TextureRect");
-		this.cityName = labelHolder.GetNode<Label>("CityName");
-		this.population = labelHolder.GetNode<Label>("Population");
-		this.food = labelHolder.GetNode<Label>("Food");
-		this.production = labelHolder.GetNode<Label>("Production");
+		this.cityImage = uiContainer.GetNode<TextureRect>("TextureRect");
+		this.cityName = cityContainer.GetNode<Label>("CityName");
+		this.population = cityContainer.GetNode<Label>("Population");
+		this.food = cityContainer.GetNode<Label>("Food");
+		this.production = cityContainer.GetNode<Label>("Production");
 
 		UISignals.OnEndTurn += this.Refresh;
 	}

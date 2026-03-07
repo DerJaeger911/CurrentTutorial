@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d3owrfcrp1jxh"]
+
+[node name="UnitBuildButton" type="Button" unique_id=1409966580]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Default"
