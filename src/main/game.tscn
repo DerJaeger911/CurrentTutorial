@@ -68,13 +68,11 @@ script = ExtResource("1_bhi3u")
 
 [node name="HexTileMap" type="Node2D" parent="." unique_id=1928960248]
 script = ExtResource("2_lghd3")
-width = 500
-height = 500
 seed = 1
 resourceSeed = 500
 useRandomizeTerrainSeed = true
 useRandomizedIceSeed = true
-aiCivNumber = 20
+aiCivNumber = 5
 playerColor = Color(0, 0, 0, 1)
 
 [node name="BaseLayer" type="TileMapLayer" parent="HexTileMap" unique_id=687382864]

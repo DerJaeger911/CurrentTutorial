@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using twentyfourtyeight.src.main;
+using twentyfourtyeight.src.main.SignalHubs;
 
 public partial class City : Node2D
 {
@@ -16,6 +17,9 @@ public partial class City : Node2D
 	public Vector2I CenterCoordinates { get; set; }
 	public List<Hex> Territory {  get; set; } = new List<Hex>();
 	public List<Hex> BorderTilePool { get; set; } = new List<Hex>();
+	public List<Unit> UnitBuildQueue { get; set; } = new List<Unit>();
+	public Unit CurrentUnitBeingBuilt { get; set; }
+	public int UnitBuildTracker { get; set; }
 	public string CityName { get; set; }
 	public Civilisation Civ {  get; set; }
 	public Int32 Population { get => this.population; set => this.population = value; }
@@ -78,6 +82,13 @@ public partial class City : Node2D
 		}
 	}
 
+	public void SpawnUnit(Unit unit)
+	{
+		Unit unitToSpawn = (Unit)Unit.UnitSceneResources[unit.GetType()].Instantiate();
+		unitToSpawn.Position = this.Map.MapToLocal(this.CenterCoordinates);
+		unitToSpawn.SetCiv(this.Civ);
+	}
+
 	public bool IsValidNeighborTile(Hex neighborHex)
 	{
 		if(neighborHex.TerrainType == TerrainEnum.Water ||
@@ -111,6 +122,11 @@ public partial class City : Node2D
 			this.TotalFood += hex.Food;
 			this.TotalProduction += hex.Production;
 		}
+	}
+
+	public void AddUnitToBuildQueue(Unit unit)
+	{
+		this.UnitBuildQueue.Add(unit);
 	}
 
 	public void AddRandomNewTile()

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://by5nr2gavsteg"]
+
+[ext_resource type="Texture2D" uid="uid://dv1o3rnrwseo8" path="res://Assets-4XHexMap/settler.png" id="1_f2is0"]
+[ext_resource type="Script" uid="uid://cim3f1f6wqs4" path="res://src/main/Units/Unit.cs" id="1_u4rj8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f2is0"]
+radius = 34.0
+
+[node name="Unit" type="Node2D" unique_id=210841287]
+script = ExtResource("1_u4rj8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1679176027]
+position = Vector2(-1, 2)
+texture = ExtResource("1_f2is0")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1004958508]
+position = Vector2(1, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=801682768]
+shape = SubResource("CircleShape2D_f2is0")

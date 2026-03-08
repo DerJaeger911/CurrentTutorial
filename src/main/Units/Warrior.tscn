@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b5b3unp6n58p8"]
+
+[ext_resource type="PackedScene" uid="uid://by5nr2gavsteg" path="res://src/main/Units/unit.tscn" id="1_1np66"]
+[ext_resource type="Texture2D" uid="uid://juvj12v80ir5" path="res://Assets-4XHexMap/warrior.png" id="2_j8yo7"]
+[ext_resource type="Script" uid="uid://6eebkclyw5c0" path="res://src/main/Units/Warrior.cs" id="2_nvw5g"]
+
+[node name="Unit" unique_id=210841287 instance=ExtResource("1_1np66")]
+script = ExtResource("2_nvw5g")
+
+[node name="Sprite2D" parent="." index="0" unique_id=1679176027]
+position = Vector2(0.765, 3.77)
+texture = ExtResource("2_j8yo7")
+
+[node name="CollisionShape2D" parent="Sprite2D/Area2D" parent_id_path=PackedInt32Array(1004958508) index="0" unique_id=801682768]
+position = Vector2(-2.17, -1.375)
