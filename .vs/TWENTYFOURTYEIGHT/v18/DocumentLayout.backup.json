@@ -3,88 +3,40 @@
   "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\cityui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\cityui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\signalhubs\\uisignals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\signalhubs\\uisignals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\unitbuildbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\unitbuildbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\units\\warrior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\units\\warrior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\hextilemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\hextilemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\units\\settler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\units\\settler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\unitui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\unitui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\units\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\units\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\signalhubs\\hexsignals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\signalhubs\\hexsignals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\generalui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\generalui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\units\\settler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\units\\settler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\terraintileui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\terraintileui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\units\\warrior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\units\\warrior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\civilisation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\civilisation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\hex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\hex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\mangager\\assetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\mangager\\assetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\cityui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\cityui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\terrainenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\terrainenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\camera2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\camera2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\seedgeneration\\seedgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\seedgeneration\\seedgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\seedgeneration\\seedsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\seedgeneration\\seedsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\autoload\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\autoload\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\src\\main\\ui\\unitbuildbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45404696-5260-4B90-8E8A-312781E82BFA}|twentyfourtyeight.csproj|solutionrelative:src\\main\\ui\\unitbuildbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,8 +46,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Settler.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Units\\Settler.cs",
+              "RelativeDocumentMoniker": "src\\main\\Units\\Settler.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Units\\Settler.cs",
+              "RelativeToolTip": "src\\main\\Units\\Settler.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAkAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T16:58:57.244Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -130,265 +95,105 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Settler.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Units\\Settler.cs",
-              "RelativeDocumentMoniker": "src\\main\\Units\\Settler.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Units\\Settler.cs",
-              "RelativeToolTip": "src\\main\\Units\\Settler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T09:57:13.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Warrior.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Units\\Warrior.cs",
               "RelativeDocumentMoniker": "src\\main\\Units\\Warrior.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Units\\Warrior.cs",
               "RelativeToolTip": "src\\main\\Units\\Warrior.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T09:56:29.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Unit.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Units\\Unit.cs",
-              "RelativeDocumentMoniker": "src\\main\\Units\\Unit.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Units\\Unit.cs",
-              "RelativeToolTip": "src\\main\\Units\\Unit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T09:55:52.028Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UnitBuildButton.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UnitBuildButton.cs",
-              "RelativeDocumentMoniker": "src\\main\\Ui\\UnitBuildButton.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UnitBuildButton.cs",
-              "RelativeToolTip": "src\\main\\Ui\\UnitBuildButton.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAzwAsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T09:44:50.145Z",
+              "WhenOpened": "2026-03-08T18:08:56.236Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CityUi.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\CityUi.cs",
-              "RelativeDocumentMoniker": "src\\main\\Ui\\CityUi.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\CityUi.cs",
-              "RelativeToolTip": "src\\main\\Ui\\CityUi.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAQwGMAAAAAAAAAAAAAAA==",
+              "Title": "UnitUi.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UnitUi.cs",
+              "RelativeDocumentMoniker": "src\\main\\Ui\\UnitUi.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UnitUi.cs",
+              "RelativeToolTip": "src\\main\\Ui\\UnitUi.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAwwB0AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T15:44:06.069Z",
+              "WhenOpened": "2026-03-08T17:04:15.605Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UISignals.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SignalHubs\\UISignals.cs",
-              "RelativeDocumentMoniker": "src\\main\\SignalHubs\\UISignals.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SignalHubs\\UISignals.cs",
-              "RelativeToolTip": "src\\main\\SignalHubs\\UISignals.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T16:53:46.203Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HexSignals.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SignalHubs\\HexSignals.cs",
-              "RelativeDocumentMoniker": "src\\main\\SignalHubs\\HexSignals.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SignalHubs\\HexSignals.cs",
-              "RelativeToolTip": "src\\main\\SignalHubs\\HexSignals.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T10:34:55.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UiManager.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UiManager.cs",
-              "RelativeDocumentMoniker": "src\\main\\Ui\\UiManager.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UiManager.cs",
-              "RelativeToolTip": "src\\main\\Ui\\UiManager.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAwwC4AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T09:39:21.609Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "City.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\City.cs",
-              "RelativeDocumentMoniker": "src\\main\\City.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\City.cs",
-              "RelativeToolTip": "src\\main\\City.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowCQAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T14:31:11.799Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HexTileMap.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\HexTileMap.cs",
-              "RelativeDocumentMoniker": "src\\main\\HexTileMap.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\HexTileMap.cs",
-              "RelativeToolTip": "src\\main\\HexTileMap.cs",
-              "ViewState": "AgIAAM4BAAAAAAAAAAAQwNkBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T19:34:52.832Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TerrainTileUi.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\TerrainTileUi.cs",
-              "RelativeDocumentMoniker": "src\\main\\Ui\\TerrainTileUi.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\TerrainTileUi.cs",
-              "RelativeToolTip": "src\\main\\Ui\\TerrainTileUi.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBsAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T21:19:30.109Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Hex.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Hex.cs",
-              "RelativeDocumentMoniker": "src\\main\\Hex.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Hex.cs",
-              "RelativeToolTip": "src\\main\\Hex.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBMAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T13:11:02.399Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GeneralUi.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\GeneralUi.cs",
-              "RelativeDocumentMoniker": "src\\main\\Ui\\GeneralUi.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\GeneralUi.cs",
-              "RelativeToolTip": "src\\main\\Ui\\GeneralUi.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAswBgAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T16:29:58.601Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 5,
               "Title": "Civilisation.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Civilisation.cs",
               "RelativeDocumentMoniker": "src\\main\\Civilisation.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Civilisation.cs",
               "RelativeToolTip": "src\\main\\Civilisation.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBIAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAMwAoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T14:40:16.713Z"
+              "WhenOpened": "2026-03-08T15:03:12.013Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AssetManager.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Mangager\\AssetManager.cs",
-              "RelativeDocumentMoniker": "src\\main\\Mangager\\AssetManager.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Mangager\\AssetManager.cs",
-              "RelativeToolTip": "src\\main\\Mangager\\AssetManager.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwAsAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T11:55:11.004Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TerrainEnum.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\TerrainEnum.cs",
-              "RelativeDocumentMoniker": "src\\main\\TerrainEnum.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\TerrainEnum.cs",
-              "RelativeToolTip": "src\\main\\TerrainEnum.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T13:08:29.217Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 2,
               "Title": "Game.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Game.cs",
               "RelativeDocumentMoniker": "src\\main\\Game.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Game.cs",
               "RelativeToolTip": "src\\main\\Game.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T18:09:50.956Z"
+              "WhenOpened": "2026-03-08T14:57:32.261Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Camera2d.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Camera2d.cs",
-              "RelativeDocumentMoniker": "src\\main\\Camera2d.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Camera2d.cs",
-              "RelativeToolTip": "src\\main\\Camera2d.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAxwB8AAAApAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Unit.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Units\\Unit.cs",
+              "RelativeDocumentMoniker": "src\\main\\Units\\Unit.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Units\\Unit.cs",
+              "RelativeToolTip": "src\\main\\Units\\Unit.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAkAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T20:06:41.415Z"
+              "WhenOpened": "2026-03-08T14:48:26.009Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "SeedGenerator.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SeedGeneration\\SeedGenerator.cs",
-              "RelativeDocumentMoniker": "src\\main\\SeedGeneration\\SeedGenerator.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SeedGeneration\\SeedGenerator.cs",
-              "RelativeToolTip": "src\\main\\SeedGeneration\\SeedGenerator.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAqwC0AAAAkAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "City.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\City.cs",
+              "RelativeDocumentMoniker": "src\\main\\City.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\City.cs",
+              "RelativeToolTip": "src\\main\\City.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAADwv1wAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T11:53:40.093Z"
+              "WhenOpened": "2026-03-08T14:47:25.706Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "SeedSettings.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SeedGeneration\\SeedSettings.cs",
-              "RelativeDocumentMoniker": "src\\main\\SeedGeneration\\SeedSettings.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\SeedGeneration\\SeedSettings.cs",
-              "RelativeToolTip": "src\\main\\SeedGeneration\\SeedSettings.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCkAAAA5AAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "CityUi.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\CityUi.cs",
+              "RelativeDocumentMoniker": "src\\main\\Ui\\CityUi.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\CityUi.cs",
+              "RelativeToolTip": "src\\main\\Ui\\CityUi.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAmwEMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T13:24:34.414Z"
+              "WhenOpened": "2026-03-08T14:26:13.7Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Global.cs",
-              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\AutoLoad\\Global.cs",
-              "RelativeDocumentMoniker": "src\\main\\AutoLoad\\Global.cs",
-              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\AutoLoad\\Global.cs",
-              "RelativeToolTip": "src\\main\\AutoLoad\\Global.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "UnitBuildButton.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UnitBuildButton.cs",
+              "RelativeDocumentMoniker": "src\\main\\Ui\\UnitBuildButton.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\src\\main\\Ui\\UnitBuildButton.cs",
+              "RelativeToolTip": "src\\main\\Ui\\UnitBuildButton.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T10:09:14.745Z"
+              "WhenOpened": "2026-03-08T14:25:27.869Z"
             }
           ]
         }

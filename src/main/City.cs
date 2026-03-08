@@ -49,6 +49,7 @@ public partial class City : Node2D
 			this.AddRandomNewTile();
 			this.Map.UpdateCivTerritoryMap(this.Civ);
 		}
+		this.ProcessUnitBuildQueue();
 	}
 
 	public void CleanUpBoarderPool()
@@ -87,6 +88,9 @@ public partial class City : Node2D
 		Unit unitToSpawn = (Unit)Unit.UnitSceneResources[unit.GetType()].Instantiate();
 		unitToSpawn.Position = this.Map.MapToLocal(this.CenterCoordinates);
 		unitToSpawn.SetCiv(this.Civ);
+		unitToSpawn.Coords = this.CenterCoordinates;
+
+		this.Map.AddChild(unitToSpawn);
 	}
 
 	public bool IsValidNeighborTile(Hex neighborHex)
@@ -151,6 +155,27 @@ public partial class City : Node2D
 		this.Territory.AddRange(territoryToAdd);
 		this.CalculateTerritoryResourceTotals();
 	} 
+
+	public void ProcessUnitBuildQueue()
+	{
+		if(this.UnitBuildQueue.Count > 0)
+		{
+			if(this.CurrentUnitBeingBuilt == null)
+			{
+				this.CurrentUnitBeingBuilt = this.UnitBuildQueue[0];
+			}
+
+			this.UnitBuildTracker += this.TotalProduction;
+			
+			if (this.UnitBuildTracker >= this.CurrentUnitBeingBuilt.ProductionCost)
+			{
+				this.SpawnUnit(this.CurrentUnitBeingBuilt);
+				this.UnitBuildQueue.RemoveAt(0);
+				this.CurrentUnitBeingBuilt = null;
+				this.UnitBuildTracker = 0;
+			}
+		}
+	}
 
 	public void SetCityName(string cityName)
 	{

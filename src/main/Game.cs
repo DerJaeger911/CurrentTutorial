@@ -7,6 +7,7 @@ public partial class Game : Node
 	public override void _Ready()
 	{
 		Unit.LoadUnitScenes();
+		Unit.LoadTextures();
 		AssetManager manager = new AssetManager();
 		this.AddChild(manager);
 	}

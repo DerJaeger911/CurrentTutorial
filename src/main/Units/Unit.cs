@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using twentyfourtyeight.src.main;
 
-public abstract partial class Unit : Node2D
+public partial class Unit : Node2D
 {
-	public static Dictionary<Type, PackedScene> UnitSceneResources;
+	public static Dictionary<Type, PackedScene> UnitSceneResources {  get; private set; }
+	public static Dictionary<Type, Texture2D> UiImages {  get; private set; }
 
 	public static void LoadUnitScenes()
 	{
@@ -17,13 +18,30 @@ public abstract partial class Unit : Node2D
 		};
 	}
 
+	public static void LoadTextures()
+	{
+		UiImages = new Dictionary<Type, Texture2D>
+		{
+			{typeof(Settler), ResourceLoader.Load<Texture2D>("res://Assets-4XHexMap/settler_image.png") },
+			{typeof(Warrior), ResourceLoader.Load<Texture2D>("res://Assets-4XHexMap/warrior_image.jpg") },
+		};
+	}
+
 	public Vector2I Coords { get; set; }
 
-	public abstract string UnitName { get; }
+	public virtual string UnitName => "Default";
 
-	public abstract int ProductionCost { get; }
+	public virtual int ProductionCost => 0;
 
 	public Civilisation civ { get; set; }
+
+	public virtual int MaxHp {  get; set; }
+	
+	public virtual int Hp { get; set; }
+	
+	public virtual int MaxMovePoints { get; set; }
+
+	public virtual int MovePoints { get; set; }
 
 	public void SetCiv(Civilisation civ) 
 	{ 
