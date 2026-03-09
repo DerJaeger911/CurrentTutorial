@@ -7,17 +7,21 @@ public partial class UiManager : Node2D
 {
 	private PackedScene terrainUiScene;
 	private PackedScene cityUiScene;
+	private PackedScene unitUiScene;
+
 
 	private TerrainTileUi terrainTileUi;
-
 	private CityUi cityTileUi;
+	private UnitUi unitUi;
 
 	public override void _Ready()
 	{
 		this.terrainUiScene = ResourceLoader.Load<PackedScene>("res://src/main/Ui/terrain_tile_ui.tscn");
 		this.cityUiScene = ResourceLoader.Load<PackedScene>("res://src/main/Ui/CityUi.tscn");
+        this.unitUiScene = ResourceLoader.Load<PackedScene>("res://src/main/Ui/UnitUi.tscn");
 
-		HexSignals.OnSendHexData += this.SetTerrainUi;
+
+        HexSignals.OnSendHexData += this.SetTerrainUi;
 		HexSignals.OnSendCityData += this.SetCityUi;
 		HexSignals.OnClickOffMap += this.HideAllPopups;
 	}
@@ -35,7 +39,12 @@ public partial class UiManager : Node2D
 			this.cityTileUi.QueueFree();
 			this.cityTileUi = null;
 		}
-	}
+        if (this.unitUi is not null)
+        {
+            this.unitUi.QueueFree();
+            this.unitUi = null;
+        }
+    }
 
 	private void SetCityUi(City city)
 	{
@@ -44,6 +53,16 @@ public partial class UiManager : Node2D
 		this.cityTileUi = (CityUi)this.cityUiScene.Instantiate();
 		this.AddChild(this.cityTileUi);
 		this.cityTileUi.SetCityUi(city);
+	}
+
+	private void SetUnitUi(Unit unit)
+	{
+		this.HideAllPopups();
+
+		this.unitUi = (UnitUi)this.unitUiScene.Instantiate();
+		this.AddChild(this.unitUi);
+		this.unitUi.SetUnit(unit);
+		this.unitUi.Refresh();
 	}
 
 	private void SetTerrainUi(Hex hex)
