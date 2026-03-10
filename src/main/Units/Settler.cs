@@ -11,6 +11,7 @@ public partial class Settler : Unit
 
 	public override void _Ready()
 	{
+		base._Ready();
 		this.Hp = this.MaxHp;
 		this.MovePoints = this.MaxMovePoints;
 	}

@@ -86,11 +86,10 @@ public partial class City : Node2D
 	public void SpawnUnit(Unit unit)
 	{
 		Unit unitToSpawn = (Unit)Unit.UnitSceneResources[unit.GetType()].Instantiate();
+		this.Map.AddChild(unitToSpawn);
 		unitToSpawn.Position = this.Map.MapToLocal(this.CenterCoordinates);
 		unitToSpawn.SetCiv(this.Civ);
 		unitToSpawn.Coords = this.CenterCoordinates;
-
-		this.Map.AddChild(unitToSpawn);
 	}
 
 	public bool IsValidNeighborTile(Hex neighborHex)

@@ -104,6 +104,7 @@ public partial class HexTileMap : Node2D
 		this.GenerateAiCivs(startPoints);
 
 		UISignals.OnEndTurn += this.ProcessTurn;
+		UISignals.UnitClicked += this.DeselectCurrentCell;
 	}
 
 	public override void _UnhandledInput(InputEvent @event)
@@ -146,6 +147,10 @@ public partial class HexTileMap : Node2D
 		}
 	}
 
+	public void DeselectCurrentCell(Unit unit = null)
+	{
+		this.overlayLayer.SetCell(this.currentSelectedCell, -1);
+	}
 	public void GenerateResources()
 	{
 		for (int x = 0; x < this.Width; x++)
@@ -298,6 +303,11 @@ public partial class HexTileMap : Node2D
 				this.civColorLayer.SetCell(hex.Coordinates, 0, this.terrainTextures[TerrainEnum.CivColorBase], civ.TerritoryColorAltTileId);
 			}
 		}
+	}
+
+	public Hex GetHex(Vector2I coords)
+	{
+		return this.mapData[coords];
 	}
 
 	public List<Hex> GetSurroundingHexes(Vector2I coords)
@@ -469,5 +479,11 @@ public partial class HexTileMap : Node2D
 	{
 		Random rnd = new Random();
 		return new Color(rnd.Next(255) / 255.0f, rnd.Next(255) / 255.0f, rnd.Next(255) / 255.0f);
+	}
+
+	public override void _ExitTree()
+	{
+		UISignals.OnEndTurn -= this.ProcessTurn;
+		UISignals.UnitClicked -= this.DeselectCurrentCell;
 	}
 }

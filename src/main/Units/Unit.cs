@@ -1,8 +1,10 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using twentyfourtyeight.src.main;
+using twentyfourtyeight.src.main.SignalHubs;
 
 public partial class Unit : Node2D
 {
@@ -28,14 +30,37 @@ public partial class Unit : Node2D
 
 	public Sprite2D Sprite { get; set; }
 
+	public HexTileMap Map { get; set; } 
+
     public static Dictionary<Type, PackedScene> UnitSceneResources {  get; private set; }
 	public static Dictionary<Type, Texture2D> UiImages {  get; private set; }
+
+	public static readonly HashSet<TerrainEnum> Impassable = new HashSet<TerrainEnum>
+	{
+		TerrainEnum.Water,
+		TerrainEnum.ShallowWater,
+		TerrainEnum.Ice,
+		TerrainEnum.Mountain,
+	};
+
+	private List<Hex> validMovementHex = new();
+
+	public static Dictionary<Hex, List<Unit>> UnitLocations = new Dictionary<Hex, List<Unit>>();
 
     public override void _Ready()
     {
 		this.Collider = this.GetNode<Area2D>("Sprite2D/Area2D");
         this.Sprite = this.GetNode<Sprite2D>("Sprite2D");
-    }
+		this.Map = this.GetNode<HexTileMap>("/root/Game/HexTileMap");
+		this.validMovementHex = this.CalculateValidAdjacentMovementHex();
+
+		if (!UnitLocations.ContainsKey(this.Map.GetHex(this.Coords)))
+		{
+			UnitLocations[this.Map.GetHex(this.Coords)] = new();
+			
+		}
+		UnitLocations[this.Map.GetHex(this.Coords)].Add(this);
+	}
 
     public override void _UnhandledInput(InputEvent @event)
     {
@@ -48,6 +73,7 @@ public partial class Unit : Node2D
             Godot.Collections.Array<Godot.Collections.Dictionary> result = spaceState.IntersectPoint(point);
 			if(result.Count > 0 && (Area2D)result[0]["collider"] == this.Collider)
 			{
+				UISignals.EmitUnitClicked(this);
 				this.SetSelected();
 				this.GetViewport().SetInputAsHandled();
 			}
@@ -76,24 +102,59 @@ public partial class Unit : Node2D
 		};
 	}
 
+	public void MoveToHex(Hex hex)
+	{
+		if(!UnitLocations.ContainsKey(hex) || (UnitLocations.ContainsKey(hex) && UnitLocations[h].Count == 0))
+		{
+			UnitLocations[this.Map.GetHex(this.Coords)].Remove(this);
+
+			this.Position = this.Map.MapToLocal(hex.Coordinates);
+			this.Coords = hex.Coordinates;
+		}
+	}
+
+	public void Move(Hex hex)
+	{
+		if(this.Selected && this.MovePoints > 0)
+		{
+			this.MoveToHex(hex);
+			UISignals.EmitUnitClicked(this);
+		}
+	}
+
+	public List<Hex> CalculateValidAdjacentMovementHex()
+	{
+		List<Hex> hexes = [.. this.Map.GetSurroundingHexes(this.Coords)];
+		hexes.Where(h => !Impassable.Contains(h.TerrainType)).ToList();
+
+
+		return hexes;
+	}
+
 	public void SetCiv(Civilisation civ) 
 	{ 
 		this.civ = civ;
+		GD.Print(civ);
 		this.Sprite.Modulate = civ.TerritoryColor;
 		this.civ.Units.Add(this);
 	}
 
 	public void SetSelected()
 	{
-		this.Selected = true;
-		Color color = new Color(this.Sprite.Modulate);
-		color.V = color.V - 0.25f;
-        this.Sprite.Modulate = color;
+		if (!this.Selected)
+		{
+			this.Selected = true;
+			Color color = new Color(this.Sprite.Modulate);
+			color.V = color.V - 0.25f;
+			this.Sprite.Modulate = color;
+			this.validMovementHex = this.CalculateValidAdjacentMovementHex();
+		}
     }
 
 	public void SetDeselected()
 	{
 		this.Selected = false;
-        this.Sprite.Modulate = this.civ.TerritoryColor;
+		this.validMovementHex.Clear();
+		this.Sprite.Modulate = this.civ.TerritoryColor;
     }
 }

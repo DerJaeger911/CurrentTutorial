@@ -24,6 +24,8 @@ public partial class UiManager : Node2D
         HexSignals.OnSendHexData += this.SetTerrainUi;
 		HexSignals.OnSendCityData += this.SetCityUi;
 		HexSignals.OnClickOffMap += this.HideAllPopups;
+		UISignals.UnitClicked += this.SetUnitUi;
+
 	}
 
 	public void HideAllPopups()
@@ -79,6 +81,6 @@ public partial class UiManager : Node2D
 		HexSignals.OnSendHexData -= this.SetTerrainUi;
 		HexSignals.OnSendCityData -= this.SetCityUi;
 		HexSignals.OnClickOffMap -= this.HideAllPopups;
-
+		UISignals.UnitClicked -= this.SetUnitUi;
 	}
 }

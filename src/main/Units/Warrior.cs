@@ -11,6 +11,7 @@ public partial class Warrior : Unit
 
 	public override void _Ready()
 	{
+		base._Ready();
 		this.Hp = this.MaxHp;
 		this.MovePoints = this.MaxMovePoints;
 	}
