@@ -1,5 +1,4 @@
 using Godot;
-using System.Security.AccessControl;
 using twentyfourtyeight.src.main;
 using twentyfourtyeight.src.main.SignalHubs;
 
@@ -24,7 +23,8 @@ public partial class UiManager : Node2D
         HexSignals.OnSendHexData += this.SetTerrainUi;
 		HexSignals.OnSendCityData += this.SetCityUi;
 		HexSignals.OnClickOffMap += this.HideAllPopups;
-		UISignals.UnitClicked += this.SetUnitUi;
+		UISignals.OnUnitClicked += this.SetUnitUi;
+		UISignals.OnSelectedUnitDestroyedEventHandler += this.HideAllPopups;
 
 	}
 
@@ -81,6 +81,7 @@ public partial class UiManager : Node2D
 		HexSignals.OnSendHexData -= this.SetTerrainUi;
 		HexSignals.OnSendCityData -= this.SetCityUi;
 		HexSignals.OnClickOffMap -= this.HideAllPopups;
-		UISignals.UnitClicked -= this.SetUnitUi;
-	}
+		UISignals.OnUnitClicked -= this.SetUnitUi;
+        UISignals.OnSelectedUnitDestroyedEventHandler -= this.HideAllPopups;
+    }
 }

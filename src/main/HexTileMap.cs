@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using twentyfourtyeight.src.main;
@@ -42,6 +41,7 @@ public partial class HexTileMap : Node2D
 	private SeedGenerator seedGenerator;
 
 	private TileMapLayer baseLayer, borderLayer, overlayLayer, civColorLayer;
+	private HighlightLayer highlightLayer;
 
 	private TileSetAtlasSource terrainAtlas;
 
@@ -84,10 +84,11 @@ public partial class HexTileMap : Node2D
 		this.borderLayer = this.GetNode<TileMapLayer>("HexBordersLayer");
 		this.overlayLayer = this.GetNode<TileMapLayer>("SelectionOverlayLayer");
 		this.civColorLayer = this.GetNode<TileMapLayer>("CivColorLayer");
-
-		this.uiManager = this.GetNode<UiManager>("/root/Game/CanvasLayer/UiManager");
+		this.highlightLayer = this.GetNode<HighlightLayer>("HighlightLayer");
+        this.uiManager = this.GetNode<UiManager>("/root/Game/CanvasLayer/UiManager");
 
 		this.terrainAtlas = (TileSetAtlasSource)this.civColorLayer.TileSet.GetSource(0);
+		
 
 		SeedSettings.Instance.SetSeedSettings(this.resourceSeed, this.terrianSeed, this.maxIce, this.useRandomizeResourceSeed, this.useRandomizeTerrainSeed, this.useRandomizedIceSeed, this.useTerrainSeedOnly);
 
@@ -103,8 +104,10 @@ public partial class HexTileMap : Node2D
 
 		this.GenerateAiCivs(startPoints);
 
+		this.highlightLayer.Setup(this.width, this.height);
+
 		UISignals.OnEndTurn += this.ProcessTurn;
-		UISignals.UnitClicked += this.DeselectCurrentCell;
+		UISignals.OnUnitClicked += this.DeselectCurrentCell;
 	}
 
 	public override void _UnhandledInput(InputEvent @event)
@@ -115,17 +118,19 @@ public partial class HexTileMap : Node2D
 
 			if (mapCoords.X >= 0 && mapCoords.X < this.Width && mapCoords.Y >= 0 && mapCoords.Y < this.Height)
 			{
-				if (mouse.ButtonMask == MouseButtonMask.Left)
-				{
-					Hex hex = this.mapData[mapCoords];
-					GD.Print(this.mapData[mapCoords]);
+                Hex hex = this.mapData[mapCoords];
+                GD.Print(this.mapData[mapCoords]);
 
+                if (mouse.ButtonMask == MouseButtonMask.Left)
+				{
 					if (this.cities.ContainsKey(mapCoords))
 					{
 						HexSignals.EmitSendCityData(this.cities[mapCoords]);
+						this.highlightLayer.SetHighlightLayerForCity(this.cities[mapCoords]);
 					}
 					else
 					{
+						this.highlightLayer.ResetHighlightLayer();
 						HexSignals.EmitSendHexData(hex);
 					}
 
@@ -138,10 +143,16 @@ public partial class HexTileMap : Node2D
 
 					this.currentSelectedCell = mapCoords;
 				}
+
+				if(mouse.ButtonMask == MouseButtonMask.Right)
+				{
+					UISignals.EmitRightClickOnMapEventHandler(hex);
+				}
 			}
 			else
 			{
-				this.overlayLayer.SetCell(mapCoords, -1);
+                this.highlightLayer.ResetHighlightLayer();
+                this.overlayLayer.SetCell(mapCoords, -1);
 				HexSignals.EmitClickOffMap();
 			}
 		}
@@ -334,7 +345,8 @@ public partial class HexTileMap : Node2D
 		{
 			civ.ProcessTurn();
 		}
-	}
+        this.highlightLayer.RefreshLayer();
+    }
 
 	public void GenerateTerrain()
 	{
@@ -484,6 +496,6 @@ public partial class HexTileMap : Node2D
 	public override void _ExitTree()
 	{
 		UISignals.OnEndTurn -= this.ProcessTurn;
-		UISignals.UnitClicked -= this.DeselectCurrentCell;
+		UISignals.OnUnitClicked -= this.DeselectCurrentCell;
 	}
 }

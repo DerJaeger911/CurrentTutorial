@@ -1,6 +1,4 @@
 using Godot;
-using System;
-using System.Security.Cryptography.X509Certificates;
 using twentyfourtyeight.src.main.SeedGeneration;
 
 public partial class Global : Node

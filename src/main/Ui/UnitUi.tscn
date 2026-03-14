@@ -68,5 +68,12 @@ layout_mode = 2
 text = "Actions"
 label_settings = SubResource("LabelSettings_p423b")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=901709462]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1696060090]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=901709462]
 layout_mode = 2

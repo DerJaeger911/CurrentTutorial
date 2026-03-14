@@ -1,4 +1,3 @@
-using Godot;
 using System;
 
 public partial class Warrior : Unit
@@ -8,6 +7,8 @@ public partial class Warrior : Unit
 
 	public override Int32 MaxHp { get; set; } = 3;
 	public override Int32 MaxMovePoints { get; set; } = 1;
+
+	public override Int32 AttackValue { get; set; } = 2;
 
 	public override void _Ready()
 	{

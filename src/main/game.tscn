@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ccxtjvsfebund" path="res://src/main/HexTileMap.cs" id="2_lghd3"]
 [ext_resource type="Texture2D" uid="uid://bjmn8uy3mm1er" path="res://Assets-4XHexMap/hex_128.png" id="3_02q1w"]
 [ext_resource type="Texture2D" uid="uid://bqqbm1f14ymjl" path="res://Assets-4XHexMap/hex_overlays.png" id="4_02q1w"]
+[ext_resource type="Script" uid="uid://c6p4q651px5c7" path="res://src/main/Ui/HighlightLayer.cs" id="4_inhak"]
 [ext_resource type="Script" uid="uid://lfsb7x1676ng" path="res://src/main/Camera2d.cs" id="5_vp2t8"]
 [ext_resource type="PackedScene" uid="uid://cyt332ps6pvfa" path="res://src/main/Ui/UiManager.tscn" id="6_cpn03"]
 
@@ -41,6 +42,23 @@ tile_shape = 3
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_hgmhw")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rilqq"]
+texture = ExtResource("3_02q1w")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_inhak"]
+tile_shape = 3
+tile_size = Vector2i(128, 128)
+sources/3 = SubResource("TileSetAtlasSource_rilqq")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cpn03"]
 texture = ExtResource("4_02q1w")
 texture_region_size = Vector2i(128, 128)
@@ -72,8 +90,6 @@ seed = 1
 resourceSeed = 500
 useRandomizeTerrainSeed = true
 useRandomizedIceSeed = true
-aiCivNumber = 5
-playerColor = Color(0.29219002, 0.29219005, 0.29219002, 1)
 
 [node name="BaseLayer" type="TileMapLayer" parent="HexTileMap" unique_id=687382864]
 tile_set = SubResource("TileSet_bhi3u")
@@ -81,6 +97,11 @@ tile_set = SubResource("TileSet_bhi3u")
 [node name="CivColorLayer" type="TileMapLayer" parent="HexTileMap" unique_id=568909997]
 modulate = Color(1, 1, 1, 0.60784316)
 tile_set = SubResource("TileSet_cpn03")
+
+[node name="HighlightLayer" type="TileMapLayer" parent="HexTileMap" unique_id=2090043169]
+modulate = Color(0.10980392, 0.10980392, 0.10980392, 0.6862745)
+tile_set = SubResource("TileSet_inhak")
+script = ExtResource("4_inhak")
 
 [node name="HexBordersLayer" type="TileMapLayer" parent="HexTileMap" unique_id=706319246]
 modulate = Color(1, 1, 1, 0.20392157)

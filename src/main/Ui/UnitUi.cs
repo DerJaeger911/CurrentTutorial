@@ -1,6 +1,5 @@
 using Godot;
-using System;
-using System.Runtime.CompilerServices;
+using twentyfourtyeight.src.main.SignalHubs;
 
 public partial class UnitUi : Panel
 {
@@ -10,17 +9,32 @@ public partial class UnitUi : Panel
 
 	private Unit unit;
 
-	public override void _Ready()
+	private VBoxContainer actionsContainer;
+
+
+    public override void _Ready()
 	{
 		this.unitImage = this.GetNode<TextureRect>("VBoxContainer/TextureRect");
 		this.unitLabel = this.GetNode<Label>("VBoxContainer/UnitTypeLabel");
 		this.healthLabel = this.GetNode<Label>("VBoxContainer/HealthLabel");
 		this.movesLabel = this.GetNode<Label>("VBoxContainer/MovesLabel");
+		this.actionsContainer = this.GetNode<VBoxContainer>("VBoxContainer/MarginContainer/VBoxContainer2");
+		UISignals.OnEndTurn += this.Refresh;
 	}
 
 	public void SetUnit(Unit unit)
 	{
 		this.unit = unit;
+
+		if(this.unit.GetType() == typeof(Settler))
+		{
+			Button foundCityButton = new();
+			foundCityButton.Text = "Fuck Ground";
+			this.actionsContainer.AddChild(foundCityButton);
+
+			Settler settler = (Settler)this.unit;
+			foundCityButton.Pressed += settler.FoundCity;
+		}
 
 		this.Refresh();
 	}
@@ -32,4 +46,9 @@ public partial class UnitUi : Panel
 		this.movesLabel.Text = $"{this.unit.MovePoints}/{this.unit.MaxMovePoints}";
 		this.healthLabel.Text = $"{this.unit.Hp}/{this.unit.MaxHp}";
 	}
+
+    public override void _ExitTree()
+    {
+        UISignals.OnEndTurn -= this.Refresh;
+    }
 }

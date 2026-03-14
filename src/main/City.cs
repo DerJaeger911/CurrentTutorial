@@ -2,7 +2,6 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using twentyfourtyeight.src.main;
-using twentyfourtyeight.src.main.SignalHubs;
 
 public partial class City : Node2D
 {
@@ -129,7 +128,25 @@ public partial class City : Node2D
 
 	public void AddUnitToBuildQueue(Unit unit)
 	{
-		this.UnitBuildQueue.Add(unit);
+		if(this.Civ.MaxUnits > this.Civ.Units.Count)
+		{
+            this.UnitBuildQueue.Add(unit);
+        }
+	}
+
+	public void ChangeOwnership(Civilisation newOwner)
+	{
+		Civilisation oldOwner = this.Civ;
+
+		this.Civ.Cities.Remove(this);
+		newOwner.Cities.Add(this);
+
+		this.Civ = newOwner;
+
+		this.SetIconColor(newOwner.TerritoryColor);
+
+		this.Map.UpdateCivTerritoryMap(newOwner);
+		this.Map.UpdateCivTerritoryMap(oldOwner);
 	}
 
 	public void AddRandomNewTile()

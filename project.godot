@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="twentyfourtyeight"
-run/main_scene="uid://con2syxsujdow"
+run/main_scene="uid://beqtrss0xfmhk"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
