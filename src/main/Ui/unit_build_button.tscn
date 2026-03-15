@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://d3owrfcrp1jxh"]
-
-[ext_resource type="Script" uid="uid://cu66rajetlxrk" path="res://src/main/Ui/UnitBuildButton.cs" id="1_aoty4"]
-
-[node name="UnitBuildButton" type="Button" unique_id=1409966580]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Default"
-script = ExtResource("1_aoty4")

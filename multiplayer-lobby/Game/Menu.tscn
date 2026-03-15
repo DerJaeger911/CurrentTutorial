@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://c7h52hu8nhc4c"]
+
+[ext_resource type="Texture2D" uid="uid://dge2wdvtlm3nt" path="res://Assets/Sprites/backgroundForest.png" id="1_boc80"]
+[ext_resource type="Script" uid="uid://dcph7823patil" path="res://Game/MainMenu.cs" id="2_dcqic"]
+[ext_resource type="PackedScene" uid="uid://d2ovt4apf1pmq" path="res://Game/PlayerSlot.tscn" id="2_xmc1m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmc1m"]
+bg_color = Color(0.16862746, 0.16862746, 0.16862746, 0.5372549)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Menu" type="Control" unique_id=1105375084]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=900310696]
+
+[node name="BackgroundImage" type="TextureRect" parent="CanvasLayer" unique_id=1736647415]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -188.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_boc80")
+
+[node name="BG" type="Panel" parent="CanvasLayer" unique_id=1477460776]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -353.0
+offset_top = -253.0
+offset_right = 353.0
+offset_bottom = 253.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" type="Control" parent="CanvasLayer/BG" unique_id=968792180 node_paths=PackedStringArray("createLobbyButton", "joinLobbyButton")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_dcqic")
+createLobbyButton = NodePath("VBoxContainer/HBoxContainer/CreateLobby")
+joinLobbyButton = NodePath("VBoxContainer/HBoxContainer/JoinLobby")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BG/MainMenu" unique_id=836821579]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -50.5
+offset_right = 127.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UserNameInput" type="LineEdit" parent="CanvasLayer/BG/MainMenu/VBoxContainer" unique_id=772171308]
+layout_mode = 2
+placeholder_text = "UserName..."
+
+[node name="IpInput" type="LineEdit" parent="CanvasLayer/BG/MainMenu/VBoxContainer" unique_id=1734144782]
+layout_mode = 2
+text = "localhost"
+
+[node name="PortInput" type="LineEdit" parent="CanvasLayer/BG/MainMenu/VBoxContainer" unique_id=1329216049]
+layout_mode = 2
+text = "8080"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BG/MainMenu/VBoxContainer" unique_id=1296299465]
+layout_mode = 2
+
+[node name="CreateLobby" type="Button" parent="CanvasLayer/BG/MainMenu/VBoxContainer/HBoxContainer" unique_id=666017578]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Create Lobby"
+
+[node name="JoinLobby" type="Button" parent="CanvasLayer/BG/MainMenu/VBoxContainer/HBoxContainer" unique_id=1915170122]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "JoinLobby"
+
+[node name="Lobby" type="Control" parent="CanvasLayer/BG" unique_id=789249545]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/BG/Lobby" unique_id=517017772]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BG/Lobby/MarginContainer" unique_id=1763279272]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer" unique_id=1664382636]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_xmc1m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer" unique_id=1575729329]
+layout_mode = 2
+
+[node name="PlayerSlot" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1536957957 instance=ExtResource("2_xmc1m")]
+layout_mode = 2
+
+[node name="PlayerSlot2" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=741092387 instance=ExtResource("2_xmc1m")]
+layout_mode = 2
+
+[node name="PlayerSlot3" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1170904656 instance=ExtResource("2_xmc1m")]
+layout_mode = 2
+
+[node name="PlayerSlot4" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=504565026 instance=ExtResource("2_xmc1m")]
+layout_mode = 2
+
+[node name="PlayerSlot5" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=594960958 instance=ExtResource("2_xmc1m")]
+layout_mode = 2
+
+[node name="PlayerSlot6" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=9090011 instance=ExtResource("2_xmc1m")]
+layout_mode = 2
+
+[node name="PlayerSlot7" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=883345626 instance=ExtResource("2_xmc1m")]
+layout_mode = 2
+
+[node name="PlayerSlot8" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=106848391 instance=ExtResource("2_xmc1m")]
+layout_mode = 2
+
+[node name="PlayerSlot9" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=161596219 instance=ExtResource("2_xmc1m")]
+layout_mode = 2
+
+[node name="PlayerSlot10" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=2133348013 instance=ExtResource("2_xmc1m")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer" unique_id=67683020]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1304541990]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=540579002]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "LeaveLobby"
