@@ -41,7 +41,7 @@ public partial class NetworkManager : Node
 		this.OnConnectedToServer();
 	}
 
-	private void StartClient(string ip, int port)
+	public void StartClient(string ip, int port)
 	{
 		var peer = new ENetMultiplayerPeer();
 		peer.CreateClient(ip, port);
@@ -59,6 +59,12 @@ public partial class NetworkManager : Node
 
 	private void OnPlayerConnected(long playerId)
 	{
+		if (!this.Multiplayer.IsServer())
+		{
+			return;
+		}
+
+		GD.Print("New Player has joined!");
 		var player = this.playerScene.Instantiate();
 		player.Name = playerId.ToString();
 		this.spawnedNodes.AddChild(player, true);

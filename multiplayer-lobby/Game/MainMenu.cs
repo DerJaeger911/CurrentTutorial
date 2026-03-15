@@ -40,6 +40,10 @@ public partial class MainMenu : Control
 
 	private void OnJoinLobbyButtonPressed()
 	{
-
+		this.networkManager.LocalUsername = this.usernameInput.Text;
+		if (int.TryParse(this.portInput.Text, out int port))
+		{
+			this.networkManager.StartClient(this.ipInput.Text, port);
+		}
 	}
 }
