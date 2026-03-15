@@ -75,6 +75,8 @@ public partial class HexTileMap : Node2D
 	public List<Civilisation> civs { get; set; } = new List<Civilisation>();
 	public Int32 Width { get => this.width; set => this.width = value; }
 	public Int32 Height { get => this.height; set => this.height = value; }
+	public Int32 AiCivNumber { get => this.aiCivNumber; set => this.aiCivNumber = value; }
+	public Color PlayerColor { get => this.playerColor; set => this.playerColor = value; }
 
 	override public void _Ready()
 	{
@@ -97,7 +99,7 @@ public partial class HexTileMap : Node2D
 		this.GenerateTerrain();
 		this.GenerateResources();
 
-		List<Vector2I> startPoints = this.GenerateCivStartingLocations(this.aiCivNumber + 1);
+		List<Vector2I> startPoints = this.GenerateCivStartingLocations(this.AiCivNumber + 1);
 
 		Civilisation playerCiv = this.CreatePlayerCiv(startPoints[0]);
 		startPoints.RemoveAt(0);
@@ -208,7 +210,7 @@ public partial class HexTileMap : Node2D
 		Civilisation playerCiv = new Civilisation();
 		playerCiv.Id = 0;
 		playerCiv.IsPlayerCivilisation = true;
-		playerCiv.TerritoryColor = this.playerColor;
+		playerCiv.TerritoryColor = this.PlayerColor;
 
 		playerCiv.TerritoryColorAltTileId = this.SetTerritoryColorAltTileId(playerCiv);
 

@@ -22,7 +22,7 @@ public partial class HighlightLayer : TileMapLayer
 		{
 			for (int y = 0; y < height; y++)
 			{
-				this.SetCell(new Vector2I(x, y), 0, new Vector2I(0, 3));
+				this.SetCell(new Vector2I(x, y), 3, new Vector2I(0, 3));
 			}
 		}
 		this.Visible = false;
