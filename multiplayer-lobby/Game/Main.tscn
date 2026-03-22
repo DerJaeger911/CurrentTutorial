@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://b7s6r1jd2uneo"]
 
+[ext_resource type="Script" uid="uid://dqi2bhvyb2mxx" path="res://Game/Manager/SceneManager.cs" id="1_lv82p"]
 [ext_resource type="Script" uid="uid://bqwnrd57vpxin" path="res://Game/Manager/NetworkManager.cs" id="1_wd0a0"]
-[ext_resource type="PackedScene" uid="uid://c7h52hu8nhc4c" path="res://Game/Menu.tscn" id="2_lv82p"]
 
 [node name="Main" type="Node2D" unique_id=974894704]
+script = ExtResource("1_lv82p")
 
 [node name="NetworkManager" type="Node" parent="." unique_id=337290534]
 script = ExtResource("1_wd0a0")
@@ -11,5 +12,3 @@ script = ExtResource("1_wd0a0")
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="NetworkManager" unique_id=1808247221]
 _spawnable_scenes = PackedStringArray("uid://cnk00c0p5n3bw")
 spawn_path = NodePath(".")
-
-[node name="Menu" parent="." unique_id=1105375084 instance=ExtResource("2_lv82p")]

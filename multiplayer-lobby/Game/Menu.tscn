@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c7h52hu8nhc4c"]
 
 [ext_resource type="Texture2D" uid="uid://dge2wdvtlm3nt" path="res://Assets/Sprites/backgroundForest.png" id="1_boc80"]
+[ext_resource type="Script" uid="uid://cbrjrsohvsnd2" path="res://Game/Manager/MenuManager.cs" id="1_ijs0n"]
 [ext_resource type="Script" uid="uid://dcph7823patil" path="res://Game/MainMenu.cs" id="2_dcqic"]
 [ext_resource type="PackedScene" uid="uid://d2ovt4apf1pmq" path="res://Game/PlayerSlot.tscn" id="2_xmc1m"]
+[ext_resource type="Script" uid="uid://cx3jymddhof26" path="res://Game/Lobby.cs" id="4_q6y81"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmc1m"]
 bg_color = Color(0.16862746, 0.16862746, 0.16862746, 0.5372549)
@@ -18,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ijs0n")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=900310696]
 
@@ -108,6 +111,7 @@ offset_left = 1.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_q6y81")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/BG/Lobby" unique_id=517017772]
 layout_mode = 1
@@ -130,37 +134,37 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_xmc1m")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer" unique_id=1575729329]
+[node name="PlayerSlotList" type="VBoxContainer" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer" unique_id=1575729329]
 layout_mode = 2
 
-[node name="PlayerSlot" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1536957957 instance=ExtResource("2_xmc1m")]
+[node name="PlayerSlot" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/PlayerSlotList" unique_id=1536957957 instance=ExtResource("2_xmc1m")]
 layout_mode = 2
 
-[node name="PlayerSlot2" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=741092387 instance=ExtResource("2_xmc1m")]
+[node name="PlayerSlot2" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/PlayerSlotList" unique_id=741092387 instance=ExtResource("2_xmc1m")]
 layout_mode = 2
 
-[node name="PlayerSlot3" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1170904656 instance=ExtResource("2_xmc1m")]
+[node name="PlayerSlot3" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/PlayerSlotList" unique_id=1170904656 instance=ExtResource("2_xmc1m")]
 layout_mode = 2
 
-[node name="PlayerSlot4" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=504565026 instance=ExtResource("2_xmc1m")]
+[node name="PlayerSlot4" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/PlayerSlotList" unique_id=504565026 instance=ExtResource("2_xmc1m")]
 layout_mode = 2
 
-[node name="PlayerSlot5" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=594960958 instance=ExtResource("2_xmc1m")]
+[node name="PlayerSlot5" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/PlayerSlotList" unique_id=594960958 instance=ExtResource("2_xmc1m")]
 layout_mode = 2
 
-[node name="PlayerSlot6" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=9090011 instance=ExtResource("2_xmc1m")]
+[node name="PlayerSlot6" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/PlayerSlotList" unique_id=9090011 instance=ExtResource("2_xmc1m")]
 layout_mode = 2
 
-[node name="PlayerSlot7" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=883345626 instance=ExtResource("2_xmc1m")]
+[node name="PlayerSlot7" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/PlayerSlotList" unique_id=883345626 instance=ExtResource("2_xmc1m")]
 layout_mode = 2
 
-[node name="PlayerSlot8" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=106848391 instance=ExtResource("2_xmc1m")]
+[node name="PlayerSlot8" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/PlayerSlotList" unique_id=106848391 instance=ExtResource("2_xmc1m")]
 layout_mode = 2
 
-[node name="PlayerSlot9" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=161596219 instance=ExtResource("2_xmc1m")]
+[node name="PlayerSlot9" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/PlayerSlotList" unique_id=161596219 instance=ExtResource("2_xmc1m")]
 layout_mode = 2
 
-[node name="PlayerSlot10" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=2133348013 instance=ExtResource("2_xmc1m")]
+[node name="PlayerSlot10" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/ScrollContainer/PlayerSlotList" unique_id=2133348013 instance=ExtResource("2_xmc1m")]
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer" unique_id=67683020]
@@ -169,12 +173,16 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1304541990]
+[node name="StartGame" type="Button" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1304541990]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Start Game"
 
-[node name="Button2" type="Button" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=540579002]
+[node name="LeaveLobby" type="Button" parent="CanvasLayer/BG/Lobby/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=540579002]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-text = "LeaveLobby"
+text = "Leave Lobby"
+
+[node name="LobbyUpdateTimer" type="Timer" parent="CanvasLayer/BG/Lobby" unique_id=635554657]
+wait_time = 0.1
+autostart = true

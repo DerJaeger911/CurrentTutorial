@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://d2ovt4apf1pmq"]
 
+[ext_resource type="Script" uid="uid://cpq2xv77cadeq" path="res://Game/PlayerSlot.cs" id="1_6tm3u"]
+
 [node name="PlayerSlot" type="Panel" unique_id=1536957957]
 custom_minimum_size = Vector2(256, 40)
 offset_right = 256.0
 offset_bottom = 40.0
+script = ExtResource("1_6tm3u")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=774798610]
 layout_mode = 1
@@ -39,6 +42,6 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/AspectRatioContainer/MarginContainer" unique_id=922471351]
+[node name="KickButton" type="Button" parent="MarginContainer/HBoxContainer/AspectRatioContainer/MarginContainer" unique_id=922471351]
 layout_mode = 2
 text = "X"

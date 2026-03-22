@@ -8,9 +8,10 @@ public partial class NetworkManager : Node
 {
 	private PackedScene playerScene;
 	private MultiplayerSpawner spawnedNodes;
-	private List<Node> currentPlayer = new();
+	private List<Node> currentPlayers = new();
 
 	public String LocalUsername { get; set; }
+	public List<Node> CurrentPlayers { get => this.currentPlayers; set => this.currentPlayers = value; }
 
 	[Signal]
 	public delegate void ConnectedToServerEventHandler();
@@ -49,7 +50,7 @@ public partial class NetworkManager : Node
 	}
 
 	[Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
-	private void DisconnectPlayer(long playerId)
+	public void DisconnectPlayer(long playerId)
 	{
 		if (this.Multiplayer.MultiplayerPeer is ENetMultiplayerPeer enetPeer)
 		{
@@ -65,7 +66,7 @@ public partial class NetworkManager : Node
 		}
 
 		GD.Print("New Player has joined!");
-		var player = this.playerScene.Instantiate();
+		Player player = (Player)this.playerScene.Instantiate();
 		player.Name = playerId.ToString();
 		this.spawnedNodes.AddChild(player, true);
 	}
@@ -74,7 +75,7 @@ public partial class NetworkManager : Node
 	{
 		var node = this.spawnedNodes.GetNode(playerId.ToString());
 
-		if (this.currentPlayer.Contains(node))
+		if (this.CurrentPlayers.Contains(node))
 		{
 			this.RemovePlayerFormList(node);
 		}
@@ -100,14 +101,14 @@ public partial class NetworkManager : Node
 
 	}
 
-	private void AddPlayerFormList(Node player)
+	public void AddPlayerToList(Node player)
 	{
-		this.currentPlayer.Add(player);
+		this.CurrentPlayers.Add(player);
 	}
 
-	private void RemovePlayerFormList(Node player)
+	public void RemovePlayerFormList(Node player)
 	{
-		this.currentPlayer.Remove(player);
+		this.CurrentPlayers.Remove(player);
 	}
 
 	public override void _ExitTree()

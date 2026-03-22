@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\multiplayer-lobby\\game\\manager\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|solutionrelative:game\\manager\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\multiplayer-lobby\\game\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|solutionrelative:game\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\multiplayer-lobby\\game\\manager\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|solutionrelative:game\\manager\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\multiplayer-lobby\\game\\manager\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|solutionrelative:game\\manager\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\multiplayer-lobby\\game\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|solutionrelative:game\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\multiplayer-lobby\\game\\manager\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|solutionrelative:game\\manager\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\multiplayer-lobby\\game\\playerslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|solutionrelative:game\\playerslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\multiplayer-lobby\\game\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E85835EA-A645-41F8-B2F3-CE48E277E7FB}|MultiplayerLobby.csproj|solutionrelative:game\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +38,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SceneManager.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\Manager\\SceneManager.cs",
+              "RelativeDocumentMoniker": "Game\\Manager\\SceneManager.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\Manager\\SceneManager.cs",
+              "RelativeToolTip": "Game\\Manager\\SceneManager.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T17:01:39.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Lobby.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\Lobby.cs",
+              "RelativeDocumentMoniker": "Game\\Lobby.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\Lobby.cs",
+              "RelativeToolTip": "Game\\Lobby.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwD4AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T16:06:10.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlayerSlot.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\PlayerSlot.cs",
+              "RelativeDocumentMoniker": "Game\\PlayerSlot.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\PlayerSlot.cs",
+              "RelativeToolTip": "Game\\PlayerSlot.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAuwC0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T15:42:34.136Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -54,26 +113,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\Player.cs",
+              "RelativeDocumentMoniker": "Game\\Player.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\Player.cs",
+              "RelativeToolTip": "Game\\Player.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwB4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T16:34:59.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MenuManager.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\Manager\\MenuManager.cs",
+              "RelativeDocumentMoniker": "Game\\Manager\\MenuManager.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\Manager\\MenuManager.cs",
+              "RelativeToolTip": "Game\\Manager\\MenuManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T16:20:23.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\MainMenu.cs",
               "RelativeDocumentMoniker": "Game\\MainMenu.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\MainMenu.cs",
               "RelativeToolTip": "Game\\MainMenu.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBgAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-15T16:23:37.315Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "NetworkManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\Manager\\NetworkManager.cs",
               "RelativeDocumentMoniker": "Game\\Manager\\NetworkManager.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\multiplayer-lobby\\Game\\Manager\\NetworkManager.cs",
               "RelativeToolTip": "Game\\Manager\\NetworkManager.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAADwvz0AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwDMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-15T15:12:42.58Z",
               "EditorCaption": ""
