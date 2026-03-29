@@ -212,4 +212,5 @@ z_index = -99
 texture = ExtResource("2_vrr3t")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1931828027]
+_spawnable_scenes = PackedStringArray("uid://dbmfh0vlh7sb4")
 spawn_path = NodePath(".")

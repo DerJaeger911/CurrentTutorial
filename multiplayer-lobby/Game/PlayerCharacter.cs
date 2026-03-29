@@ -4,27 +4,31 @@ using System;
 public partial class PlayerCharacter : CharacterBody2D
 {
 	[Export] public float Speed = 50;
-	[Export] public float JumpVelocity = -150;
-	[Export] public float Gravity = 400;
+	//[Export] public float JumpVelocity = -150;
+	//[Export] public float Gravity = 400;
 
-	private MultiplayerSynchronizer synchronizer;
+	private PlayerCharacterInputs inputSync;
 
 	public override void _EnterTree()
 	{
-		this.GetNode<MultiplayerSynchronizer>("InputSync").SetMultiplayerAuthority(int.Parse(this.Name));
+		int id = int.Parse(this.Name);
+		this.SetMultiplayerAuthority(1);
+		this.GetNode<PlayerCharacterInputs>("InputSync").SetMultiplayerAuthority(id);
+		this.GetNode<MultiplayerSynchronizer>("CharacterSync").SetMultiplayerAuthority(1);
 	}
 
 	public override void _Ready()
 	{
-		this.synchronizer = this.GetNode<MultiplayerSynchronizer>("InputSync");
+		this.inputSync = this.GetNode<PlayerCharacterInputs>("InputSync");
 	}
 
-	public override void _PhysicsProcess(Double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 		if (this.Multiplayer.IsServer())
 		{
 			this.Move(delta);
 		}
+		GD.Print(this.Position);
 	}
 
 	public void Move(double delta)
@@ -33,17 +37,17 @@ public partial class PlayerCharacter : CharacterBody2D
 
 		if (!this.IsOnFloor())
 		{
-			velocity.Y += this.Gravity * (float)delta;
+			//velocity.Y += this.Gravity * (float)delta;
 		}
 
-		if (Input.IsActionJustPressed("ui_accept") && this.IsOnFloor())
+		if (this.inputSync.JumpInput && this.IsOnFloor())
 		{
-			velocity.Y = this.JumpVelocity;
+			//velocity.Y = this.JumpVelocity;
 		}
 
-		float direction = Input.GetAxis("ui_left", "ui_right");
+		float direction = this.inputSync.MoveInput;
 
-		if (direction != 0)
+		if (!Mathf.IsZeroApprox(direction))
 		{
 			velocity.X = direction * this.Speed;
 		}

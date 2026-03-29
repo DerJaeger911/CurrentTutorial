@@ -8,7 +8,7 @@ namespace MultiplayerLobby.Game;
 public partial class Game : Node2D
 {
 	private NetworkManager network;
-	private PackedScene playerCharScene;
+	private PackedScene playerCharScene = GD.Load<PackedScene>("res://Game/player_character.tscn");
 	private MultiplayerSpawner spawner;
 
 	private int playersInGame;
@@ -49,9 +49,10 @@ public partial class Game : Node2D
 
 	private void SpawnPlayerCharacter(Player player)
 	{
-		Player character = (Player)this.playerCharScene.Instantiate();
+		PlayerCharacter character = this.playerCharScene.Instantiate<PlayerCharacter>();
 		character.Name = player.Name;
 		this.spawner.AddChild(character, true);
+		character.GlobalPosition = new Vector2(100, -200);
 		this.currentCharacters.Add(character);
 	}
 }
