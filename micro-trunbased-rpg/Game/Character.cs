@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 namespace MicroTrunbasedRPG.Game;
@@ -11,6 +12,8 @@ public partial class Character : Node2D
 	private int currentHealth;
 	[Export]
 	private int maxHealth = 100;
+	[Export]
+	private Array<CombatAction> combatActions;
 
 	private float targetScale = 1.0f;
 

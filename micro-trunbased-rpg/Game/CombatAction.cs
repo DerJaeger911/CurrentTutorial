@@ -18,4 +18,7 @@ public partial class CombatAction : Resource
 
 	[Export]
 	private int baseWeight = 100;
+
+	public String DisplayName { get => this.displayName; set => this.displayName = value; }
+	public String Description { get => this.description; set => this.description = value; }
 }

@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://dh1vbgw3jyvg5" path="res://Game/GameManager.cs" id="1_c61t3"]
 [ext_resource type="Texture2D" uid="uid://pobk3xi8r8cq" path="res://Assets/Sprites/backgroundCastles.png" id="2_w54k5"]
 [ext_resource type="PackedScene" uid="uid://dme5gtfcrwl1s" path="res://Game/Character.tscn" id="3_ssupy"]
+[ext_resource type="Resource" uid="uid://biy0sstli7dva" path="res://Game/CombatActions/Heal.tres" id="4_wkxix"]
+[ext_resource type="Resource" uid="uid://jyspxfbi3q4g" path="res://Game/CombatActions/HeavyHit.tres" id="5_6vr0d"]
+[ext_resource type="Resource" uid="uid://dwl1c3mt57feg" path="res://Game/CombatActions/Slash.tres" id="6_ny63t"]
+[ext_resource type="Script" uid="uid://c3pntmonjlmtm" path="res://Game/CombatActionButton.cs" id="7_6vr0d"]
+[ext_resource type="Script" uid="uid://pfjiiqpfbqq2" path="res://Game/CombatActionUi.cs" id="7_ny63t"]
 
 [node name="Main" type="Node2D" unique_id=273568353 node_paths=PackedStringArray("playerCharacter", "aiCharacter")]
 script = ExtResource("1_c61t3")
@@ -22,6 +27,71 @@ stretch_mode = 1
 [node name="PlayerCharacter" parent="." unique_id=1449557121 instance=ExtResource("3_ssupy")]
 position = Vector2(-281, 0)
 isPlayer = true
+combatActions = Array[Object]([ExtResource("4_wkxix"), ExtResource("5_6vr0d"), ExtResource("6_ny63t")])
 
 [node name="AiCharacter" parent="." unique_id=1556332696 instance=ExtResource("3_ssupy")]
-position = Vector2(281, 1)
+position = Vector2(281, -2)
+combatActions = Array[Object]([ExtResource("4_wkxix"), ExtResource("5_6vr0d"), ExtResource("6_ny63t")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1688799542]
+
+[node name="CombatActionUi" type="Panel" parent="CanvasLayer" unique_id=62208749 node_paths=PackedStringArray("passTurnButton")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -155.0
+offset_right = 225.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("7_ny63t")
+passTurnButton = NodePath("MarginContainer/HBoxContainer/ActionContainer/PassTurnButton")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CombatActionUi" unique_id=412343817]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CombatActionUi/MarginContainer" unique_id=1818287171]
+layout_mode = 2
+
+[node name="ActionContainer" type="VBoxContainer" parent="CanvasLayer/CombatActionUi/MarginContainer/HBoxContainer" unique_id=735714089]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CombatActionButton" type="Button" parent="CanvasLayer/CombatActionUi/MarginContainer/HBoxContainer/ActionContainer" unique_id=1455117503]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Slash"
+script = ExtResource("7_6vr0d")
+
+[node name="CombatActionButton2" type="Button" parent="CanvasLayer/CombatActionUi/MarginContainer/HBoxContainer/ActionContainer" unique_id=1644997614]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Slash"
+script = ExtResource("7_6vr0d")
+
+[node name="CombatActionButton3" type="Button" parent="CanvasLayer/CombatActionUi/MarginContainer/HBoxContainer/ActionContainer" unique_id=2041942102]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Slash"
+script = ExtResource("7_6vr0d")
+
+[node name="PassTurnButton" type="Button" parent="CanvasLayer/CombatActionUi/MarginContainer/HBoxContainer/ActionContainer" unique_id=483785009]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Pass Turn"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/CombatActionUi/MarginContainer/HBoxContainer" unique_id=2008280249]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "This is shit and it tastes like, ähhh shit."
