@@ -38,7 +38,7 @@ public partial class CombatActionUi : Panel
 
 	}
 
-	private void SetCombatActions(Array<CombatAction> combatActions)
+	public void SetCombatActions(Array<CombatAction> combatActions)
 	{
 		for(int i = 0; i < this.combatActionButtons.Count; i++)
 		{

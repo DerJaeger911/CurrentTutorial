@@ -94,4 +94,4 @@ text = "Pass Turn"
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/CombatActionUi/MarginContainer/HBoxContainer" unique_id=2008280249]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "This is shit and it tastes like, ähhh shit."
+bbcode_enabled = true

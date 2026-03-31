@@ -22,6 +22,8 @@ public partial class Character : Node2D
 	private AudioStream takeDamageSfx = GD.Load<AudioStream>("res://Assets/Audio/take_damage.wav");
 	private AudioStream healSfx = GD.Load<AudioStream>("res://Assets/Audio/heal.wav");
 
+	public Array<CombatAction> CombatActions { get => this.combatActions; set => this.combatActions = value; }
+
 	override public void _Ready()
 	{
 		if (this.currentHealth == 0)

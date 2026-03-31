@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\micro-trunbased-rpg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\micro-trunbased-rpg\\game\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|solutionrelative:game\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\micro-trunbased-rpg\\game\\combatactionui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|solutionrelative:game\\combatactionui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\micro-trunbased-rpg\\game\\combatactionbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|solutionrelative:game\\combatactionbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\micro-trunbased-rpg\\game\\combatactionui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|solutionrelative:game\\combatactionui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\micro-trunbased-rpg\\game\\combataction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|solutionrelative:game\\combataction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\micro-trunbased-rpg\\game\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|solutionrelative:game\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\micro-trunbased-rpg\\game\\combataction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|solutionrelative:game\\combataction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\micro-trunbased-rpg\\game\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|solutionrelative:game\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1168CC29-8EF1-42F1-B06D-95BDB7249409}|MicroTrunbasedRPG.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\micro-trunbased-rpg\\game\\signalhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,13 +70,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "CombatActionUi.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\micro-trunbased-rpg\\Game\\CombatActionUi.cs",
               "RelativeDocumentMoniker": "Game\\CombatActionUi.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\micro-trunbased-rpg\\Game\\CombatActionUi.cs",
               "RelativeToolTip": "Game\\CombatActionUi.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAIAwwDIAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAIAwwD4AAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-30T18:11:15.246Z",
               "EditorCaption": ""
@@ -89,33 +89,33 @@
               "RelativeDocumentMoniker": "Game\\CombatActionButton.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\micro-trunbased-rpg\\Game\\CombatActionButton.cs",
               "RelativeToolTip": "Game\\CombatActionButton.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAhwAkAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-30T18:07:31.286Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "CombatAction.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\micro-trunbased-rpg\\Game\\CombatAction.cs",
               "RelativeDocumentMoniker": "Game\\CombatAction.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\micro-trunbased-rpg\\Game\\CombatAction.cs",
               "RelativeToolTip": "Game\\CombatAction.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAtwAsAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-29T19:04:40.806Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\micro-trunbased-rpg\\Game\\GameManager.cs",
               "RelativeDocumentMoniker": "Game\\GameManager.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\micro-trunbased-rpg\\Game\\GameManager.cs",
               "RelativeToolTip": "Game\\GameManager.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBQAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-29T18:32:21.19Z",
               "EditorCaption": ""
@@ -140,7 +140,7 @@
               "RelativeDocumentMoniker": "Game\\Character.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\micro-trunbased-rpg\\Game\\Character.cs",
               "RelativeToolTip": "Game\\Character.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAmwA8AAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwA8AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-29T18:09:05.23Z",
               "EditorCaption": ""

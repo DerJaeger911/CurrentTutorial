@@ -55,10 +55,13 @@ public partial class GameManager : Node2D
 
 		if (this.currentCharacter == this.playerCharacter)
 		{
-			_ = this.NextTurn();
+			this.playerUi.Visible = true;
+			
+			this.playerUi.SetCombatActions(this.playerCharacter.CombatActions);
 		}
 		else
 		{
+			this.playerUi.Visible = false;
 			var waitTime = GD.RandRange(0.5f, 1.5f);
 			await this.ToSignal(this.GetTree().CreateTimer(waitTime), SceneTreeTimer.SignalName.Timeout);
 			CombatAction action = this.AiDecideCombatAction();
@@ -78,7 +81,7 @@ public partial class GameManager : Node2D
 		}
 
 		this.playerCharacter.CastCombatAction(action, this.aiCharacter);
-
+		this.playerUi.Visible = false;
 		await this.ToSignal(this.GetTree().CreateTimer(0.5f), SceneTreeTimer.SignalName.Timeout);
 
 		_ = this.NextTurn();
