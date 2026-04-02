@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_o27h2")
-displayName = "Slash"
-description = "Deals 8 Damage"
-meleeDamage = 8
+DisplayName = "Slash"
+Description = "Hits for 10 Points"
+MeleeDamage = 10
 metadata/_custom_type_script = "uid://bdthov0eaxknc"

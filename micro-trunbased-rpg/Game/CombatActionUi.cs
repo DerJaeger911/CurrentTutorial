@@ -60,6 +60,12 @@ public partial class CombatActionUi : Panel
 	private void ButtonEntered(CombatActionButton button)
 	{
 		var action = button.Action;
+
+		if (action == null)
+		{
+			return;
+		}
+
 		this.descriptionLabel.Text = $"[b]{action.DisplayName}[/b]\n{action.Description}";
 	}
 
@@ -75,16 +81,11 @@ public partial class CombatActionUi : Panel
 
 	public override void _ExitTree()
 	{
-		foreach (var button in this.combatActionButtons)
+		if (IsInstanceValid(this.passTurnButton))
 		{
-			if (IsInstanceValid(button))
-			{
-				button.Pressed -= () => this.ButtonPressed(button);
-				button.MouseEntered -= () => this.ButtonEntered(button);
-				button.MouseExited -= () => this.ButtonExited(button);
-			}
+			this.passTurnButton.Pressed -= this.OnPassTurnButtonPressed;
 		}
-		this.passTurnButton.Pressed -= this.OnPassTurnButtonPressed;
+
 		this.combatActionButtons.Clear();
 	}
 }

@@ -2,12 +2,52 @@
 
 [ext_resource type="Script" uid="uid://8w1rsqulaslm" path="res://Game/Character.cs" id="1_j5eqf"]
 [ext_resource type="Texture2D" uid="uid://cci2obm4cuci4" path="res://Assets/Sprites/Dragon.png" id="2_phthx"]
+[ext_resource type="Script" uid="uid://b7c2m5i3b71f2" path="res://Game/CharacterVisuals.cs" id="3_4bhsv"]
+[ext_resource type="Script" uid="uid://c5dhgkei04x8n" path="res://Game/HealthBar.cs" id="3_phthx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bhsv"]
+bg_color = Color(0.08078333, 0.08078336, 0.08078327, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vups5"]
+bg_color = Color(0.72771585, 0.25057, 0.0700332, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_utxi0"]
+font_size = 22
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Character" type="Node2D" unique_id=1449557121]
 script = ExtResource("1_j5eqf")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=896050729]
-position = Vector2(0, -72)
 texture = ExtResource("2_phthx")
+offset = Vector2(0, -72)
+script = ExtResource("3_4bhsv")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1624158888]
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=646193342]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -106.0
+offset_top = 26.0
+offset_right = 106.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_4bhsv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vups5")
+show_percentage = false
+script = ExtResource("3_phthx")
+
+[node name="Label" type="Label" parent="HealthBar" unique_id=959548128]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "40/50"
+label_settings = SubResource("LabelSettings_utxi0")
+horizontal_alignment = 1
+vertical_alignment = 1

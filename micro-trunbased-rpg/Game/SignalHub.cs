@@ -6,21 +6,16 @@ public partial class SignalHub:Node
 {
 	public static SignalHub Instance { get; private set; }
 
-	public override void _Ready()
+	public override void _EnterTree()
 	{
 		Instance = this;
 	}
 
 	[Signal]
-	public delegate void HealEventHandler(int health);
+	public delegate void GameLoserEventHandler(Character character);
 
-	[Signal]
-	public delegate void TakeDamageEventHandler(int health);
-
-
-	public static void EmitHeal(int health) =>
-		Instance.EmitSignal(SignalName.Heal, health);
-
-	public static void EmitTakeDamage(int health) =>
-		Instance.EmitSignal(SignalName.TakeDamage, health);
+	public void EmitGameLoser(Character character)
+	{
+		this.EmitSignal(SignalName.GameLoser, character);
+	}
 }

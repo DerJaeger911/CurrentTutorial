@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_lnr45")
-displayName = "Heal"
-description = "Heals 10 HP"
-healAmount = 10
+DisplayName = "Heal"
+Description = "Heals 15 points"
+HealAmount = 15
 metadata/_custom_type_script = "uid://bdthov0eaxknc"

@@ -7,18 +7,15 @@ namespace MicroTrunbasedRPG.Game;
 public partial class CombatAction : Resource
 {
 	[Export]
-	private string displayName;
+	public string DisplayName { get; set; }
 	[Export]
-	private string description;
+	public string Description { get; set; }
 
 	[Export]
-	private int meleeDamage;
+	public int MeleeDamage { get; set; }
 	[Export]
-	private int healAmount;
+	public int HealAmount { get; set; }
 
 	[Export]
-	private int baseWeight = 100;
-
-	public String DisplayName { get => this.displayName; set => this.displayName = value; }
-	public String Description { get => this.description; set => this.description = value; }
+	public int BaseWeight { get; set; } = 100;
 }

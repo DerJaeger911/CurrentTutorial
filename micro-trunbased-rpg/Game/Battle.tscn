@@ -2,25 +2,43 @@
 
 [ext_resource type="Script" uid="uid://dh1vbgw3jyvg5" path="res://Game/GameManager.cs" id="1_c61t3"]
 [ext_resource type="Texture2D" uid="uid://pobk3xi8r8cq" path="res://Assets/Sprites/backgroundCastles.png" id="2_w54k5"]
+[ext_resource type="Script" uid="uid://s6pebtqmq332" path="res://Game/Background.cs" id="3_3fh0s"]
 [ext_resource type="PackedScene" uid="uid://dme5gtfcrwl1s" path="res://Game/Character.tscn" id="3_ssupy"]
 [ext_resource type="Resource" uid="uid://biy0sstli7dva" path="res://Game/CombatActions/Heal.tres" id="4_wkxix"]
 [ext_resource type="Resource" uid="uid://jyspxfbi3q4g" path="res://Game/CombatActions/HeavyHit.tres" id="5_6vr0d"]
 [ext_resource type="Resource" uid="uid://dwl1c3mt57feg" path="res://Game/CombatActions/Slash.tres" id="6_ny63t"]
 [ext_resource type="Script" uid="uid://c3pntmonjlmtm" path="res://Game/CombatActionButton.cs" id="7_6vr0d"]
+[ext_resource type="Texture2D" uid="uid://brka4a1tfnxt1" path="res://Assets/Sprites/Snake.png" id="7_av2na"]
 [ext_resource type="Script" uid="uid://pfjiiqpfbqq2" path="res://Game/CombatActionUi.cs" id="7_ny63t"]
+[ext_resource type="Script" uid="uid://nl3o6xoa1da1" path="res://Game/EndScreen.cs" id="9_acqs3"]
+[ext_resource type="AudioStream" uid="uid://nhacmbw8c7dr" path="res://Assets/Audio/battle_music.wav" id="11_c1dqk"]
+
+[sub_resource type="Gradient" id="Gradient_3fh0s"]
+offsets = PackedFloat32Array(0, 0.5168196, 1)
+colors = PackedColorArray(0.5529412, 0.8509804, 0.80784315, 1, 0.31764707, 0.87058824, 0.23921569, 1, 1, 0.6117647, 0.5137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ny63t"]
+bg_color = Color(0.8941964, 0.37010214, 0.752815, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_acqs3"]
+font_size = 66
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D" unique_id=273568353 node_paths=PackedStringArray("playerCharacter", "aiCharacter")]
 script = ExtResource("1_c61t3")
 playerCharacter = NodePath("PlayerCharacter")
 aiCharacter = NodePath("AiCharacter")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=201360934]
+[node name="Background" type="TextureRect" parent="." unique_id=201360934]
 offset_left = -1662.0
 offset_top = -512.0
 offset_right = 1676.0
 offset_bottom = 512.0
 texture = ExtResource("2_w54k5")
 stretch_mode = 1
+script = ExtResource("3_3fh0s")
+colorLerp = SubResource("Gradient_3fh0s")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=729630894]
 
@@ -32,6 +50,8 @@ combatActions = Array[Object]([ExtResource("4_wkxix"), ExtResource("5_6vr0d"), E
 [node name="AiCharacter" parent="." unique_id=1556332696 instance=ExtResource("3_ssupy")]
 position = Vector2(281, -2)
 combatActions = Array[Object]([ExtResource("4_wkxix"), ExtResource("5_6vr0d"), ExtResource("6_ny63t")])
+faceLeft = true
+texture = ExtResource("7_av2na")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1688799542]
 
@@ -95,3 +115,43 @@ text = "Pass Turn"
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
+
+[node name="EndScreen" type="Panel" parent="CanvasLayer" unique_id=1047081762]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ny63t")
+script = ExtResource("9_acqs3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/EndScreen" unique_id=542908345]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/EndScreen/VBoxContainer" unique_id=1726332033]
+layout_mode = 2
+text = "Lose/Win"
+label_settings = SubResource("LabelSettings_acqs3")
+
+[node name="Button" type="Button" parent="CanvasLayer/EndScreen/VBoxContainer" unique_id=606646856]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Retry"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=657253815]
+stream = ExtResource("11_c1dqk")
+volume_db = -20.0
+autoplay = true
