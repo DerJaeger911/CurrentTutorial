@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://b8kvihk3vis5c"]
+
+[ext_resource type="Texture2D" uid="uid://vyr0ks75oxum" path="res://assets/graphics/characters/drone.png" id="1_8p5pc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p5pc"]
+atlas = ExtResource("1_8p5pc")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58jpx"]
+atlas = ExtResource("1_8p5pc")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xy6p"]
+atlas = ExtResource("1_8p5pc")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq8hv"]
+atlas = ExtResource("1_8p5pc")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2d8dx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p5pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58jpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xy6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq8hv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8d6m8"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6e156"]
+radius = 69.02898
+
+[node name="Drone" type="CharacterBody2D" unique_id=39738330]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=560086368]
+sprite_frames = SubResource("SpriteFrames_2d8dx")
+frame = 1
+frame_progress = 0.70741993
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=652100922]
+shape = SubResource("CircleShape2D_8d6m8")
+
+[node name="PlayerDetectionArea" type="Area2D" parent="." unique_id=446526411]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea" unique_id=2133465201]
+shape = SubResource("CircleShape2D_6e156")
