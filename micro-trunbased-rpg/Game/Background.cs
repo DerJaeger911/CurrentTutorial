@@ -30,6 +30,10 @@ public partial class Background : TextureRect
 			this.Position = this.startPos;
 		}
 
-		GD.Print(this.Position);
+		double time = Math.Sin(Time.GetUnixTimeFromSystem());
+
+		time = (time + 1) / 2;
+
+		this.Modulate = this.colorLerp.Sample((float)time);
 	}
 }
