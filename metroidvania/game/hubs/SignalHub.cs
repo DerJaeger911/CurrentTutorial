@@ -16,11 +16,10 @@ public partial class SignalHub : Node
 		Instance = this;
 	}
 
-	[Signal]
-	public delegate void ShootEventHandler(Vector2 position, Vector2 direction);
-
-	public void EmitShoot(Vector2 position, Vector2 direction)
-	{
-		this.EmitSignal(SignalName.Shoot, position, direction);
-	}
+	//[Signal]
+	//public delegate void ShootEventHandler(Vector2 position, Vector2 direction);
+	//public void EmitShoot(Vector2 position, Vector2 direction)
+	//{
+	//	this.EmitSignal(SignalName.Shoot, position, direction);
+	//}
 }

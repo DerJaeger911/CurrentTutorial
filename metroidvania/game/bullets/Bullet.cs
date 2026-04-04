@@ -8,12 +8,13 @@ public partial class Bullet : Area2D
 	private Vector2 direction;
 	private float speed = 200f;
 	private const int offset = 16;
+	private Node2D parent;
 
-	public void Setup(Vector2 position, Vector2 direction)
+	public void Setup(Node2D parent, Vector2 position, Vector2 direction)
 	{
-		position = new Vector2(position.X, position.Y - 20);
 		this.Position = position + direction * offset;
 		this.direction = direction;
+		this.parent = parent;
 
 		this.BodyEntered += this.OnBulletHit;
 	}
@@ -25,9 +26,10 @@ public partial class Bullet : Area2D
 
 	private void OnBulletHit(Node body)
 	{
-		if (body is IDamageable entity)
+		if (body is IDamageable entity && body != this.parent)
 		{
 			entity.Hit();
+			this.QueueFree();
 		}
 	}
 }

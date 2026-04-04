@@ -1,8 +1,11 @@
 using Godot;
 using Metroidvania.game;
+using Metroidvania.game.interfaces;
+using Metroidvania.game.utility;
 using System;
+using System.Diagnostics;
 
-public partial class Player : CharacterBody2D
+public partial class Player : CharacterBody2D, IDamageable
 {
 	[ExportGroup("Movement")]
 	[Export]
@@ -18,6 +21,8 @@ public partial class Player : CharacterBody2D
 	private float jumpTimeToPeak = 0.5f;
 	[Export]
 	private float jumpTimeToDescent = 0.4f;
+	[Export]
+	private int health = 3;
 
 	private Timer reloadTimer;
 	private bool canShoot = true;
@@ -31,6 +36,7 @@ public partial class Player : CharacterBody2D
 	private Sprite2D legSprite;
 	private Sprite2D torsoSprite;
 	private AnimationPlayer animationPlayer;
+	private Marker2D bulletSpawner;
 
 	private Vector2 velocity;
 
@@ -41,6 +47,7 @@ public partial class Player : CharacterBody2D
 		this.velocity = this.Velocity;
 		this.animationPlayer = this.GetNode<AnimationPlayer>("AnimationPlayer");
 		this.reloadTimer = this.GetNode<Timer>("Timer/ReloadTimer");
+		this.bulletSpawner = this.GetNode<Marker2D>("BulletSpawner");
 
 		this.jumpVelocity = (-2.0f * this.jumpHeight) / this.jumpTimeToPeak;
 		this.jumpGravity = (2.0f * this.jumpHeight) / (this.jumpTimeToPeak * this.jumpTimeToPeak);
@@ -91,7 +98,7 @@ public partial class Player : CharacterBody2D
 		{
 			this.reloadTimer.Start();
 			this.canShoot = false;
-			SignalHub.Instance.EmitShoot(this.GlobalPosition, this.GetLocalMousePosition().Normalized());
+			FX.SpawnBullet(this, this.bulletSpawner, this.CorrectedLocalMoussePosition());
 		}
 	}
 
@@ -148,5 +155,19 @@ public partial class Player : CharacterBody2D
 	public override void _ExitTree()
 	{
 		this.reloadTimer.Timeout -= this.OnReloadTimerTimeout;
+	}
+
+	private Vector2 CorrectedLocalMoussePosition()
+	{
+		Vector2 rawDirection = this.GetLocalMousePosition();
+		rawDirection.Y -= this.bulletSpawner.Position.Y;
+		Vector2 correctedDirection = rawDirection.Normalized();
+		return correctedDirection;
+	}
+
+	public void Hit()
+	{
+		this.health--;
+		GD.Print($"Health left: {this.health}");
 	}
 }

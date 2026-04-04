@@ -1,6 +1,14 @@
-[gd_scene format=3 uid="uid://b8kvihk3vis5c"]
+[gd_scene format=3 uid="uid://d3vn5bji200sp"]
 
 [ext_resource type="Texture2D" uid="uid://vyr0ks75oxum" path="res://assets/graphics/characters/drone.png" id="1_8p5pc"]
+[ext_resource type="Script" uid="uid://bx4qr7puoqpbr" path="res://game/enteties/Enemies/Drone.cs" id="1_58jpx"]
+[ext_resource type="Shader" uid="uid://bsy1qe6glcb43" path="res://shaders/Flash.tres" id="2_5xy6p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jq8hv"]
+resource_local_to_scene = true
+shader = ExtResource("2_5xy6p")
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+shader_parameter/Progress = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8p5pc"]
 atlas = ExtResource("1_8p5pc")
@@ -44,9 +52,16 @@ radius = 7.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6e156"]
 radius = 69.02898
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xy6p"]
+radius = 15.0
+
 [node name="Drone" type="CharacterBody2D" unique_id=39738330]
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("1_58jpx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=560086368]
+material = SubResource("ShaderMaterial_jq8hv")
 sprite_frames = SubResource("SpriteFrames_2d8dx")
 frame = 1
 frame_progress = 0.70741993
@@ -55,8 +70,15 @@ frame_progress = 0.70741993
 shape = SubResource("CircleShape2D_8d6m8")
 
 [node name="PlayerDetectionArea" type="Area2D" parent="." unique_id=446526411]
-collision_layer = 4
-collision_mask = 11
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea" unique_id=2133465201]
 shape = SubResource("CircleShape2D_6e156")
+
+[node name="ExplosionDetectionArea" type="Area2D" parent="." unique_id=1031314221]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionDetectionArea" unique_id=1094121465]
+shape = SubResource("CircleShape2D_5xy6p")

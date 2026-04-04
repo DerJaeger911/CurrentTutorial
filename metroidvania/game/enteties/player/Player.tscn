@@ -81,6 +81,9 @@ collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_m6r7x")
 
+[node name="BulletSpawner" type="Marker2D" parent="." unique_id=1661069278]
+position = Vector2(0, -20)
+
 [node name="Sprites" type="Node2D" parent="." unique_id=1276787456]
 position = Vector2(0, -16.5)
 

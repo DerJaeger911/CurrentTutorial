@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\metroidvania\\game\\bullets\\explosion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|solutionrelative:game\\bullets\\explosion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\metroidvania\\game\\enteties\\enemies\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|solutionrelative:game\\enteties\\enemies\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\metroidvania\\game\\enteties\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|solutionrelative:game\\enteties\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\metroidvania\\game\\utility\\fx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|solutionrelative:game\\utility\\fx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\metroidvania\\game\\bullets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|solutionrelative:game\\bullets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\metroidvania\\game\\interfaces\\idamageable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|solutionrelative:game\\interfaces\\idamageable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\metroidvania\\game\\enteties\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|solutionrelative:game\\enteties\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\metroidvania\\game\\gundirections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|solutionrelative:game\\gundirections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\metroidvania\\game\\level\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,8 +39,8 @@
       "RelativeMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|solutionrelative:game\\hubs\\signalhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\metroidvania\\game\\gundirections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|solutionrelative:game\\gundirections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|d:\\workinprogress\\currenttutorial\\currenttutorial\\metroidvania\\game\\interfaces\\idamageable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72889EDA-F310-4B94-925D-6CE821A52C77}|Metroidvania.csproj|solutionrelative:game\\interfaces\\idamageable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +86,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "FX.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\utility\\FX.cs",
+              "RelativeDocumentMoniker": "game\\utility\\FX.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\utility\\FX.cs",
+              "RelativeToolTip": "game\\utility\\FX.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwBAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T11:56:32.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Explosion.cs",
+              "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\bullets\\Explosion.cs",
+              "RelativeDocumentMoniker": "game\\bullets\\Explosion.cs",
+              "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\bullets\\Explosion.cs",
+              "RelativeToolTip": "game\\bullets\\Explosion.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwBsAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T11:30:22.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "IDamageable.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\interfaces\\IDamageable.cs",
               "RelativeDocumentMoniker": "game\\interfaces\\IDamageable.cs",
@@ -91,20 +125,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Drone.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\enteties\\Enemies\\Drone.cs",
               "RelativeDocumentMoniker": "game\\enteties\\Enemies\\Drone.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\enteties\\Enemies\\Drone.cs",
               "RelativeToolTip": "game\\enteties\\Enemies\\Drone.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAUwDgAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T18:30:28.495Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "SubwayLevel.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\level\\SubwayLevel.cs",
               "RelativeDocumentMoniker": "game\\level\\SubwayLevel.cs",
@@ -117,63 +151,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Bullet.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\bullets\\Bullet.cs",
               "RelativeDocumentMoniker": "game\\bullets\\Bullet.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\bullets\\Bullet.cs",
               "RelativeToolTip": "game\\bullets\\Bullet.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwB0AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAgwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T17:51:11.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "SignalHub.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\hubs\\SignalHub.cs",
               "RelativeDocumentMoniker": "game\\hubs\\SignalHub.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\hubs\\SignalHub.cs",
               "RelativeToolTip": "game\\hubs\\SignalHub.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBcAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T17:46:07.272Z"
+              "WhenOpened": "2026-04-03T17:46:07.272Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Level.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\level\\Level.cs",
               "RelativeDocumentMoniker": "game\\level\\Level.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\level\\Level.cs",
               "RelativeToolTip": "game\\level\\Level.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBoAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T15:56:38.381Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "GunDirections.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\GunDirections.cs",
               "RelativeDocumentMoniker": "game\\GunDirections.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\GunDirections.cs",
               "RelativeToolTip": "game\\GunDirections.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T14:19:29.565Z"
+              "WhenOpened": "2026-04-03T14:19:29.565Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\enteties\\player\\Player.cs",
               "RelativeDocumentMoniker": "game\\enteties\\player\\Player.cs",
               "ToolTip": "D:\\WorkInProgress\\CurrentTutorial\\CurrentTutorial\\metroidvania\\game\\enteties\\player\\Player.cs",
               "RelativeToolTip": "game\\enteties\\player\\Player.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAIwF0AAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAgwK0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T12:12:11.263Z",
               "EditorCaption": ""
