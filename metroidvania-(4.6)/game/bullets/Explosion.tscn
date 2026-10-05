@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://nwad7kb3ut6o"]
+
+[ext_resource type="Script" uid="uid://bmk8sgo42yu1h" path="res://game/bullets/Explosion.cs" id="1_1jvvy"]
+[ext_resource type="Texture2D" uid="uid://bav7n447bnsa5" path="res://assets/graphics/fire/explosion.png" id="1_7uru0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7uru0"]
+radius = 30.016663
+
+[sub_resource type="Animation" id="Animation_a60ii"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7uru0"]
+resource_name = "explode"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1jvvy"]
+_data = {
+&"RESET": SubResource("Animation_a60ii"),
+&"explode": SubResource("Animation_7uru0")
+}
+
+[node name="Explosion" type="Area2D" unique_id=1168657469]
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_1jvvy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=79756059]
+texture = ExtResource("1_7uru0")
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1050622202]
+shape = SubResource("CircleShape2D_7uru0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=626680451]
+libraries/ = SubResource("AnimationLibrary_1jvvy")
+autoplay = &"explode"

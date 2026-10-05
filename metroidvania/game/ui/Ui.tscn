@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cdqhhg154o2xv"]
+
+[ext_resource type="Texture2D" uid="uid://bh0awhb02my2t" path="res://assets/graphics/ui/bar_main.png" id="1_fyqef"]
+[ext_resource type="Script" uid="uid://bbeu2woh3iwr0" path="res://game/ui/Ui.cs" id="1_p6uh5"]
+
+[node name="UI" type="CanvasLayer" unique_id=389826281 node_paths=PackedStringArray("healthbar")]
+script = ExtResource("1_p6uh5")
+healthbar = NodePath("Healthbar")
+
+[node name="Healthbar" type="TextureProgressBar" parent="." unique_id=622282281]
+custom_minimum_size = Vector2(400, 30)
+anchors_preset = -1
+offset_left = 20.0
+offset_top = 20.0
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_fyqef")
+texture_progress = ExtResource("1_fyqef")
+tint_under = Color(0.07058824, 0.09411765, 0.12156863, 1)
+tint_progress = Color(0.88235295, 0.18039216, 0.16862746, 1)

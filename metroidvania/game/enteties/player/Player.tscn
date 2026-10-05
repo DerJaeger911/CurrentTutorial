@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dqpkk7h1n3ma0" path="res://game/enteties/player/Player.cs" id="1_m6r7x"]
 [ext_resource type="Texture2D" uid="uid://de5wf7al0hknv" path="res://assets/graphics/characters/player.png" id="1_vkcef"]
+[ext_resource type="Texture2D" uid="uid://dijla4pisrrw8" path="res://assets/graphics/lights/main.png" id="3_i0dsi"]
+[ext_resource type="PackedScene" uid="uid://cdqhhg154o2xv" path="res://game/ui/Ui.tscn" id="4_a516o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m6r7x"]
 radius = 7.0
@@ -116,3 +118,10 @@ libraries/ = SubResource("AnimationLibrary_gcq5c")
 [node name="ReloadTimer" type="Timer" parent="Timer" unique_id=198421684]
 wait_time = 0.2
 one_shot = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=382901162]
+position = Vector2(0, -16)
+energy = 0.5
+texture = ExtResource("3_i0dsi")
+
+[node name="UI" parent="." unique_id=389826281 instance=ExtResource("4_a516o")]

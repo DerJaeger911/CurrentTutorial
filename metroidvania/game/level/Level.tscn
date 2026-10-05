@@ -1462,6 +1462,9 @@ texture = ExtResource("1_td0it")
 22:24/0 = 0
 23:24/0 = 0
 24:24/0 = 0
+4:4/0 = 0
+8:3/0 = 0
+9:4/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_gygjc"]
 physics_layer_0/collision_layer = 1
@@ -1475,10 +1478,16 @@ script = ExtResource("1_gygjc")
 [node name="Layers" type="Node2D" parent="." unique_id=989733418]
 position = Vector2(0, -1)
 
+[node name="BGLayer" type="TileMapLayer" parent="Layers" unique_id=850437675]
+tile_set = SubResource("TileSet_gygjc")
+
+[node name="BGDetailLayer" type="TileMapLayer" parent="Layers" unique_id=765971401]
+tile_set = SubResource("TileSet_gygjc")
+
 [node name="CollisionLayer" type="TileMapLayer" parent="Layers" unique_id=2044976722]
 tile_set = SubResource("TileSet_gygjc")
 
-[node name="BGLayer" type="TileMapLayer" parent="Layers" unique_id=850437675]
+[node name="FGDetailLayer" type="TileMapLayer" parent="Layers" unique_id=1731361586]
 tile_set = SubResource("TileSet_gygjc")
 
 [node name="Entities" type="Node2D" parent="." unique_id=1345670138]
@@ -1486,3 +1495,8 @@ tile_set = SubResource("TileSet_gygjc")
 [node name="Bullets" type="Node2D" parent="." unique_id=2001137597]
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=1835906865]
+
+[node name="Light" type="Node2D" parent="." unique_id=648202521]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light" unique_id=830027301]
+position = Vector2(0, 1)

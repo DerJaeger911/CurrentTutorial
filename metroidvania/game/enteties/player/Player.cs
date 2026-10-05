@@ -23,6 +23,7 @@ public partial class Player : CharacterBody2D, IDamageable
 	private float jumpTimeToDescent = 0.4f;
 	[Export]
 	private int health = 3;
+	
 
 	private Timer reloadTimer;
 	private bool canShoot = true;
