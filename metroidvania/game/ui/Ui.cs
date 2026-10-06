@@ -13,13 +13,10 @@ public partial class Ui : CanvasLayer
 		this.healthbar.Value = currentHealth;
 	}
 
-
-
-	public void UpdateHealth(float health)
+	public void UpdateHealth(int health)
 	{
 		this.healthbar.Value = health;
 	}
-}
 
 	public override void _Process(double delta)
 	{

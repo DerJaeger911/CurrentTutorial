@@ -78,10 +78,11 @@ _data = {
 &"run": SubResource("Animation_o7b2u")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1180798695]
+[node name="Player" type="CharacterBody2D" unique_id=1180798695 node_paths=PackedStringArray("ui")]
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_m6r7x")
+ui = NodePath("UI")
 
 [node name="BulletSpawner" type="Marker2D" parent="." unique_id=1661069278]
 position = Vector2(0, -20)

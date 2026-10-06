@@ -22,8 +22,10 @@ public partial class Player : CharacterBody2D, IDamageable
 	[Export]
 	private float jumpTimeToDescent = 0.4f;
 	[Export]
-	private int health = 3;
-	
+	private int health = 5;
+	[ExportGroup("Ports")]
+	[Export]
+	private Ui ui;
 
 	private Timer reloadTimer;
 	private bool canShoot = true;
@@ -41,6 +43,16 @@ public partial class Player : CharacterBody2D, IDamageable
 
 	private Vector2 velocity;
 
+	public int Health
+	{
+		get => this.health;
+		set
+		{
+			this.health = value;
+			ui.UpdateHealth(health);
+		}
+	}
+
 	public override void _Ready()
 	{
 		this.torsoSprite = this.GetNode<Sprite2D>("Sprites/TorsoSprite");
@@ -55,6 +67,8 @@ public partial class Player : CharacterBody2D, IDamageable
 		this.fallGravity = (2.0f * this.jumpHeight) / (this.jumpTimeToPeak * this.jumpTimeToDescent);
 
 		this.reloadTimer.Timeout += this.OnReloadTimerTimeout;
+
+		this.ui.Init(health, health);
 	}
 
 	public override void _PhysicsProcess(Double delta)
@@ -168,7 +182,13 @@ public partial class Player : CharacterBody2D, IDamageable
 
 	public void Hit()
 	{
-		this.health--;
+		this.Health--;
+		GD.Print($"Health left: {this.health}");
+	}
+
+	public void Heal()
+	{
+		this.Health++;
 		GD.Print($"Health left: {this.health}");
 	}
 }
