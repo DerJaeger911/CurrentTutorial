@@ -1,3 +1,18 @@
 {
-    "godotTools.editorPath.godot4": "/usr/bin/godot-mono"
+  "godotTools.editorPath.godot4": "/usr/bin/godot-mono",
+
+  // Aktiviert Roslyn-Analysen und Code-Style-Checks in VS Code
+  "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "fullSolution",
+  "csharp.analyses.enableCodeStyleAnalysis": true,
+
+  // Sagt dem C#-Formatter, dass 'this.' bevorzugt wird
+  "csharp.formatting.qualificationForField": true,
+  "csharp.formatting.qualificationForProperty": true,
+  "csharp.formatting.qualificationForMethod": true,
+  "csharp.formatting.qualificationForEvent": true,
+
+  // Korrigiert fehlende 'this.' automatisch beim Speichern (Strg+S)
+  "editor.codeActionsOnSave": {
+    "source.fixAll.codeAnalysis": "explicit"
+  }
 }

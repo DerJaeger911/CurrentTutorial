@@ -2,6 +2,7 @@ using Godot;
 using Metroidvania.game.interfaces;
 using System;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 public partial class Bullet : Area2D
 {
@@ -9,6 +10,18 @@ public partial class Bullet : Area2D
 	private float speed = 200f;
 	private const int offset = 16;
 	private Node2D parent;
+
+	private CollisionShape2D collisionShape;
+
+	public override void _Ready()
+	{
+		this.collisionShape = this.GetNode<CollisionShape2D>("CollisionShape2D");
+	// 	this.collisionShape.Disabled = true;
+	// 	this.GetTree().CreateTimer(0.2f).Timeout += () =>
+	// {
+	// 	this.collisionShape.Disabled = false;
+	// };
+	}
 
 	public void Setup(Node2D parent, Vector2 position, Vector2 direction)
 	{
@@ -26,10 +39,16 @@ public partial class Bullet : Area2D
 
 	private void OnBulletHit(Node body)
 	{
-		if (body is IDamageable entity && body != this.parent)
+		if (body == this.parent)
+		{
+			return;
+		}
+
+		if (body is IDamageable entity)
 		{
 			entity.Hit();
-			this.QueueFree();
 		}
+
+		this.QueueFree();
 	}
 }

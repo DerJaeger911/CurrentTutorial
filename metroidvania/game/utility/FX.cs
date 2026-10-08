@@ -17,12 +17,14 @@ public static class FX
 		explosion.Setup(caller);
 	}
 
-	public static void SpawnBullet(Node2D caller,Marker2D spawner, Vector2 direction)
+	public static void SpawnBullet(Node2D caller,Marker2D spawner, Vector2 direction, bool isDucking)
 	{
+		float offsetY = isDucking ? 8f : 0f;
+		
 		var bullet = bulletScene.Instantiate<Bullet>();
 		var bulletContainer = GetBulletContainer(caller);
 		bulletContainer.AddChild(bullet);
-		bullet.Setup(caller, spawner.GlobalPosition, direction);
+		bullet.Setup(caller, spawner.GlobalPosition + new Vector2(0, offsetY), direction);
 	}
 
 	private static Node GetBulletContainer(Node2D caller)
