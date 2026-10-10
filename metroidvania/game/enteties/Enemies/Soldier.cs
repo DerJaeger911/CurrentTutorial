@@ -144,12 +144,14 @@ public partial class Soldier : CharacterBody2D, IDamageable, IEnemy
 
 	private void Die()
 	{
-		//this.GetChildren().OfType<Area2D>().ToList().ForEach(area => area.Monitoring = false);
-		this.floorLeftArea.BodyExited -= this.OnFloorLeftExit;
-		this.floorRightArea.BodyExited -= this.OnFloorRightExit;
-		this.playerDetectionArea.BodyEntered -= this.OnPlayerDetected;
-		this.playerDetectionArea.BodyExited -= this.OnPlayerLost;
-		this.shootTimer.Timeout -= this.OnShootTimerTimeout;
+		this.GetChildren().OfType<Area2D>().ToList().ForEach(area => area.Monitoring = false);
+		this.CollisionLayer = 0;
+		this.CollisionMask = 0;
+		// this.floorLeftArea.BodyExited -= this.OnFloorLeftExit;
+		// this.floorRightArea.BodyExited -= this.OnFloorRightExit;
+		// this.playerDetectionArea.BodyEntered -= this.OnPlayerDetected;
+		// this.playerDetectionArea.BodyExited -= this.OnPlayerLost;
+		// this.shootTimer.Timeout -= this.OnShootTimerTimeout;
 
 		this.shootTimer.Stop();
 

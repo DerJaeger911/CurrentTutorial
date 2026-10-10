@@ -18,7 +18,7 @@ public static class FX
 		bulletContainer.CallDeferred(Node.MethodName.AddChild, explosion);
 		explosion.Setup(caller);
 		Level level = GetLevel(caller);
-			level.ExplosionSound.Play();
+		level.ExplosionSound.Play();
 	}
 
 	public static void SpawnBullet(Node2D caller, Marker2D spawner, Vector2 direction, bool isDucking, GunEnums gunType, GpuParticles2D shotgunParticles = null)
