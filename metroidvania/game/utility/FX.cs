@@ -17,6 +17,8 @@ public static class FX
 		var bulletContainer = ContainerFinderHelper.GetContainer<Level>(caller, "Bullets");
 		bulletContainer.CallDeferred(Node.MethodName.AddChild, explosion);
 		explosion.Setup(caller);
+		Level level = GetLevel(caller);
+			level.ExplosionSound.Play();
 	}
 
 	public static void SpawnBullet(Node2D caller, Marker2D spawner, Vector2 direction, bool isDucking, GunEnums gunType, GpuParticles2D shotgunParticles = null)
@@ -30,6 +32,8 @@ public static class FX
 			Shotgun shotgun = new Shotgun();
 			shotgun.EmitParticles(direction, spawnOffset, shotgunParticles);
 			shotgun.OnShotgunHit(caller, direction);
+			Level level = GetLevel(caller);
+			level.ShotgunSound.Play();
 			
 		}
 		else
@@ -38,8 +42,14 @@ public static class FX
 			var bulletContainer = ContainerFinderHelper.GetContainer<Level>(caller, "Bullets");
 			bulletContainer.AddChild(bullet);
 			bullet.Setup(caller, direction, gunType, spawnOffset);
-			Level soundContainer = (Level)ContainerFinderHelper.GetParent<Level>(caller);
-			soundContainer.GunSound.Play();
+			Level level = GetLevel(caller);
+			level.GunSound.Play();
 		}
+	}
+
+	private static Level GetLevel(Node2D caller)
+	{
+		Level level = (Level)ContainerFinderHelper.GetParent<Level>(caller);
+		return level;
 	}
 }
