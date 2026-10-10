@@ -23,7 +23,6 @@ public partial class Explosion : Area2D
 		if (body is Node2D target && !this.targets.Contains(target) && target != this.parent)
 		{
 			this.targets.Add(target);
-			GD.Print($"Explosion hit: {target.Name}");
 			if (target is IDamageable damageable)
 			{
 				damageable.Hit();

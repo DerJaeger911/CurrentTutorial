@@ -4,6 +4,8 @@ namespace Metroidvania.game.utility;
 
 public static class FX
 {
+	private const int muzzleOffset = 16;
+
 	private static readonly PackedScene explosionScene = GD.Load<PackedScene>("res://game/bullets/Explosion.tscn");
 	private static readonly PackedScene bulletScene = GD.Load<PackedScene>("res://game/bullets/Bullet.tscn");
 
@@ -12,29 +14,32 @@ public static class FX
 	{
 		var explosion = explosionScene.Instantiate<Explosion>();
 		explosion.Position = caller.Position;
-		var bulletContainer = GetBulletContainer(caller);
+		var bulletContainer = ContainerFinderHelper.GetContainer<Level>(caller, "Bullets");
 		bulletContainer.CallDeferred(Node.MethodName.AddChild, explosion);
 		explosion.Setup(caller);
 	}
 
-	public static void SpawnBullet(Node2D caller,Marker2D spawner, Vector2 direction, bool isDucking)
+	public static void SpawnBullet(Node2D caller, Marker2D spawner, Vector2 direction, bool isDucking, GunEnums gunType, GpuParticles2D shotgunParticles = null)
 	{
 		float offsetY = isDucking ? 8f : 0f;
-		
-		var bullet = bulletScene.Instantiate<Bullet>();
-		var bulletContainer = GetBulletContainer(caller);
-		bulletContainer.AddChild(bullet);
-		bullet.Setup(caller, spawner.GlobalPosition + new Vector2(0, offsetY), direction);
-	}
 
-	private static Node GetBulletContainer(Node2D caller)
-	{
-		Node2D bulletContainer = caller.GetParent().GetParent().GetNode<Node2D>("Bullets");
-		if (bulletContainer == null)
+		Vector2 spawnOffset = spawner.GlobalPosition + new Vector2(0, offsetY) + direction * muzzleOffset;
+
+		if (gunType == GunEnums.Shotgun)
 		{
-			caller.GetParent().GetParent().AddChild(new Node2D() { Name = "Bullets" });
-			GD.Print("Bim");
+			Shotgun shotgun = new Shotgun();
+			shotgun.EmitParticles(direction, spawnOffset, shotgunParticles);
+			shotgun.OnShotgunHit(caller, direction);
+			
 		}
-		return bulletContainer;
+		else
+		{
+			var bullet = bulletScene.Instantiate<Bullet>();
+			var bulletContainer = ContainerFinderHelper.GetContainer<Level>(caller, "Bullets");
+			bulletContainer.AddChild(bullet);
+			bullet.Setup(caller, direction, gunType, spawnOffset);
+			Level soundContainer = (Level)ContainerFinderHelper.GetParent<Level>(caller);
+			soundContainer.GunSound.Play();
+		}
 	}
 }

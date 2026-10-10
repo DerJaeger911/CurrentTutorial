@@ -9,7 +9,7 @@ public partial class Player : CharacterBody2D, IDamageable
 {
 	[ExportGroup("Stats")]
 	[Export]
-	private int health = 5;
+	private int playerHealth = 5;
 
 	[ExportGroup("Movement")]
 	[Export]
@@ -62,27 +62,20 @@ public partial class Player : CharacterBody2D, IDamageable
 	private Sprite2D torsoSprite;
 	private AnimationPlayer animationPlayer;
 	private Marker2D bulletSpawner;
+	private GpuParticles2D shotgunParticles;
 	private GunEnums currentGun;
 
 	//More Parts
 	private Crosshair crosshair;
 	private bool controllerAim;
-	private Vector2 targetDir = new Vector2(1,0);
+	private Vector2 targetDir = new Vector2(1, 0);
 	private Vector2 controllerAimDir;
+
+	private bool isFrozen = false;
 
 	private Vector2 velocity;
 	private Vector2 torsoPosition;
 	private int torsoY = -8;
-
-	public int Health
-	{
-		get => this.health;
-		set
-		{
-			this.health = value;
-			this.ui.UpdateHealth(this.health);
-		}
-	}
 
 	public override void _Ready()
 	{
@@ -95,7 +88,14 @@ public partial class Player : CharacterBody2D, IDamageable
 		this.dashTimer = this.GetNode<Timer>("Timer/DashTimer");
 		this.coyoteTimer = this.GetNode<Timer>("Timer/CoyoteTimer");
 		this.bulletSpawner = this.GetNode<Marker2D>("BulletSpawner");
+		this.shotgunParticles = this.GetNode<GpuParticles2D>("BulletSpawner/ShotgunParticles");
 		this.crosshair = this.GetNode<Crosshair>("Sprites/Crosshair");
+		if (Data.Instance.PlayerHealth == -1)
+		{
+			Data.Instance.PlayerHealth = this.playerHealth;
+			Data.Instance.PlayerMaxHealth = this.playerHealth;
+			GD.Print(Data.Instance.PlayerHealth);
+		}
 
 		this.jumpVelocity = (-2.0f * this.jumpHeight) / this.jumpTimeToPeak;
 		this.jumpGravity = (2.0f * this.jumpHeight) / (this.jumpTimeToPeak * this.jumpTimeToPeak);
@@ -104,16 +104,19 @@ public partial class Player : CharacterBody2D, IDamageable
 		this.reloadTimer.Timeout += this.OnReloadTimerTimeout;
 		this.dashTimer.Timeout += this.OnDashTimerTimeout;
 
-		this.ui.Init(this.health, this.health);
+		this.ui.Init(Data.Instance.PlayerHealth, Data.Instance.PlayerMaxHealth);
 	}
 
 	public override void _PhysicsProcess(Double delta)
 	{
-		this.GetInput();
-		this.Move(delta);
-		this.Animation();
-		this.MoveAndSlide();
-		this.CanCoyoteJump();
+		if (!this.isFrozen)
+		{
+			this.GetInput();
+			this.Move(delta);
+			this.Animation();
+			this.MoveAndSlide();
+			this.CanCoyoteJump();
+		}
 
 	}
 
@@ -179,7 +182,7 @@ public partial class Player : CharacterBody2D, IDamageable
 	private void GetInput()
 	{
 		this.directionX = Input.GetAxis("left", "right");
-		if (Input.IsActionJustPressed("jump") && (this.IsOnFloor() || this.coyoteTimer.TimeLeft >= 0))
+		if (Input.IsActionJustPressed("jump") && (this.IsOnFloor() || this.coyoteTimer.TimeLeft > 0))
 		{
 			this.velocity.Y = this.jumpVelocity;
 		}
@@ -187,7 +190,7 @@ public partial class Player : CharacterBody2D, IDamageable
 		{
 			this.reloadTimer.Start();
 			this.canShoot = false;
-			FX.SpawnBullet(this, this.bulletSpawner, this.targetDir, this.isDucking);
+			FX.SpawnBullet(this, this.bulletSpawner, this.targetDir, this.isDucking, this.currentGun, this.shotgunParticles);
 		}
 		if (Input.IsActionJustPressed("dash") && this.canDash)
 		{
@@ -203,7 +206,6 @@ public partial class Player : CharacterBody2D, IDamageable
 		if (Input.IsActionJustPressed("toggle"))
 		{
 			this.currentGun = (GunEnums)Mathf.PosMod((int)this.currentGun + 1, Enum.GetValues(typeof(GunEnums)).Length);
-			GD.Print(this.currentGun);
 		}
 	}
 
@@ -268,11 +270,11 @@ public partial class Player : CharacterBody2D, IDamageable
 	}
 
 	private Vector2 GetNormalizedMousePosition()
-{
-    Vector2 mousePos = this.GetLocalMousePosition();
-    mousePos.Y += 20f;
-    return mousePos.Normalized();
-}
+	{
+		Vector2 mousePos = this.GetLocalMousePosition();
+		mousePos.Y += 20f;
+		return mousePos.Normalized();
+	}
 
 	private Vector2I GetRoundedAimDirection()
 	{
@@ -292,12 +294,14 @@ public partial class Player : CharacterBody2D, IDamageable
 
 	public void Hit()
 	{
-		this.Health--;
+		Data.Instance.PlayerHealth--;
+		this.ui.UpdateHealth(Data.Instance.PlayerHealth);
 	}
 
 	public void Heal()
 	{
-		this.Health++;
+		Data.Instance.PlayerHealth++;
+		this.ui.UpdateHealth(Data.Instance.PlayerHealth);
 	}
 
 	private void CanCoyoteJump()
@@ -309,7 +313,7 @@ public partial class Player : CharacterBody2D, IDamageable
 
 		bool isOnFloorNow = this.IsOnFloor();
 
-		if (this.wasOnFloorLastFrame && !isOnFloorNow)
+		if (this.wasOnFloorLastFrame && !isOnFloorNow && this.coyoteTimer.IsStopped())
 		{
 			this.coyoteTimer.Start();
 		}
@@ -327,6 +331,11 @@ public partial class Player : CharacterBody2D, IDamageable
 		{
 			this.targetDir = this.GetNormalizedMousePosition();
 		}
+	}
 
+	public void Freeze()
+	{
+		this.isFrozen = true;
+		this.animationPlayer.Pause();
 	}
 }

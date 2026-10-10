@@ -17,8 +17,4 @@ public partial class Ui : CanvasLayer
 	{
 		this.healthbar.Value = health;
 	}
-
-	public override void _Process(double delta)
-	{
-	}
 }

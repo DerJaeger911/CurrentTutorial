@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 
 SignalHub="*uid://d1h1ts2ecguhb"
 Data="*uid://dtw0yov63xymq"
+TransitionLayer="*uid://uefw68w0re8f"
 
 [display]
 

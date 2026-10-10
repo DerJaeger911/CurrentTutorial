@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://73liv07jgm5v" path="res://game/level/Level.cs" id="1_gygjc"]
 [ext_resource type="Texture2D" uid="uid://c7v0ifpdabs2i" path="res://assets/graphics/tilesets/subway.png" id="1_td0it"]
 [ext_resource type="Texture2D" uid="uid://cgh7234wked4l" path="res://assets/graphics/tilesets/walls.png" id="2_gygjc"]
+[ext_resource type="PackedScene" uid="uid://d1lo453gihviw" path="res://game/level/TransitionGate.tscn" id="4_efkba"]
+[ext_resource type="AudioStream" uid="uid://tkjj51je3two" path="res://assets/audio/laser.wav" id="5_o2m4a"]
+[ext_resource type="AudioStream" uid="uid://dqrcrb8bhwepx" path="res://assets/audio/shotgun_shoot.wav" id="6_al8j2"]
+[ext_resource type="AudioStream" uid="uid://dtnqyh7corvdx" path="res://assets/audio/explosion.wav" id="7_o4sqj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_efkba"]
 texture = ExtResource("2_gygjc")
@@ -1500,3 +1504,22 @@ tile_set = SubResource("TileSet_gygjc")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light" unique_id=830027301]
 position = Vector2(0, 1)
+
+[node name="Gates" type="Node2D" parent="." unique_id=471119256]
+
+[node name="StartPoint" type="Marker2D" parent="Gates" unique_id=2108521983]
+
+[node name="TransitionGate" parent="Gates" unique_id=236165325 instance=ExtResource("4_efkba")]
+
+[node name="EnemySpawns" type="Node2D" parent="." unique_id=1484025716]
+
+[node name="Sounds" type="Node2D" parent="." unique_id=1894252661]
+
+[node name="GunSound" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1502448873]
+stream = ExtResource("5_o2m4a")
+
+[node name="ShotgunSound" type="AudioStreamPlayer2D" parent="Sounds" unique_id=292699988]
+stream = ExtResource("6_al8j2")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="Sounds" unique_id=302778464]
+stream = ExtResource("7_o4sqj")

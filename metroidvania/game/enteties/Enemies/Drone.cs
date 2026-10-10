@@ -4,13 +4,14 @@ using Metroidvania.game.utility;
 using System;
 using System.Diagnostics;
 
-public partial class Drone : CharacterBody2D, IDamageable
+public partial class Drone : CharacterBody2D, IDamageable, IEnemy
 {
 	private Vector2 direction;
 	private float speed = 50f;
 	private Player player;
 	private int health = 3;
-	private bool isDying;
+
+	private EnemySpawner enemySpawner;
 
 	private Area2D playerDetectionArea;
 	private Area2D explosionDetectionArea;
@@ -25,6 +26,12 @@ public partial class Drone : CharacterBody2D, IDamageable
 		this.playerDetectionArea.BodyEntered += this.OnPlayerDetected;
 		this.playerDetectionArea.BodyExited += this.OnPlayerLost;
 		this.explosionDetectionArea.BodyEntered += this.OnExplosionDetected;
+	}
+
+	public void Setup(EnemySpawner enemySpawner)
+	{
+		this.GlobalPosition = enemySpawner.GlobalPosition;
+		this.enemySpawner = enemySpawner;
 	}
 
 	public override void _PhysicsProcess(Double delta)
@@ -62,7 +69,6 @@ public partial class Drone : CharacterBody2D, IDamageable
 	public void Hit()
 	{
 		this.health--;
-
 		if (this.health <= 0)
 		{
 			this.Die();
@@ -86,14 +92,11 @@ public partial class Drone : CharacterBody2D, IDamageable
 
 	private void Die()
 	{
-		this.isDying = true;
 		this.CollisionLayer = 0;
 		this.SetPhysicsProcess(false);
-
-		Tween tween = this.CreateTween();
 		
 		FX.SpawnExplosion(this);
-
+		this.enemySpawner.IsDefeated = true;
 		this.QueueFree();
 	}
 

@@ -2,10 +2,25 @@
 
 [ext_resource type="Script" uid="uid://dqpkk7h1n3ma0" path="res://game/enteties/player/Player.cs" id="1_m6r7x"]
 [ext_resource type="Texture2D" uid="uid://de5wf7al0hknv" path="res://assets/graphics/characters/player.png" id="1_vkcef"]
+[ext_resource type="Texture2D" uid="uid://cya8nsfxd5dut" path="res://assets/graphics/fire/shotgun_explosion.png" id="2_fmjr3"]
 [ext_resource type="Texture2D" uid="uid://otyoj5px7yk7" path="res://assets/graphics/ui/crosshair.png" id="3_gcq5c"]
 [ext_resource type="Texture2D" uid="uid://dijla4pisrrw8" path="res://assets/graphics/lights/main.png" id="3_i0dsi"]
 [ext_resource type="PackedScene" uid="uid://cdqhhg154o2xv" path="res://game/ui/Ui.tscn" id="4_a516o"]
 [ext_resource type="Script" uid="uid://d2b0bm2k3fatf" path="res://game/enteties/player/Crosshair.cs" id="4_fmjr3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gcq5c"]
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_23bnl"]
+particle_flag_disable_z = true
+initial_velocity_min = 200.0
+initial_velocity_max = 280.0
+gravity = Vector3(0, 0, 0)
+anim_speed_min = 0.29999998
+anim_speed_max = 2.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m6r7x"]
 radius = 7.0
@@ -96,7 +111,7 @@ _data = {
 &"run": SubResource("Animation_o7b2u")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1180798695 node_paths=PackedStringArray("ui")]
+[node name="Player" type="CharacterBody2D" unique_id=1180798695 node_paths=PackedStringArray("ui") groups=["Damageable"]]
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_m6r7x")
@@ -104,6 +119,15 @@ ui = NodePath("UI")
 
 [node name="BulletSpawner" type="Marker2D" parent="." unique_id=1661069278]
 position = Vector2(0, -20)
+
+[node name="ShotgunParticles" type="GPUParticles2D" parent="BulletSpawner" unique_id=962952276]
+material = SubResource("CanvasItemMaterial_gcq5c")
+emitting = false
+amount = 20
+texture = ExtResource("2_fmjr3")
+lifetime = 0.3
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_23bnl")
 
 [node name="Sprites" type="Node2D" parent="." unique_id=1276787456]
 position = Vector2(0, -16.5)
@@ -147,7 +171,8 @@ one_shot = true
 [node name="DashTimer" type="Timer" parent="Timer" unique_id=1184045395]
 
 [node name="CoyoteTimer" type="Timer" parent="Timer" unique_id=117989610]
-wait_time = 0.2
+wait_time = 0.3
+one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=382901162]
 position = Vector2(0, -16)
@@ -155,7 +180,7 @@ energy = 0.5
 texture = ExtResource("3_i0dsi")
 
 [node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1046565575]
-position = Vector2(0, -16)
+position = Vector2(-2, -16)
 energy = 0.5
 texture = ExtResource("3_i0dsi")
 
