@@ -9,13 +9,12 @@ public partial class Level : Node2D
 
     public override void _Ready()
     {
-        this.enemy = this.enemyScene.Instantiate<Enemy>();
+        this.path = this.GetNode<Path2D>("Path2D");
+        this.path.AddChild(this.pathFollow);
 
+        this.enemy = this.enemyScene.Instantiate<Enemy>();
         this.enemy.Setup(this.pathFollow);
 
         this.pathFollow.AddChild(this.enemy);
-        this.path = this.GetNode<Path2D>("Path2D");
-        this.path.AddChild(this.pathFollow);
     }
 }
-

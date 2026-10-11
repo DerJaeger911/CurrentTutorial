@@ -1,7 +1,7 @@
 using Godot;
 using System.Collections.Generic;
 
-public partial class GameData : Node
+public partial class Data : Node
 {
 
     public static readonly Dictionary<TowerTypeEnums, Dictionary<string, object>> TowerData = new()

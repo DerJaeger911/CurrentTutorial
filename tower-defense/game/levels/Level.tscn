@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bwiw34ibi27wr"]
 
 [ext_resource type="Script" uid="uid://d0788iqas6s1y" path="res://game/levels/Level.cs" id="1_cxdwt"]
-[ext_resource type="PackedScene" uid="uid://d3mggdgiwquvl" path="res://game/enteties/enemies/Enemy.tscn" id="1_sas6g"]
 
 [sub_resource type="Curve2D" id="Curve2D_5xgho"]
 _data = {
@@ -16,8 +15,3 @@ script = ExtResource("1_cxdwt")
 position = Vector2(-23.463337, -25.995575)
 scale = Vector2(1.0185335, 1.039823)
 curve = SubResource("Curve2D_5xgho")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=609658053]
-position = Vector2(30.890825, 32.69362)
-
-[node name="Enemy" parent="Path2D/PathFollow2D" unique_id=128780493 instance=ExtResource("1_sas6g")]
