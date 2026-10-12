@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bs1ain61kklyv"]
+
+[ext_resource type="Script" uid="uid://dgcqllp7nbpfj" path="res://game/enteties/tower/Tower.cs" id="1_l821x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l821x"]
+radius = 100.0
+
+[node name="Tower" type="Node2D" unique_id=1950718181]
+script = ExtResource("1_l821x")
+
+[node name="Base" type="Sprite2D" parent="." unique_id=962930951]
+
+[node name="Turret" type="Sprite2D" parent="." unique_id=1175245472]
+
+[node name="EnemyDetectionArea" type="Area2D" parent="." unique_id=35088226]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectionArea" unique_id=1950159513]
+shape = SubResource("CircleShape2D_l821x")
+
+[node name="ReloadTimer" type="Timer" parent="." unique_id=324897746]
+autostart = true

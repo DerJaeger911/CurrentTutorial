@@ -4,6 +4,13 @@ using System.Collections.Generic;
 public partial class Data : Node
 {
 
+    public static Data Instance { get; private set; }
+
+    public override void _Ready()
+    {
+        Instance = this;
+    }
+
     public static readonly Dictionary<TowerTypeEnums, Dictionary<string, object>> TowerData = new()
     {
         {
