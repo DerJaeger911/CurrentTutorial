@@ -1,3 +1,32 @@
-# Godot 4+ specific ignores
+# =========================
+# Godot 4 / C# Ignores
+# =========================
+
+# Godot-spezifische Caches und Exports
+.import/
+export.cfg
+export_presets.cfg
+*.log
+
+# C# / Mono / .NET Build-Ordner
 .godot/
+bin/
+obj/
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
 /android/
+
+# =========================
+# VS Code lokale Einstellungen
+# =========================
+
+# Ignoriert nur die maschinenspezifischen Workspace-Settings, 
+# damit du plattform-unterschiedliche Pfade (Windows/Linux) lokal halten kannst.
+.vscode/settings.json
+
+# Falls du den gesamten .vscode Ordner ignorieren willst (auskommentieren, falls gewünscht):
+# .vscode/
