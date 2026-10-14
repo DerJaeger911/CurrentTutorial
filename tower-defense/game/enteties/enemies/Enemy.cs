@@ -19,7 +19,6 @@ public partial class Enemy : Area2D
 
         if (this.pathFollow.ProgressRatio >= 0.99f)
         {
-            GD.Print(this.UniqueNameInOwner + " got destroyed");
             this.QueueFree();
         }
     }

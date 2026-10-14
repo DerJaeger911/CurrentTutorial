@@ -3,12 +3,40 @@ using System.Collections.Generic;
 
 public partial class Data : Node
 {
+    private int money = 50;
+
+    private Ui uiNode;
+
+    public int Money 
+    {
+        get => this.money;
+
+        set
+        {
+            this.money = value;
+            
+            if (this.uiNode != null)
+            {
+                this.uiNode.UpdateStats(this.money);
+            }
+            foreach (TowerCard towerCard in this.GetTree().GetNodesInGroup("TowerCard"))
+            {
+                towerCard.ToggleActive(value);
+            }
+        }
+    }
 
     public static Data Instance { get; private set; }
 
     public override void _Ready()
     {
         Instance = this;
+    }
+
+    public void LateLoad(Ui uiNode)
+    {
+                this.uiNode = uiNode;
+        GD.Print(this.uiNode);
     }
 
     public static readonly Dictionary<TowerTypeEnums, Dictionary<string, object>> TowerData = new()
@@ -21,7 +49,7 @@ public partial class Data : Node
                 { "upgrade_cost", 30 },
                 { "reload_time", 1.0f },
                 { "bullet", BulletTypeEnums.Single },
-                { "thumbnail", "res://graphics/ui/tower thumbnails/basic.png" },
+                { "thumbnail", "res://assets/graphics/ui/tower thumbnails/basic.png" },
                 { "scene", "res://scenes/towers/single_tower.tscn" }
             }
         },
@@ -33,7 +61,7 @@ public partial class Data : Node
                 { "upgrade_cost", 50 },
                 { "reload_time", 1.5f },
                 { "bullet", BulletTypeEnums.Fire },
-                { "thumbnail", "res://graphics/ui/tower thumbnails/blaster.png" },
+                { "thumbnail", "res://assets/graphics/ui/tower thumbnails/blaster.png" },
                 { "scene", "res://scenes/towers/blaster_tower.tscn" }
             }
         },
@@ -45,7 +73,7 @@ public partial class Data : Node
                 { "upgrade_cost", 60 },
                 { "reload_time", 2.0f },
                 { "bullet", BulletTypeEnums.MortarExplosion },
-                { "thumbnail", "res://graphics/ui/tower thumbnails/mortar.png" },
+                { "thumbnail", "res://assets/graphics/ui/tower thumbnails/mortar.png" },
                 { "scene", "res://scenes/towers/mortar_tower.tscn" }
             }
         }
@@ -88,7 +116,7 @@ public partial class Data : Node
             EnemyTypeEnums.Default, new Dictionary<string, object>
             {
                 { "health", 3 },
-                { "texture", "res://graphics/Ships/ship_0004.png" },
+                { "texture", "res://assets/graphics/Ships/ship_0004.png" },
                 { "speed", 20 }
             }
         },
@@ -96,7 +124,7 @@ public partial class Data : Node
             EnemyTypeEnums.Fast, new Dictionary<string, object>
             {
                 { "health", 3 },
-                { "texture", "res://graphics/Ships/ship_0007.png" },
+                { "texture", "res://assets/graphics/Ships/ship_0007.png" },
                 { "speed", 50 }
             }
         },
@@ -104,7 +132,7 @@ public partial class Data : Node
             EnemyTypeEnums.Strong, new Dictionary<string, object>
             {
                 { "health", 6 },
-                { "texture", "res://graphics/Ships/ship_0000.png" },
+                { "texture", "res://assets/graphics/Ships/ship_0000.png" },
                 { "speed", 25 }
             }
         },
@@ -112,7 +140,7 @@ public partial class Data : Node
             EnemyTypeEnums.Big, new Dictionary<string, object>
             {
                 { "health", 20 },
-                { "texture", "res://graphics/Ships/ship_0015.png" },
+                { "texture", "res://assets/graphics/Ships/ship_0015.png" },
                 { "speed", 15 }
             }
         }

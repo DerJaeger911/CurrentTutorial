@@ -10,7 +10,7 @@ public partial class Tower : Node2D
 
     protected Sprite2D turret;
 
-    private PackedScene bulletScene = GD.Load<PackedScene>("res://game/Bullets/Bullet.tscn");
+    private PackedScene bulletScene = GD.Load<PackedScene>("res://game/bullets/Bullet.tscn");
 
     public override void _Ready()
     {
@@ -27,7 +27,7 @@ public partial class Tower : Node2D
 
     public override void _Process(double delta)
     {
-        GD.Print(this.Enemies);
+        
     }
 
     private void OnEnemyDetected(Area2D area)
