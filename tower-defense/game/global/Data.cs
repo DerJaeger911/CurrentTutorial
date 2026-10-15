@@ -5,26 +5,43 @@ public partial class Data : Node
 {
     private int money = 50;
 
+    private int health = 50;
+
     private Ui uiNode;
 
     public int CurrentWave { get; set; }
 
-    public int Money 
+    public int Money
     {
         get => this.money;
 
         set
         {
             this.money = value;
-            
+
             if (this.uiNode != null)
             {
-                this.uiNode.UpdateStats(this.money);
+                this.uiNode.UpdateStats(this.money, this.health);
             }
             foreach (TowerCard towerCard in this.GetTree().GetNodesInGroup("TowerCard"))
             {
                 towerCard.ToggleActive(value);
             }
+        }
+    }
+
+    public int Health
+    {
+        get => this.health;
+        set
+        {
+            if (this.uiNode != null)
+            {
+                this.health = value;
+                this.uiNode.UpdateStats(this.money, this.health);
+            }
+
+
         }
     }
 
@@ -37,7 +54,7 @@ public partial class Data : Node
 
     public void LateLoad(Ui uiNode)
     {
-                this.uiNode = uiNode;
+        this.uiNode = uiNode;
         GD.Print(this.uiNode);
     }
 

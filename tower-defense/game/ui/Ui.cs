@@ -24,9 +24,10 @@ public partial class Ui : CanvasLayer
 		EventBus.Instance.EmitSignal(EventBus.SignalName.PlaceTower, (int)id);
 	}
 
-	public void UpdateStats(int money)
+	public void UpdateStats(int money, int health)
 	{
 		this.moneyLabel.Text = money.ToString();
+		this.healthLabel.Text = health.ToString();
 		GD.Print(money);
 	}
 
