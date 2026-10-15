@@ -11,7 +11,7 @@ public partial class Level : Node2D
         { TowerTypeEnums.Basic, "res://game/enteties/tower/TowerBasic.tscn" },
     };
     private List<Vector2I> usedCells = [];
-    private PathFollow2D pathFollow = new();
+    private PathFollow2D pathFollow;
     [Export]
     private Path2D path;
     [Export]
@@ -41,14 +41,8 @@ public partial class Level : Node2D
     public override void _Ready()
     {
         RenderingServer.SetDefaultClearColor(new Color("#dff6f5"));
-        this.path.AddChild(this.pathFollow);
-
-        this.enemy = this.enemyScene.Instantiate<Enemy>();
-        this.enemy.Setup(this.pathFollow);
-
-        this.pathFollow.AddChild(this.enemy);
-
         EventBus.Instance.PlaceTower += this.OnPlaceTower;
+        EventBus.Instance.WaveStart += this.WaveStarted;
     }
 
     public override void _Input(InputEvent @event)
@@ -65,9 +59,9 @@ public partial class Level : Node2D
         if (@event is InputEventMouseButton mouseButton &&
         mouseButton.Pressed &&
         mouseButton.ButtonIndex == MouseButton.Left &&
-        this.placeTower && 
+        this.placeTower &&
         !this.usedCells.Contains(pos) &&
-        this.tilemapLayer.GetCellTileData(pos) is TileData tileData && 
+        this.tilemapLayer.GetCellTileData(pos) is TileData tileData &&
         (bool)tileData.GetCustomData("Usable"))
         {
             this.usedCells.Add(pos);
@@ -92,6 +86,27 @@ public partial class Level : Node2D
         this.selectedTower = id;
         string thumbnailPath = (string)Data.TowerData[id]["thumbnail"];
         this.towerPreview.Texture = GD.Load<Texture2D>(thumbnailPath);
+    }
 
+    public async void WaveStarted()
+    {
+        var data = Data.EnemyWaves[Data.Instance.CurrentWave];
+
+        foreach (var kvp in data)
+        {
+            EnemyTypeEnums enemyType = kvp.Key;
+            int count = kvp.Value;
+
+            for (int i = 0; i < count; i++)
+            {
+                this.pathFollow = new();
+                this.enemy = this.enemyScene.Instantiate<Enemy>();
+                this.enemy.Setup(this.pathFollow);
+                this.pathFollow.AddChild(this.enemy);
+                this.path.AddChild(this.pathFollow);
+                await this.ToSignal(this.GetTree().CreateTimer(0.5f), SceneTreeTimer.SignalName.Timeout);
+                GD.Print("GO");
+            }
+        }
     }
 }

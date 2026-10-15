@@ -7,6 +7,8 @@ public partial class Data : Node
 
     private Ui uiNode;
 
+    public int CurrentWave { get; set; }
+
     public int Money 
     {
         get => this.money;

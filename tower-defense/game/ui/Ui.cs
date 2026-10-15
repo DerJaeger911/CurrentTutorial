@@ -32,7 +32,6 @@ public partial class Ui : CanvasLayer
 
 	private void OnWaveButtonPressed()
 	{
-		this.wave++;
-		GD.Print("Start Wave: " + this.wave);
+		EventBus.Instance.EmitSignal(EventBus.SignalName.WaveStart);
 	}
 }
