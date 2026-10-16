@@ -9,7 +9,12 @@ public partial class Level : Node2D
     private Dictionary<TowerTypeEnums, string> towerScenes = new()
     {
         { TowerTypeEnums.Basic, "res://game/enteties/tower/TowerBasic.tscn" },
+        { TowerTypeEnums.Blast, "res://game/enteties/tower/TowerBlaster.tscn" },
+        { TowerTypeEnums.Mortar, "res://game/enteties/tower/TowerMortar.tscn" },
+        
+
     };
+
     private List<Vector2I> usedCells = [];
     private PathFollow2D pathFollow;
     [Export]
@@ -86,11 +91,13 @@ public partial class Level : Node2D
         this.selectedTower = id;
         string thumbnailPath = (string)Data.TowerData[id]["thumbnail"];
         this.towerPreview.Texture = GD.Load<Texture2D>(thumbnailPath);
+        GD.Print(id);
     }
 
     public async void WaveStarted()
     {
         var data = Data.EnemyWaves[Data.Instance.CurrentWave];
+        Data.Instance.CurrentWave++;
 
         foreach (var kvp in data)
         {
@@ -105,7 +112,6 @@ public partial class Level : Node2D
                 this.pathFollow.AddChild(this.enemy);
                 this.path.AddChild(this.pathFollow);
                 await this.ToSignal(this.GetTree().CreateTimer(0.5f), SceneTreeTimer.SignalName.Timeout);
-                GD.Print("GO");
             }
         }
     }

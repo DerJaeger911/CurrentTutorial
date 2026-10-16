@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://5fcgjf624a6x" path="res://assets/graphics/ui/frame.png" id="2_kvsb7"]
 [ext_resource type="Texture2D" uid="uid://dtx2b4ht28ccs" path="res://assets/graphics/ui/suit_hearts.png" id="2_p6uh5"]
 [ext_resource type="Texture2D" uid="uid://b3k0r3etcd08f" path="res://assets/graphics/ui/dollar.png" id="4_xq1hi"]
-[ext_resource type="PackedScene" uid="uid://b8rn5vnwp50y0" path="res://game/ui/TowerCard.tscn" id="5_xq1hi"]
+[ext_resource type="Texture2D" uid="uid://l6jm6r7wbg1m" path="res://assets/graphics/ui/menu.png" id="7_n6w4m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j71as"]
 bg_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
@@ -44,11 +44,13 @@ texture_margin_top = 6.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 
-[node name="UI" type="CanvasLayer" unique_id=1666191775 node_paths=PackedStringArray("healthLabel", "moneyLabel", "waveButton")]
+[node name="UI" type="CanvasLayer" unique_id=1666191775 node_paths=PackedStringArray("healthLabel", "moneyLabel", "waveButton", "menuToggleButton", "towerCardsContainer")]
 script = ExtResource("1_qq1mc")
 healthLabel = NodePath("Control/StatsContainer/PanelContainer/HBoxContainer/HealthLabel")
 moneyLabel = NodePath("Control/StatsContainer/PanelContainer2/HBoxContainer/MoneyLabel")
 waveButton = NodePath("Control/WaveButtton")
+menuToggleButton = NodePath("TowerCards/HBoxContainer/MenuToggleButton")
+towerCardsContainer = NodePath("TowerCards/HBoxContainer/TowerCardsContainer")
 
 [node name="Control" type="Control" parent="." unique_id=1040627305]
 layout_mode = 3
@@ -57,6 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="WaveButtton" type="Button" parent="Control" unique_id=546793301]
 custom_minimum_size = Vector2(240, 50)
@@ -131,21 +134,28 @@ text = "50"
 
 [node name="TowerCards" type="Control" parent="." unique_id=689561603]
 layout_mode = 3
-anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_bottom = -20.0
+offset_left = 10.0
+offset_bottom = -10.0
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TowerCards" unique_id=1023794704]
+[node name="HBoxContainer" type="HBoxContainer" parent="TowerCards" unique_id=533814358]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -180.0
-offset_right = 140.0
+offset_right = 184.0
 grow_vertical = 0
+theme_override_constants/separation = 10
 
-[node name="TowerCard" parent="TowerCards/HBoxContainer" unique_id=944025854 instance=ExtResource("5_xq1hi")]
+[node name="MenuToggleButton" type="TextureButton" parent="TowerCards/HBoxContainer" unique_id=1203897043]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("7_n6w4m")
+stretch_mode = 4
+
+[node name="TowerCardsContainer" type="HBoxContainer" parent="TowerCards/HBoxContainer" unique_id=1023794704]
 layout_mode = 2

@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://d3mggdgiwquvl"]
 
 [ext_resource type="Script" uid="uid://by0ex7o05mods" path="res://game/enteties/enemies/Enemy.cs" id="1_e20cc"]
-[ext_resource type="Texture2D" uid="uid://li8enjc54fih" path="res://assets/graphics/Ships/ship_0000.png" id="1_rvk37"]
+[ext_resource type="Shader" uid="uid://ct34vphrroqad" path="res://game/enteties/enemies/Enemy.tres" id="2_8xrsp"]
+[ext_resource type="Texture2D" uid="uid://dguehp11e3dof" path="res://assets/graphics/Ships/ship_0005.png" id="3_8xrsp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e20cc"]
+resource_local_to_scene = true
+shader = ExtResource("2_8xrsp")
+shader_parameter/Progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ssfo"]
 radius = 16.0
 
-[node name="Enemy" type="Area2D" unique_id=128780493 node_paths=PackedStringArray("sprite", "collisionShape")]
+[node name="Enemy" type="Area2D" unique_id=128780493 node_paths=PackedStringArray("sprite", "collisionShape") groups=["Enemies"]]
 z_index = 1
 collision_mask = 2
 script = ExtResource("1_e20cc")
@@ -14,8 +20,9 @@ sprite = NodePath("Sprite2D")
 collisionShape = NodePath("CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=694358024]
+material = SubResource("ShaderMaterial_e20cc")
 rotation = 1.5707964
-texture = ExtResource("1_rvk37")
+texture = ExtResource("3_8xrsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1417980719]
 shape = SubResource("CircleShape2D_4ssfo")

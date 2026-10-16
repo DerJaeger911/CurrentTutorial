@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://gw4euujc34g4"]
+
+[ext_resource type="PackedScene" uid="uid://bs1ain61kklyv" path="res://game/enteties/tower/Tower.tscn" id="1_1mvaf"]
+[ext_resource type="Texture2D" uid="uid://1t08v8xyx2kj" path="res://assets/graphics/towers/mortar/mortar tower down.png" id="2_sqlrk"]
+[ext_resource type="Texture2D" uid="uid://decyie3x0j0su" path="res://assets/graphics/ui/crosshair.png" id="3_t47ol"]
+
+[node name="TowerMortar" unique_id=1950718181 instance=ExtResource("1_1mvaf")]
+
+[node name="Base" parent="." index="0" unique_id=962930951]
+texture = ExtResource("2_sqlrk")
+
+[node name="Turret" parent="." index="1" unique_id=1175245472]
+visible = false
+
+[node name="CrosshairSprite" type="Sprite2D" parent="." index="4" unique_id=1304673584]
+texture = ExtResource("3_t47ol")

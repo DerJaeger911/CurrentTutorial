@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using Godot;
 
 public partial class Enemy : Area2D
@@ -28,22 +29,39 @@ public partial class Enemy : Area2D
 
         if (this.pathFollow.ProgressRatio >= 0.99f)
         {
-            Data.Instance.Health --;
+            Data.Instance.Health--;
             this.QueueFree();
         }
     }
 
-    private void OnAreaEntered(Area2D area)
+    private void Flash()
+    {
+        if (this.sprite.Material is ShaderMaterial shaderMat)
+        {
+            Tween tween = this.CreateTween();
+            tween.TweenProperty(shaderMat, "shader_parameter/Progress", 1.0f, 0.2f);
+            tween.TweenProperty(shaderMat, "shader_parameter/Progress", 0.0f, 0.2f);
+        }
+    }
+
+    public void Hit()
     {
         this.health--;
+        this.Flash();
         if (this.health <= 0)
         {
             this.QueueFree();
+            Data.Instance.Money++;
         }
-        //Despawn Bullet
+
+    }
+
+    private void OnAreaEntered(Area2D area)
+    {
         if (area is Bullet bullet)
         {
             bullet.QueueFree();
         }
+        this.Hit();
     }
 }

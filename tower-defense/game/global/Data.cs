@@ -55,7 +55,6 @@ public partial class Data : Node
     public void LateLoad(Ui uiNode)
     {
         this.uiNode = uiNode;
-        GD.Print(this.uiNode);
     }
 
     public static readonly Dictionary<TowerTypeEnums, Dictionary<string, object>> TowerData = new()

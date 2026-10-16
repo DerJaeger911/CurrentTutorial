@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.ComponentModel;
 
 public partial class EventBus : Node
 {
@@ -7,6 +8,8 @@ public partial class EventBus : Node
     [Signal] public delegate void PlaceTowerEventHandler(int towerId);
 
     [Signal] public delegate void WaveStartEventHandler();
+
+    [Signal] public delegate void SelectPlacedTowerEventHandler(Tower tower);
 
     // Eine statische Instanz, damit du von überall bequem darauf zugreifen kannst
     public static EventBus Instance { get; private set; }
