@@ -6,10 +6,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ssfo"]
 radius = 16.0
 
-[node name="Enemy" type="Area2D" unique_id=128780493]
+[node name="Enemy" type="Area2D" unique_id=128780493 node_paths=PackedStringArray("sprite", "collisionShape")]
 z_index = 1
 collision_mask = 2
 script = ExtResource("1_e20cc")
+sprite = NodePath("Sprite2D")
+collisionShape = NodePath("CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=694358024]
 rotation = 1.5707964

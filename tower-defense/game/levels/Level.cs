@@ -101,7 +101,7 @@ public partial class Level : Node2D
             {
                 this.pathFollow = new();
                 this.enemy = this.enemyScene.Instantiate<Enemy>();
-                this.enemy.Setup(this.pathFollow);
+                this.enemy.Setup(this.pathFollow, enemyType);
                 this.pathFollow.AddChild(this.enemy);
                 this.path.AddChild(this.pathFollow);
                 await this.ToSignal(this.GetTree().CreateTimer(0.5f), SceneTreeTimer.SignalName.Timeout);
