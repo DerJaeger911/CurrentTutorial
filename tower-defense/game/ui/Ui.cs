@@ -25,6 +25,7 @@ public partial class Ui : CanvasLayer
 	}
 
 	public void UpdateStats(int money, int health)
+	public void UpdateStats(int money, int health)
 	{
 		this.moneyLabel.Text = money.ToString();
 		this.healthLabel.Text = health.ToString();

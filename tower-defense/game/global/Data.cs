@@ -4,7 +4,8 @@ using System.Collections.Generic;
 public partial class Data : Node
 {
     private int money = 50;
-    private int health = 100;
+
+    private int health = 50;
 
     private Ui uiNode;
 

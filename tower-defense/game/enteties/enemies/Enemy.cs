@@ -3,7 +3,14 @@ using Godot;
 
 public partial class Enemy : Area2D
 {
+    [Export]
+    private Sprite2D sprite;
+    [Export]
+    private CollisionShape2D collisionShape;
+
     private PathFollow2D pathFollow;
+    private int health;
+    private int speed;
 
     private int health;
     private int speed;
@@ -24,7 +31,7 @@ public partial class Enemy : Area2D
 
     public override void _Process(double delta)
     {
-        this.pathFollow.Progress += 50.0f * (float)delta;
+        this.pathFollow.Progress += this.speed * (float)delta;
 
         if (this.pathFollow.ProgressRatio >= 0.99f)
         {
