@@ -12,13 +12,6 @@ public partial class Enemy : Area2D
     private int health;
     private int speed;
 
-    private int health;
-    private int speed;
-    [Export]
-    private Sprite2D sprite;
-    [Export]
-    private CollisionShape2D collisionShape;
-
     public void Setup(PathFollow2D pathFollow, EnemyTypeEnums enemyType)
     {
         this.pathFollow = pathFollow;
