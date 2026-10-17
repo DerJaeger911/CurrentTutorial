@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://by0ex7o05mods" path="res://game/enteties/enemies/Enemy.cs" id="1_e20cc"]
 [ext_resource type="Shader" uid="uid://ct34vphrroqad" path="res://game/enteties/enemies/Enemy.tres" id="2_8xrsp"]
 [ext_resource type="Texture2D" uid="uid://dguehp11e3dof" path="res://assets/graphics/Ships/ship_0005.png" id="3_8xrsp"]
+[ext_resource type="AudioStream" uid="uid://b8gyhihdsirns" path="res://assets/audio/impact.1.ogg" id="4_kg7ll"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e20cc"]
 resource_local_to_scene = true
@@ -12,12 +13,13 @@ shader_parameter/Progress = 0.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ssfo"]
 radius = 16.0
 
-[node name="Enemy" type="Area2D" unique_id=128780493 node_paths=PackedStringArray("sprite", "collisionShape") groups=["Enemies"]]
+[node name="Enemy" type="Area2D" unique_id=128780493 node_paths=PackedStringArray("sprite", "collisionShape", "hitSound") groups=["Enemies"]]
 z_index = 1
 collision_mask = 2
 script = ExtResource("1_e20cc")
 sprite = NodePath("Sprite2D")
 collisionShape = NodePath("CollisionShape2D")
+hitSound = NodePath("HitSound")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=694358024]
 material = SubResource("ShaderMaterial_e20cc")
@@ -26,3 +28,6 @@ texture = ExtResource("3_8xrsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1417980719]
 shape = SubResource("CircleShape2D_4ssfo")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=869199944]
+stream = ExtResource("4_kg7ll")
