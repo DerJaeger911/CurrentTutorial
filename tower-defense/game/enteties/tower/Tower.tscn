@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dgcqllp7nbpfj" path="res://game/enteties/tower/Tower.cs" id="1_l821x"]
 [ext_resource type="Texture2D" uid="uid://ftkgg8wg17u" path="res://assets/graphics/ui/tower thumbnails/basic.png" id="2_483sl"]
+[ext_resource type="PackedScene" uid="uid://f74kd2qdmmia" path="res://game/ui/UpgradeMenu.tscn" id="3_7hk0q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l821x"]
 radius = 100.0
@@ -9,9 +10,13 @@ radius = 100.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23bnl"]
 size = Vector2(22, 24)
 
-[node name="Tower" type="Node2D" unique_id=1950718181 node_paths=PackedStringArray("clickArea")]
+[node name="Tower" type="Node2D" unique_id=1950718181 node_paths=PackedStringArray("Base", "clickArea", "ReloadTimer", "DelayTimer", "upgradeMenu")]
 script = ExtResource("1_l821x")
+Base = NodePath("Base")
 clickArea = NodePath("ClickArea")
+ReloadTimer = NodePath("ReloadTimer")
+DelayTimer = NodePath("DelayTimer")
+upgradeMenu = NodePath("UpgradeMenu")
 
 [node name="Base" type="Sprite2D" parent="." unique_id=962930951]
 texture = ExtResource("2_483sl")
@@ -34,3 +39,10 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=89924740]
 shape = SubResource("RectangleShape2D_23bnl")
+
+[node name="UpgradeMenu" parent="." unique_id=692313663 instance=ExtResource("3_7hk0q")]
+
+[node name="DelayTimer" type="Timer" parent="." unique_id=779423063]
+wait_time = 0.5
+one_shot = true
+autostart = true

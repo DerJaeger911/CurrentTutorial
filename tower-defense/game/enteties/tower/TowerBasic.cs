@@ -4,15 +4,14 @@ using System;
 
 public partial class TowerBasic : Tower
 {
-
+    [Export]
     private Sprite2D turret;
 
-   
+
 
     public override void _Ready()
     {
         base._Ready();
-        this.turret = this.GetNode<Sprite2D>("Turret");
     }
 
     public override void _Process(double delta)
@@ -26,4 +25,12 @@ public partial class TowerBasic : Tower
         }
     }
 
+
+    public override void UpgradeTower()
+    {
+        base.UpgradeTower();
+        this.Base.Texture = GD.Load<Texture2D>("res://assets/graphics/towers/basic/basic tower upgrade bottom.png");
+        this.turret.Texture = GD.Load<Texture2D>("res://assets/graphics/towers/basic/basic tower upgrade top.png");
+
+    }
 }

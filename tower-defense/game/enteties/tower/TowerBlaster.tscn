@@ -53,6 +53,7 @@ anim_speed_max = 1.0
 script = ExtResource("2_fatnb")
 particleEmitterGroup = NodePath("Particles")
 BulletType = 1
+TowerType = 1
 
 [node name="Base" parent="." index="0" unique_id=962930951]
 texture = ExtResource("3_1utxb")

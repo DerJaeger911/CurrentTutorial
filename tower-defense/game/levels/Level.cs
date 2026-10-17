@@ -11,7 +11,7 @@ public partial class Level : Node2D
         { TowerTypeEnums.Basic, "res://game/enteties/tower/TowerBasic.tscn" },
         { TowerTypeEnums.Blast, "res://game/enteties/tower/TowerBlaster.tscn" },
         { TowerTypeEnums.Mortar, "res://game/enteties/tower/TowerMortar.tscn" },
-        
+
 
     };
 
@@ -28,6 +28,28 @@ public partial class Level : Node2D
     private Enemy enemy;
     private TowerTypeEnums selectedTower;
 
+    private Tower currentSelectedTower;
+    public Tower CurrentSelectedTower
+    {
+        get => this.currentSelectedTower;
+
+        set
+        {
+            this.currentSelectedTower = value;
+            if (this.currentSelectedTower == null)
+            {
+                this.towerMenu = false;
+            }
+            else
+            {
+                this.towerMenu = true;
+            }
+        }
+    }
+
+
+    private bool towerMenu;
+
     private bool placeTower;
     public bool PlaceTower
     {
@@ -37,6 +59,7 @@ public partial class Level : Node2D
         {
             this.placeTower = value;
             this.towerPreview.Visible = value;
+            GD.Print(this.towerPreview.Visible);
         }
     }
 
@@ -54,32 +77,61 @@ public partial class Level : Node2D
     {
         Vector2 rawPos = this.GetLocalMousePosition();
         Vector2I pos = new Vector2I((int)(rawPos.X / 16f), (int)(rawPos.Y / 16f));
+        Vector2I gridPos = pos * 16;
 
         if (@event is InputEventMouseMotion && this.PlaceTower)
         {
-            Vector2I towerPos = pos * 16;
-            this.towerPreview.Position = towerPos;
+
+            this.towerPreview.Position = gridPos;
         }
 
-        if (@event is InputEventMouseButton mouseButton &&
-        mouseButton.Pressed &&
-        mouseButton.ButtonIndex == MouseButton.Left &&
-        this.placeTower &&
-        !this.usedCells.Contains(pos) &&
-        this.tilemapLayer.GetCellTileData(pos) is TileData tileData &&
-        (bool)tileData.GetCustomData("Usable"))
+        if (@event is InputEventMouseMotion && this.towerMenu)
         {
-            this.usedCells.Add(pos);
-            Tower tower = GD.Load<PackedScene>(this.towerScenes[this.selectedTower]).Instantiate<Tower>();
-            tower.Position = pos * 16;
-            this.towers.AddChild(tower);
-            this.placeTower = false;
-            Data.Instance.Money -= (int)Data.TowerData[this.selectedTower]["cost"];
+            if (this.CurrentSelectedTower is TowerMortar towerMortar)
+            {
+                towerMortar.CrosshairPosUpdate(gridPos);
+            }
         }
+
+        if (@event is InputEventMouseButton mouseButton)
+        {
+            //Tower selected
+            if (mouseButton.Pressed &&
+            mouseButton.ButtonIndex == MouseButton.Left &&
+            this.CurrentSelectedTower != null)
+            {
+                if(this.CurrentSelectedTower is TowerMortar towerMortar)
+                {
+                    towerMortar.FinishPlacing();
+                    this.CurrentSelectedTower = null;
+                }
+            }
+
+            //Tower placing
+            if (mouseButton.Pressed &&
+            mouseButton.ButtonIndex == MouseButton.Left &&
+            this.PlaceTower &&
+            !this.usedCells.Contains(pos) &&
+            this.tilemapLayer.GetCellTileData(pos) is TileData tileData &&
+            (bool)tileData.GetCustomData("Usable"))
+            {
+                this.usedCells.Add(pos);
+                Tower tower = GD.Load<PackedScene>(this.towerScenes[this.selectedTower]).Instantiate<Tower>();
+                tower.LevelInstance = this;
+                tower.Position = pos * 16;
+                tower.Setup();
+                this.towers.AddChild(tower);
+                this.PlaceTower = false;
+                Data.Instance.Money -= (int)Data.TowerData[this.selectedTower]["cost"];
+            }
+        }
+
+
 
         if (Input.IsActionJustPressed("exit"))
         {
-            this.placeTower = false;
+            this.PlaceTower = false;
+            this.CurrentSelectedTower = null;
         }
     }
 
@@ -87,11 +139,10 @@ public partial class Level : Node2D
     {
         TowerTypeEnums id = (TowerTypeEnums)idInt;
 
-        this.placeTower = true;
+        this.PlaceTower = true;
         this.selectedTower = id;
         string thumbnailPath = (string)Data.TowerData[id]["thumbnail"];
         this.towerPreview.Texture = GD.Load<Texture2D>(thumbnailPath);
-        GD.Print(id);
     }
 
     public async void WaveStarted()

@@ -3,20 +3,42 @@ using Godot;
 
 public partial class Tower : Node2D
 {
+    [Export]
+    protected TowerTypeEnums TowerType { get; set; }
+    [Export]
+    protected Sprite2D Base { get; set; }
+    [Export]
+    private Area2D clickArea { get; set; }
+    [Export]
+    protected Timer ReloadTimer { get; set; }
+    [Export]
+    protected Timer DelayTimer { get; set; }
+    [Export]
+    private UpgradeMenu upgradeMenu;
+
+    protected BulletTypeEnums BulletType { get; set; }
     protected List<Enemy> Enemies { get; private set; } = [];
     private Area2D enemyDetectionArea;
-    protected Timer ReloadTimer { get; set; }
+
     protected Node2D BulletContainer { get; set; }
 
-    [Export]
-    private Area2D clickArea;
+    protected int Cost { get; set; }
+    protected int UpgradeCost { get; set; }
+
+
+
+    protected bool Upgraded { get; set; }
+
+    public Level LevelInstance { get; set; }
+
+
 
     protected float ShootDir;
 
-    [Export]
-    protected BulletTypeEnums BulletType { get; set; }
+
 
     private PackedScene bulletScene = GD.Load<PackedScene>("res://game/bullets/Bullet.tscn");
+    private PackedScene explosionScene = GD.Load<PackedScene>("res://game/bullets/Explosion.tscn");
 
     public override void _Ready()
     {
@@ -25,16 +47,21 @@ public partial class Tower : Node2D
         this.enemyDetectionArea.AreaExited += this.OnEnemyLost;
         this.BulletContainer = this.GetTree().Root.GetNode<Node2D>("Level/Bullets");
 
-        this.ReloadTimer = this.GetNode<Timer>("ReloadTimer");
         this.ReloadTimer.Timeout += this.OnReloadTimerTimeout;
 
         this.clickArea.InputEvent += this.OnClickInputArea;
-        
+        EventBus.Instance.SelectPlacedTower += this.OnSelectedPlacedTower;
     }
 
-    public override void _Process(double delta)
+    public void Setup()
     {
+        this.ReloadTimer.WaitTime = (float)Data.TowerData[this.TowerType]["reload_time"];
+        this.BulletType = (BulletTypeEnums)Data.TowerData[this.TowerType]["bullet"];
+        this.Cost = (int)Data.TowerData[this.TowerType]["cost"];
+        this.UpgradeCost = (int)Data.TowerData[this.TowerType]["upgrade_cost"];
 
+
+        GD.Print(this.TowerType);
     }
 
     private void OnEnemyDetected(Area2D area)
@@ -53,7 +80,7 @@ public partial class Tower : Node2D
         }
     }
 
-    protected void OnReloadTimerTimeout()
+    protected virtual void OnReloadTimerTimeout()
     {
         if (this.Enemies.Count > 0)
         {
@@ -63,13 +90,24 @@ public partial class Tower : Node2D
 
     private void OnClickInputArea(Node viewport, InputEvent @event, long shapeIdx)
     {
-        if (@event is InputEventMouseButton mouseEvent && mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
+        if (@event is InputEventMouseButton mouseEvent && 
+        mouseEvent.ButtonIndex == MouseButton.Left && 
+        mouseEvent.Pressed)
         {
-            EventBus.Instance.EmitSignal(EventBus.SignalName.SelectPlacedTower, this);
+            if (this.DelayTimer.TimeLeft == 0)
+            {
+                EventBus.Instance.EmitSignal(EventBus.SignalName.SelectPlacedTower);
+                this.upgradeMenu.Reveal();
+            }
         }
     }
 
-    protected virtual void CreateBullet()
+    protected virtual void OnSelectedPlacedTower()
+    {
+        this.LevelInstance.CurrentSelectedTower = this;
+    }
+
+    protected virtual void CreateBullet(Vector2 pos = default)
     {
         if (this.BulletType == BulletTypeEnums.Single)
         {
@@ -92,5 +130,23 @@ public partial class Tower : Node2D
                 }
             }
         }
+        if (this.BulletType == BulletTypeEnums.MortarExplosion)
+        {
+            Explosion explosion = this.explosionScene.Instantiate<Explosion>();
+            explosion.Setup(pos);
+            this.BulletContainer.AddChild(explosion);
+        }
+    }
+
+    public virtual void UpgradeTower()
+    {
+        this.Upgraded = true;
+    }
+
+    public void DeleteTower()
+    {
+        var returnMoney = !this.Upgraded ? this.Cost : (this.Cost + this.UpgradeCost)
+        Data.Instance.Money += returnMoney
+        this.QueueFree();
     }
 }

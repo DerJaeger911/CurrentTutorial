@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public partial class Data : Node
 {
-    private int money = 50;
+    private int money = 500;
 
     private int health = 50;
 
@@ -55,6 +55,7 @@ public partial class Data : Node
     public void LateLoad(Ui uiNode)
     {
         this.uiNode = uiNode;
+        this.uiNode.UpdateStats(this.money, this.health);
     }
 
     public static readonly Dictionary<TowerTypeEnums, Dictionary<string, object>> TowerData = new()

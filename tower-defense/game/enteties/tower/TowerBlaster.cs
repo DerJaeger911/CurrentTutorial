@@ -19,4 +19,11 @@ public partial class TowerBlaster : Tower
 
 		}
 	}
+
+	public override void UpgradeTower()
+	{
+		base.UpgradeTower();
+        this.Base.Texture = GD.Load<Texture2D>("res://assets/graphics/towers/blaster/blaster upgrade.png");
+
+	}
 }

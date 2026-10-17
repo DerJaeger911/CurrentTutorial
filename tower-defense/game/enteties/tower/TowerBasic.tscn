@@ -5,8 +5,9 @@
 [ext_resource type="Script" uid="uid://bf5ydquylp2t7" path="res://game/enteties/tower/TowerBasic.cs" id="2_uxpft"]
 [ext_resource type="Texture2D" uid="uid://drqd7mybdere0" path="res://assets/graphics/towers/basic/basic tower top.png" id="3_uxpft"]
 
-[node name="TowerBasic" unique_id=1950718181 instance=ExtResource("1_drxj6")]
+[node name="TowerBasic" unique_id=1950718181 node_paths=PackedStringArray("turret") instance=ExtResource("1_drxj6")]
 script = ExtResource("2_uxpft")
+turret = NodePath("Turret")
 
 [node name="Base" parent="." index="0" unique_id=962930951]
 texture = ExtResource("2_t3o0w")

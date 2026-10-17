@@ -9,7 +9,7 @@ public partial class EventBus : Node
 
     [Signal] public delegate void WaveStartEventHandler();
 
-    [Signal] public delegate void SelectPlacedTowerEventHandler(Tower tower);
+    [Signal] public delegate void SelectPlacedTowerEventHandler();
 
     // Eine statische Instanz, damit du von überall bequem darauf zugreifen kannst
     public static EventBus Instance { get; private set; }

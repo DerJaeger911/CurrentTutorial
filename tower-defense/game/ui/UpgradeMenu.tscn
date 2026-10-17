@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://f74kd2qdmmia"]
+
+[ext_resource type="Script" uid="uid://c6lvs5jfp6b38" path="res://game/ui/UpgradeMenu.cs" id="1_3d2qd"]
+[ext_resource type="Texture2D" uid="uid://cnlkrt3od8e0" path="res://assets/graphics/ui/close_normal.png" id="2_a1nst"]
+[ext_resource type="Texture2D" uid="uid://0co0sik7sq0v" path="res://assets/graphics/ui/close_hover.png" id="3_1dojy"]
+
+[node name="UpgradeMenu" type="Control" unique_id=692313663 node_paths=PackedStringArray("upgradeButton", "deleteButton")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3d2qd")
+upgradeButton = NodePath("UpgradeButton")
+deleteButton = NodePath("DeleteButton")
+
+[node name="UpgradeButton" type="Button" parent="." unique_id=698956082]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 20.0
+grow_horizontal = 2
+text = "Upgrade (30)"
+
+[node name="DeleteButton" type="TextureButton" parent="." unique_id=1992142167]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_a1nst")
+texture_pressed = ExtResource("2_a1nst")
+texture_hover = ExtResource("3_1dojy")
