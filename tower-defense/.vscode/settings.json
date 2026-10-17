@@ -1,6 +1,0 @@
-{
-    "godotTools.editorPath": "/usr/bin/godot-mono",
-    "csharp.analyzers.enableCompilerDirectives": true,
-    "dotnet.completion.showCompletionItemsFromUnimportedNames": true,
-    "csharp.inlayHints.enableInlayHintsForTypes": true
-}
