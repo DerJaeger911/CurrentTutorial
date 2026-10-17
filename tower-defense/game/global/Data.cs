@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public partial class Data : Node
 {
-    private int money = 500;
+    private int money = 50;
 
     private int health = 50;
 
@@ -23,9 +23,16 @@ public partial class Data : Node
             {
                 this.uiNode.UpdateStats(this.money, this.health);
             }
-            foreach (TowerCard towerCard in this.GetTree().GetNodesInGroup("TowerCard"))
+            foreach (Node node in this.GetTree().GetNodesInGroup("TowerCard"))
             {
-                towerCard.ToggleActive(value);
+                if (node is TowerCard towerCard)
+                {
+                    towerCard.ToggleActive(value);
+                }
+                if (node is UpgradeMenu upgradeMenu)
+                {
+                    upgradeMenu.ToggleActive();
+                }
             }
         }
     }
@@ -41,6 +48,10 @@ public partial class Data : Node
             if (this.uiNode != null)
             {
                 this.uiNode.UpdateStats(this.money, this.health);
+            }
+            if(this.health <= 0)
+            {
+                this.GetTree().Quit();
             }
         }
     }

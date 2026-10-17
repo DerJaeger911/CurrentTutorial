@@ -1,10 +1,36 @@
 [gd_scene format=3 uid="uid://f74kd2qdmmia"]
 
 [ext_resource type="Script" uid="uid://c6lvs5jfp6b38" path="res://game/ui/UpgradeMenu.cs" id="1_3d2qd"]
+[ext_resource type="FontFile" uid="uid://bqm53gushpubk" path="res://assets/graphics/ui/Digitalt.otf" id="2_1dojy"]
 [ext_resource type="Texture2D" uid="uid://cnlkrt3od8e0" path="res://assets/graphics/ui/close_normal.png" id="2_a1nst"]
 [ext_resource type="Texture2D" uid="uid://0co0sik7sq0v" path="res://assets/graphics/ui/close_hover.png" id="3_1dojy"]
 
-[node name="UpgradeMenu" type="Control" unique_id=692313663 node_paths=PackedStringArray("upgradeButton", "deleteButton")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2pb2"]
+bg_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dojy"]
+bg_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1nst"]
+bg_color = Color(0.21176471, 0.21176471, 0.21176471, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 3
+
+[node name="UpgradeMenu" type="Control" unique_id=692313663 node_paths=PackedStringArray("upgradeButton", "deleteButton") groups=["TowerCard"]]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,6 +51,11 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_top = 20.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_1dojy")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_a2pb2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1dojy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a1nst")
 text = "Upgrade (30)"
 
 [node name="DeleteButton" type="TextureButton" parent="." unique_id=1992142167]

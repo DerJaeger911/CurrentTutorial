@@ -15,6 +15,8 @@ public partial class Tower : Node2D
     protected Timer DelayTimer { get; set; }
     [Export]
     private UpgradeMenu upgradeMenu;
+    [Export]
+    private AudioStreamPlayer2D shootSound;
 
     protected BulletTypeEnums BulletType { get; set; }
     protected List<Enemy> Enemies { get; private set; } = [];
@@ -23,7 +25,7 @@ public partial class Tower : Node2D
     protected Node2D BulletContainer { get; set; }
 
     protected int Cost { get; set; }
-    protected int UpgradeCost { get; set; }
+    public int UpgradeCost { get; set; }
 
 
 
@@ -59,9 +61,6 @@ public partial class Tower : Node2D
         this.BulletType = (BulletTypeEnums)Data.TowerData[this.TowerType]["bullet"];
         this.Cost = (int)Data.TowerData[this.TowerType]["cost"];
         this.UpgradeCost = (int)Data.TowerData[this.TowerType]["upgrade_cost"];
-
-
-        GD.Print(this.TowerType);
     }
 
     private void OnEnemyDetected(Area2D area)
@@ -82,10 +81,7 @@ public partial class Tower : Node2D
 
     protected virtual void OnReloadTimerTimeout()
     {
-        if (this.Enemies.Count > 0)
-        {
-            this.CreateBullet();
-        }
+        this.shootSound.Play();
     }
 
     private void OnClickInputArea(Node viewport, InputEvent @event, long shapeIdx)
@@ -97,7 +93,7 @@ public partial class Tower : Node2D
             if (this.DelayTimer.TimeLeft == 0)
             {
                 EventBus.Instance.EmitSignal(EventBus.SignalName.SelectPlacedTower);
-                this.upgradeMenu.Reveal();
+                this.upgradeMenu.Reveal(this.Upgraded);
             }
         }
     }
@@ -141,6 +137,7 @@ public partial class Tower : Node2D
     public virtual void UpgradeTower()
     {
         this.Upgraded = true;
+        Data.Instance.Money -= this.UpgradeCost;
     }
 
     public void DeleteTower()
@@ -148,5 +145,10 @@ public partial class Tower : Node2D
         var returnMoney = !this.Upgraded ? this.Cost : (this.Cost + this.UpgradeCost);
         Data.Instance.Money += returnMoney;
         this.QueueFree();
+    }
+
+    public void HideUi()
+    {
+        this.upgradeMenu.Hide();
     }
 }

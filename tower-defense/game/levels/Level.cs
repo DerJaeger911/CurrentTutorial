@@ -25,6 +25,10 @@ public partial class Level : Node2D
     private Node2D towers;
     [Export]
     private TileMapLayer tilemapLayer;
+    [Export]
+    private Ui ui;
+    [Export]
+    private AudioStreamPlayer2D music;
     private Enemy enemy;
     private TowerTypeEnums selectedTower;
 
@@ -59,7 +63,6 @@ public partial class Level : Node2D
         {
             this.placeTower = value;
             this.towerPreview.Visible = value;
-            GD.Print(this.towerPreview.Visible);
         }
     }
 
@@ -132,6 +135,11 @@ public partial class Level : Node2D
         {
             this.PlaceTower = false;
             this.CurrentSelectedTower = null;
+            this.ui.HideCards();
+            foreach (Tower tower in this.GetTree().GetNodesInGroup("Towers"))
+            {
+                tower.HideUi();
+            }
         }
     }
 

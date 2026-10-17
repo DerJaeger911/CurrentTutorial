@@ -25,6 +25,14 @@ public partial class TowerBasic : Tower
         }
     }
 
+    protected override void OnReloadTimerTimeout()
+    {
+        base.OnReloadTimerTimeout();
+        if (this.Enemies.Count > 0)
+        {
+            this.CreateBullet();
+        }
+    }
 
     public override void UpgradeTower()
     {

@@ -83,12 +83,18 @@ public partial class Ui : CanvasLayer
 	private void OnToggleButtonPressed()
 	{
 		this.currentState = this.currentState == MenuStateEnums.Open ? MenuStateEnums.Closed : MenuStateEnums.Open;
-		this.ChangeButtonTexture(this.currentState);
+		this.ToggleTowerCards();
+	}
+
+	public void HideCards()
+	{
+		this.currentState = MenuStateEnums.Closed;
 		this.ToggleTowerCards();
 	}
 
 	private void ToggleTowerCards()
 	{
 		this.towerCardsContainer.Visible = this.currentState == MenuStateEnums.Open;
+		this.ChangeButtonTexture(this.currentState);
 	}
 }

@@ -1,11 +1,16 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class TowerMortar : Tower
 {
-	private bool justInit = true;
 	[Export]
 	private Sprite2D crosshairSprite;
+	[Export]
+	private AnimatedSprite2D shootAnimation;
+
+	private bool justInit = true;
+
 	private bool crossHairSet;
 
 	public override void _Ready()
@@ -43,15 +48,19 @@ public partial class TowerMortar : Tower
 		this.crossHairSet = true;
 	}
 
-	protected override void OnReloadTimerTimeout()
+	protected override async void OnReloadTimerTimeout()
 	{
+		base.OnReloadTimerTimeout();
+		this.shootAnimation.Show();
+		this.shootAnimation.Play();
+		await this.ToSignal(this.shootAnimation, AnimatedSprite2D.SignalName.AnimationFinished);
 		this.CreateBullet(this.crosshairSprite.GlobalPosition);
 	}
 
 	public override void UpgradeTower()
 	{
 		base.UpgradeTower();
-        this.Base.Texture = GD.Load<Texture2D>("res://assets/graphics/towers/mortar/mortar tower upgrade down.png");
+		this.Base.Texture = GD.Load<Texture2D>("res://assets/graphics/towers/mortar/mortar tower upgrade down.png");
 
 	}
 }

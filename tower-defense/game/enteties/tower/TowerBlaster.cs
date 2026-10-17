@@ -16,7 +16,6 @@ public partial class TowerBlaster : Tower
 		foreach (GpuParticles2D particles in this.particleEmitterGroup.GetChildren())
 		{
 			particles.Emitting = true;
-
 		}
 	}
 

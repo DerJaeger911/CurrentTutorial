@@ -8,6 +8,8 @@ public partial class Enemy : Area2D
     private Sprite2D sprite;
     [Export]
     private CollisionShape2D collisionShape;
+    [Export]
+    private AudioStreamPlayer2D hitSound;
 
     private PathFollow2D pathFollow;
     private int health;
@@ -48,6 +50,7 @@ public partial class Enemy : Area2D
     {
         this.health--;
         this.Flash();
+        this.hitSound.Play();
         if (this.health <= 0)
         {
             this.QueueFree();

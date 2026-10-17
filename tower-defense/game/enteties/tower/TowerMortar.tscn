@@ -4,11 +4,55 @@
 [ext_resource type="Script" uid="uid://cs7jdrvoe2kb3" path="res://game/enteties/tower/TowerMortar.cs" id="2_d1pk2"]
 [ext_resource type="Texture2D" uid="uid://1t08v8xyx2kj" path="res://assets/graphics/towers/mortar/mortar tower down.png" id="2_sqlrk"]
 [ext_resource type="Texture2D" uid="uid://decyie3x0j0su" path="res://assets/graphics/ui/crosshair.png" id="3_t47ol"]
+[ext_resource type="Texture2D" uid="uid://bwj40wgb4ivd7" path="res://assets/graphics/towers/mortar/mortar tower effect.png" id="5_w6t3o"]
+[ext_resource type="AudioStream" uid="uid://cry1g5gx667ip" path="res://assets/audio/fire.wav" id="6_ykinh"]
 
-[node name="TowerMortar" unique_id=1950718181 node_paths=PackedStringArray("crosshairSprite") instance=ExtResource("1_1mvaf")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykinh"]
+atlas = ExtResource("5_w6t3o")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tqfh"]
+atlas = ExtResource("5_w6t3o")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rrxm"]
+atlas = ExtResource("5_w6t3o")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1se8"]
+atlas = ExtResource("5_w6t3o")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_23bnl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykinh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tqfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rrxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1se8")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TowerMortar" unique_id=1950718181 node_paths=PackedStringArray("crosshairSprite", "shootAnimation") instance=ExtResource("1_1mvaf")]
 script = ExtResource("2_d1pk2")
 crosshairSprite = NodePath("CrosshairSprite")
-BulletType = 2
+shootAnimation = NodePath("ShootAnimation")
 TowerType = 2
 
 [node name="Base" parent="." index="0" unique_id=962930951]
@@ -22,3 +66,12 @@ wait_time = 3.0
 
 [node name="CrosshairSprite" type="Sprite2D" parent="." index="4" unique_id=1304673584]
 texture = ExtResource("3_t47ol")
+
+[node name="ShootAnimation" type="AnimatedSprite2D" parent="." index="8" unique_id=859278805]
+visible = false
+position = Vector2(0, 6)
+sprite_frames = SubResource("SpriteFrames_23bnl")
+frame_progress = 0.7184001
+
+[node name="ShootSound" parent="." index="9" unique_id=1996547471]
+stream = ExtResource("6_ykinh")
