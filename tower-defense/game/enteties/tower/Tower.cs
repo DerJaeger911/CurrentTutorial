@@ -145,8 +145,8 @@ public partial class Tower : Node2D
 
     public void DeleteTower()
     {
-        var returnMoney = !this.Upgraded ? this.Cost : (this.Cost + this.UpgradeCost)
-        Data.Instance.Money += returnMoney
+        var returnMoney = !this.Upgraded ? this.Cost : (this.Cost + this.UpgradeCost);
+        Data.Instance.Money += returnMoney;
         this.QueueFree();
     }
 }
