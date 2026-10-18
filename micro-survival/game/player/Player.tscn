@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqx35dvbrdpsj" path="res://game/player/Player.cs" id="1_wv0h6"]
 [ext_resource type="Script" uid="uid://ddlrqjmhdkrie" path="res://game/player/Need.cs" id="2_e8u23"]
+[ext_resource type="Script" uid="uid://dpy2ao1xa7uuc" path="res://game/player/PlayerNeeds.cs" id="2_o4naa"]
 [ext_resource type="PackedScene" uid="uid://nxlnf8kprmxk" path="res://game/player/NeedBar.tscn" id="2_r5dqo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_23bnl"]
@@ -36,7 +37,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 [node name="Head" type="Node3D" parent="." unique_id=1357644974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
-[node name="PlayerNeeds" type="Node3D" parent="." unique_id=964987962]
+[node name="PlayerNeeds" type="Node3D" parent="." unique_id=964987962 node_paths=PackedStringArray("health", "hunger", "thirst", "sleep")]
+script = ExtResource("2_o4naa")
+health = NodePath("VBoxContainer/Health")
+hunger = NodePath("VBoxContainer/Hunger")
+thirst = NodePath("VBoxContainer/Thirst")
+sleep = NodePath("VBoxContainer/Sleep")
+noHungerHealthDecay = 1.0
+noThirstHealthDecay = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PlayerNeeds" unique_id=1560831341]
 anchors_preset = -1
@@ -50,8 +58,8 @@ theme_override_constants/separation = 10
 custom_minimum_size = Vector2(300, 45)
 layout_mode = 2
 script = ExtResource("2_e8u23")
-maxValue = 100.0
-startValue = 80.0
+MaxValue = 100.0
+StartValue = 80.0
 uiBar = NodePath("NeedBar")
 
 [node name="NeedBar" parent="PlayerNeeds/VBoxContainer/Health" unique_id=956195835 instance=ExtResource("2_r5dqo")]
@@ -61,9 +69,9 @@ layout_mode = 0
 custom_minimum_size = Vector2(300, 45)
 layout_mode = 2
 script = ExtResource("2_e8u23")
-maxValue = 100.0
-startValue = 70.0
-decayRate = 1.0
+MaxValue = 100.0
+StartValue = 70.0
+DecayRate = 1.0
 uiBar = NodePath("NeedBar")
 
 [node name="NeedBar" parent="PlayerNeeds/VBoxContainer/Hunger" unique_id=800494017 instance=ExtResource("2_r5dqo")]
@@ -75,9 +83,9 @@ needName = 1
 custom_minimum_size = Vector2(300, 45)
 layout_mode = 2
 script = ExtResource("2_e8u23")
-maxValue = 100.0
-startValue = 80.0
-decayRate = 1.5
+MaxValue = 100.0
+StartValue = 80.0
+DecayRate = 1.5
 uiBar = NodePath("NeedBar")
 
 [node name="NeedBar" parent="PlayerNeeds/VBoxContainer/Thirst" unique_id=1218141500 instance=ExtResource("2_r5dqo")]
@@ -89,8 +97,8 @@ needName = 2
 custom_minimum_size = Vector2(300, 45)
 layout_mode = 2
 script = ExtResource("2_e8u23")
-maxValue = 100.0
-regenRate = 1.0
+MaxValue = 100.0
+RegenRate = 1.0
 uiBar = NodePath("NeedBar")
 
 [node name="NeedBar" parent="PlayerNeeds/VBoxContainer/Sleep" unique_id=240178955 instance=ExtResource("2_r5dqo")]

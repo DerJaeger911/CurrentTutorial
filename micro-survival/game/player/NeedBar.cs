@@ -17,6 +17,6 @@ public partial class NeedBar : ProgressBar
     {
         this.Value = newValue;
         this.MaxValue = max;
-        this.text.Text = $"{this.needName} : {this.Value} / {this.MaxValue}";
+        this.text.Text = $"{this.needName} : {Mathf.RoundToInt(this.Value)} / {Mathf.RoundToInt(this.MaxValue)}";
     }
 }

@@ -4,40 +4,40 @@ using System;
 public partial class Need : Control
 {
     [Export]
-    private float maxValue;
+    public float MaxValue {get; set;}
     [Export]
-    private float startValue;
+    public float StartValue {get; set;}
     [Export]
-    private float regenRate;
+    public float RegenRate{get; set;}
     [Export]
-    private float decayRate;
+    public float DecayRate {get; set;}
     [Export]
     private NeedBar uiBar;
 
-    private float value;
+    public float Value {get; set;}
 
-    private void Add(float amount)
+    public void Add(float amount)
     {
-        this.value += amount;
+        this.Value += amount;
 
-        if (this.value > this.maxValue)
+        if (this.Value > this.MaxValue)
         {
-            this.value = this.maxValue;
+            this.Value = this.MaxValue;
         }
     }
 
-    private void Subtract(float amount)
+    public void Subtract(float amount)
     {
-        this.value -= amount;
+        this.Value -= amount;
 
-        if (this.value < 0)
+        if (this.Value < 0)
         {
-            this.value = 0;
+            this.Value = 0;
         }
     }
 
     public void UpdateUiBar()
     {
-        this.uiBar.UpdateValue(this.value, this.maxValue);
+        this.uiBar.UpdateValue(this.Value, this.MaxValue);
     }
 }
