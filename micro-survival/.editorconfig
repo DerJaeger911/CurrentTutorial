@@ -2,3 +2,10 @@ root = true
 
 [*]
 charset = utf-8
+
+[*.cs]
+# Erzwinge "this." bei Feldern, Properties, Methoden und Events
+dotnet_style_qualification_for_field = true:warning
+dotnet_style_qualification_for_property = true:warning
+dotnet_style_qualification_for_method = true:warning
+dotnet_style_qualification_for_event = true:warning
