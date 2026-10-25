@@ -1,0 +1,18 @@
+# Automatische Erkennung von Textdateien und Normalisierung auf LF im Git-Repository
+* text=auto
+
+# C#-Dateien explizit auf LF zwingen (sehr wichtig für plattformübergreifendes .NET)
+*.cs text eol=lf
+*.csproj text eol=lf
+*.sln text eol=lf
+
+# Godot-spezifische Dateien als Text behandeln
+*.godot text eol=lf
+*.tscn text eol=lf
+*.tres text eol=lf
+
+# Binärdateien unverändert lassen
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.svg binary

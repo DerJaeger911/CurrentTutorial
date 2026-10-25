@@ -1,0 +1,19 @@
+
+
+**/android/
+
+# ==========================================
+# Godot-spezifische Cache- und Build-Dateien
+# ==========================================
+# Ignoriert den Godot-Cache in JEDEM Unterordner
+**/.godot/
+
+# ==========================================
+# .NET / C# / VS Code (Plattformspezifisch)
+# ==========================================
+# Ignoriert die kompilierten Binärdateien in JEDEM Unterordner
+**/bin/
+**/obj/
+
+# Ignoriert die VS Code-Einstellungen überall
+**/.vscode/
