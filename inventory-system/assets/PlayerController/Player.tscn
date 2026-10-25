@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cf1pwgl0y0mi6"]
+
+[ext_resource type="Script" uid="uid://heoao8fb4d6k" path="res://assets/PlayerController/Player.cs" id="1_6kio1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lt5te"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbwra"]
+font_size = 24
+
+[node name="Player" type="CharacterBody3D" unique_id=1228110925 groups=["Player"]]
+script = ExtResource("1_6kio1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=572909386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_lt5te")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=48198874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+current = true
+
+[node name="InteractionController" type="RayCast3D" parent="Camera3D" unique_id=1883931600]
+target_position = Vector3(0, 0, -2)
+
+[node name="InteractionPrompt" type="Label" parent="Camera3D/InteractionController" unique_id=2024969859]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.0
+offset_top = -50.0
+offset_right = 247.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_cbwra")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Inventory" type="Node" parent="." unique_id=1405218619]
+
+[node name="Panel" type="Panel" parent="Inventory" unique_id=1431107736]
+offset_right = 40.0
+offset_bottom = 40.0
