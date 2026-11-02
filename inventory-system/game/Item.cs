@@ -7,9 +7,9 @@ public partial class Item : Resource
 	[Export]
 	private string displayName;
 	[Export]
-	private Texture2D Icon;
+	public Texture2D Icon {get; set;}
 	[Export]
-	private int maxStackSize = 12;
+	public int MaxStackSize {get; set;} = 12;
 	[Export]
 	private PackedScene worldItemScene;
 

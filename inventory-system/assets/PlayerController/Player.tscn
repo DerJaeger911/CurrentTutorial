@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cf1pwgl0y0mi6"]
 
 [ext_resource type="Script" uid="uid://heoao8fb4d6k" path="res://assets/PlayerController/Player.cs" id="1_6kio1"]
+[ext_resource type="Script" uid="uid://ya3e1usk134f" path="res://game/inventory/Inventory.cs" id="2_73ah1"]
+[ext_resource type="PackedScene" uid="uid://dgmxufgjjwtpx" path="res://game/inventory/inventorySlot.tscn" id="3_ll02t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lt5te"]
 radius = 0.3
@@ -39,8 +41,96 @@ label_settings = SubResource("LabelSettings_cbwra")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Inventory" type="Node" parent="." unique_id=1405218619]
+[node name="Inventory" type="Node" parent="." unique_id=1405218619 node_paths=PackedStringArray("window", "infoText")]
+script = ExtResource("2_73ah1")
+window = NodePath("InventoryWindow")
+infoText = NodePath("InventoryWindow/InfoText")
 
-[node name="Panel" type="Panel" parent="Inventory" unique_id=1431107736]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="InventoryWindow" type="Panel" parent="Inventory" unique_id=1431107736]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -180.0
+offset_right = 280.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoText" type="Label" parent="Inventory/InventoryWindow" unique_id=1219520074]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Contains info about the selected item"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlotContainer" type="GridContainer" parent="Inventory/InventoryWindow" unique_id=142106317]
+custom_minimum_size = Vector2(520, 310)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -160.0
+offset_right = 260.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="InventorySlot" parent="Inventory/InventoryWindow/SlotContainer" unique_id=2141940367 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="Inventory/InventoryWindow/SlotContainer" unique_id=669389389 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Inventory/InventoryWindow/SlotContainer" unique_id=947423642 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Inventory/InventoryWindow/SlotContainer" unique_id=751545045 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Inventory/InventoryWindow/SlotContainer" unique_id=743648276 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Inventory/InventoryWindow/SlotContainer" unique_id=591282632 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="Inventory/InventoryWindow/SlotContainer" unique_id=1266048473 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="Inventory/InventoryWindow/SlotContainer" unique_id=775193288 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="Inventory/InventoryWindow/SlotContainer" unique_id=110372448 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="Inventory/InventoryWindow/SlotContainer" unique_id=230719587 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="Inventory/InventoryWindow/SlotContainer" unique_id=648422868 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="Inventory/InventoryWindow/SlotContainer" unique_id=654164510 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="Inventory/InventoryWindow/SlotContainer" unique_id=1872443924 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="Inventory/InventoryWindow/SlotContainer" unique_id=499283918 instance=ExtResource("3_ll02t")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="Inventory/InventoryWindow/SlotContainer" unique_id=573722542 instance=ExtResource("3_ll02t")]
+layout_mode = 2
