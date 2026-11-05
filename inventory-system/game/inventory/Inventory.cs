@@ -10,7 +10,7 @@ public partial class Inventory : Node
 	private Panel window;
 
 	[Export]
-	private Label infoText;
+	public Label InfoText {get; set;}
 
 	[Export]
 	private Item[] starterItems;
@@ -23,7 +23,7 @@ public partial class Inventory : Node
 		{
 			if (child is InventorySlot inventorySlot)
 			{
-				slots.Add(inventorySlot);
+                this.slots.Add(inventorySlot);
 				inventorySlot.SetItem(null);
 				inventorySlot.Inventory = this;
 			}
@@ -33,9 +33,11 @@ public partial class Inventory : Node
 			foreach (Item item in this.starterItems)
 			{
 
-				AddItem(item);
+                this.AddItem(item);
 			}
 		}
+
+		SignalHub.Instance.GivePlayerItem += this.OnGivePlayerItem;
 	}
 
 	public override void _Process(double delta)
@@ -100,7 +102,7 @@ public partial class Inventory : Node
 
 	private InventorySlot GetSlotToAdd(Item item)
 	{
-		foreach (InventorySlot slot in slots)
+		foreach (InventorySlot slot in this.slots)
 		{
 			if (slot.Item == item && slot.Quantity < item.MaxStackSize)
 			{
@@ -108,7 +110,7 @@ public partial class Inventory : Node
 			}
 		}
 
-		foreach (InventorySlot slot in slots)
+		foreach (InventorySlot slot in this.slots)
 		{
 			if (slot.Item == null)
 			{
@@ -121,7 +123,7 @@ public partial class Inventory : Node
 
 	private InventorySlot GetSlotToRemove(Item item)
 	{
-		foreach (InventorySlot slot in slots)
+		foreach (InventorySlot slot in this.slots)
 		{
 			if (slot.Item == item)
 			{
@@ -136,7 +138,7 @@ public partial class Inventory : Node
 	{
 		int total = 0;
 
-		foreach (InventorySlot slot in slots)
+		foreach (InventorySlot slot in this.slots)
 		{
 			if (slot.Item == item)
 			{

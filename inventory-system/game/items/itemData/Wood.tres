@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_5sw3d")
-displayName = "Wood"
+DisplayName = "Wood"
 Icon = ExtResource("1_1p227")
 metadata/_custom_type_script = "uid://brnkbdp83pr4r"

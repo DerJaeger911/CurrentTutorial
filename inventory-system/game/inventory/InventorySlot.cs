@@ -15,6 +15,13 @@ public partial class InventorySlot : Button
 
 	public Item Item { get; set; }
 
+    public override void _Ready()
+    {
+        this.MouseEntered += this.OnMouseEntered;
+		this.MouseExited += this.OnMouseExited;
+		this.Pressed += this.OnPressed;
+    }
+
 	public void SetItem(Item item)
 	{
 		this.Item = item;
@@ -22,13 +29,15 @@ public partial class InventorySlot : Button
 
 		if (item == null)
 		{
-			icon.Visible = false;
+            this.icon.Visible = false;
 		}
 		else
 		{
-			icon.Visible = true;
-			icon.Texture = item.Icon;
+            this.icon.Visible = true;
+            this.icon.Texture = item.Icon;
 		}
+
+		this.UpdateQuantityText();
 	}
 
 	public void AddItem()
@@ -41,17 +50,59 @@ public partial class InventorySlot : Button
 	{
 		this.Quantity -= 1;
 		this.UpdateQuantityText();
+
+		if(this.Quantity == 0)
+		{
+			this.SetItem(null);
+		}
 	}
 
 	private void UpdateQuantityText()
 	{
 		if (this.Quantity <= 1)
 		{
-			quantityText.Text = "";
+            this.quantityText.Text = "";
 		}
 		else
 		{
 			this.quantityText.Text = this.Quantity.ToString();
 		}
+	}
+
+	private void OnMouseEntered()
+	{
+		if(this.Item == null)
+		{
+            this.Inventory.InfoText.Text = "";
+		}
+		else
+		{
+            this.Inventory.InfoText.Text = this.Item.DisplayName;
+		}
+	}
+
+	private void OnMouseExited()
+	{
+        this.Inventory.InfoText.Text = "";
+	}
+
+	private void OnPressed()
+	{
+		if (this.Item == null)
+		{
+			return;
+		}
+
+		bool removeAfterUse = this.Item.OnUse((Player)this.Inventory.GetParent());
+
+		if (removeAfterUse)
+		{
+			this.RemoveItem();
+		}
+	}
+
+	private void DropItem()
+	{
+		
 	}
 }

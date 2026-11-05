@@ -5,7 +5,7 @@ using System;
 public partial class Item : Resource
 {
 	[Export]
-	private string displayName;
+	public string DisplayName {get; set;}
 	[Export]
 	public Texture2D Icon {get; set;}
 	[Export]
@@ -13,8 +13,9 @@ public partial class Item : Resource
 	[Export]
 	private PackedScene worldItemScene;
 
-	private bool OnUse (Player player)
+	public bool OnUse (Player player)
 	{
-		return false;
+		GD.Print("Use");
+		return player.UseItems;
 	}
 }

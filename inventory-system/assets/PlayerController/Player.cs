@@ -2,6 +2,9 @@ using Godot;
 
 public partial class Player : CharacterBody3D
 {
+    [Export]
+    public bool UseItems {get; set;}
+
     [ExportGroup("Movement")]
     [Export] private float maxSpeed = 4.0f;
     [Export] private float acceleration = 20.0f;
@@ -24,8 +27,8 @@ public partial class Player : CharacterBody3D
         // Lock the mouse
         Input.MouseMode = Input.MouseModeEnum.Captured;
 
-        camera = GetNode<Camera3D>("Camera3D");
-        gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle() * gravityModifier;
+        this.camera = this.GetNode<Camera3D>("Camera3D");
+        this.gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle() * this.gravityModifier;
     }
 
     public override void _PhysicsProcess(double delta)
@@ -33,43 +36,43 @@ public partial class Player : CharacterBody3D
         float fDelta = (float)delta;
 
         // Apply gravity
-        Vector3 vel = Velocity;
-        if (!IsOnFloor())
+        Vector3 vel = this.Velocity;
+        if (!this.IsOnFloor())
         {
-            vel.Y -= gravity * fDelta;
+            vel.Y -= this.gravity * fDelta;
         }
 
         // Jumping
-        if (Input.IsActionPressed("jump") && IsOnFloor())
+        if (Input.IsActionPressed("jump") && this.IsOnFloor())
         {
-            vel.Y = jumpForce;
+            vel.Y = this.jumpForce;
         }
 
         // Movement
         Vector2 moveInput = Input.GetVector("move_left", "move_right", "move_forward", "move_back");
-        Vector3 moveDir = (Transform.Basis * new Vector3(moveInput.X, 0, moveInput.Y)).Normalized();
+        Vector3 moveDir = (this.Transform.Basis * new Vector3(moveInput.X, 0, moveInput.Y)).Normalized();
 
-        IsRunning = Input.IsActionPressed("sprint");
+        this.IsRunning = Input.IsActionPressed("sprint");
 
-        float targetSpeed = maxSpeed;
+        float targetSpeed = this.maxSpeed;
 
-        if (IsRunning)
+        if (this.IsRunning)
         {
-            targetSpeed = maxRunSpeed;
-            float runDot = -moveDir.Dot(Transform.Basis.Z);
+            targetSpeed = this.maxRunSpeed;
+            float runDot = -moveDir.Dot(this.Transform.Basis.Z);
             runDot = Mathf.Clamp(runDot, 0.0f, 1.0f);
             moveDir *= runDot;
         }
 
-        float currentSmoothing = acceleration;
+        float currentSmoothing = this.acceleration;
 
-        if (!IsOnFloor())
+        if (!this.IsOnFloor())
         {
-            currentSmoothing = airAcceleration;
+            currentSmoothing = this.airAcceleration;
         }
         else if (moveDir == Vector3.Zero)
         {
-            currentSmoothing = braking;
+            currentSmoothing = this.braking;
         }
 
         Vector3 targetVel = moveDir * targetSpeed;
@@ -77,18 +80,18 @@ public partial class Player : CharacterBody3D
         vel.X = Mathf.Lerp(vel.X, targetVel.X, currentSmoothing * fDelta);
         vel.Z = Mathf.Lerp(vel.Z, targetVel.Z, currentSmoothing * fDelta);
 
-        Velocity = vel;
-        MoveAndSlide();
+        this.Velocity = vel;
+        this.MoveAndSlide();
 
         // Camera Look
-        RotateY(-cameraLookInput.X * lookSensitivity);
+        this.RotateY(-this.cameraLookInput.X * this.lookSensitivity);
         
-        Vector3 camRot = camera.Rotation;
-        camRot.X -= cameraLookInput.Y * lookSensitivity;
+        Vector3 camRot = this.camera.Rotation;
+        camRot.X -= this.cameraLookInput.Y * this.lookSensitivity;
         camRot.X = Mathf.Clamp(camRot.X, -1.5f, 1.5f);
-        camera.Rotation = camRot;
+        this.camera.Rotation = camRot;
 
-        cameraLookInput = Vector2.Zero;
+        this.cameraLookInput = Vector2.Zero;
 
         // Mouse
         if (Input.IsActionJustPressed("ui_cancel"))
@@ -108,7 +111,7 @@ public partial class Player : CharacterBody3D
     {
         if (@event is InputEventMouseMotion mouseMotion)
         {
-            cameraLookInput = mouseMotion.Relative;
+            this.cameraLookInput = mouseMotion.Relative;
         }
     }
 }
