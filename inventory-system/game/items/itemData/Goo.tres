@@ -8,5 +8,5 @@
 script = ExtResource("2_ij320")
 DisplayName = "Goo"
 Icon = ExtResource("1_uugyp")
-worldItemScene = ExtResource("3_ij320")
+WorldItemScene = ExtResource("3_ij320")
 metadata/_custom_type_script = "uid://brnkbdp83pr4r"

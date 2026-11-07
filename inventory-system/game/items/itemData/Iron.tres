@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://dh2738j32g6s5"]
 
 [ext_resource type="Texture2D" uid="uid://d2twxtxeqy64" path="res://assets/Items/Icons/Iron.png" id="1_mhewa"]
+[ext_resource type="PackedScene" uid="uid://diylmrtntcxh3" path="res://game/items/worldItems/WorldItemIron.tscn" id="2_7iroj"]
 [ext_resource type="Script" uid="uid://brnkbdp83pr4r" path="res://game/Item.cs" id="2_n6aae"]
 
 [resource]
 script = ExtResource("2_n6aae")
 DisplayName = "Iron"
 Icon = ExtResource("1_mhewa")
+WorldItemScene = ExtResource("2_7iroj")
 metadata/_custom_type_script = "uid://brnkbdp83pr4r"
