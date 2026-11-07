@@ -9,7 +9,21 @@ public partial class InventorySlot : Button
 	[Export]
 	private Label quantityText;
 
-	public Inventory Inventory { get; set; }
+	private Player player;
+
+    private Inventory inventory;
+    public Inventory Inventory 
+    {
+        get => this.inventory;
+        set 
+        {
+            this.inventory = value;
+            if (this.inventory != null)
+            {
+                this.player = (Player)this.inventory.GetParent();
+            }
+        }
+    }
 
 	public int Quantity { get; set; }
 
@@ -20,6 +34,7 @@ public partial class InventorySlot : Button
         this.MouseEntered += this.OnMouseEntered;
 		this.MouseExited += this.OnMouseExited;
 		this.Pressed += this.OnPressed;
+		this.GuiInput += this.OnGuiInput;
     }
 
 	public void SetItem(Item item)
@@ -101,8 +116,31 @@ public partial class InventorySlot : Button
 		}
 	}
 
+	private void OnGuiInput(InputEvent @event)
+	{
+		if (@event is InputEventMouseButton mouseButton && mouseButton.Pressed)
+		{
+			if (mouseButton.ButtonIndex == MouseButton.Left)
+			{
+				
+			}
+			else if (mouseButton.ButtonIndex == MouseButton.Right)
+			{
+				this.DropItem();
+			}
+		}
+	}
+
 	private void DropItem()
 	{
-		
+		if(this.Item == null)
+		{
+			return;
+		}
+
+		RigidBody3D worldItem = (RigidBody3D)this.Item.WorldItemScene.Instantiate();
+		this.AddChild(worldItem);
+		worldItem.Position = this.player.Position + new Vector3(0, 1.5f, 0) - this.player.Basis.Z;
+		this.RemoveItem();
 	}
 }

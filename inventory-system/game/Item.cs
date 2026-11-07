@@ -11,7 +11,7 @@ public partial class Item : Resource
 	[Export]
 	public int MaxStackSize {get; set;} = 12;
 	[Export]
-	private PackedScene worldItemScene;
+	public PackedScene WorldItemScene {get; set;}
 
 	public bool OnUse (Player player)
 	{
